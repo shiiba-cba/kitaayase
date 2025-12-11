@@ -79,7 +79,7 @@ const SELECTABLE_STATIONS = [
   "nishinippori",
   "machiya",
   "kitasenju",
-  // "ayase",
+  "ayase",
   // "kitaayase",
 ];
 
