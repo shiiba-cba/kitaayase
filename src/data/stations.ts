@@ -1,0 +1,37 @@
+// src/data/stations.ts
+
+export const stations: Record<string, string> = {
+  hakoneyumoto: "箱根湯本",
+  karakida: "唐木田",
+  isehara: "伊勢原",
+  honatsugi: "本厚木",
+  sagamiono: "相模大野",
+  mukogaokayuen: "向ヶ丘遊園",
+  seijogakuenmae: "成城学園前",
+
+  yoyogiuehara: "代々木上原",
+  yoyogikoen: "代々木公園",
+  meijijingumae: "明治神宮前",
+  omotesando: "表参道",
+  nogizaka: "乃木坂",
+  akasaka: "赤坂",
+  kokkaigijidomae: "国会議事堂前",
+  kasumigaseki: "霞ケ関",
+  hibiya: "日比谷",
+  nijubashimae: "二重橋前",
+  otemachi: "大手町",
+  shinochanomizu: "新御茶ノ水",
+  yushima: "湯島",
+  nezu: "根津",
+  sendagi: "千駄木",
+  nishinippori: "西日暮里",
+  machiya: "町屋",
+  kitasenju: "北千住",
+  ayase: "綾瀬",
+  kitaayase: "北綾瀬",
+
+  matsudo: "松戸",
+  kashiwa: "柏",
+  abiko: "我孫子",
+  toride: "取手",
+};
