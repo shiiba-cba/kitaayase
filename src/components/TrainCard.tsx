@@ -53,16 +53,27 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           : stations["ayase"]
         : "";
     } else {
-      depTime = row.stationDepartureTime ?? row.originDepartureTime;
-      if (row.trainNumber?.includes("96S")) {
-        depLabel = depTime ? stations["ayase"] + "0番線" : "";
+      // === 北綾瀬方面 ===
+      if (
+        row.stationDepartureTime === null &&
+        row.ayaseArrivalTime !== null
+      ) {
+        // 綾瀬止まり（常磐緩行線直通）
+        depTime = row.ayaseArrivalTime;
+        depLabel = stations["ayase"] + "(着)";
       } else {
-        depLabel = depTime
-          ? row.stationDepartureTime
-            ? stationName
-            : stations[row.originStationName.toLowerCase()] ||
-              row.originStationName
-          : "";
+        depTime = row.stationDepartureTime ?? row.originDepartureTime;
+    
+        if (row.trainNumber?.includes("96S")) {
+          depLabel = depTime ? stations["ayase"] + "0番線" : "";
+        } else {
+          depLabel = depTime
+            ? row.stationDepartureTime
+              ? stationName
+              : stations[row.originStationName.toLowerCase()] ||
+                row.originStationName
+            : "";
+        }
       }
     }
 
