@@ -110,37 +110,46 @@ export default function App() {
   // --------------------------------------------------
   useEffect(() => {
     if (rows.length === 0) return;
-
+  
     const now = new Date();
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
+  
+    let currentMinutes = now.getHours() * 60 + now.getMinutes();
+  
+    // 4:00 始まり補正
+    if (currentMinutes < 240) {
+      currentMinutes += 1440;
+    }
+  
     const targetIndex = rows.findIndex((row) => {
       let t: string | null = null;
-
+  
       if (direction === "for_yoyogiuehara") {
         t = row.kitaAyaseDepartureTime;
       } else {
         t = row.stationDepartureTime;
       }
-
+  
       if (!t) return false;
-
+  
       const [h, m] = t.split(":").map(Number);
-      return h * 60 + m >= currentMinutes;
+      let trainMinutes = h * 60 + m;
+  
+      // 列車時刻側も同じ補正
+      if (trainMinutes < 240) {
+        trainMinutes += 1440;
+      }
+  
+      return trainMinutes >= currentMinutes;
     });
-
+  
     if (targetIndex !== -1 && cardRefs.current[targetIndex]) {
-      // === sticky ヘッダーの高さを動的に算出 ===
       const headerHeight = headerRef.current?.offsetHeight ?? 0;
-
-      // カードの上端位置
       const cardTop =
         cardRefs.current[targetIndex]!.getBoundingClientRect().top +
         window.scrollY;
-
-      // ぴったりヘッダー直下にくるようにスクロール
+  
       window.scrollTo({
-        top: cardTop - headerHeight - 8, // 余裕 8px
+        top: cardTop - headerHeight - 8,
         behavior: "smooth",
       });
     }
