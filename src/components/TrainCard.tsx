@@ -53,27 +53,17 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           : stations["ayase"]
         : "";
     } else {
-      // === 北綾瀬方面 ===
-      if (
-        row.stationDepartureTime === null &&
-        row.ayaseArrivalTime !== null
-      ) {
-        // 綾瀬止まり（常磐緩行線直通）
-        depTime = row.ayaseArrivalTime;
-        depLabel = stations["ayase"] + "(着)";
-      } else {
-        depTime = row.stationDepartureTime ?? row.originDepartureTime;
+      depTime = row.stationDepartureTime ?? row.originDepartureTime;
     
-        if (row.trainNumber?.includes("96S")) {
-          depLabel = depTime ? stations["ayase"] + "0番線" : "";
-        } else {
-          depLabel = depTime
-            ? row.stationDepartureTime
-              ? stationName
-              : stations[row.originStationName.toLowerCase()] ||
-                row.originStationName
-            : "";
-        }
+      if (row.trainNumber?.includes("96S")) {
+        depLabel = depTime ? stations["ayase"] + "0番線" : "";
+      } else {
+        depLabel = depTime
+          ? row.stationDepartureTime
+            ? stationName
+            : stations[row.originStationName.toLowerCase()] ||
+              row.originStationName
+          : "";
       }
     }
 
@@ -82,7 +72,15 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     let arrLabel = "";
 
     if (direction === "for_yoyogiuehara") {
-      if (row.stationArrivalTime || row.stationDepartureTime) {
+      if (
+        row.trainNumber?.includes("96S") &&
+        row.stationName === "Ayase" &&
+        row.stationArrivalTime !== null &&
+        row.stationDepartureTime === null
+      ) {
+        arrTime = row.stationArrivalTime;
+        arrLabel = stations["ayase"] + "0番線";
+      } else if (row.stationArrivalTime || row.stationDepartureTime) {
         arrTime = row.stationArrivalTime ?? row.stationDepartureTime;
         arrLabel = stationName;
       } else {
@@ -96,6 +94,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         }
       }
     } else {
+      // for_kitaayase
       arrTime = row.kitaAyaseArrivalTime ?? row.ayaseArrivalTime;
       arrLabel = arrTime
         ? row.kitaAyaseArrivalTime

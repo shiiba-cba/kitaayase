@@ -314,6 +314,25 @@ function buildTimetableByStation(allTrains) {
     const kaDep = times.departure[STATIONS.kitaayase] || null;
 
     for (const stationKey of SELECTABLE_STATIONS) {
+      // ===============================
+      // 綾瀬駅の出力制御（要件対応）
+      // ===============================
+      if (stationKey === "ayase") {
+        if (direction === "for_yoyogiuehara") {
+          // 北綾瀬始発のみ出力
+          if (originStationId !== STATIONS.kitaayase) {
+            continue;
+          }
+        }
+      
+        if (direction === "for_kitaayase") {
+          // 北綾瀬行のみ出力
+          if (destinationStationId !== STATIONS.kitaayase) {
+            continue;
+          }
+        }
+      }
+
       const stationId = STATIONS[stationKey];
 
       const stationName = resolveStationName(stationId);
