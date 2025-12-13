@@ -32,18 +32,18 @@ type Props = {
   row: TrainRow;
   stationKey: keyof typeof stations;
   direction: "for_yoyogiuehara" | "for_kitaayase";
+  themeColor: string;
 };
 
 // ---- ref を受け取るために forwardRef を使用 ----
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
-  ({ row, stationKey, direction }, ref) => {
-    const time = (v: string | null) => (v ? v : "--");
-
+  ({ row, stationKey, direction, themeColor }, ref) => {
     const stationName = stations[stationKey];
 
     // ===== 発側 =====
     let depTime: string | null = null;
     let depLabel = "";
+    let depSuffix = "";
 
     if (direction === "for_yoyogiuehara") {
       depTime = row.kitaAyaseDepartureTime ?? row.ayaseDepartureTime;
@@ -55,8 +55,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     } else {
       depTime = row.stationDepartureTime ?? row.originDepartureTime;
     
-      if (row.trainNumber?.includes("96S")) {
-        depLabel = depTime ? stations["ayase"] + "0番線" : "";
+      if (row.trainNumber?.includes("96S") && depTime) {
+        depLabel = stations["ayase"];
+        depSuffix = "0番線";
       } else {
         depLabel = depTime
           ? row.stationDepartureTime
@@ -70,6 +71,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     // ===== 着側 =====
     let arrTime: string | null = null;
     let arrLabel = "";
+    let arrSuffix = "";
 
     if (direction === "for_yoyogiuehara") {
       if (
@@ -79,14 +81,16 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         row.stationDepartureTime === null
       ) {
         arrTime = row.stationArrivalTime;
-        arrLabel = stations["ayase"] + "0番線";
+        arrLabel = stations["ayase"];
+        arrSuffix = "0番線";
       } else if (row.stationArrivalTime || row.stationDepartureTime) {
         arrTime = row.stationArrivalTime ?? row.stationDepartureTime;
         arrLabel = stationName;
       } else {
         arrTime = row.destinationArrivalTime;
         if (row.trainNumber?.includes("96S")) {
-          arrLabel = stations["ayase"] + "0番線";
+          arrLabel = stations["ayase"];
+          arrSuffix = "0番線";
         } else {
           arrLabel =
             stations[row.destinationStationName.toLowerCase()] ||
@@ -118,8 +122,19 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       isArrivalWrong = row.kitaAyaseArrivalTime === null;
     }
 
+    const CARD_NORMAL_BG = "rgba(255,255,255,0.12)";   // 止まる：明るい
+    const CARD_PASS_BG   = "rgba(255,255,255,0.04)";   // 止まらない：減光
+
+    const formatTime = (t: string | null) => {
+      if (!t) return "--:--";
+    
+      const [h, m] = t.split(":").map(Number);
+      return `${h}:${m.toString().padStart(2, "0")}`;
+    };
+
     const depColor = isDepartWrong ? "whiteAlpha.700" : "white";
     const arrColor = isArrivalWrong ? "whiteAlpha.700" : "white";
+    const isPassTrain = isDepartWrong || isArrivalWrong;
 
     const trainType =
       traintypes[row.type.toLowerCase()] || row.type;
@@ -135,21 +150,55 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     return (
       <Box
         ref={ref}
-        bg={isDepartWrong ? "rgba(255, 150, 0, 0.15)" : "rgba(255,255,255,0.08)"}
-        borderLeft={isDepartWrong ? "4px solid #ffae00" : "4px solid transparent"}
-        borderRadius="lg"
+        bg={isPassTrain ? CARD_PASS_BG : CARD_NORMAL_BG}
+        borderLeft={
+          isPassTrain
+            ? "4px solid transparent"
+            : `4px solid ${themeColor}`
+        }
+        borderRadius="md"
         w="100%"
         p={3}
       >
         <Flex justify="space-between" align="center">
           {/* 左：発 */}
-          <VStack align="flex-start" w="84px" gap={0}>
-            <Text fontSize="2xl" fontWeight="bold" color={depColor}>
-              {time(depTime)}
+          <VStack align="flex-start" w="93px" gap={0}>
+            <Text
+              fontSize="2xl"
+              fontWeight="700"
+              fontFamily='"Inter", "Noto Sans JP", sans-serif'
+              fontVariantNumeric="tabular-nums"
+              fontFeatureSettings="'tnum' 1"
+              color={depColor}
+              w="70px"
+              textAlign="left"
+              whiteSpace="nowrap"
+            >
+              {formatTime(depTime)}
             </Text>
-            <Text fontSize="sm" color={depColor}>
+            <Text
+              fontSize="sm"
+              fontWeight="500"
+              letterSpacing="0.08em"
+              color={depColor}
+              opacity={0.9}
+              lineHeight={1.2}
+            >
               {depLabel}
-              {isDepartWrong && depLabel && " ⚠"}
+              <Text
+                as="span"
+                fontSize="xs"
+                letterSpacing="0.04em"
+                opacity={0.7}
+                ml={1}
+              >
+                {depSuffix}
+              </Text>
+              {isDepartWrong && depLabel && (
+                <Text as="span" ml={1} color="yellow.300">
+                  ▲
+                </Text>
+              )}
             </Text>
           </VStack>
 
@@ -157,7 +206,11 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           <VStack flex="1" align="center" gap={1}>
             <HStack gap={2}>
               {trainType && (
-                <Badge
+              <Badge
+                px={2}
+                py={0.5}
+                fontWeight="600"
+                letterSpacing="0.04em"
                   colorPalette={
                     row.type.includes("SemiExpress")
                       ? "green"
@@ -173,10 +226,34 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
 
             <HStack gap={2}>
               {isOrigin && !is3car && (
-                <Badge colorPalette="yellow">始発</Badge>
+                <Badge
+                  px={2}
+                  py={0.5}
+                  fontWeight="600"
+                  letterSpacing="0.04em"
+                  colorPalette="yellow"
+                >
+                  始発
+                </Badge>
               )}
-              {is3car && <Badge colorPalette="gray">3両</Badge>}
-              <Text fontSize="lg">
+              {is3car && (
+                <Badge
+                  px={2}
+                  py={0.5}
+                  fontWeight="600"
+                  letterSpacing="0.04em"
+                  colorPalette="gray"
+                >
+                  3両
+                </Badge>
+              )}
+              <Text
+                fontSize="lg"
+                // fontWeight="600"
+                fontWeight="500"
+                letterSpacing="0.06em"
+                textAlign="center"
+              >
                 {stations[row.destinationStationName.toLowerCase()] ||
                   row.destinationStationName}
               </Text>
@@ -184,13 +261,43 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           </VStack>
 
           {/* 右：着 */}
-          <VStack align="flex-end" w="84px" gap={0}>
-            <Text fontSize="2xl" fontWeight="bold" color={arrColor}>
-              {time(arrTime)}
+          <VStack align="flex-end" w="93px" gap={0}>
+            <Text
+              fontSize="2xl"
+              fontWeight="700"
+              fontFamily='"Inter", "Noto Sans JP", sans-serif'
+              fontVariantNumeric="tabular-nums"
+              fontFeatureSettings="'tnum' 1"
+              color={arrColor}
+              w="70px"
+              textAlign="right"
+              whiteSpace="nowrap"
+            >
+              {formatTime(arrTime)}
             </Text>
-            <Text fontSize="sm" color={arrColor}>
+            <Text
+              fontSize="sm"
+              fontWeight="500"
+              letterSpacing="0.08em"
+              color={arrColor}
+              opacity={0.9}
+              lineHeight={1.2}
+            >
               {arrLabel}
-              {isArrivalWrong && arrLabel && " ⚠"}
+              <Text
+                as="span"
+                fontSize="xs"
+                letterSpacing="0.04em"
+                opacity={0.7}
+                ml={1}
+              >
+                {arrSuffix}
+              </Text>
+              {isArrivalWrong && arrLabel && (
+                <Text as="span" ml={1} color="yellow.300">
+                  ▲
+                </Text>
+              )}
             </Text>
           </VStack>
         </Flex>

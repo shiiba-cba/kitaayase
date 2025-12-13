@@ -99,7 +99,9 @@ export default function App() {
   }, [base, calendar, direction, stationKey]);
 
   const isHolidayTheme = calendar === "holiday";
-  const themeColor = isHolidayTheme ? "red.400" : "#009944";
+  const METRO_GREEN = "#009944";
+  const METRO_RED = "#d32f2f";
+  const themeColor = isHolidayTheme ? METRO_RED : METRO_GREEN;
 
   const currentStationName = selectstations[stationKey];
 
@@ -160,22 +162,23 @@ export default function App() {
   // ==================================================
 
   return (
-    <Box bg="#222" minH="100vh" color="white">
+    <Box bg="#111111" minH="100vh" color="white">
       {/* 固定ヘッダー */}
       <Box
         ref={headerRef}
         position="sticky"
         top="0"
         zIndex={1000}
-        bg="#222"
-        pb={2}
-        pt={2}
+        bg="#111111"
+        borderBottom={`4px solid ${themeColor}`}
+        pb={3}
+        pt={3}
       >
         <VStack gap={4}>
           {/* ==== 方面（⇔） ==== */}
           <Flex w="100%" align="center">
             <Flex flex="1" justify="flex-end">
-              <Text fontSize="lg" fontWeight="bold">
+              <Text fontSize="lg" fontWeight="700" letterSpacing="0.08em">
                 {direction === "for_yoyogiuehara"
                   ? "北綾瀬"
                   : currentStationName}
@@ -202,7 +205,7 @@ export default function App() {
             </Flex>
 
             <Flex flex="1" justify="flex-start">
-              <Text fontSize="lg" fontWeight="bold">
+              <Text fontSize="lg" fontWeight="700" letterSpacing="0.08em">
                 {direction === "for_yoyogiuehara"
                   ? currentStationName
                   : "北綾瀬"}
@@ -268,6 +271,7 @@ export default function App() {
             row={row}
             stationKey={stationKey}
             direction={direction}
+            themeColor={themeColor}
             ref={(el) => {
               cardRefs.current[i] = el;
             }}
