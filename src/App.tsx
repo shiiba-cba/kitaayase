@@ -49,20 +49,25 @@ export default function App() {
   // --------------------------------------------------
   useEffect(() => {
     const now = new Date();
-    const hour = now.getHours();
-
-    if (hour < 4) {
+  
+    if (now.getHours() < 4) {
       now.setDate(now.getDate() - 1);
     }
-
-    const dateStr = now.toISOString().slice(0, 10);
-
+  
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, "0");
+    const dd = String(now.getDate()).padStart(2, "0");
+    const dateStr = `${yyyy}-${mm}-${dd}`;
+  
+    const day = now.getDay(); // 0:日, 6:土
+    const isWeekend = day === 0 || day === 6;
+  
     (async () => {
       try {
-        const holiday = await isHoliday(dateStr);
-        setCalendar(holiday ? "holiday" : "weekday");
+        const isNatHoliday = await isHoliday(dateStr);
+        setCalendar(isWeekend || isNatHoliday ? "holiday" : "weekday");
       } catch {
-        setCalendar("weekday");
+        setCalendar(isWeekend ? "holiday" : "weekday");
       }
     })();
   }, []);
