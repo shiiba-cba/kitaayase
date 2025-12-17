@@ -1,0 +1,21 @@
+{
+  "name": "北綾瀬発着時刻表",
+  "short_name": "北綾瀬発着",
+  "description": "東京メトロ千代田線 北綾瀬発着に特化した時刻表",
+  "start_url": "/kitaayase/",
+  "display": "standalone",
+  "background_color": "#000048",
+  "theme_color": "#009944",
+  "icons": [
+    {
+      "src": "/kitaayase/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/kitaayase/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
