@@ -161,7 +161,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     const isOrigin =
       direction === "for_yoyogiuehara"
         ? row.originStationName === "KitaAyase"
-        : row.originStationName === row.stationName;
+          || row.originStationName === "Ayase"
+        : row.originStationName === row.stationName
+          || row.originStationName === "Ayase";
 
     const is3car = row.trainNumber.includes("96S");
 
