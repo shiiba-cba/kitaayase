@@ -4,7 +4,6 @@ import {
   Button,
   VStack,
   HStack,
-  Text,
   IconButton,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
@@ -12,8 +11,9 @@ import { LuArrowLeftRight } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
-import { selectstations } from "./data/selectstations";
+import { selectStations } from "./data/selectStations";
 import { isHoliday } from "./utils/holiday";
+import { StationLabel } from "./components/StationLabel";
 
 export default function App() {
   // ===== 永続化された設定を初期値に使用 =====
@@ -28,9 +28,9 @@ export default function App() {
   const [calendar, setCalendar] = useState<"weekday" | "holiday">("weekday");
 
   const [stationKey, setStationKey] = useState<
-    keyof typeof selectstations
+    keyof typeof selectStations
   >(
-    (localStorage.getItem("stationKey") as keyof typeof selectstations) ??
+    (localStorage.getItem("stationKey") as keyof typeof selectStations) ??
       "otemachi"
   );
 
@@ -99,11 +99,11 @@ export default function App() {
   }, [base, calendar, direction, stationKey]);
 
   const isHolidayTheme = calendar === "holiday";
-  const METRO_GREEN = "#009944";
-  const METRO_RED = "#d32f2f";
+  const METRO_GREEN = "#00bb85";
+  const METRO_RED = "#f62e36";
   const themeColor = isHolidayTheme ? METRO_RED : METRO_GREEN;
 
-  const currentStationName = selectstations[stationKey];
+  const currentStationName = selectStations[stationKey];
 
   // --------------------------------------------------
   // ② 方向別にスクロール基準時刻を変える
@@ -178,11 +178,14 @@ export default function App() {
           {/* ==== 方面（⇔） ==== */}
           <Flex w="100%" align="center">
             <Flex flex="1" justify="flex-end">
-              <Text fontSize="lg" fontWeight="700" letterSpacing="0.08em">
-                {direction === "for_yoyogiuehara"
-                  ? "北綾瀬"
-                  : currentStationName}
-              </Text>
+              <StationLabel
+                stationKey={
+                  direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
+                }
+                stationName={
+                  direction === "for_yoyogiuehara" ? "北綾瀬" : currentStationName
+                }
+              />
             </Flex>
 
             <Flex flex="0" px={4}>
@@ -205,11 +208,14 @@ export default function App() {
             </Flex>
 
             <Flex flex="1" justify="flex-start">
-              <Text fontSize="lg" fontWeight="700" letterSpacing="0.08em">
-                {direction === "for_yoyogiuehara"
-                  ? currentStationName
-                  : "北綾瀬"}
-              </Text>
+              <StationLabel
+                stationKey={
+                  direction === "for_yoyogiuehara" ? stationKey : "kitaayase"
+                }
+                stationName={
+                  direction === "for_yoyogiuehara" ? currentStationName : "北綾瀬"
+                }
+              />
             </Flex>
           </Flex>
 
@@ -217,7 +223,7 @@ export default function App() {
           <select
             value={stationKey}
             onChange={(e) =>
-              setStationKey(e.target.value as keyof typeof selectstations)
+              setStationKey(e.target.value as keyof typeof selectStations)
             }
             style={{
               width: "90%",
@@ -229,7 +235,7 @@ export default function App() {
               border: "1px solid #555",
             }}
           >
-            {Object.entries(selectstations).map(([key, name]) => (
+            {Object.entries(selectStations).map(([key, name]) => (
               <option key={key} value={key}>
                 {name}
               </option>
@@ -239,9 +245,9 @@ export default function App() {
           {/* ==== 平日 / 休日 ==== */}
           <HStack gap={4}>
             <Button
-              bg={calendar === "weekday" ? "green.500" : "gray.700"}
+              bg={calendar === "weekday" ? METRO_GREEN : "gray.700"}
               _hover={{
-                bg: calendar === "weekday" ? "green.600" : "gray.600",
+                bg: calendar === "weekday" ? METRO_GREEN : "gray.600",
               }}
               color="white"
               onClick={() => onCalendarChange("weekday")}
@@ -250,9 +256,9 @@ export default function App() {
             </Button>
 
             <Button
-              bg={calendar === "holiday" ? "red.500" : "gray.700"}
+              bg={calendar === "holiday" ? METRO_RED : "gray.700"}
               _hover={{
-                bg: calendar === "holiday" ? "red.600" : "gray.600",
+                bg: calendar === "holiday" ? METRO_RED : "gray.600",
               }}
               color="white"
               onClick={() => onCalendarChange("holiday")}

@@ -5,7 +5,7 @@
   "start_url": "/kitaayase/",
   "display": "standalone",
   "background_color": "#000048",
-  "theme_color": "#009944",
+  "theme_color": "#00bb85",
   "icons": [
     {
       "src": "/kitaayase/icon-192.png",

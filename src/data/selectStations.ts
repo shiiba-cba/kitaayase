@@ -1,6 +1,6 @@
-// src/data/selectstations.ts
+// src/data/selectStations.ts
 
-export const selectstations: Record<string, string> = {
+export const selectStations: Record<string, string> = {
   ayase: "綾瀬",
   kitasenju: "北千住",
   machiya: "町屋",

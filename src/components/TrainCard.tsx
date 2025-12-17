@@ -8,7 +8,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { stations } from "../data/stations";
-import { traintypes } from "../data/traintypes";
+import { trainTypes } from "../data/trainTypes";
 
 export type TrainRow = {
   trainNumber: string;
@@ -155,7 +155,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     const arrColor = isArrivalWrong ? "whiteAlpha.700" : "white";
 
     const trainType =
-      traintypes[row.type.toLowerCase()] || row.type;
+      trainTypes[row.type.toLowerCase()] || row.type;
 
     const isOrigin =
       direction === "for_yoyogiuehara"
@@ -164,7 +164,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
 
     const is3car = row.trainNumber.includes("96S");
 
-        // ==================================================
+    // ==================================================
     // 描画
     // ==================================================
     return (
@@ -186,7 +186,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       >
         <Flex justify="space-between" align="center">
           {/* 左：発 */}
-          <VStack align="flex-start" w="93px" gap={0}>
+          <VStack align="flex-start" w="97px" gap={0}>
             <Text
               fontSize="2xl"
               fontWeight="700"
@@ -234,13 +234,14 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               py={0.5}
               fontWeight="600"
               letterSpacing="0.04em"
-                colorPalette={
-                  row.type.includes("SemiExpress")
-                    ? "green"
-                    : row.type.includes("Express")
-                    ? "red"
-                    : "blue"
-                }
+              color="#ffffff"
+              backgroundColor={
+                row.type.includes("SemiExpress")
+                  ? "#007f00"
+                  : row.type.includes("Express")
+                  ? "#c40000"
+                  : "#004cb0"
+              }
               >
                 {trainType}
               </Badge>
@@ -282,7 +283,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           </VStack>
 
           {/* 右：着 */}
-          <VStack align="flex-end" w="93px" gap={0}>
+          <VStack align="flex-end" w="97px" gap={0}>
             <Text
               fontSize="2xl"
               fontWeight="700"
