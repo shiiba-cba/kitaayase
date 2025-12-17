@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { stations } from "../data/stations";
 import { trainTypes } from "../data/trainTypes";
+import { StationLabel } from "./StationLabel";
 
 export type TrainRow = {
   trainNumber: string;
@@ -227,27 +228,26 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           </VStack>
 
           {/* 中央：種別・行先 */}
-          <VStack flex="1" align="center" gap={1}>
-            {trainType && (
-            <Badge
-              px={2}
-              py={0.5}
-              fontWeight="600"
-              letterSpacing="0.04em"
-              color="#ffffff"
-              backgroundColor={
-                row.type.includes("SemiExpress")
-                  ? "#007f00"
-                  : row.type.includes("Express")
-                  ? "#c40000"
-                  : "#004cb0"
-              }
-              >
-                {trainType}
-              </Badge>
-            )}
-
+          <VStack flex="1" align="left" gap={1}>
             <HStack gap={2}>
+              {trainType && (
+              <Badge
+                px={2}
+                py={0.5}
+                fontWeight="600"
+                letterSpacing="0.04em"
+                color="#ffffff"
+                backgroundColor={
+                  row.type.includes("SemiExpress")
+                    ? "#007f00"
+                    : row.type.includes("Express")
+                    ? "#c40000"
+                    : "#004cb0"
+                }
+                >
+                  {trainType}
+                </Badge>
+              )}
               {isOrigin && !is3car && (
                 <Badge
                   px={2}
@@ -270,16 +270,15 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   3両
                 </Badge>
               )}
-              <Text
-                fontSize="lg"
-                fontWeight="500"
-                letterSpacing="0.06em"
-                textAlign="center"
-              >
-                {stations[row.destinationStationName.toLowerCase()] ||
-                  row.destinationStationName}
-              </Text>
             </HStack>
+
+            <StationLabel
+              stationKey={row.destinationStationName.toLowerCase()}
+              stationName={
+                stations[row.destinationStationName.toLowerCase()] ||
+                row.destinationStationName
+              }
+            />
           </VStack>
 
           {/* 右：着 */}
