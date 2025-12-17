@@ -280,6 +280,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 stations[row.destinationStationName.toLowerCase()] ||
                 row.destinationStationName
               }
+              textColor={depColor}
             />
           </VStack>
 

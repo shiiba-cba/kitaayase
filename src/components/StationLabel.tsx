@@ -5,13 +5,17 @@ import {
   Image,
 } from "@chakra-ui/react";
 
+type Props = {
+  stationKey: string;
+  stationName: string;
+  textColor?: string;
+};
+
 export const StationLabel = ({
   stationKey,
   stationName,
-}: {
-  stationKey: string;
-  stationName: string;
-}) => {
+  textColor,
+}: Props) => {
   const img = stationNumberImageMap[stationKey];
 
   return (
@@ -24,7 +28,12 @@ export const StationLabel = ({
           objectFit="contain"
         />
       )}
-      <Text fontSize="lg" fontWeight="700" letterSpacing="0.08em">
+      <Text
+        fontSize="lg"
+        fontWeight="700"
+        letterSpacing="0.08em"
+        color={textColor}
+      >
         {stationName}
       </Text>
     </HStack>
