@@ -35,12 +35,16 @@ type Props = {
   themeColor: string;
 };
 
-// ---- ref を受け取るために forwardRef を使用 ----
+// --------------------------------------------------
+// TrainCard
+// --------------------------------------------------
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
   ({ row, stationKey, direction, themeColor }, ref) => {
     const stationName = stations[stationKey];
 
-    // ===== 発側 =====
+    // ==================================================
+    // 発側
+    // ==================================================
     let depTime: string | null = null;
     let depLabel = "";
     let depSuffix = "";
@@ -53,8 +57,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           : stations["ayase"]
         : "";
     } else {
+      // for_kitaayase
       depTime = row.stationDepartureTime ?? row.originDepartureTime;
-    
+
       if (row.trainNumber?.includes("96S") && depTime) {
         depLabel = stations["ayase"];
         depSuffix = "0番線";
@@ -68,7 +73,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       }
     }
 
-    // ===== 着側 =====
+    // ==================================================
+    // 着側
+    // ==================================================
     let arrTime: string | null = null;
     let arrLabel = "";
     let arrSuffix = "";
@@ -107,7 +114,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         : "";
     }
 
-    // ===== 異常判定 =====
+    // ==================================================
+    // 異常 / 通過判定
+    // ==================================================
     let isDepartWrong = false;
     let isArrivalWrong = false;
 
@@ -122,39 +131,54 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       isArrivalWrong = row.kitaAyaseArrivalTime === null;
     }
 
-    const CARD_NORMAL_BG = "rgba(255,255,255,0.12)";   // 止まる：明るい
-    const CARD_PASS_BG   = "rgba(255,255,255,0.04)";   // 止まらない：減光
+    // ==================================================
+    // ハイライト判定
+    // ==================================================
+    const isHighlight =
+      direction === "for_yoyogiuehara"
+        ? row.originStationName === "KitaAyase"
+        : row.stationDepartureTime !== null;
+
+    // ==================================================
+    // 表示定数
+    // ==================================================
+    const CARD_NORMAL_BG = "rgba(255,255,255,0.04)";
+    const CARD_HIGHLIGHT_BG = "rgba(255,255,255,0.12)";
 
     const formatTime = (t: string | null) => {
       if (!t) return "--:--";
-    
       const [h, m] = t.split(":").map(Number);
       return `${h}:${m.toString().padStart(2, "0")}`;
     };
 
     const depColor = isDepartWrong ? "whiteAlpha.700" : "white";
     const arrColor = isArrivalWrong ? "whiteAlpha.700" : "white";
-    const isPassTrain = isDepartWrong || isArrivalWrong;
 
     const trainType =
       traintypes[row.type.toLowerCase()] || row.type;
-
-    const is3car = row.trainNumber.includes("96S");
 
     const isOrigin =
       direction === "for_yoyogiuehara"
         ? row.originStationName === "KitaAyase"
         : row.originStationName === row.stationName;
 
-    // ---- Box に ref を渡すのが重要！ ----
+    const is3car = row.trainNumber.includes("96S");
+
+        // ==================================================
+    // 描画
+    // ==================================================
     return (
       <Box
         ref={ref}
-        bg={isPassTrain ? CARD_PASS_BG : CARD_NORMAL_BG}
+        bg={
+          isHighlight
+            ? CARD_HIGHLIGHT_BG
+            : CARD_NORMAL_BG
+        }
         borderLeft={
-          isPassTrain
-            ? "4px solid transparent"
-            : `4px solid ${themeColor}`
+          isHighlight
+            ? `4px solid ${themeColor}`
+            : "4px solid transparent"
         }
         borderRadius="md"
         w="100%"
@@ -204,25 +228,23 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
 
           {/* 中央：種別・行先 */}
           <VStack flex="1" align="center" gap={1}>
-            <HStack gap={2}>
-              {trainType && (
-              <Badge
-                px={2}
-                py={0.5}
-                fontWeight="600"
-                letterSpacing="0.04em"
-                  colorPalette={
-                    row.type.includes("SemiExpress")
-                      ? "green"
-                      : row.type.includes("Express")
-                      ? "red"
-                      : "blue"
-                  }
-                >
-                  {trainType}
-                </Badge>
-              )}
-            </HStack>
+            {trainType && (
+            <Badge
+              px={2}
+              py={0.5}
+              fontWeight="600"
+              letterSpacing="0.04em"
+                colorPalette={
+                  row.type.includes("SemiExpress")
+                    ? "green"
+                    : row.type.includes("Express")
+                    ? "red"
+                    : "blue"
+                }
+              >
+                {trainType}
+              </Badge>
+            )}
 
             <HStack gap={2}>
               {isOrigin && !is3car && (
@@ -249,7 +271,6 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               )}
               <Text
                 fontSize="lg"
-                // fontWeight="600"
                 fontWeight="500"
                 letterSpacing="0.06em"
                 textAlign="center"
