@@ -189,7 +189,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       >
         <Flex justify="space-between" align="center">
           {/* 左：発 */}
-          <VStack align="flex-start" w="97px" gap={0}>
+          <VStack align="flex-start" w="98px" gap={0}>
             <Text
               fontSize="2xl"
               fontWeight="700"
@@ -285,7 +285,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           </VStack>
 
           {/* 右：着 */}
-          <VStack align="flex-end" w="97px" gap={0}>
+          <VStack align="flex-end" w="98px" gap={0}>
             <Text
               fontSize="2xl"
               fontWeight="700"
