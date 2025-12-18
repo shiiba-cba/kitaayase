@@ -206,21 +206,25 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
             <Text
               fontSize="sm"
               fontWeight="500"
+              fontFamily='"Noto Sans JP", sans-serif'
               letterSpacing="0.08em"
               color={depColor}
               opacity={0.9}
               lineHeight={1.2}
             >
               {depLabel}
-              <Text
-                as="span"
-                fontSize="xs"
-                letterSpacing="0.04em"
-                opacity={0.7}
-                ml={1}
-              >
-                {depSuffix}
-              </Text>
+              {depSuffix && (
+                <Text
+                  as="span"
+                  fontSize="xs"
+                  fontFamily='"Noto Sans JP", sans-serif'
+                  letterSpacing="0.04em"
+                  opacity={0.7}
+                  ml={1}
+                >
+                  {depSuffix}
+                </Text>
+              )}
               {isDepartWrong && depLabel && (
                 <Text as="span" ml={1} color="yellow.300">
                   ▲
@@ -237,6 +241,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 px={2}
                 py={0.5}
                 fontWeight="600"
+                fontFamily='"Noto Sans JP", sans-serif'
                 letterSpacing="0.04em"
                 color="#ffffff"
                 backgroundColor={
@@ -255,6 +260,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   px={0}
                   py={0.5}
                   fontWeight="600"
+                  fontFamily='"Noto Sans JP", sans-serif'
                   letterSpacing="0.04em"
                   color="#ff7f00"
                   backgroundColor="transparent"
@@ -267,6 +273,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   px={2}
                   py={0.5}
                   fontWeight="600"
+                  fontFamily='"Noto Sans JP", sans-serif'
                   letterSpacing="0.04em"
                   color="#ffffff"
                   backgroundColor="#66669c"
@@ -304,21 +311,25 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
             <Text
               fontSize="sm"
               fontWeight="500"
+              fontFamily='"Noto Sans JP", sans-serif'
               letterSpacing="0.08em"
               color={arrColor}
               opacity={0.9}
               lineHeight={1.2}
             >
               {arrLabel}
-              <Text
-                as="span"
-                fontSize="xs"
-                letterSpacing="0.04em"
-                opacity={0.7}
-                ml={1}
-              >
-                {arrSuffix}
-              </Text>
+              {arrSuffix && (
+                <Text
+                  as="span"
+                  fontSize="xs"
+                  fontFamily='"Noto Sans JP", sans-serif'
+                  letterSpacing="0.04em"
+                  opacity={0.7}
+                  ml={1}
+                >
+                  {arrSuffix}
+                </Text>
+              )}
               {isArrivalWrong && arrLabel && (
                 <Text as="span" ml={1} color="yellow.300">
                   ▲

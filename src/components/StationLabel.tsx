@@ -4,6 +4,7 @@ import {
   HStack,
   Image,
 } from "@chakra-ui/react";
+import { formatStationName } from "../utils/formatStationName";
 
 type Props = {
   stationKey: string;
@@ -42,8 +43,9 @@ export const StationLabel = ({
             : "scaleX(1.20) scaleY(1.20)"
         }
         transformOrigin="center left"
+        px={stationName.length <= 2 ? 2 : 0}
       >
-        {stationName}
+        {formatStationName(stationName)}
       </Text>
     </HStack>
   );

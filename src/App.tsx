@@ -177,7 +177,7 @@ export default function App() {
         <VStack gap={4}>
           {/* ==== 方面（⇔） ==== */}
           <Flex w="100%" align="center">
-            <Flex flex="1" justify="flex-start">
+            <Flex flex="1" justify="center">
               <StationLabel
                 stationKey={
                   direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
@@ -192,7 +192,6 @@ export default function App() {
               <IconButton
                 aria-label="方向入れ替え"
                 size="md"
-                rounded="full"
                 bg={METRO_GREEN}
                 _hover={{ bg: METRO_GREEN }}
                 onClick={() =>
@@ -207,7 +206,7 @@ export default function App() {
               </IconButton>
             </Flex>
 
-            <Flex flex="1" justify="flex-start">
+            <Flex flex="1" justify="center">
               <StationLabel
                 stationKey={
                   direction === "for_yoyogiuehara" ? stationKey : "kitaayase"
