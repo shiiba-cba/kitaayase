@@ -21,7 +21,7 @@ export const StationLabel = ({
   const img = stationNumberImageMap[stationKey];
 
   return (
-    <HStack width="108px" gap={1}>
+    <HStack width="134px" gap={1}>
       {img && (
         <Image
           src={img}
@@ -30,7 +30,7 @@ export const StationLabel = ({
           objectFit="contain"
         />
       )}
-      <Box width="72px" textAlign="center">
+      <Box width="98px" textAlign="center">
         <Text
           fontSize="2xl"
           fontWeight="500"
@@ -39,12 +39,10 @@ export const StationLabel = ({
           color={textColor}
           transform={
             stationName.length >= 6
-              ? "scaleX(0.50)"
+              ? "scaleX(0.67)"
               : stationName.length >= 5
-                ? "scaleX(0.60)"
-                : stationName.length >= 4
-                  ? "scaleX(0.75)"
-                  : ""
+                ? "scaleX(0.80)"
+                : ""
           }
           transformOrigin="center left"
           whiteSpace="nowrap"
