@@ -190,21 +190,21 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         <Flex justify="space-between" align="center">
           {/* 左：発 */}
           <VStack align="flex-start" w="100px" gap={0}>
-            <Text
-              fontSize="3xl"
-              fontWeight="600"
-              fontFamily='"Open Sans", sans-serif'
-              fontVariantNumeric="tabular-nums"
-              fontFeatureSettings="'tnum' 1"
-              color={depColor}
-              w="62px"
-              textAlign="left"
-              whiteSpace="nowrap"
-              transform="scaleX(0.8)"
-              transformOrigin="center left"
-            >
-              {formatTime(depTime)}
-            </Text>
+            <Box width="62px" justifyItems="left">
+              <Text
+                fontSize="3xl"
+                fontWeight="600"
+                fontFamily='"Open Sans", sans-serif'
+                fontVariantNumeric="tabular-nums"
+                fontFeatureSettings="'tnum' 1"
+                color={depColor}
+                whiteSpace="nowrap"
+                transform="scaleX(0.8)"
+                transformOrigin="center left"
+              >
+                {formatTime(depTime)}
+              </Text>
+            </Box>
             <Text
               fontSize="sm"
               fontWeight="500"
@@ -297,21 +297,21 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
 
           {/* 右：着 */}
           <VStack align="flex-end" w="100px" gap={0}>
-            <Text
-              fontSize="3xl"
-              fontWeight="600"
-              fontFamily='"Open Sans", sans-serif'
-              fontVariantNumeric="tabular-nums"
-              fontFeatureSettings="'tnum' 1"
-              color={arrColor}
-              w="62px"
-              textAlign="right"
-              whiteSpace="nowrap"
-              transform="scaleX(0.8)"
-              transformOrigin="center left"
-            >
-              {formatTime(arrTime)}
-            </Text>
+            <Box width="62px" justifyItems="right">
+              <Text
+                fontSize="3xl"
+                fontWeight="600"
+                fontFamily='"Open Sans", sans-serif'
+                fontVariantNumeric="tabular-nums"
+                fontFeatureSettings="'tnum' 1"
+                color={arrColor}
+                whiteSpace="nowrap"
+                transform="scaleX(0.8)"
+                transformOrigin="center right"
+              >
+                {formatTime(arrTime)}
+              </Text>
+            </Box>
             <Text
               fontSize="sm"
               fontWeight="500"
