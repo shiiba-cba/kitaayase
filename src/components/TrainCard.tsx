@@ -269,7 +269,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   fontWeight="600"
                   letterSpacing="0.04em"
                   color="#ffffff"
-                  backgroundColor="#696969"
+                  backgroundColor="#66669c"
                 >
                   3両
                 </Badge>
