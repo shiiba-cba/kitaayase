@@ -170,7 +170,7 @@ export default function App() {
         top="0"
         zIndex={1000}
         bg="#111111"
-        borderBottom={`4px solid ${themeColor}`}
+        borderBottom={`4px solid ${METRO_GREEN}`}
         pb={3}
         pt={3}
       >
@@ -193,8 +193,8 @@ export default function App() {
                 aria-label="方向入れ替え"
                 size="md"
                 rounded="full"
-                bg={themeColor}
-                _hover={{ bg: themeColor }}
+                bg={METRO_GREEN}
+                _hover={{ bg: METRO_GREEN }}
                 onClick={() =>
                   setDirection(
                     direction === "for_yoyogiuehara"
