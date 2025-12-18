@@ -177,7 +177,7 @@ export default function App() {
         <VStack gap={4}>
           {/* ==== 方面（⇔） ==== */}
           <Flex w="100%" align="center">
-            <Flex flex="1" justify="flex-end">
+            <Flex flex="1" justify="flex-start">
               <StationLabel
                 stationKey={
                   direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
@@ -188,7 +188,7 @@ export default function App() {
               />
             </Flex>
 
-            <Flex flex="0" px={2}>
+            <Flex flex="0" px={1}>
               <IconButton
                 aria-label="方向入れ替え"
                 size="md"

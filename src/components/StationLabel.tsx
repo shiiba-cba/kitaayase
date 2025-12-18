@@ -19,7 +19,7 @@ export const StationLabel = ({
   const img = stationNumberImageMap[stationKey];
 
   return (
-    <HStack gap={2}>
+    <HStack gap={1}>
       {img && (
         <Image
           src={img}
@@ -29,10 +29,19 @@ export const StationLabel = ({
         />
       )}
       <Text
-        fontSize="lg"
-        fontWeight="700"
-        letterSpacing="0.08em"
+        fontSize="xl"
+        fontWeight="400"
+        fontFamily='"Noto Sans JP", sans-serif'
+        letterSpacing="0.02em"
         color={textColor}
+        transform={
+          stationName.length >= 5
+            ? "scaleX(1.00) scaleY(1.20)"
+            : stationName.length >= 4
+            ? "scaleX(1.10) scaleY(1.20)"
+            : "scaleX(1.20) scaleY(1.20)"
+        }
+        transformOrigin="center left"
       >
         {stationName}
       </Text>
