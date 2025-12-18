@@ -30,7 +30,7 @@ export const StationLabel = ({
           objectFit="contain"
         />
       )}
-      <Box width="72px">
+      <Box width="72px" textAlign="center">
         <Text
           fontSize="2xl"
           fontWeight="500"
@@ -47,7 +47,6 @@ export const StationLabel = ({
                   : ""
           }
           transformOrigin="center left"
-          px={stationName.length <= 2 ? 2.5 : 0}
           whiteSpace="nowrap"
         >
           {formatStationName(stationName)}
