@@ -191,15 +191,17 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           {/* 左：発 */}
           <VStack align="flex-start" w="100px" gap={0}>
             <Text
-              fontSize="2xl"
-              fontWeight="700"
-              fontFamily='"Inter", "Noto Sans JP", sans-serif'
+              fontSize="3xl"
+              fontWeight="600"
+              fontFamily='"Open Sans", sans-serif'
               fontVariantNumeric="tabular-nums"
               fontFeatureSettings="'tnum' 1"
               color={depColor}
-              w="70px"
+              w="62px"
               textAlign="left"
               whiteSpace="nowrap"
+              transform="scaleX(0.8)"
+              transformOrigin="center left"
             >
               {formatTime(depTime)}
             </Text>
@@ -276,7 +278,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   fontFamily='"Noto Sans JP", sans-serif'
                   letterSpacing="0.04em"
                   color="#ffffff"
-                  backgroundColor="#66669c"
+                  backgroundColor="#808080"
                 >
                   3両
                 </Badge>
@@ -296,15 +298,17 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           {/* 右：着 */}
           <VStack align="flex-end" w="100px" gap={0}>
             <Text
-              fontSize="2xl"
-              fontWeight="700"
-              fontFamily='"Inter", "Noto Sans JP", sans-serif'
+              fontSize="3xl"
+              fontWeight="600"
+              fontFamily='"Open Sans", sans-serif'
               fontVariantNumeric="tabular-nums"
               fontFeatureSettings="'tnum' 1"
               color={arrColor}
-              w="70px"
+              w="62px"
               textAlign="right"
               whiteSpace="nowrap"
+              transform="scaleX(0.8)"
+              transformOrigin="center left"
             >
               {formatTime(arrTime)}
             </Text>
