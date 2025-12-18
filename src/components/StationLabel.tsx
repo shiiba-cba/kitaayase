@@ -30,7 +30,7 @@ export const StationLabel = ({
       )}
       <Text
         fontSize="xl"
-        fontWeight="400"
+        fontWeight="500"
         fontFamily='"Noto Sans JP", sans-serif'
         letterSpacing="0.02em"
         color={textColor}
