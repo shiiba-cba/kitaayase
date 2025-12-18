@@ -252,11 +252,12 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               )}
               {isOrigin && !is3car && (
                 <Badge
-                  px={2}
+                  px={0}
                   py={0.5}
                   fontWeight="600"
                   letterSpacing="0.04em"
-                  colorPalette="yellow"
+                  color="#ff7f00"
+                  backgroundColor="transparent"
                 >
                   始発
                 </Badge>
@@ -267,7 +268,8 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   py={0.5}
                   fontWeight="600"
                   letterSpacing="0.04em"
-                  colorPalette="gray"
+                  color="#ffffff"
+                  backgroundColor="#696969"
                 >
                   3両
                 </Badge>
