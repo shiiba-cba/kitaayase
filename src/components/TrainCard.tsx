@@ -259,7 +259,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   color="#ff7f00"
                   backgroundColor="transparent"
                 >
-                  始発
+                  {row.originStationName === "Ayase" && stationKey !== "Ayase" ? "綾瀬始発" : "当駅始発"}
                 </Badge>
               )}
               {is3car && (
