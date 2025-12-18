@@ -188,7 +188,7 @@ export default function App() {
               />
             </Flex>
 
-            <Flex flex="0" px={4}>
+            <Flex flex="0" px={2}>
               <IconButton
                 aria-label="方向入れ替え"
                 size="md"
