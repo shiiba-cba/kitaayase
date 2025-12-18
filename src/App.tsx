@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { LuArrowLeftRight } from "react-icons/lu";
+import { LuClock } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
@@ -110,13 +111,12 @@ export default function App() {
   //     ・代々木上原方面 → 北綾瀬発
   //     ・北綾瀬方面 → 当駅発
   // --------------------------------------------------
-  useEffect(() => {
+  const scrollToNow = (behavior: ScrollBehavior = "smooth") => {
     if (rows.length === 0) return;
   
     const now = new Date();
-  
     let currentMinutes = now.getHours() * 60 + now.getMinutes();
-  
+
     // 4:00 始まり補正
     if (currentMinutes < 240) {
       currentMinutes += 1440;
@@ -136,7 +136,6 @@ export default function App() {
       const [h, m] = t.split(":").map(Number);
       let trainMinutes = h * 60 + m;
   
-      // 列車時刻側も同じ補正
       if (trainMinutes < 240) {
         trainMinutes += 1440;
       }
@@ -144,17 +143,24 @@ export default function App() {
       return trainMinutes >= currentMinutes;
     });
   
-    if (targetIndex !== -1 && cardRefs.current[targetIndex]) {
-      const headerHeight = headerRef.current?.offsetHeight ?? 0;
-      const cardTop =
-        cardRefs.current[targetIndex]!.getBoundingClientRect().top +
-        window.scrollY;
+    const indexToScroll =
+      targetIndex !== -1 ? targetIndex : rows.length - 1;
   
-      window.scrollTo({
-        top: cardTop - headerHeight - 8,
-        behavior: "smooth",
-      });
-    }
+    const targetEl = cardRefs.current[indexToScroll];
+    if (!targetEl) return;
+  
+    const headerHeight = headerRef.current?.offsetHeight ?? 0;
+    const cardTop =
+      targetEl.getBoundingClientRect().top + window.scrollY;
+  
+    window.scrollTo({
+      top: cardTop - headerHeight - 8,
+      behavior,
+    });
+  };
+
+  useEffect(() => {
+    scrollToNow("smooth");
   }, [rows, direction]);
 
   // ==================================================
@@ -242,29 +248,54 @@ export default function App() {
           </select>
 
           {/* ==== 平日 / 休日 ==== */}
-          <HStack gap={4}>
-            <Button
-              bg={calendar === "weekday" ? METRO_GREEN : "gray.700"}
-              _hover={{
-                bg: calendar === "weekday" ? METRO_GREEN : "gray.600",
-              }}
-              color="white"
-              onClick={() => onCalendarChange("weekday")}
-            >
-              平日
-            </Button>
+          <Flex w="100%" align="center">
+            <Flex flex="1" justify="center">
+            </Flex>
 
-            <Button
-              bg={calendar === "holiday" ? METRO_RED : "gray.700"}
-              _hover={{
-                bg: calendar === "holiday" ? METRO_RED : "gray.600",
-              }}
-              color="white"
-              onClick={() => onCalendarChange("holiday")}
-            >
-              土・休日
-            </Button>
-          </HStack>
+            <Flex flex="0" px={1}>
+              <HStack gap={4}>
+                <Button
+                  w="90px"
+                  bg={calendar === "weekday" ? METRO_GREEN : "gray.700"}
+                  _hover={{
+                    bg: calendar === "weekday" ? METRO_GREEN : "gray.600",
+                  }}
+                  color="white"
+                  onClick={() => onCalendarChange("weekday")}
+                >
+                  平日
+                </Button>
+    
+                <Button
+                  w="90px"
+                  bg={calendar === "holiday" ? METRO_RED : "gray.700"}
+                  _hover={{
+                    bg: calendar === "holiday" ? METRO_RED : "gray.600",
+                  }}
+                  color="white"
+                  onClick={() => onCalendarChange("holiday")}
+                >
+                  土・休日
+                </Button>
+              </HStack>
+            </Flex>
+
+            <Flex flex="1" justify="center">
+              <IconButton
+                aria-label="現在時刻へスクロール"
+                size="md"
+                variant="outline"
+                color={METRO_GREEN}
+                borderColor={METRO_GREEN}
+                _hover={{
+                  bg: "rgba(0,187,133,0.15)",
+                }}
+                onClick={() => scrollToNow("smooth")}
+              >
+                <LuClock />
+              </IconButton>
+            </Flex>
+          </Flex>
         </VStack>
       </Box>
 
