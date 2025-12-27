@@ -1,73 +1,99 @@
-# React + TypeScript + Vite
+# 千代田線 北綾瀬 時刻表アプリ（Kitaayase Timetable）
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+東京メトロ千代田線 **北綾瀬駅発着** に特化した、スマートフォン向けの時刻表 Web アプリです。  
+北綾瀬支線・綾瀬 0 番線・3 両編成（96S 列車）など、**一般的な時刻表では分かりづらい情報**を分かりやすく表示することを目的としています。
 
-Currently, two official plugins are available:
+👉 公開ページ  
+https://shiiba-cba.github.io/kitaayase/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 特徴
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🚉 **北綾瀬発着に特化**
+- 🔁 上り（代々木上原方面）／下り（北綾瀬方面）切り替え
+- 📅 **平日 / 土・休日** の自動判定（4:00 を一日の始まりとして扱う）
+- 🕓 **現在時刻に自動スクロール**
+- ⚠ 途中駅止まり・当駅始発列車・綾瀬始発列車・3 両編成（96S）の視覚的判別
+- 📱 スマートフォンでの視認性を重視した UI
+- 🧩 GitHub Pages で動作する **完全サーバーレス構成**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 対応路線・駅
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 東京メトロ 千代田線
+  - 北綾瀬（固定）⇔綾瀬～代々木上原 各駅
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+※ 北綾瀬支線（綾瀬 0 番線発着）を考慮したロジックを含みます。
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 技術スタック
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend**
+  - React
+  - TypeScript
+  - Chakra UI
+- **Build / Hosting**
+  - Vite
+  - GitHub Pages
+- **Data**
+  - 静的 JSON（時刻表）
+  - 祝日判定用 API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## データ構成
+
+### 時刻表データ
+
+public/data/
+└─ 20250315/
+├─ weekday/
+│ └─ for_yoyogiuehara/
+└─ holiday/
+└─ for_kitaayase/
+
+- ダイヤ改正日ごとにディレクトリを分離
+- 平日 / 土・休日
+- 方面別 JSON
+
+---
+
+## 運行情報について
+
+現在、**運行情報の取得・表示機能は無効化**されています。
+
+### 背景
+
+- GitHub Actions の cron 実行が不安定
+- 毎分実行が必要な用途には不向き
+
+将来的には：
+
+- Raspberry Pi などの常時稼働環境で運行情報を取得
+- **データ提供専用リポジトリ（kitaayase-data）** に JSON を配置
+- アプリ側は raw.githubusercontent.com から参照
+
+という構成を想定しています。
+
+---
+
+## 設計上の考慮点
+
+- **一日の始まりを 4:00 として扱う**
+  - 終電後〜始発前でも自然な表示になるよう調整
+- 表示上の誤認を防ぐため：
+  - 綾瀬始発の列車
+  - 途中駅止まりの列車
+  - 3 両編成
+  を明示的に表示
+
+---
+
+## 開発・ローカル実行
+
+```bash
+npm install
+npm run dev
