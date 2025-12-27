@@ -214,7 +214,7 @@ export default function App() {
         borderBottom={`4px solid ${METRO_GREEN}`}
       >
         {/* ==== 運行情報 ==== */}
-        {operationInfo && (
+        {/* {operationInfo && (
           <Box
             w="100%"
             px={4}
@@ -240,7 +240,7 @@ export default function App() {
               （{formatRelativeTime(operationInfo.lastFetchedAt)}）
             </Text>
           </Box>
-        )}
+        )} */}
 
         <VStack gap={4} pb={3} pt={3}>
           {/* ==== 方面 ==== */}
