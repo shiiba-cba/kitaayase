@@ -5,10 +5,10 @@ import {
   VStack,
   HStack,
   IconButton,
+  Text,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
-import { LuArrowLeftRight } from "react-icons/lu";
-import { LuClock } from "react-icons/lu";
+import { LuArrowLeftRight, LuClock } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
@@ -16,8 +16,40 @@ import { selectStations } from "./data/selectStations";
 import { isHoliday } from "./utils/holiday";
 import { StationLabel } from "./components/StationLabel";
 
+/* ==================================================
+ * 運行情報型
+ * ================================================== */
+type OperationInfo = {
+  railway: string;
+  state: "normal" | "delay" | "suspended";
+  text: string;
+  operationDate?: string;
+  originTime?: string | null;
+  lastFetchedAt: string;
+};
+
+/* ==================================================
+ * 相対時間表示
+ * ================================================== */
+function formatRelativeTime(dateString: string): string {
+  const updatedAt = new Date(dateString);
+  const now = new Date();
+
+  const diffMs = now.getTime() - updatedAt.getTime();
+  const diffMin = Math.floor(diffMs / 60000);
+
+  if (diffMin < 5) return "数分前";
+  if (diffMin < 60) return `${diffMin}分前`;
+
+  const diffHour = Math.floor(diffMin / 60);
+  if (diffHour < 24) return `${diffHour}時間前`;
+
+  const diffDay = Math.floor(diffHour / 24);
+  return `${diffDay}日前`;
+}
+
 export default function App() {
-  // ===== 永続化された設定を初期値に使用 =====
+  // ===== 永続化された設定 =====
   const [direction, setDirection] = useState<
     "for_yoyogiuehara" | "for_kitaayase"
   >(
@@ -37,32 +69,33 @@ export default function App() {
 
   const [rows, setRows] = useState<TrainRow[]>([]);
 
+  // ===== 運行情報 =====
+  const [operationInfo, setOperationInfo] =
+    useState<OperationInfo | null>(null);
+
   const base = "/kitaayase/";
 
-  // TrainCard への複数 ref
+  // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  // sticky ヘッダーの高さ測定用
   const headerRef = useRef<HTMLDivElement | null>(null);
 
-  // --------------------------------------------------
-  // ① 一日の始まりを 4:00 として休日判定
-  // --------------------------------------------------
+  /* ==================================================
+   * ① 4:00基準の休日判定
+   * ================================================== */
   useEffect(() => {
     const now = new Date();
-  
     if (now.getHours() < 4) {
       now.setDate(now.getDate() - 1);
     }
-  
+
     const yyyy = now.getFullYear();
     const mm = String(now.getMonth() + 1).padStart(2, "0");
     const dd = String(now.getDate()).padStart(2, "0");
     const dateStr = `${yyyy}-${mm}-${dd}`;
-  
-    const day = now.getDay(); // 0:日, 6:土
+
+    const day = now.getDay();
     const isWeekend = day === 0 || day === 6;
-  
+
     (async () => {
       try {
         const isNatHoliday = await isHoliday(dateStr);
@@ -71,6 +104,26 @@ export default function App() {
         setCalendar(isWeekend ? "holiday" : "weekday");
       }
     })();
+  }, []);
+
+  /* ==================================================
+   * ② 運行情報取得（raw 直参照）
+   * ================================================== */
+  useEffect(() => {
+    const OPERATION_URL =
+      "https://raw.githubusercontent.com/shiiba-cba/kitaayase/main/public/data/operation.json";
+
+    fetch(OPERATION_URL, { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("failed to fetch operation info");
+        return res.json();
+      })
+      .then((data: OperationInfo) => {
+        setOperationInfo(data);
+      })
+      .catch(() => {
+        setOperationInfo(null);
+      });
   }, []);
 
   // 永続化
@@ -87,9 +140,9 @@ export default function App() {
     localStorage.setItem("calendar", v);
   };
 
-  // --------------------------------------------------
-  // JSON 読み込み
-  // --------------------------------------------------
+  /* ==================================================
+   * ③ 時刻表 JSON 読み込み
+   * ================================================== */
   useEffect(() => {
     const url = `${base}data/20250315/${calendar}/${direction}/${stationKey}.json`;
 
@@ -99,62 +152,45 @@ export default function App() {
       .catch(() => setRows([]));
   }, [base, calendar, direction, stationKey]);
 
-  const isHolidayTheme = calendar === "holiday";
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
-  const themeColor = isHolidayTheme ? METRO_RED : METRO_GREEN;
+  const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
 
   const currentStationName = selectStations[stationKey];
 
-  // --------------------------------------------------
-  // ② 方向別にスクロール基準時刻を変える
-  //     ・代々木上原方面 → 北綾瀬発
-  //     ・北綾瀬方面 → 当駅発
-  // --------------------------------------------------
+  /* ==================================================
+   * ④ 現在時刻へスクロール
+   * ================================================== */
   const scrollToNow = (behavior: ScrollBehavior = "smooth") => {
     if (rows.length === 0) return;
-  
+
     const now = new Date();
     let currentMinutes = now.getHours() * 60 + now.getMinutes();
+    if (currentMinutes < 240) currentMinutes += 1440;
 
-    // 4:00 始まり補正
-    if (currentMinutes < 240) {
-      currentMinutes += 1440;
-    }
-  
     const targetIndex = rows.findIndex((row) => {
-      let t: string | null = null;
-  
-      if (direction === "for_yoyogiuehara") {
-        t = row.kitaAyaseDepartureTime;
-      } else {
-        t = row.stationDepartureTime;
-      }
-  
+      const t =
+        direction === "for_yoyogiuehara"
+          ? row.kitaAyaseDepartureTime
+          : row.stationDepartureTime;
       if (!t) return false;
-  
-      const [h, m] = t.split(":").map(Number);
+
+      let [h, m] = t.split(":").map(Number);
       let trainMinutes = h * 60 + m;
-  
-      if (trainMinutes < 240) {
-        trainMinutes += 1440;
-      }
-  
+      if (trainMinutes < 240) trainMinutes += 1440;
+
       return trainMinutes >= currentMinutes;
     });
-  
-    const indexToScroll =
-      targetIndex !== -1 ? targetIndex : rows.length - 1;
-  
-    const targetEl = cardRefs.current[indexToScroll];
-    if (!targetEl) return;
-  
+
+    const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
+    const el = cardRefs.current[index];
+    if (!el) return;
+
     const headerHeight = headerRef.current?.offsetHeight ?? 0;
-    const cardTop =
-      targetEl.getBoundingClientRect().top + window.scrollY;
-  
+    const top = el.getBoundingClientRect().top + window.scrollY;
+
     window.scrollTo({
-      top: cardTop - headerHeight - 8,
+      top: top - headerHeight - 8,
       behavior,
     });
   };
@@ -163,13 +199,12 @@ export default function App() {
     scrollToNow("smooth");
   }, [rows, direction]);
 
-  // ==================================================
-  //                     UI 本体
-  // ==================================================
-
+  /* ==================================================
+   * UI
+   * ================================================== */
   return (
     <Box bg="#111111" minH="100vh" color="white">
-      {/* 固定ヘッダー */}
+      {/* ===== 固定ヘッダー ===== */}
       <Box
         ref={headerRef}
         position="sticky"
@@ -177,11 +212,38 @@ export default function App() {
         zIndex={1000}
         bg="#111111"
         borderBottom={`4px solid ${METRO_GREEN}`}
-        pb={3}
-        pt={3}
       >
-        <VStack gap={4}>
-          {/* ==== 方面（⇔） ==== */}
+        {/* ==== 運行情報 ==== */}
+        {operationInfo && (
+          <Box
+            w="100%"
+            px={4}
+            py={2}
+            bg={
+              operationInfo.state === "normal"
+                ? "gray.700"
+                : operationInfo.state === "delay"
+                ? "orange.500"
+                : "red.600"
+            }
+            textAlign="center"
+          >
+            <Text fontSize="sm">{operationInfo.text}</Text>
+            <Text fontSize="xs" opacity={0.8}>
+              最終更新：
+              {new Date(operationInfo.lastFetchedAt).toLocaleString("ja-JP", {
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+              （{formatRelativeTime(operationInfo.lastFetchedAt)}）
+            </Text>
+          </Box>
+        )}
+
+        <VStack gap={4} pb={3} pt={3}>
+          {/* ==== 方面 ==== */}
           <Flex w="100%" align="center">
             <Flex flex="1" justify="center">
               <StationLabel
@@ -189,28 +251,28 @@ export default function App() {
                   direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
                 }
                 stationName={
-                  direction === "for_yoyogiuehara" ? "北綾瀬" : currentStationName
+                  direction === "for_yoyogiuehara"
+                    ? "北綾瀬"
+                    : currentStationName
                 }
               />
             </Flex>
 
-            <Flex flex="0" px={1}>
-              <IconButton
-                aria-label="方向入れ替え"
-                size="md"
-                bg={METRO_GREEN}
-                _hover={{ bg: METRO_GREEN }}
-                onClick={() =>
-                  setDirection(
-                    direction === "for_yoyogiuehara"
-                      ? "for_kitaayase"
-                      : "for_yoyogiuehara"
-                  )
-                }
-              >
-                <LuArrowLeftRight />
-              </IconButton>
-            </Flex>
+            <IconButton
+              aria-label="方向入れ替え"
+              size="md"
+              bg={METRO_GREEN}
+              _hover={{ bg: METRO_GREEN }}
+              onClick={() =>
+                setDirection(
+                  direction === "for_yoyogiuehara"
+                    ? "for_kitaayase"
+                    : "for_yoyogiuehara"
+                )
+              }
+            >
+              <LuArrowLeftRight />
+            </IconButton>
 
             <Flex flex="1" justify="center">
               <StationLabel
@@ -218,7 +280,9 @@ export default function App() {
                   direction === "for_yoyogiuehara" ? stationKey : "kitaayase"
                 }
                 stationName={
-                  direction === "for_yoyogiuehara" ? currentStationName : "北綾瀬"
+                  direction === "for_yoyogiuehara"
+                    ? currentStationName
+                    : "北綾瀬"
                 }
               />
             </Flex>
