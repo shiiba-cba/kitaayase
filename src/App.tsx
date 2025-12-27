@@ -73,8 +73,6 @@ export default function App() {
   // const [operationInfo, setOperationInfo] =
   //   useState<OperationInfo | null>(null);
 
-  const base = "/kitaayase/";
-
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -144,13 +142,31 @@ export default function App() {
    * ③ 時刻表 JSON 読み込み
    * ================================================== */
   useEffect(() => {
-    const url = `${base}data/20250315/${calendar}/${direction}/${stationKey}.json`;
+    const controller = new AbortController();
+    const base = "/kitaayase/data";
 
-    fetch(url)
-      .then((res) => res.json())
-      .then((data: TrainRow[]) => setRows(data))
-      .catch(() => setRows([]));
-  }, [base, calendar, direction, stationKey]);
+    (async () => {
+      try {
+        const diagramDate = await fetch(`${base}/latest.json`, {
+          signal: controller.signal,
+        })
+          .then((res) => res.json())
+          .then((j) => j.diagramDate);
+
+        const url = `${base}/${diagramDate}/${calendar}/${direction}/${stationKey}.json`;
+
+        const data: TrainRow[] = await fetch(url, {
+          signal: controller.signal,
+        }).then((res) => res.json());
+
+        setRows(data);
+      } catch {
+        setRows([]);
+      }
+    })();
+
+    return () => controller.abort();
+  }, [calendar, direction, stationKey]);
 
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";

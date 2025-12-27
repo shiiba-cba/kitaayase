@@ -7,6 +7,24 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// ===============================
+// 引数処理
+// ===============================
+
+/**
+ * Usage:
+ *   node src/tools/generateTimetable.js 20250315
+ */
+const diagramDate = process.argv[2] || "20250315"; // 後方互換
+
+// 出力先：public/data/<diagramDate>
+const OUTPUT_BASE_DIR = path.resolve(
+  process.cwd(),
+  "public",
+  "data",
+  diagramDate
+);
+
 // ====================================================================
 // 設定
 // ====================================================================
@@ -14,28 +32,22 @@ import { fileURLToPath } from "url";
 // API KEY（環境変数から取得）
 const API_KEY = process.env.ODPT_API_KEY;
 
-// ダイヤ改正日フォルダ
-const DIAGRAM_DATE = "20250315";
-
-// 出力ディレクトリ
-const OUTPUT_BASE_DIR = "./out";
-
 // 千代田線 ID
 const CHIYODA_RAILWAY_ID = "odpt.Railway:TokyoMetro.Chiyoda";
 
-// カレンダー → weekday/holiday
+// カレンダー → weekday / holiday
 const CALENDAR_MAP = {
   "odpt.Calendar:Weekday": "weekday",
   "odpt.Calendar:SaturdayHoliday": "holiday",
 };
 
-// 方向（千代田線 → 北綾瀬＝for_kitaayase、北綾瀬 → 千代田線＝for_yoyogiuehara）
+// 方向
 const DIRECTION_MAP = {
   "odpt.RailDirection:TokyoMetro.KitaAyase": "for_kitaayase",
   "odpt.RailDirection:TokyoMetro.YoyogiUehara": "for_yoyogiuehara",
 };
 
-// 駅 ID 一覧（千代田線）
+// 駅 ID
 const STATIONS = {
   yoyogiuehara: "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara",
   yoyogikoen: "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen",
@@ -59,7 +71,7 @@ const STATIONS = {
   kitaayase: "odpt.Station:TokyoMetro.Chiyoda.KitaAyase",
 };
 
-// 出力対象駅（キー名＝ファイル名）
+// 出力対象駅
 const SELECTABLE_STATIONS = [
   "yoyogiuehara",
   "yoyogikoen",
@@ -83,6 +95,7 @@ const SELECTABLE_STATIONS = [
   // "kitaayase",
 ];
 
+// ファイル名
 const STATION_FILENAME = {
   yoyogiuehara: "yoyogiuehara",
   yoyogikoen: "yoyogikoen",
@@ -160,7 +173,7 @@ const STATION_NAME_MAP = {
 
 function ensureApiKey() {
   if (!API_KEY) {
-    console.error("ERROR: ODPT_API_KEY が未設定です。");
+    console.error("ERROR: ODPT_API_KEY is not set.");
     process.exit(1);
   }
 }
@@ -190,34 +203,31 @@ function resolveStationName(stationId) {
 // ====================================================================
 
 async function fetchTrainTimetables() {
-  const calendars = ["odpt.Calendar:Weekday", "odpt.Calendar:SaturdayHoliday"];
-  const directions = [
-    "odpt.RailDirection:TokyoMetro.KitaAyase",
-    "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-  ];
+  const calendars = Object.keys(CALENDAR_MAP);
+  const directions = Object.keys(DIRECTION_MAP);
 
   const all = [];
 
   for (const cal of calendars) {
     for (const dir of directions) {
-      const url = new URL("https://api.odpt.org/api/v4/odpt:TrainTimetable");
+      const url = new URL(
+        "https://api.odpt.org/api/v4/odpt:TrainTimetable"
+      );
       url.searchParams.set("acl:consumerKey", API_KEY);
       url.searchParams.set("odpt:railway", CHIYODA_RAILWAY_ID);
       url.searchParams.set("odpt:calendar", cal);
       url.searchParams.set("odpt:railDirection", dir);
 
-      console.log("Fetching:", url.toString());
-
       const res = await fetch(url);
-      if (!res.ok) throw new Error(`API Error: ${res.status}`);
-      const json = await res.json();
+      if (!res.ok) {
+        throw new Error(`API Error: ${res.status}`);
+      }
 
-      console.log(`Fetched ${json.length} trains for ${cal} × ${dir}`);
+      const json = await res.json();
       all.push(...json);
     }
   }
 
-  console.log("Total trains fetched:", all.length);
   return all;
 }
 
@@ -412,19 +422,24 @@ function buildTimetableByStation(allTrains) {
 // ====================================================================
 
 function writeOutputFiles(byStation) {
-  const base = path.join(OUTPUT_BASE_DIR, DIAGRAM_DATE);
-
   for (const cal of Object.keys(byStation)) {
     for (const dir of Object.keys(byStation[cal])) {
       for (const stationKey of Object.keys(byStation[cal][dir])) {
         const rows = byStation[cal][dir][stationKey];
-        const outDir = path.join(base, cal, dir);
+        const outDir = path.join(OUTPUT_BASE_DIR, cal, dir);
+
         fs.mkdirSync(outDir, { recursive: true });
 
-        const fileName = STATION_FILENAME[stationKey] + ".json";
-        const filePath = path.join(outDir, fileName);
-        fs.writeFileSync(filePath, JSON.stringify(rows, null, 2), "utf-8");
-        console.log(`Wrote ${filePath} (${rows.length} trains)`);
+        const filePath = path.join(
+          outDir,
+          `${STATION_FILENAME[stationKey]}.json`
+        );
+
+        fs.writeFileSync(
+          filePath,
+          JSON.stringify(rows, null, 2),
+          "utf-8"
+        );
       }
     }
   }
@@ -439,7 +454,7 @@ async function main() {
   const trains = await fetchTrainTimetables();
   const byStation = buildTimetableByStation(trains);
   writeOutputFiles(byStation);
-  console.log("Done.");
+  console.log(`Timetable generated: ${diagramDate}`);
 }
 
 const __filename = fileURLToPath(import.meta.url);

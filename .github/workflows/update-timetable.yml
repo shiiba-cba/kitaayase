@@ -1,0 +1,90 @@
+name: Detect diagram revision and update timetable
+
+on:
+  schedule:
+    # JST 4:00 = UTC 19:00
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-timetable:
+    runs-on: ubuntu-latest
+
+    steps:
+      # --------------------------------------------------
+      # Checkout
+      # --------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --------------------------------------------------
+      # Node.js
+      # --------------------------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # --------------------------------------------------
+      # Fetch raw TrainTimetable (加工前)
+      # --------------------------------------------------
+      - name: Fetch raw timetable
+        run: |
+          node src/tools/fetchRawTrainTimetable.js
+        env:
+          ODPT_API_KEY: ${{ secrets.ODPT_API_KEY }}
+
+      # --------------------------------------------------
+      # Compare raw data (previous vs current)
+      # --------------------------------------------------
+      - name: Compare raw timetable
+        id: diff
+        run: |
+          RAW_DIR="public/data/raw"
+          PREV="$RAW_DIR/previous.json"
+          CURR="$RAW_DIR/current.json"
+
+          if [ ! -f "$PREV" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if diff -q "$PREV" "$CURR" > /dev/null; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      # --------------------------------------------------
+      # Generate processed timetable if changed
+      # --------------------------------------------------
+      - name: Generate timetable (diagram revision detected)
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          DIAGRAM_DATE=$(date +%Y%m%d)
+
+          # 加工後データ生成
+          node src/tools/generateTimetable.js "$DIAGRAM_DATE"
+
+          # latest.json 更新
+          echo "{ \"diagramDate\": \"$DIAGRAM_DATE\" }" > public/data/latest.json
+
+      # --------------------------------------------------
+      # Update raw baseline
+      # --------------------------------------------------
+      - name: Update raw baseline
+        run: |
+          cp public/data/raw/current.json public/data/raw/previous.json
+
+      # --------------------------------------------------
+      # Commit & push (only if diagram changed)
+      # --------------------------------------------------
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add public/data
+          git commit -m "Add new timetable data for diagram revision"
+          git push
