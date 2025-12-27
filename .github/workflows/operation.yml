@@ -2,7 +2,7 @@ name: Update operation info
 
 on:
   schedule:
-    - cron: "*/1 * * * *"   # 1分間隔
+    - cron: "*/5 * * * *"   # 5分間隔
   workflow_dispatch:
 
 jobs:
