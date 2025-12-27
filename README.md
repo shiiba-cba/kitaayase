@@ -48,12 +48,16 @@ https://shiiba-cba.github.io/kitaayase/
 
 ### 時刻表データ
 
+```
 public/data/
 └─ 20250315/
-├─ weekday/
-│ └─ for_yoyogiuehara/
-└─ holiday/
-└─ for_kitaayase/
+  ├─ weekday/
+  │ ├─ for_kitaayase/
+  │ └─ for_yoyogiuehara/
+  └─ holiday/
+    ├─ for_kitaayase/
+    └─ for_yoyogiuehara/
+```
 
 - ダイヤ改正日ごとにディレクトリを分離
 - 平日 / 土・休日
