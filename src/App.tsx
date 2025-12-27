@@ -19,14 +19,14 @@ import { StationLabel } from "./components/StationLabel";
 /* ==================================================
  * 運行情報型
  * ================================================== */
-type OperationInfo = {
-  railway: string;
-  state: "normal" | "delay" | "suspended";
-  text: string;
-  operationDate?: string;
-  originTime?: string | null;
-  lastFetchedAt: string;
-};
+// type OperationInfo = {
+//   railway: string;
+//   state: "normal" | "delay" | "suspended";
+//   text: string;
+//   operationDate?: string;
+//   originTime?: string | null;
+//   lastFetchedAt: string;
+// };
 
 /* ==================================================
  * 相対時間表示
@@ -70,8 +70,8 @@ export default function App() {
   const [rows, setRows] = useState<TrainRow[]>([]);
 
   // ===== 運行情報 =====
-  const [_operationInfo, setOperationInfo] =
-    useState<OperationInfo | null>(null);
+  // const [operationInfo, setOperationInfo] =
+  //   useState<OperationInfo | null>(null);
 
   const base = "/kitaayase/";
 
@@ -109,22 +109,22 @@ export default function App() {
   /* ==================================================
    * ② 運行情報取得（raw 直参照）
    * ================================================== */
-  useEffect(() => {
-    const OPERATION_URL =
-      "https://raw.githubusercontent.com/shiiba-cba/kitaayase/main/public/data/operation.json";
+  // useEffect(() => {
+  //   const OPERATION_URL =
+  //     "https://raw.githubusercontent.com/shiiba-cba/kitaayase-data/main/operation/chiyoda.json";
 
-    fetch(OPERATION_URL, { cache: "no-store" })
-      .then((res) => {
-        if (!res.ok) throw new Error("failed to fetch operation info");
-        return res.json();
-      })
-      .then((data: OperationInfo) => {
-        setOperationInfo(data);
-      })
-      .catch(() => {
-        setOperationInfo(null);
-      });
-  }, []);
+  //   fetch(OPERATION_URL, { cache: "no-store" })
+  //     .then((res) => {
+  //       if (!res.ok) throw new Error("failed to fetch operation info");
+  //       return res.json();
+  //     })
+  //     .then((data: OperationInfo) => {
+  //       setOperationInfo(data);
+  //     })
+  //     .catch(() => {
+  //       setOperationInfo(null);
+  //     });
+  // }, []);
 
   // 永続化
   useEffect(() => {
