@@ -1,3 +1,5 @@
+import { Icon } from "@chakra-ui/react";
+import { MdWarning } from "react-icons/md";
 import { forwardRef } from "react";
 import {
   Box,
@@ -228,9 +230,13 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 </Text>
               )}
               {isDepartWrong && depLabel && (
-                <Text as="span" ml={1} color="yellow.300">
-                  ▲
-                </Text>
+                <Icon
+                  as={MdWarning}
+                  ml={1}
+                  color="yellow.300"
+                  boxSize="1.4em"
+                  verticalAlign="middle"
+                />
               )}
             </Text>
           </VStack>
@@ -240,6 +246,8 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
             <HStack gap={2}>
               {trainType && (
               <Badge
+                w="66px"
+                justifyContent="center"
                 px={2}
                 py={0.5}
                 fontWeight="600"
@@ -335,9 +343,13 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 </Text>
               )}
               {isArrivalWrong && arrLabel && (
-                <Text as="span" ml={1} color="yellow.300">
-                  ▲
-                </Text>
+                <Icon
+                  as={MdWarning}
+                  ml={1}
+                  color="yellow.300"
+                  boxSize="1.4em"
+                  verticalAlign="middle"
+                />
               )}
             </Text>
           </VStack>
