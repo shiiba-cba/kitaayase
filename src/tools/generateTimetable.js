@@ -1,40 +1,55 @@
-// generateTimetable.js
-// 東京メトロ千代田線 TrainTimetable を
-// 駅 × 方向 × ダイヤの軽量 JSON に変換するツール。
-// --- Node.js 18+（標準 fetch）前提 ---
+// src/tools/generateTimetable.js
+// ==========================================
+// Raw TrainTimetable を加工して
+// public/data/<YYYYMMDD>/ 以下に出力する
+// API 呼び出しは行わない
+// ==========================================
 
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// ===============================
-// 引数処理
-// ===============================
+// --------------------------------------------------
+// パス解決（どこから実行しても repo ルート基準）
+// --------------------------------------------------
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const REPO_ROOT = path.resolve(__dirname, "../..");
 
+// --------------------------------------------------
+// 引数
+// --------------------------------------------------
 /**
  * Usage:
  *   node src/tools/generateTimetable.js 20250315
  */
-const diagramDate = process.argv[2] || "20250315"; // 後方互換
+const diagramDate = process.argv[2];
+if (!diagramDate) {
+  console.error("Usage: node generateTimetable.js <YYYYMMDD>");
+  process.exit(1);
+}
 
-// 出力先：public/data/<diagramDate>
-const OUTPUT_BASE_DIR = path.resolve(
-  process.cwd(),
+// --------------------------------------------------
+// 入出力パス
+// --------------------------------------------------
+const RAW_FILE = path.join(
+  REPO_ROOT,
+  "public",
+  "data",
+  "raw",
+  "current.json"
+);
+
+const OUTPUT_BASE_DIR = path.join(
+  REPO_ROOT,
   "public",
   "data",
   diagramDate
 );
 
-// ====================================================================
-// 設定
-// ====================================================================
-
-// API KEY（環境変数から取得）
-const API_KEY = process.env.ODPT_API_KEY;
-
-// 千代田線 ID
-const CHIYODA_RAILWAY_ID = "odpt.Railway:TokyoMetro.Chiyoda";
-
+// --------------------------------------------------
+// 定義（既存仕様と同一）
+// --------------------------------------------------
 // カレンダー → weekday / holiday
 const CALENDAR_MAP = {
   "odpt.Calendar:Weekday": "weekday",
@@ -167,24 +182,16 @@ const STATION_NAME_MAP = {
   "odpt.Station:JR-East.JobanLocal.Toride": "Toride",
 };
 
-// ====================================================================
+// --------------------------------------------------
 // ユーティリティ
-// ====================================================================
-
-function ensureApiKey() {
-  if (!API_KEY) {
-    console.error("ERROR: ODPT_API_KEY is not set.");
-    process.exit(1);
-  }
-}
-
+// --------------------------------------------------
 function timeToMinutes(hhmm) {
   if (!hhmm) return null;
   const [h, m] = hhmm.split(":").map(Number);
   return h * 60 + m;
 }
 
-function normalize(min) {
+function normalizeMinute(min) {
   if (min == null) return 99999;
   return min < 240 ? min + 1440 : min;
 }
@@ -198,64 +205,29 @@ function resolveStationName(stationId) {
   return STATION_NAME_MAP[stationId] || stationId;
 }
 
-// ====================================================================
-// API 呼び出し
-// ====================================================================
-
-async function fetchTrainTimetables() {
-  const calendars = Object.keys(CALENDAR_MAP);
-  const directions = Object.keys(DIRECTION_MAP);
-
-  const all = [];
-
-  for (const cal of calendars) {
-    for (const dir of directions) {
-      const url = new URL(
-        "https://api.odpt.org/api/v4/odpt:TrainTimetable"
-      );
-      url.searchParams.set("acl:consumerKey", API_KEY);
-      url.searchParams.set("odpt:railway", CHIYODA_RAILWAY_ID);
-      url.searchParams.set("odpt:calendar", cal);
-      url.searchParams.set("odpt:railDirection", dir);
-
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`API Error: ${res.status}`);
-      }
-
-      const json = await res.json();
-      all.push(...json);
-    }
-  }
-
-  return all;
-}
-
-// ====================================================================
+// --------------------------------------------------
 // 時刻抽出
-// ====================================================================
-
+// --------------------------------------------------
 function extractTimes(train) {
-  const tt = train["odpt:trainTimetableObject"] || [];
-  const times = { departure: {}, arrival: {} };
+  const list = train["odpt:trainTimetableObject"] || [];
+  const times = { dep: {}, arr: {} };
 
-  for (const obj of tt) {
-    if (obj["odpt:departureStation"]) {
-      times.departure[obj["odpt:departureStation"]] =
-        obj["odpt:departureTime"] || null;
+  for (const t of list) {
+    if (t["odpt:departureStation"]) {
+      times.dep[t["odpt:departureStation"]] =
+        t["odpt:departureTime"] ?? null;
     }
-    if (obj["odpt:arrivalStation"]) {
-      times.arrival[obj["odpt:arrivalStation"]] =
-        obj["odpt:arrivalTime"] || null;
+    if (t["odpt:arrivalStation"]) {
+      times.arr[t["odpt:arrivalStation"]] =
+        t["odpt:arrivalTime"] ?? null;
     }
   }
   return times;
 }
 
-// ====================================================================
+// --------------------------------------------------
 // 綾瀬基準ソートキー
-// ====================================================================
-
+// --------------------------------------------------
 function computeSortKeyAyase(ayArr, ayDep, direction, trainNumber) {
   let sameTimeSortKey = 1;
   if (direction ==="for_yoyogiuehara" && trainNumber.includes("96S")) {
@@ -264,24 +236,21 @@ function computeSortKeyAyase(ayArr, ayDep, direction, trainNumber) {
   if (direction === "for_kitaayase" && trainNumber.includes("96S")) {
     sameTimeSortKey = 0;
   }
-  if (ayDep) return normalize(timeToMinutes(ayDep)) * 10 + sameTimeSortKey;
-  if (ayArr) return normalize(timeToMinutes(ayArr)) * 10 + sameTimeSortKey;
+  if (ayDep) return normalizeMinute(timeToMinutes(ayDep)) * 10 + sameTimeSortKey;
+  if (ayArr) return normalizeMinute(timeToMinutes(ayArr)) * 10 + sameTimeSortKey;
   return 99999;
 }
 
-// ====================================================================
-// メイン変換
-// ====================================================================
-
-function buildTimetableByStation(allTrains) {
+// --------------------------------------------------
+// メイン加工ロジック
+// --------------------------------------------------
+function buildTimetable(raw) {
   const result = {};
 
-  for (const train of allTrains) {
+  for (const train of raw) {
     const calendar = CALENDAR_MAP[train["odpt:calendar"]];
-    if (!calendar) continue;
-
     const direction = DIRECTION_MAP[train["odpt:railDirection"]];
-    if (!direction) continue;
+    if (!calendar || !direction) continue;
 
     const trainTypeId = train["odpt:trainType"];
 
@@ -304,24 +273,24 @@ function buildTimetableByStation(allTrains) {
     const destinationStationName = resolveStationName(destinationStationId);
 
     const originDepartureTime =
-      originStationId && times.departure[originStationId]
-        ? times.departure[originStationId]
+      originStationId && times.dep[originStationId]
+        ? times.dep[originStationId]
         : null;
 
     const destinationArrivalTime =
-      destinationStationId && times.arrival[destinationStationId]
-        ? times.arrival[destinationStationId]
+      destinationStationId && times.arr[destinationStationId]
+        ? times.arr[destinationStationId]
         : null;
 
     // 綾瀬・代々木上原の時刻
-    const yoArr = times.arrival[STATIONS.yoyogiuehara] || null;
-    const yoDep = times.departure[STATIONS.yoyogiuehara] || null;
+    const yoArr = times.arr[STATIONS.yoyogiuehara] || null;
+    const yoDep = times.dep[STATIONS.yoyogiuehara] || null;
 
-    const ayArr = times.arrival[STATIONS.ayase] || null;
-    const ayDep = times.departure[STATIONS.ayase] || null;
+    const ayArr = times.arr[STATIONS.ayase] || null;
+    const ayDep = times.dep[STATIONS.ayase] || null;
 
-    const kaArr = times.arrival[STATIONS.kitaayase] || null;
-    const kaDep = times.departure[STATIONS.kitaayase] || null;
+    const kaArr = times.arr[STATIONS.kitaayase] || null;
+    const kaDep = times.dep[STATIONS.kitaayase] || null;
 
     for (const stationKey of SELECTABLE_STATIONS) {
       // ===============================
@@ -346,8 +315,8 @@ function buildTimetableByStation(allTrains) {
       const stationId = STATIONS[stationKey];
 
       const stationName = resolveStationName(stationId);
-      const stationDepartureTime = times.departure[stationId] || null;
-      const stationArrivalTime = times.arrival[stationId] || null;
+      const stationDepartureTime = times.dep[stationId] || null;
+      const stationArrivalTime = times.arr[stationId] || null;
 
       const row = {
         // ① 列車番号
@@ -417,27 +386,20 @@ function buildTimetableByStation(allTrains) {
   return result;
 }
 
-// ====================================================================
+// --------------------------------------------------
 // 出力
-// ====================================================================
-
-function writeOutputFiles(byStation) {
-  for (const cal of Object.keys(byStation)) {
-    for (const dir of Object.keys(byStation[cal])) {
-      for (const stationKey of Object.keys(byStation[cal][dir])) {
-        const rows = byStation[cal][dir][stationKey];
+// --------------------------------------------------
+function writeFiles(data) {
+  for (const cal of Object.keys(data)) {
+    for (const dir of Object.keys(data[cal])) {
+      for (const station of Object.keys(data[cal][dir])) {
         const outDir = path.join(OUTPUT_BASE_DIR, cal, dir);
-
         fs.mkdirSync(outDir, { recursive: true });
 
-        const filePath = path.join(
-          outDir,
-          `${STATION_FILENAME[stationKey]}.json`
-        );
-
+        const filePath = path.join(outDir, `${station}.json`);
         fs.writeFileSync(
           filePath,
-          JSON.stringify(rows, null, 2),
+          JSON.stringify(data[cal][dir][station], null, 2),
           "utf-8"
         );
       }
@@ -445,19 +407,16 @@ function writeOutputFiles(byStation) {
   }
 }
 
-// ====================================================================
-// メイン
-// ====================================================================
-
-async function main() {
-  ensureApiKey();
-  const trains = await fetchTrainTimetables();
-  const byStation = buildTimetableByStation(trains);
-  writeOutputFiles(byStation);
-  console.log(`Timetable generated: ${diagramDate}`);
+// --------------------------------------------------
+// Main
+// --------------------------------------------------
+if (!fs.existsSync(RAW_FILE)) {
+  console.error(`Raw file not found: ${RAW_FILE}`);
+  process.exit(1);
 }
 
-const __filename = fileURLToPath(import.meta.url);
-if (process.argv[1] === __filename) {
-  main();
-}
+const raw = JSON.parse(fs.readFileSync(RAW_FILE, "utf-8"));
+const timetable = buildTimetable(raw);
+writeFiles(timetable);
+
+console.log(`Timetable generated: ${diagramDate}`);
