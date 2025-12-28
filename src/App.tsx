@@ -73,6 +73,9 @@ export default function App() {
   const [operationInfo, setOperationInfo] =
     useState<OperationInfo | null>(null);
 
+  // ===== 運行情報 折りたたみ =====
+  const [isOperationOpen, setIsOperationOpen] = useState(true);
+
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -243,9 +246,23 @@ export default function App() {
                 : "red.600"
             }
             textAlign="center"
+            cursor="pointer"
+            onClick={() => setIsOperationOpen((v) => !v)}
           >
-            <Text fontSize="sm">{operationInfo.text}</Text>
-            <Text fontSize="xs" opacity={0.8}>
+            {/* 折りたたみ時も見えるヘッダー */}
+            <Text fontSize="sm" fontWeight="bold">
+              運行情報 {isOperationOpen ? "▲" : "▼"}
+            </Text>
+          
+            {/* 本文（折りたたみ対象） */}
+            {isOperationOpen && (
+              <Text fontSize="sm" mt={1}>
+                {operationInfo.text}
+              </Text>
+            )}
+        
+            {/* 最終更新（常に表示） */}
+            <Text fontSize="xs" opacity={0.8} mt={1}>
               最終更新：
               {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
                 month: "2-digit",
