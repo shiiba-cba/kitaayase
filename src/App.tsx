@@ -5,7 +5,7 @@ import {
   VStack,
   HStack,
   IconButton,
-  // Text,
+  Text,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { LuArrowLeftRight, LuClock } from "react-icons/lu";
@@ -19,34 +19,34 @@ import { StationLabel } from "./components/StationLabel";
 /* ==================================================
  * 運行情報型
  * ================================================== */
-// type OperationInfo = {
-//   railway: string;
-//   state: "normal" | "delay" | "suspended";
-//   text: string;
-//   operationDate?: string;
-//   originTime?: string | null;
-//   lastFetchedAt: string;
-// };
+type OperationInfo = {
+  railway: string;
+  state: "normal" | "delay" | "suspended";
+  text: string;
+  operationDate?: string;
+  originTime?: string | null;
+  updatedAt: string;
+};
 
 /* ==================================================
  * 相対時間表示
  * ================================================== */
-// function formatRelativeTime(dateString: string): string {
-//   const updatedAt = new Date(dateString);
-//   const now = new Date();
+function formatRelativeTime(dateString: string): string {
+  const updatedAt = new Date(dateString);
+  const now = new Date();
 
-//   const diffMs = now.getTime() - updatedAt.getTime();
-//   const diffMin = Math.floor(diffMs / 60000);
+  const diffMs = now.getTime() - updatedAt.getTime();
+  const diffMin = Math.floor(diffMs / 60000);
 
-//   if (diffMin < 5) return "数分前";
-//   if (diffMin < 60) return `${diffMin}分前`;
+  if (diffMin < 5) return "数分前";
+  if (diffMin < 60) return `${diffMin}分前`;
 
-//   const diffHour = Math.floor(diffMin / 60);
-//   if (diffHour < 24) return `${diffHour}時間前`;
+  const diffHour = Math.floor(diffMin / 60);
+  if (diffHour < 24) return `${diffHour}時間前`;
 
-//   const diffDay = Math.floor(diffHour / 24);
-//   return `${diffDay}日前`;
-// }
+  const diffDay = Math.floor(diffHour / 24);
+  return `${diffDay}日前`;
+}
 
 export default function App() {
   // ===== 永続化された設定 =====
@@ -70,8 +70,8 @@ export default function App() {
   const [rows, setRows] = useState<TrainRow[]>([]);
 
   // ===== 運行情報 =====
-  // const [operationInfo, setOperationInfo] =
-  //   useState<OperationInfo | null>(null);
+  const [operationInfo, setOperationInfo] =
+    useState<OperationInfo | null>(null);
 
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -107,22 +107,22 @@ export default function App() {
   /* ==================================================
    * ② 運行情報取得（raw 直参照）
    * ================================================== */
-  // useEffect(() => {
-  //   const OPERATION_URL =
-  //     "https://raw.githubusercontent.com/shiiba-cba/kitaayase-data/main/operation/chiyoda.json";
+  useEffect(() => {
+    const OPERATION_URL =
+      "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
 
-  //   fetch(OPERATION_URL, { cache: "no-store" })
-  //     .then((res) => {
-  //       if (!res.ok) throw new Error("failed to fetch operation info");
-  //       return res.json();
-  //     })
-  //     .then((data: OperationInfo) => {
-  //       setOperationInfo(data);
-  //     })
-  //     .catch(() => {
-  //       setOperationInfo(null);
-  //     });
-  // }, []);
+    fetch(OPERATION_URL, { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("failed to fetch operation info");
+        return res.json();
+      })
+      .then((data: OperationInfo) => {
+        setOperationInfo(data);
+      })
+      .catch(() => {
+        setOperationInfo(null);
+      });
+  }, []);
 
   // 永続化
   useEffect(() => {
@@ -230,7 +230,7 @@ export default function App() {
         borderBottom={`4px solid ${METRO_GREEN}`}
       >
         {/* ==== 運行情報 ==== */}
-        {/* {operationInfo && (
+        {operationInfo && (
           <Box
             w="100%"
             px={4}
@@ -247,16 +247,16 @@ export default function App() {
             <Text fontSize="sm">{operationInfo.text}</Text>
             <Text fontSize="xs" opacity={0.8}>
               最終更新：
-              {new Date(operationInfo.lastFetchedAt).toLocaleString("ja-JP", {
+              {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
                 month: "2-digit",
                 day: "2-digit",
                 hour: "2-digit",
                 minute: "2-digit",
               })}
-              （{formatRelativeTime(operationInfo.lastFetchedAt)}）
+              （{formatRelativeTime(operationInfo.updatedAt)}）
             </Text>
           </Box>
-        )} */}
+        )}
 
         <VStack gap={4} pb={3} pt={3}>
           {/* ==== 方面 ==== */}
