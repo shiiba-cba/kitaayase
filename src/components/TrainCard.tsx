@@ -54,15 +54,20 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     let depSuffix = "";
 
     if (direction === "for_yoyogiuehara") {
-      depTime = row.kitaAyaseDepartureTime ?? row.ayaseDepartureTime;
+      // 北綾瀬発時刻 or 綾瀬発時刻 or 始発駅発時刻(特急)
+      depTime = row.kitaAyaseDepartureTime ?? row.ayaseDepartureTime ?? row.originDepartureTime;
       depLabel = depTime
         ? row.kitaAyaseDepartureTime
           ? stations["kitaayase"]
-          : stations["ayase"]
+          : row.ayaseDepartureTime
+            ? stations["ayase"]
+            : stations[row.originStationName.toLowerCase()] ||
+              row.originStationName
         : "";
     } else {
       // for_kitaayase
-      depTime = row.stationDepartureTime ?? row.originDepartureTime;
+      // 選択駅発時刻 or 綾瀬発時刻 or 選択駅着時刻(特急)
+      depTime = row.stationDepartureTime ?? row.ayaseDepartureTime ?? row.stationArrivalTime;
 
       if (row.trainNumber?.includes("96S") && depTime) {
         depLabel = stations["ayase"];
@@ -71,8 +76,10 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         depLabel = depTime
           ? row.stationDepartureTime
             ? stationName
-            : stations[row.originStationName.toLowerCase()] ||
-              row.originStationName
+            : row.ayaseDepartureTime
+              ? stations["ayase"]
+              : stations[row.stationName.toLowerCase()] ||
+                row.stationName
           : "";
       }
     }
@@ -86,18 +93,19 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
 
     if (direction === "for_yoyogiuehara") {
       if (
-        row.trainNumber?.includes("96S") &&
         row.stationName === "Ayase" &&
-        row.stationArrivalTime !== null &&
-        row.stationDepartureTime === null
+        row.trainNumber?.includes("96S")
       ) {
+        // 綾瀬駅選択時は次の条件に合致するため先に96Sを処理する
         arrTime = row.stationArrivalTime;
         arrLabel = stations["ayase"];
         arrSuffix = "0番線";
       } else if (row.stationArrivalTime || row.stationDepartureTime) {
+        // 選択駅着時刻 or 選択駅発時刻(途中駅)
         arrTime = row.stationArrivalTime ?? row.stationDepartureTime;
         arrLabel = stationName;
-      } else {
+      } else if (row.destinationArrivalTime) {
+        // 終着駅着時刻
         arrTime = row.destinationArrivalTime;
         if (row.trainNumber?.includes("96S")) {
           arrLabel = stations["ayase"];
@@ -110,11 +118,15 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       }
     } else {
       // for_kitaayase
-      arrTime = row.kitaAyaseArrivalTime ?? row.ayaseArrivalTime;
+      // 北綾瀬着時刻 or 綾瀬着時刻 or 終着駅着時刻(特急)
+      arrTime = row.kitaAyaseArrivalTime ?? row.ayaseArrivalTime ?? row.destinationArrivalTime;
       arrLabel = arrTime
         ? row.kitaAyaseArrivalTime
           ? stations["kitaayase"]
-          : stations["ayase"]
+          : row.ayaseArrivalTime
+            ? stations["ayase"]
+            : stations[row.destinationStationName.toLowerCase()] ||
+              row.destinationStationName
         : "";
     }
 
@@ -260,6 +272,8 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 backgroundColor={
                   row.type.includes("SemiExpress")
                     ? "#007f00"
+                    : row.type.includes("LimitedExpress")
+                    ? "#c40000"
                     : row.type.includes("Express")
                     ? "#c40000"
                     : "#004cb0"
