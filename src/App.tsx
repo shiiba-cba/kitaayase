@@ -154,24 +154,25 @@ export default function App() {
     })();
   }, []);
 
+  const OPERATION_URL =
+    "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
+
+  const fetchOperationInfo = async () => {
+    try {
+      const res = await fetch(OPERATION_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error("failed to fetch operation info");
+      const data: OperationInfo = await res.json();
+      setOperationInfo(data);
+    } catch {
+      setOperationInfo(null);
+    }
+  };
+
   /* ==================================================
    * ② 運行情報取得（raw 直参照）
    * ================================================== */
   useEffect(() => {
-    const OPERATION_URL =
-      "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
-
-    fetch(OPERATION_URL, { cache: "no-store" })
-      .then((res) => {
-        if (!res.ok) throw new Error("failed to fetch operation info");
-        return res.json();
-      })
-      .then((data: OperationInfo) => {
-        setOperationInfo(data);
-      })
-      .catch(() => {
-        setOperationInfo(null);
-      });
+    fetchOperationInfo();
   }, []);
 
   // 永続化
@@ -438,7 +439,10 @@ export default function App() {
                 _hover={{
                   bg: "rgba(0,187,133,0.15)",
                 }}
-                onClick={() => scrollToNow("smooth")}
+                onClick={async () => {
+                  await fetchOperationInfo();   // ← 追加
+                  scrollToNow("smooth");
+                }}
               >
                 <LuClock />
               </IconButton>
