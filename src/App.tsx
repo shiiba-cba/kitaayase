@@ -29,6 +29,53 @@ type OperationInfo = {
 };
 
 /* ==================================================
+ * 運行情報の見出し取得
+ * ================================================== */
+function getOperationTitle(text: string): string {
+  if (text.includes("運転を見合わせ")) {
+    return "運転見合わせ";
+  }
+
+  if (text.includes("折返し運転")) {
+    return "折返し運転";
+  }
+
+  if (text.includes("運転を再開")) {
+    return text.includes("ダイヤが乱れ")
+      ? "運転再開・ダイヤ乱れ"
+      : "運転再開";
+  }
+
+  if (text.includes("直通運転を中止")) {
+    return "直通運転中止";
+  }
+
+  if (text.includes("直通運転を再開")) {
+    return "直通運転再開";
+  }
+
+  if (text.includes("運休")) {
+    // 列車名があれば拾う
+    const m = text.match(/(メトロ[^\s、。]+号)/);
+    return m ? `${m[1]}運休` : "列車運休";
+  }
+
+  if (text.includes("一部の列車に遅れ")) {
+    return "一部列車遅延";
+  }
+
+  if (text.includes("ダイヤが乱れ")) {
+    return "ダイヤ乱れ";
+  }
+
+  if (text.includes("平常どおり運転")) {
+    return "平常運転";
+  }
+
+  return "運行情報";
+}
+
+/* ==================================================
  * 相対時間表示
  * ================================================== */
 function formatRelativeTime(dateString: string): string {
@@ -175,6 +222,10 @@ export default function App() {
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
 
+  const operationTitle = operationInfo
+    ? getOperationTitle(operationInfo.text)
+    : "運行情報";
+
   const currentStationName = selectStations[stationKey];
 
   /* ==================================================
@@ -251,7 +302,7 @@ export default function App() {
           >
             {/* 折りたたみ時も見えるヘッダー */}
             <Text fontSize="sm" fontWeight="bold">
-              運行情報 {isOperationOpen ? "▲" : "▼"}
+              {operationTitle} {isOperationOpen ? "▲" : "▼"}
             </Text>
           
             {/* 本文（折りたたみ対象） */}
@@ -260,7 +311,7 @@ export default function App() {
                 {operationInfo.text}
               </Text>
             )}
-        
+
             {/* 最終更新（常に表示） */}
             <Text fontSize="xs" opacity={0.8} mt={1}>
               最終更新：
