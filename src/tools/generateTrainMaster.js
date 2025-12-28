@@ -114,14 +114,6 @@ for (const train of raw) {
   const direction = DIRECTION_MAP[train["odpt:railDirection"]];
   if (!calendar || !direction) continue;
 
-  // 特急除外
-  if (
-    train["odpt:trainType"] ===
-    "odpt.TrainType:TokyoMetro.LimitedExpress"
-  ) {
-    continue;
-  }
-
   const trainNumber = train["odpt:trainNumber"];
   if (!trainNumber) continue;
 

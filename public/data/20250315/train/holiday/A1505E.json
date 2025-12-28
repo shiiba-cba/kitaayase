@@ -1,0 +1,35 @@
+{
+  "trainNumber": "A1505E",
+  "calendar": "holiday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "LimitedExpress",
+  "originStation": "KitaSenju",
+  "destinationStation": "HakoneYumoto",
+  "timetable": [
+    {
+      "station": "KitaSenju",
+      "arrivalTime": null,
+      "departureTime": "15:22"
+    },
+    {
+      "station": "Otemachi",
+      "arrivalTime": null,
+      "departureTime": "15:39"
+    },
+    {
+      "station": "Kasumigaseki",
+      "arrivalTime": null,
+      "departureTime": "15:45"
+    },
+    {
+      "station": "OmoteSando",
+      "arrivalTime": null,
+      "departureTime": "15:53"
+    },
+    {
+      "station": "YoyogiUehara",
+      "arrivalTime": null,
+      "departureTime": null
+    }
+  ]
+}
