@@ -1,4 +1,3 @@
-// src/tools/generateTimetable.js
 // ==========================================
 // Raw TrainTimetable を加工して
 // public/data/<YYYYMMDD>/ 以下に出力する
@@ -10,7 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 // --------------------------------------------------
-// パス解決（どこから実行しても repo ルート基準）
+// パス解決
 // --------------------------------------------------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,10 +18,6 @@ const REPO_ROOT = path.resolve(__dirname, "../..");
 // --------------------------------------------------
 // 引数
 // --------------------------------------------------
-/**
- * Usage:
- *   node src/tools/generateTimetable.js 20250315
- */
 const diagramDate = process.argv[2];
 if (!diagramDate) {
   console.error("Usage: node generateTimetable.js <YYYYMMDD>");
@@ -32,23 +27,11 @@ if (!diagramDate) {
 // --------------------------------------------------
 // 入出力パス
 // --------------------------------------------------
-const RAW_FILE = path.join(
-  REPO_ROOT,
-  "public",
-  "data",
-  "raw",
-  "current.json"
-);
-
-const OUTPUT_BASE_DIR = path.join(
-  REPO_ROOT,
-  "public",
-  "data",
-  diagramDate
-);
+const RAW_FILE = path.join(REPO_ROOT, "public", "data", "raw", "current.json");
+const OUTPUT_BASE_DIR = path.join(REPO_ROOT, "public", "data", diagramDate);
 
 // --------------------------------------------------
-// 定義（既存仕様と同一）
+// 定義
 // --------------------------------------------------
 // カレンダー → weekday / holiday
 const CALENDAR_MAP = {
@@ -110,30 +93,6 @@ const SELECTABLE_STATIONS = [
   // "kitaayase",
 ];
 
-// ファイル名
-const STATION_FILENAME = {
-  yoyogiuehara: "yoyogiuehara",
-  yoyogikoen: "yoyogikoen",
-  meijijingumae: "meijijingumae",
-  omotesando: "omotesando",
-  nogizaka: "nogizaka",
-  akasaka: "akasaka",
-  kokkaigijidomae: "kokkaigijidomae",
-  kasumigaseki: "kasumigaseki",
-  hibiya: "hibiya",
-  nijubashimae: "nijubashimae",
-  otemachi: "otemachi",
-  shinochanomizu: "shinochanomizu",
-  yushima: "yushima",
-  nezu: "nezu",
-  sendagi: "sendagi",
-  nishinippori: "nishinippori",
-  machiya: "machiya",
-  kitasenju: "kitasenju",
-  ayase: "ayase",
-  kitaayase: "kitaayase",
-};
-
 // 列車種別
 const TRAIN_TYPE_MAP = {
   "odpt.TrainType:TokyoMetro.Local": "Local",
@@ -185,6 +144,14 @@ const STATION_NAME_MAP = {
 // --------------------------------------------------
 // ユーティリティ
 // --------------------------------------------------
+function resolveTrainType(id) {
+  return TRAIN_TYPE_MAP[id] || id;
+}
+
+function resolveStationName(id) {
+  return STATION_NAME_MAP[id] || id;
+}
+
 function timeToMinutes(hhmm) {
   if (!hhmm) return null;
   const [h, m] = hhmm.split(":").map(Number);
@@ -196,189 +163,185 @@ function normalizeMinute(min) {
   return min < 240 ? min + 1440 : min;
 }
 
-function resolveTrainType(id) {
-  return TRAIN_TYPE_MAP[id] || id;
-}
-
-function resolveStationName(stationId) {
-  if (!stationId) return "";
-  return STATION_NAME_MAP[stationId] || stationId;
-}
-
-// --------------------------------------------------
-// 時刻抽出
-// --------------------------------------------------
 function extractTimes(train) {
   const list = train["odpt:trainTimetableObject"] || [];
   const times = { dep: {}, arr: {} };
-
   for (const t of list) {
-    if (t["odpt:departureStation"]) {
-      times.dep[t["odpt:departureStation"]] =
-        t["odpt:departureTime"] ?? null;
-    }
-    if (t["odpt:arrivalStation"]) {
-      times.arr[t["odpt:arrivalStation"]] =
-        t["odpt:arrivalTime"] ?? null;
-    }
+    if (t["odpt:departureStation"])
+      times.dep[t["odpt:departureStation"]] = t["odpt:departureTime"] ?? null;
+    if (t["odpt:arrivalStation"])
+      times.arr[t["odpt:arrivalStation"]] = t["odpt:arrivalTime"] ?? null;
   }
   return times;
 }
 
 // --------------------------------------------------
-// 綾瀬基準ソートキー
+// 既存ソート
 // --------------------------------------------------
 function computeSortKeyAyase(ayArr, ayDep, direction, trainNumber) {
   let sameTimeSortKey = 1;
-  if (direction ==="for_yoyogiuehara" && trainNumber.includes("96S")) {
-    sameTimeSortKey = 2;
-  }
-  if (direction === "for_kitaayase" && trainNumber.includes("96S")) {
-    sameTimeSortKey = 0;
-  }
+  if (direction === "for_yoyogiuehara" && trainNumber.includes("96S")) sameTimeSortKey = 2;
+  if (direction === "for_kitaayase" && trainNumber.includes("96S")) sameTimeSortKey = 0;
   if (ayDep) return normalizeMinute(timeToMinutes(ayDep)) * 10 + sameTimeSortKey;
   if (ayArr) return normalizeMinute(timeToMinutes(ayArr)) * 10 + sameTimeSortKey;
   return 99999;
 }
 
 // --------------------------------------------------
-// メイン加工ロジック
+// 特急用 仮想綾瀬ソート
+// --------------------------------------------------
+function buildOtemachiOrder(trains) {
+  return trains
+    .map(train => {
+      const times = extractTimes(train);
+      const ot = times.dep[STATIONS.otemachi] || times.arr[STATIONS.otemachi];
+      if (!ot) return null;
+      return {
+        train,
+        trainNumber: train["odpt:trainNumber"] || "",
+        minute: normalizeMinute(timeToMinutes(ot)),
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.minute - b.minute);
+}
+
+function computeVirtualAyaseSortKey(train, ordered) {
+  const trainNumber = train["odpt:trainNumber"] || "";
+  const idx = ordered.findIndex(v => v.trainNumber === trainNumber);
+  if (idx === -1) return 99999;
+
+  let prevMinute = null;
+  let nextMinute = null;
+
+  // 前方探索（大手町時刻順で前）
+  for (let i = idx - 1; i >= 0; i--) {
+    const t = ordered[i].train;
+    const times = extractTimes(t);
+    const ay =
+      times.dep[STATIONS.ayase] ||
+      times.arr[STATIONS.ayase];
+    if (ay) {
+      prevMinute = normalizeMinute(timeToMinutes(ay));
+      break;
+    }
+  }
+
+  // 後方探索
+  for (let i = idx + 1; i < ordered.length; i++) {
+    const t = ordered[i].train;
+    const times = extractTimes(t);
+    const ay =
+      times.dep[STATIONS.ayase] ||
+      times.arr[STATIONS.ayase];
+    if (ay) {
+      nextMinute = normalizeMinute(timeToMinutes(ay));
+      break;
+    }
+  }
+
+  // ★ 両方見つからない場合のみ末尾
+  if (prevMinute == null && nextMinute == null) return 99999;
+
+  // ★ 片側しか無い場合は、その近傍に寄せる
+  const virtualMinute =
+    prevMinute != null && nextMinute != null
+      ? (prevMinute + nextMinute) / 2
+      : prevMinute != null
+      ? prevMinute + 0.1
+      : nextMinute - 0.1;
+
+  return virtualMinute * 10 + 1;
+}
+
+// --------------------------------------------------
+// メイン
 // --------------------------------------------------
 function buildTimetable(raw) {
   const result = {};
+
+  // ★ calendar + direction ごとの大手町順
+  const otemachiOrderedMap = {};
+  for (const train of raw) {
+    const calendar = CALENDAR_MAP[train["odpt:calendar"]];
+    const direction = DIRECTION_MAP[train["odpt:railDirection"]];
+    if (!calendar || !direction) continue;
+
+    if (!otemachiOrderedMap[calendar]) otemachiOrderedMap[calendar] = {};
+    if (!otemachiOrderedMap[calendar][direction]) otemachiOrderedMap[calendar][direction] = [];
+    otemachiOrderedMap[calendar][direction].push(train);
+  }
+  for (const cal of Object.keys(otemachiOrderedMap)) {
+    for (const dir of Object.keys(otemachiOrderedMap[cal])) {
+      otemachiOrderedMap[cal][dir] = buildOtemachiOrder(otemachiOrderedMap[cal][dir]);
+    }
+  }
 
   for (const train of raw) {
     const calendar = CALENDAR_MAP[train["odpt:calendar"]];
     const direction = DIRECTION_MAP[train["odpt:railDirection"]];
     if (!calendar || !direction) continue;
 
-    const trainTypeId = train["odpt:trainType"];
-
-    // 特急は完全除外
-    if (trainTypeId === "odpt.TrainType:TokyoMetro.LimitedExpress") continue;
-
-    if (!result[calendar]) result[calendar] = {};
-    if (!result[calendar][direction]) result[calendar][direction] = {};
+    const otemachiOrdered = otemachiOrderedMap[calendar][direction];
 
     const times = extractTimes(train);
-    const type = resolveTrainType(trainTypeId);
+    const trainTypeId = train["odpt:trainType"];
 
-    const originStationIdArr = train["odpt:originStation"] || [];
-    const destinationStationIdArr = train["odpt:destinationStation"] || [];
-
-    const originStationId = originStationIdArr[0] || null;
-    const destinationStationId = destinationStationIdArr[0] || null;
-
-    const originStationName = resolveStationName(originStationId);
-    const destinationStationName = resolveStationName(destinationStationId);
-
-    const originDepartureTime =
-      originStationId && times.dep[originStationId]
-        ? times.dep[originStationId]
-        : null;
-
-    const destinationArrivalTime =
-      destinationStationId && times.arr[destinationStationId]
-        ? times.arr[destinationStationId]
-        : null;
-
-    // 綾瀬・代々木上原の時刻
-    const yoArr = times.arr[STATIONS.yoyogiuehara] || null;
-    const yoDep = times.dep[STATIONS.yoyogiuehara] || null;
+    const originId = (train["odpt:originStation"] || [])[0] || null;
+    const destId = (train["odpt:destinationStation"] || [])[0] || null;
 
     const ayArr = times.arr[STATIONS.ayase] || null;
     const ayDep = times.dep[STATIONS.ayase] || null;
-
     const kaArr = times.arr[STATIONS.kitaayase] || null;
     const kaDep = times.dep[STATIONS.kitaayase] || null;
+    const yoArr = times.arr[STATIONS.yoyogiuehara] || null;
+    const yoDep = times.dep[STATIONS.yoyogiuehara] || null;
 
     for (const stationKey of SELECTABLE_STATIONS) {
-      // ===============================
-      // 綾瀬駅の出力制御（要件対応）
-      // ===============================
-      if (stationKey === "ayase") {
-        if (direction === "for_yoyogiuehara") {
-          // 北綾瀬始発のみ出力
-          if (originStationId !== STATIONS.kitaayase) {
-            continue;
-          }
-        }
-      
-        if (direction === "for_kitaayase") {
-          // 北綾瀬行のみ出力
-          if (destinationStationId !== STATIONS.kitaayase) {
-            continue;
-          }
-        }
-      }
-
       const stationId = STATIONS[stationKey];
 
-      const stationName = resolveStationName(stationId);
-      const stationDepartureTime = times.dep[stationId] || null;
-      const stationArrivalTime = times.arr[stationId] || null;
-
       const row = {
-        // ① 列車番号
         trainNumber: train["odpt:trainNumber"] || "",
-
-        // ② 種別
-        type,
-
-        // ③ 終着駅名
-        destinationStationName,
-
-        // ④ 始発駅名
-        originStationName,
-
-        // ⑤ 始発駅発時刻
-        originDepartureTime,
-
-        // ⑥ 当駅名
-        stationName,
-
-        // ⑦ 当駅発時刻
-        stationDepartureTime,
-
-        // ⑧ 当駅発時刻
-        stationArrivalTime,
-
-        // ⑨ 終着駅着時刻
-        destinationArrivalTime,
-
-        // ⑩ 北綾瀬
+        type: resolveTrainType(trainTypeId),
+        destinationStationName: resolveStationName(destId),
+        originStationName: resolveStationName(originId),
+        originDepartureTime: originId ? times.dep[originId] || null : null,
+        stationName: resolveStationName(stationId),
+        stationDepartureTime: times.dep[stationId] || null,
+        stationArrivalTime: times.arr[stationId] || null,
+        destinationArrivalTime: destId ? times.arr[destId] || null : null,
         kitaAyaseArrivalTime: kaArr,
         kitaAyaseDepartureTime: kaDep,
-
-        // ⑪ 綾瀬
         ayaseArrivalTime: ayArr,
         ayaseDepartureTime: ayDep,
-
-        // ⑫ 代々木上原
         yoyogiUeharaArrivalTime: yoArr,
         yoyogiUeharaDepartureTime: yoDep,
 
-        // ソートキー（後で削除）
-        sortKeyAyase: computeSortKeyAyase(ayArr, ayDep, direction, train["odpt:trainNumber"] || ""),
+        sortKeyAyase:
+          trainTypeId === "odpt.TrainType:TokyoMetro.LimitedExpress"
+            ? computeVirtualAyaseSortKey(train, otemachiOrdered)
+            : computeSortKeyAyase(
+                ayArr,
+                ayDep,
+                direction,
+                train["odpt:trainNumber"] || ""
+              ),
       };
 
-      if (!result[calendar][direction][stationKey]) {
+      if (!result[calendar]) result[calendar] = {};
+      if (!result[calendar][direction]) result[calendar][direction] = {};
+      if (!result[calendar][direction][stationKey])
         result[calendar][direction][stationKey] = [];
-      }
+
       result[calendar][direction][stationKey].push(row);
     }
   }
 
-  // ---- ソート & 軽量化 ----
   for (const cal of Object.keys(result)) {
     for (const dir of Object.keys(result[cal])) {
-      for (const stationKey of Object.keys(result[cal][dir])) {
-        const rows = result[cal][dir][stationKey];
-
-        rows.sort((a, b) => a.sortKeyAyase - b.sortKeyAyase);
-        for (const row of rows) {
-          delete row.sortKeyAyase;
-        }
+      for (const station of Object.keys(result[cal][dir])) {
+        result[cal][dir][station].sort((a, b) => a.sortKeyAyase - b.sortKeyAyase);
+        result[cal][dir][station].forEach(r => delete r.sortKeyAyase);
       }
     }
   }
@@ -395,10 +358,8 @@ function writeFiles(data) {
       for (const station of Object.keys(data[cal][dir])) {
         const outDir = path.join(OUTPUT_BASE_DIR, cal, dir);
         fs.mkdirSync(outDir, { recursive: true });
-
-        const filePath = path.join(outDir, `${station}.json`);
         fs.writeFileSync(
-          filePath,
+          path.join(outDir, `${station}.json`),
           JSON.stringify(data[cal][dir][station], null, 2),
           "utf-8"
         );
@@ -410,13 +371,7 @@ function writeFiles(data) {
 // --------------------------------------------------
 // Main
 // --------------------------------------------------
-if (!fs.existsSync(RAW_FILE)) {
-  console.error(`Raw file not found: ${RAW_FILE}`);
-  process.exit(1);
-}
-
 const raw = JSON.parse(fs.readFileSync(RAW_FILE, "utf-8"));
 const timetable = buildTimetable(raw);
 writeFiles(timetable);
-
 console.log(`Timetable generated: ${diagramDate}`);

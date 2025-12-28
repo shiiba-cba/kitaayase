@@ -748,6 +748,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A801E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HakoneYumoto",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "08:33",
+    "stationName": "Hibiya",
+    "stationDepartureTime": null,
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A837S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -1255,6 +1272,23 @@
     "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:25",
     "yoyogiUeharaArrivalTime": "11:05",
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
+    "trainNumber": "A1003E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HakoneYumoto",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "10:33",
+    "stationName": "Hibiya",
+    "stationDepartureTime": null,
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": null
   },
   {
@@ -2499,6 +2533,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A1505E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HakoneYumoto",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "15:22",
+    "stationName": "Hibiya",
+    "stationDepartureTime": null,
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A1445E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -3536,6 +3587,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A1906E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "19:35",
+    "stationName": "Hibiya",
+    "stationDepartureTime": null,
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A1911K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -3737,6 +3805,23 @@
     "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:27",
     "yoyogiUeharaArrivalTime": "21:07",
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
+    "trainNumber": "A2016E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "20:35",
+    "stationName": "Hibiya",
+    "stationDepartureTime": null,
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": null
   },
   {

@@ -1700,6 +1700,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A901E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HakoneYumoto",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "09:47",
+    "stationName": "Otemachi",
+    "stationDepartureTime": "10:04",
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A957E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -3553,6 +3570,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A1711E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "Otemachi",
+    "originDepartureTime": "17:30",
+    "stationName": "Otemachi",
+    "stationDepartureTime": "17:30",
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A1727S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -3859,6 +3893,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A1812E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "KitaSenju",
+    "originDepartureTime": "18:14",
+    "stationName": "Otemachi",
+    "stationDepartureTime": "18:30",
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A1755S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -4145,6 +4196,23 @@
     "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:06",
     "yoyogiUeharaArrivalTime": "19:46",
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
+    "trainNumber": "A1913E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "Otemachi",
+    "originDepartureTime": "19:30",
+    "stationName": "Otemachi",
+    "stationDepartureTime": "19:30",
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": null
   },
   {
@@ -4471,6 +4539,23 @@
     "yoyogiUeharaDepartureTime": null
   },
   {
+    "trainNumber": "A2014E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "Otemachi",
+    "originDepartureTime": "20:30",
+    "stationName": "Otemachi",
+    "stationDepartureTime": "20:30",
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
     "trainNumber": "A2096S1",
     "type": "Local",
     "destinationStationName": "Ayase",
@@ -4774,6 +4859,23 @@
     "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:06",
     "yoyogiUeharaArrivalTime": "21:46",
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
+    "trainNumber": "A2115E",
+    "type": "LimitedExpress",
+    "destinationStationName": "HonAtsugi",
+    "originStationName": "Otemachi",
+    "originDepartureTime": "21:30",
+    "stationName": "Otemachi",
+    "stationDepartureTime": "21:30",
+    "stationArrivalTime": null,
+    "destinationArrivalTime": null,
+    "kitaAyaseArrivalTime": null,
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": null
   },
   {
