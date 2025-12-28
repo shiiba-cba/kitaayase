@@ -1,0 +1,105 @@
+{
+  "trainNumber": "B535S",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "YoyogiUehara",
+  "destinationStation": "Toride",
+  "timetable": [
+    {
+      "station": "YoyogiUehara",
+      "arrivalTime": null,
+      "departureTime": "05:12"
+    },
+    {
+      "station": "YoyogiKoen",
+      "arrivalTime": null,
+      "departureTime": "05:14"
+    },
+    {
+      "station": "MeijiJingumae",
+      "arrivalTime": null,
+      "departureTime": "05:16"
+    },
+    {
+      "station": "OmoteSando",
+      "arrivalTime": null,
+      "departureTime": "05:18"
+    },
+    {
+      "station": "Nogizaka",
+      "arrivalTime": null,
+      "departureTime": "05:21"
+    },
+    {
+      "station": "Akasaka",
+      "arrivalTime": null,
+      "departureTime": "05:23"
+    },
+    {
+      "station": "KokkaiGijidomae",
+      "arrivalTime": null,
+      "departureTime": "05:25"
+    },
+    {
+      "station": "Kasumigaseki",
+      "arrivalTime": null,
+      "departureTime": "05:27"
+    },
+    {
+      "station": "Hibiya",
+      "arrivalTime": null,
+      "departureTime": "05:29"
+    },
+    {
+      "station": "Nijubashimae",
+      "arrivalTime": null,
+      "departureTime": "05:30"
+    },
+    {
+      "station": "Otemachi",
+      "arrivalTime": null,
+      "departureTime": "05:32"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "arrivalTime": null,
+      "departureTime": "05:34"
+    },
+    {
+      "station": "Yushima",
+      "arrivalTime": null,
+      "departureTime": "05:36"
+    },
+    {
+      "station": "Nezu",
+      "arrivalTime": null,
+      "departureTime": "05:38"
+    },
+    {
+      "station": "Sendagi",
+      "arrivalTime": null,
+      "departureTime": "05:40"
+    },
+    {
+      "station": "NishiNippori",
+      "arrivalTime": null,
+      "departureTime": "05:42"
+    },
+    {
+      "station": "Machiya",
+      "arrivalTime": null,
+      "departureTime": "05:45"
+    },
+    {
+      "station": "KitaSenju",
+      "arrivalTime": null,
+      "departureTime": "05:48"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "05:52",
+      "departureTime": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "trainNumber": "B401K",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "KitaSenju",
+  "destinationStation": "Abiko",
+  "timetable": [
+    {
+      "station": "KitaSenju",
+      "arrivalTime": null,
+      "departureTime": "04:54"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "04:57",
+      "departureTime": null
+    }
+  ]
+}

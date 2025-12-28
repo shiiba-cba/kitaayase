@@ -1,0 +1,20 @@
+{
+  "trainNumber": "B2015S",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Ayase",
+  "destinationStation": "KitaAyase",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "arrivalTime": null,
+      "departureTime": "20:34"
+    },
+    {
+      "station": "KitaAyase",
+      "arrivalTime": "20:38",
+      "departureTime": null
+    }
+  ]
+}

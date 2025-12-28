@@ -1,0 +1,70 @@
+{
+  "trainNumber": "B1957E",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Kasumigaseki",
+  "destinationStation": "Kashiwa",
+  "timetable": [
+    {
+      "station": "Kasumigaseki",
+      "arrivalTime": null,
+      "departureTime": "19:09"
+    },
+    {
+      "station": "Hibiya",
+      "arrivalTime": null,
+      "departureTime": "19:11"
+    },
+    {
+      "station": "Nijubashimae",
+      "arrivalTime": null,
+      "departureTime": "19:13"
+    },
+    {
+      "station": "Otemachi",
+      "arrivalTime": null,
+      "departureTime": "19:14"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "arrivalTime": null,
+      "departureTime": "19:17"
+    },
+    {
+      "station": "Yushima",
+      "arrivalTime": null,
+      "departureTime": "19:18"
+    },
+    {
+      "station": "Nezu",
+      "arrivalTime": null,
+      "departureTime": "19:20"
+    },
+    {
+      "station": "Sendagi",
+      "arrivalTime": null,
+      "departureTime": "19:23"
+    },
+    {
+      "station": "NishiNippori",
+      "arrivalTime": null,
+      "departureTime": "19:25"
+    },
+    {
+      "station": "Machiya",
+      "arrivalTime": null,
+      "departureTime": "19:28"
+    },
+    {
+      "station": "KitaSenju",
+      "arrivalTime": null,
+      "departureTime": "19:32"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "19:35",
+      "departureTime": null
+    }
+  ]
+}

@@ -36,13 +36,14 @@ type Props = {
   stationKey: keyof typeof stations;
   direction: "for_yoyogiuehara" | "for_kitaayase";
   themeColor: string;
+  onClick?: () => void;
 };
 
 // --------------------------------------------------
 // TrainCard
 // --------------------------------------------------
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
-  ({ row, stationKey, direction, themeColor }, ref) => {
+  ({ row, stationKey, direction, themeColor, onClick }, ref) => {
     const stationName = stations[stationKey];
 
     // ==================================================
@@ -175,6 +176,8 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     return (
       <Box
         ref={ref}
+        onClick={onClick}
+        cursor="pointer"
         bg={
           isHighlight
             ? CARD_HIGHLIGHT_BG

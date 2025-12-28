@@ -1,0 +1,20 @@
+{
+  "trainNumber": "A2319K",
+  "calendar": "weekday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "Local",
+  "originStation": "Abiko",
+  "destinationStation": "KitaSenju",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "arrivalTime": null,
+      "departureTime": "00:27"
+    },
+    {
+      "station": "KitaSenju",
+      "arrivalTime": "00:30",
+      "departureTime": null
+    }
+  ]
+}

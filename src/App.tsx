@@ -6,15 +6,25 @@ import {
   HStack,
   IconButton,
   Text,
+  DialogRoot,
+  DialogBackdrop,
+  DialogPositioner,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogBody,
+  DialogCloseTrigger,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
-import { LuArrowLeftRight, LuClock } from "react-icons/lu";
+import { LuArrowLeftRight, LuClock, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
+import { stations } from "./data/stations";
 import { isHoliday } from "./utils/holiday";
 import { StationLabel } from "./components/StationLabel";
+import type { TrainDetail } from "./types/TrainDetail";
 
 /* ==================================================
  * 運行情報型
@@ -95,6 +105,15 @@ function formatRelativeTime(dateString: string): string {
   return `${diffDay}日前`;
 }
 
+/* ==================================================
+ * 駅名変換
+ * ================================================== */
+function toJaStationName(raw?: string | null): string {
+  if (!raw) return "";
+  const key = raw.trim().toLowerCase();
+  return stations[key] ?? raw;
+}
+
 export default function App() {
   // ===== 永続化された設定 =====
   const [direction, setDirection] = useState<
@@ -115,6 +134,11 @@ export default function App() {
   );
 
   const [rows, setRows] = useState<TrainRow[]>([]);
+
+  const [trainDetail, setTrainDetail] =
+    useState<TrainDetail | null>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // ===== 運行情報 =====
   const [operationInfo, setOperationInfo] =
@@ -219,6 +243,10 @@ export default function App() {
     return () => controller.abort();
   }, [calendar, direction, stationKey]);
 
+  useEffect(() => {
+  console.log("isModalOpen =", isModalOpen);
+}, [isModalOpen]);
+
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
@@ -266,6 +294,20 @@ export default function App() {
     });
   };
 
+  const fetchTrainDetail = async (trainNumber: string) => {
+    const base = "/kitaayase/data";
+
+    const diagramDate = await fetch(`${base}/latest.json`)
+      .then((r) => r.json())
+      .then((j) => j.diagramDate);
+
+    const url =
+      `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
+
+    const data = await fetch(url).then((r) => r.json());
+    setTrainDetail(data);
+  };
+
   useEffect(() => {
     scrollToNow("smooth");
   }, [rows, direction]);
@@ -274,198 +316,286 @@ export default function App() {
    * UI
    * ================================================== */
   return (
-    <Box bg="#111111" minH="100vh" color="white">
-      {/* ===== 固定ヘッダー ===== */}
-      <Box
-        ref={headerRef}
-        position="sticky"
-        top="0"
-        zIndex={1000}
-        bg="#111111"
-        borderBottom={`4px solid ${METRO_GREEN}`}
-      >
-        {/* ==== 運行情報 ==== */}
-        {operationInfo && (
-          <Box
-            w="100%"
-            px={4}
-            py={2}
-            bg={
-              operationInfo.state === "normal"
-                ? "gray.700"
-                : operationInfo.state === "delay"
-                ? "orange.500"
-                : "red.600"
-            }
-            textAlign="center"
-            cursor="pointer"
-            onClick={() => setIsOperationOpen((v) => !v)}
-          >
-            {/* 折りたたみ時も見えるヘッダー */}
-            <Text fontSize="sm" fontWeight="bold">
-              {operationTitle} {isOperationOpen ? "▲" : "▼"}
-            </Text>
-          
-            {/* 本文（折りたたみ対象） */}
-            {isOperationOpen && (
-              <Text fontSize="sm" mt={1}>
-                {operationInfo.text}
-              </Text>
-            )}
-
-            {/* 最終更新（常に表示） */}
-            <Text fontSize="xs" opacity={0.8} mt={1}>
-              最終更新：
-              {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
-              （{formatRelativeTime(operationInfo.updatedAt)}）
-            </Text>
-          </Box>
-        )}
-
-        <VStack gap={4} pb={3} pt={3}>
-          {/* ==== 方面 ==== */}
-          <Flex w="100%" align="center">
-            <Flex flex="1" justify="center">
-              <StationLabel
-                stationKey={
-                  direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
-                }
-                stationName={
-                  direction === "for_yoyogiuehara"
-                    ? "北綾瀬"
-                    : currentStationName
-                }
-              />
-            </Flex>
-
-            <IconButton
-              aria-label="方向入れ替え"
-              size="md"
-              bg={METRO_GREEN}
-              _hover={{ bg: METRO_GREEN }}
-              onClick={() =>
-                setDirection(
-                  direction === "for_yoyogiuehara"
-                    ? "for_kitaayase"
-                    : "for_yoyogiuehara"
-                )
+    <>
+      <Box bg="#111111" minH="100vh" color="white">
+        {/* ===== 固定ヘッダー ===== */}
+        <Box
+          ref={headerRef}
+          position="sticky"
+          top="0"
+          zIndex={1000}
+          bg="#111111"
+          borderBottom={`4px solid ${METRO_GREEN}`}
+        >
+          {/* ==== 運行情報 ==== */}
+          {operationInfo && (
+            <Box
+              w="100%"
+              px={4}
+              py={2}
+              bg={
+                operationInfo.state === "normal"
+                  ? "gray.700"
+                  : operationInfo.state === "delay"
+                  ? "orange.500"
+                  : "red.600"
               }
+              textAlign="center"
+              cursor="pointer"
+              onClick={() => setIsOperationOpen((v) => !v)}
             >
-              <LuArrowLeftRight />
-            </IconButton>
-
-            <Flex flex="1" justify="center">
-              <StationLabel
-                stationKey={
-                  direction === "for_yoyogiuehara" ? stationKey : "kitaayase"
-                }
-                stationName={
-                  direction === "for_yoyogiuehara"
-                    ? currentStationName
-                    : "北綾瀬"
-                }
-              />
-            </Flex>
-          </Flex>
-
-          {/* ==== 駅選択（スマホネイティブ <select>） ==== */}
-          <select
-            value={stationKey}
-            onChange={(e) =>
-              setStationKey(e.target.value as keyof typeof selectStations)
-            }
-            style={{
-              width: "90%",
-              padding: "14px",
-              fontSize: "18px",
-              borderRadius: "8px",
-              backgroundColor: "#333",
-              color: "white",
-              border: "1px solid #555",
-            }}
-          >
-            {Object.entries(selectStations).map(([key, name]) => (
-              <option key={key} value={key}>
-                {name}
-              </option>
-            ))}
-          </select>
-
-          {/* ==== 平日 / 休日 ==== */}
-          <Flex w="100%" align="center">
-            <Flex flex="1" justify="center">
-            </Flex>
-
-            <Flex flex="0" px={1}>
-              <HStack gap={4}>
-                <Button
-                  w="90px"
-                  bg={calendar === "weekday" ? METRO_GREEN : "gray.700"}
-                  _hover={{
-                    bg: calendar === "weekday" ? METRO_GREEN : "gray.600",
-                  }}
-                  color="white"
-                  onClick={() => onCalendarChange("weekday")}
-                >
-                  平日
-                </Button>
-    
-                <Button
-                  w="90px"
-                  bg={calendar === "holiday" ? METRO_RED : "gray.700"}
-                  _hover={{
-                    bg: calendar === "holiday" ? METRO_RED : "gray.600",
-                  }}
-                  color="white"
-                  onClick={() => onCalendarChange("holiday")}
-                >
-                  土・休日
-                </Button>
-              </HStack>
-            </Flex>
-
-            <Flex flex="1" justify="center">
+              {/* 折りたたみ時も見えるヘッダー */}
+              <Text fontSize="sm" fontWeight="bold">
+                {operationTitle} {isOperationOpen ? "▲" : "▼"}
+              </Text>
+            
+              {/* 本文（折りたたみ対象） */}
+              {isOperationOpen && (
+                <Text fontSize="sm" mt={1}>
+                  {operationInfo.text}
+                </Text>
+              )}
+  
+              {/* 最終更新（常に表示） */}
+              <Text fontSize="xs" opacity={0.8} mt={1}>
+                最終更新：
+                {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
+                  month: "2-digit",
+                  day: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+                （{formatRelativeTime(operationInfo.updatedAt)}）
+              </Text>
+            </Box>
+          )}
+  
+          <VStack gap={4} pb={3} pt={3}>
+            {/* ==== 方面 ==== */}
+            <Flex w="100%" align="center">
+              <Flex flex="1" justify="center">
+                <StationLabel
+                  stationKey={
+                    direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
+                  }
+                  stationName={
+                    direction === "for_yoyogiuehara"
+                      ? "北綾瀬"
+                      : currentStationName
+                  }
+                />
+              </Flex>
+  
               <IconButton
-                aria-label="現在時刻へスクロール"
+                aria-label="方向入れ替え"
                 size="md"
-                variant="outline"
-                color={METRO_GREEN}
-                borderColor={METRO_GREEN}
-                _hover={{
-                  bg: "rgba(0,187,133,0.15)",
-                }}
-                onClick={async () => {
-                  await fetchOperationInfo();   // ← 追加
-                  scrollToNow("smooth");
-                }}
+                bg={METRO_GREEN}
+                _hover={{ bg: METRO_GREEN }}
+                onClick={() =>
+                  setDirection(
+                    direction === "for_yoyogiuehara"
+                      ? "for_kitaayase"
+                      : "for_yoyogiuehara"
+                  )
+                }
               >
-                <LuClock />
+                <LuArrowLeftRight />
               </IconButton>
+  
+              <Flex flex="1" justify="center">
+                <StationLabel
+                  stationKey={
+                    direction === "for_yoyogiuehara" ? stationKey : "kitaayase"
+                  }
+                  stationName={
+                    direction === "for_yoyogiuehara"
+                      ? currentStationName
+                      : "北綾瀬"
+                  }
+                />
+              </Flex>
             </Flex>
-          </Flex>
+  
+            {/* ==== 駅選択（スマホネイティブ <select>） ==== */}
+            <select
+              value={stationKey}
+              onChange={(e) =>
+                setStationKey(e.target.value as keyof typeof selectStations)
+              }
+              style={{
+                width: "90%",
+                padding: "14px",
+                fontSize: "18px",
+                borderRadius: "8px",
+                backgroundColor: "#333",
+                color: "white",
+                border: "1px solid #555",
+              }}
+            >
+              {Object.entries(selectStations).map(([key, name]) => (
+                <option key={key} value={key}>
+                  {name}
+                </option>
+              ))}
+            </select>
+  
+            {/* ==== 平日 / 休日 ==== */}
+            <Flex w="100%" align="center">
+              <Flex flex="1" justify="center">
+              </Flex>
+  
+              <Flex flex="0" px={1}>
+                <HStack gap={4}>
+                  <Button
+                    w="90px"
+                    bg={calendar === "weekday" ? METRO_GREEN : "gray.700"}
+                    _hover={{
+                      bg: calendar === "weekday" ? METRO_GREEN : "gray.600",
+                    }}
+                    color="white"
+                    onClick={() => onCalendarChange("weekday")}
+                  >
+                    平日
+                  </Button>
+      
+                  <Button
+                    w="90px"
+                    bg={calendar === "holiday" ? METRO_RED : "gray.700"}
+                    _hover={{
+                      bg: calendar === "holiday" ? METRO_RED : "gray.600",
+                    }}
+                    color="white"
+                    onClick={() => onCalendarChange("holiday")}
+                  >
+                    土・休日
+                  </Button>
+                </HStack>
+              </Flex>
+  
+              <Flex flex="1" justify="center">
+                <IconButton
+                  aria-label="現在時刻へスクロール"
+                  size="md"
+                  variant="outline"
+                  color={METRO_GREEN}
+                  borderColor={METRO_GREEN}
+                  _hover={{
+                    bg: "rgba(0,187,133,0.15)",
+                  }}
+                  onClick={async () => {
+                    await fetchOperationInfo();   // ← 追加
+                    scrollToNow("smooth");
+                  }}
+                >
+                  <LuClock />
+                </IconButton>
+              </Flex>
+            </Flex>
+          </VStack>
+        </Box>
+  
+        {/* ===== 時刻表一覧 ===== */}
+        <VStack gap={4} w="100%" pt={2}>
+          {rows.map((row, i) => (
+            <TrainCard
+              key={i}
+              row={row}
+              stationKey={stationKey}
+              direction={direction}
+              themeColor={themeColor}
+              onClick={async () => {
+                await fetchTrainDetail(row.trainNumber);
+                setIsModalOpen(true);
+              }}
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }}
+            />
+          ))}
         </VStack>
       </Box>
-
-      {/* ===== 時刻表一覧 ===== */}
-      <VStack gap={4} w="100%" pt={2}>
-        {rows.map((row, i) => (
-          <TrainCard
-            key={i}
-            row={row}
-            stationKey={stationKey}
-            direction={direction}
-            themeColor={themeColor}
-            ref={(el) => {
-              cardRefs.current[i] = el;
-            }}
-          />
-        ))}
-      </VStack>
-    </Box>
+  
+      <DialogRoot
+        open={isModalOpen}
+        onOpenChange={(e) => setIsModalOpen(e.open)}
+        closeOnInteractOutside
+        closeOnEscape
+      >
+        <DialogBackdrop />
+      
+        <DialogPositioner>
+          <DialogContent
+            bg="#111"
+            color="white"
+            maxH="90dvh"        // 画面に収める
+            display="flex"
+            flexDirection="column"
+            position="relative"
+          >
+            {/* ×ボタン（控えめ） */}
+            <DialogCloseTrigger asChild>
+              <IconButton
+                aria-label="close"
+                size="sm"
+                variant="ghost"
+                color="whiteAlpha.700"
+                position="absolute"
+                top="3"
+                right="3"
+                _hover={{ bg: "whiteAlpha.200", color: "white" }}
+              >
+                <LuX size={18} />
+              </IconButton>
+            </DialogCloseTrigger>
+      
+            {/* ヘッダー（固定） */}
+            <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
+              <DialogTitle>
+                {trainDetail?.trainNumber}&nbsp;
+                {
+                  trainDetail?.originStation
+                    ? toJaStationName(trainDetail.originStation)
+                    : "小田急線"
+                }
+                →
+                {toJaStationName(trainDetail?.destinationStation)}
+              </DialogTitle>
+            </DialogHeader>
+      
+            {/* 本文（ここだけスクロール） */}
+            <DialogBody
+              flex="1"
+              overflowY="auto"
+              py={3}
+            >
+              <VStack align="stretch" gap={2}>
+                {trainDetail?.timetable.map((t, i) => {
+                  const isCurrent =
+                    t.station.toLowerCase() === stationKey;
+      
+                  return (
+                    <Flex
+                      key={i}
+                      px={3}
+                      py={2}
+                      borderRadius="md"
+                      bg={isCurrent ? "whiteAlpha.200" : "transparent"}
+                      justify="space-between"
+                    >
+                      <Text fontWeight={isCurrent ? "bold" : "normal"}>
+                        {toJaStationName(t.station)}
+                      </Text>
+                      <Text fontVariantNumeric="tabular-nums">
+                        {t.arrivalTime ?? "--:--"} / {t.departureTime ?? "--:--"}
+                      </Text>
+                    </Flex>
+                  );
+                })}
+              </VStack>
+            </DialogBody>
+          </DialogContent>
+        </DialogPositioner>
+      </DialogRoot>
+    </>
   );
 }

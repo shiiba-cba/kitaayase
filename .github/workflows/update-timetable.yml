@@ -62,11 +62,24 @@ jobs:
         if: steps.diff.outputs.changed == 'true'
         run: |
           DIAGRAM_DATE=$(date +%Y%m%d)
-
-          # 加工後データ生成
           node src/tools/generateTimetable.js "$DIAGRAM_DATE"
 
-          # latest.json 更新
+      # --------------------------------------------------
+      # Generate processed train master if changed
+      # --------------------------------------------------
+      - name: Generate train master (diagram revision detected)
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          DIAGRAM_DATE=$(date +%Y%m%d)
+          node src/tools/generateTrainMaster.js "$DIAGRAM_DATE"
+
+      # --------------------------------------------------
+      # Update latest.json
+      # --------------------------------------------------
+      - name: Update latest.json
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          DIAGRAM_DATE=$(date +%Y%m%d)
           echo "{ \"diagramDate\": \"$DIAGRAM_DATE\" }" > public/data/latest.json
 
       # --------------------------------------------------

@@ -1,0 +1,20 @@
+{
+  "trainNumber": "B1096S3",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Ayase",
+  "destinationStation": "KitaAyase",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "arrivalTime": null,
+      "departureTime": "10:57"
+    },
+    {
+      "station": "KitaAyase",
+      "arrivalTime": "11:01",
+      "departureTime": null
+    }
+  ]
+}
