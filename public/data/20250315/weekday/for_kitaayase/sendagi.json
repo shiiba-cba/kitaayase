@@ -3162,23 +3162,6 @@
     "yoyogiUeharaDepartureTime": "15:44"
   },
   {
-    "trainNumber": "B1696S2",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "16:26",
-    "stationName": "Sendagi",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": "16:30",
-    "kitaAyaseArrivalTime": "16:30",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "16:26",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
-  },
-  {
     "trainNumber": "B1402E",
     "type": "LimitedExpress",
     "destinationStationName": "KitaSenju",
@@ -3192,6 +3175,23 @@
     "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": null,
     "ayaseDepartureTime": null,
+    "yoyogiUeharaArrivalTime": null,
+    "yoyogiUeharaDepartureTime": null
+  },
+  {
+    "trainNumber": "B1696S2",
+    "type": "Local",
+    "destinationStationName": "KitaAyase",
+    "originStationName": "Ayase",
+    "originDepartureTime": "16:26",
+    "stationName": "Sendagi",
+    "stationDepartureTime": null,
+    "stationArrivalTime": null,
+    "destinationArrivalTime": "16:30",
+    "kitaAyaseArrivalTime": "16:30",
+    "kitaAyaseDepartureTime": null,
+    "ayaseArrivalTime": null,
+    "ayaseDepartureTime": "16:26",
     "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": null
   },

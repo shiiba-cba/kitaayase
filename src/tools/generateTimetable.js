@@ -211,47 +211,54 @@ function computeVirtualAyaseSortKey(train, ordered) {
   const idx = ordered.findIndex(v => v.trainNumber === trainNumber);
   if (idx === -1) return 99999;
 
-  let prevMinute = null;
-  let nextMinute = null;
+  let prev = null;
+  let next = null;
 
-  // 前方探索（大手町時刻順で前）
+  // 前方探索
   for (let i = idx - 1; i >= 0; i--) {
-    const t = ordered[i].train;
-    const times = extractTimes(t);
-    const ay =
-      times.dep[STATIONS.ayase] ||
-      times.arr[STATIONS.ayase];
+    const t = ordered[i];
+    const times = extractTimes(t.train);
+    const ay = times.dep[STATIONS.ayase] || times.arr[STATIONS.ayase];
     if (ay) {
-      prevMinute = normalizeMinute(timeToMinutes(ay));
+      prev = {
+        otemachi: t.minute,
+        ayase: normalizeMinute(timeToMinutes(ay)),
+      };
       break;
     }
   }
 
   // 後方探索
   for (let i = idx + 1; i < ordered.length; i++) {
-    const t = ordered[i].train;
-    const times = extractTimes(t);
-    const ay =
-      times.dep[STATIONS.ayase] ||
-      times.arr[STATIONS.ayase];
+    const t = ordered[i];
+    const times = extractTimes(t.train);
+    const ay = times.dep[STATIONS.ayase] || times.arr[STATIONS.ayase];
     if (ay) {
-      nextMinute = normalizeMinute(timeToMinutes(ay));
+      next = {
+        otemachi: t.minute,
+        ayase: normalizeMinute(timeToMinutes(ay)),
+      };
       break;
     }
   }
 
-  // ★ 両方見つからない場合のみ末尾
-  if (prevMinute == null && nextMinute == null) return 99999;
+  // 両方無い → 末尾
+  if (!prev && !next) return 99999;
 
-  // ★ 片側しか無い場合は、その近傍に寄せる
-  const virtualMinute =
-    prevMinute != null && nextMinute != null
-      ? (prevMinute + nextMinute) / 2
-      : prevMinute != null
-      ? prevMinute + 0.1
-      : nextMinute - 0.1;
+  // 片側のみ
+  if (prev && !next) return (prev.ayase + 0.1) * 10;
+  if (!prev && next) return (next.ayase - 0.1) * 10;
 
-  return virtualMinute * 10 + 1;
+  // ★ 比率補間
+  const selfMinute = ordered[idx].minute;
+  const ratio =
+    (selfMinute - prev.otemachi) /
+    (next.otemachi - prev.otemachi);
+
+  const virtualAyase =
+    prev.ayase + (next.ayase - prev.ayase) * ratio;
+
+  return virtualAyase * 10 + 1;
 }
 
 // --------------------------------------------------
