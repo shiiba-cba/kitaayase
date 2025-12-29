@@ -236,7 +236,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     return (
       <Box
         ref={ref}
-        onPointerDown={onClick}
+        onClick={onClick}
         cursor="pointer"
         userSelect="none"
         WebkitUserSelect="none"

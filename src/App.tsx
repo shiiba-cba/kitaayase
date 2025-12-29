@@ -206,8 +206,6 @@ export default function App() {
   // ===== 運行情報 折りたたみ =====
   const [isOperationOpen, setIsOperationOpen] = useState(true);
 
-  const [isClosing, setIsClosing] = useState(false);
-
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -602,22 +600,13 @@ export default function App() {
                 minW="40px"
                 minH="40px"
                 borderRadius="full"
-                bg={isClosing ? "whiteAlpha.400" : "whiteAlpha.200"}
                 color="white"
-                transform={isClosing ? "scale(0.9)" : "scale(1)"}
-                transition="background-color 0.12s ease, transform 0.12s ease"
-                onPointerDown={() => {
-                  setIsClosing(true);
-
-                  // 👇 押下状態を描画してから閉じる
-                  setTimeout(() => {
-                    setIsModalOpen(false);
-                    setIsClosing(false);
-                  }, 120); // ← ここが重要
-                }}
+                onClick={() => setIsModalOpen(false)}
                 userSelect="none"
                 WebkitUserSelect="none"
                 touchAction="manipulation"
+                _hover={{ bg: "whiteAlpha.300" }}
+                _active={{ bg: "whiteAlpha.400" }}
               >
                 <LuX size={18} />
               </IconButton>
