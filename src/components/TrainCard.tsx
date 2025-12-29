@@ -145,12 +145,11 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
 
     if (direction === "for_yoyogiuehara") {
       isDepartWrong = row.originStationName !== "KitaAyase";
-      const passesStation =
-        row.stationArrivalTime !== null || row.stationDepartureTime !== null;
+      const passesStation = row.stationArrivalTime || row.stationDepartureTime;
       isArrivalWrong = !passesStation;
     } else {
-      isDepartWrong = row.stationDepartureTime === null;
-      isArrivalWrong = row.kitaAyaseArrivalTime === null;
+      isDepartWrong = !row.stationDepartureTime;
+      isArrivalWrong = !row.kitaAyaseArrivalTime;
     }
 
     // ==================================================
@@ -159,7 +158,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     const isHighlight =
       direction === "for_yoyogiuehara"
         ? row.originStationName === "KitaAyase"
-        : row.stationDepartureTime !== null;
+        : row.stationDepartureTime;
 
     // ==================================================
     // 表示定数
