@@ -84,6 +84,46 @@ function getOperationTitle(text: string): string {
   return "運行情報";
 }
 
+type OperationVisualState = "normal" | "delay" | "suspended";
+
+function getOperationVisualState(text: string): OperationVisualState {
+  // 最優先：運転見合わせ
+  if (text.includes("運転を見合わせ")) {
+    return "suspended";
+  }
+
+  // 明確に「平常」
+  if (text.includes("平常どおり運転")) {
+    return "normal";
+  }
+
+  // 再開だが乱れあり
+  if (text.includes("運転を再開") && text.includes("ダイヤが乱れ")) {
+    return "delay";
+  }
+
+  // 遅延・乱れ系
+  if (
+    text.includes("ダイヤが乱れ") ||
+    text.includes("遅れ") ||
+    text.includes("運休") ||
+    text.includes("折返し運転") ||
+    text.includes("直通運転を中止")
+  ) {
+    return "delay";
+  }
+
+  // それ以外は無難に normal
+  return "normal";
+}
+
+function parseOperationInfo(text: string) {
+  return {
+    title: getOperationTitle(text),
+    state: getOperationVisualState(text),
+  };
+}
+
 /* ==================================================
  * 相対時間表示
  * ================================================== */
@@ -266,10 +306,6 @@ export default function App() {
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
 
-  const operationTitle = operationInfo
-    ? getOperationTitle(operationInfo.text)
-    : "運行情報";
-
   const currentStationName = selectStations[stationKey];
 
   /* ==================================================
@@ -329,6 +365,10 @@ export default function App() {
     scrollToNow("smooth");
   }, [scrollToNow]);
 
+  const parsedOperationInfo = operationInfo
+    ? parseOperationInfo(operationInfo.text)
+    : null;
+
   /* ==================================================
    * UI
    * ================================================== */
@@ -345,15 +385,15 @@ export default function App() {
           borderBottom={`4px solid ${METRO_GREEN}`}
         >
           {/* ==== 運行情報 ==== */}
-          {operationInfo && (
+          {operationInfo && parsedOperationInfo && (
             <Box
               w="100%"
               px={4}
               py={2}
               bg={
-                operationInfo.state === "normal"
+                parsedOperationInfo.state === "normal"
                   ? "gray.700"
-                  : operationInfo.state === "delay"
+                  : parsedOperationInfo.state === "delay"
                   ? "orange.500"
                   : "red.600"
               }
@@ -363,7 +403,7 @@ export default function App() {
             >
               {/* 折りたたみ時も見えるヘッダー */}
               <Text fontSize="sm" fontWeight="bold">
-                {operationTitle} {isOperationOpen ? "▲" : "▼"}
+                {parsedOperationInfo.title} {isOperationOpen ? "▲" : "▼"}
               </Text>
 
               {/* 本文（折りたたみ対象） */}
