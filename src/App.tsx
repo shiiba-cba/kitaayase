@@ -25,6 +25,7 @@ import { stations } from "./data/stations";
 import { isHoliday } from "./utils/holiday";
 import { StationLabel } from "./components/StationLabel";
 import type { TrainDetail } from "./types/TrainDetail";
+import { StationStopLabel } from "./components/StationStopLabel";
 
 /* ==================================================
  * 運行情報型
@@ -634,12 +635,21 @@ export default function App() {
                 {/* 行先 */}
                 <HStack gap={3} flexWrap="wrap" align="center">
                   {/* ===== 行先 ===== */}
+                  <StationStopLabel
+                    stationKey={
+                      trainDetail?.originStation.toLowerCase() || "odakyu"
+                    }
+                    highlight={false}
+                  />
                   <Text fontSize="sm" opacity={0.9}>
-                    {trainDetail?.originStation
-                      ? toJaStationName(trainDetail.originStation)
-                      : "小田急線"}
-                    →{toJaStationName(trainDetail?.destinationStation)}
+                    →
                   </Text>
+                  <StationStopLabel
+                    stationKey={
+                      trainDetail?.destinationStation.toLowerCase() || ""
+                    }
+                    highlight={false}
+                  />
                 </HStack>
               </VStack>
             </DialogHeader>
@@ -659,9 +669,10 @@ export default function App() {
                       bg={isCurrent ? "whiteAlpha.200" : "transparent"}
                       justify="space-between"
                     >
-                      <Text fontWeight={isCurrent ? "bold" : "normal"}>
-                        {toJaStationName(t.station)}
-                      </Text>
+                      <StationStopLabel
+                        stationKey={t.station.toLowerCase()}
+                        highlight={isCurrent}
+                      />
                       <Text fontVariantNumeric="tabular-nums">
                         {t.arrivalTime && <>{t.arrivalTime}着</>}
                         {t.departureTime && <>{t.departureTime}発</>}

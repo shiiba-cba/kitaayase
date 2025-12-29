@@ -1,4 +1,5 @@
 export const stationNumberImageMap: Record<string, string> = {
+  odakyu: "/kitaayase/station-numbering/OH.png",
   hakoneyumoto: "/kitaayase/station-numbering/OH-51.png",
   karakida: "/kitaayase/station-numbering/OT-07.png",
   isehara: "/kitaayase/station-numbering/OH-36.png",

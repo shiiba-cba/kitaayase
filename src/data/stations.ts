@@ -1,6 +1,7 @@
 // src/data/stations.ts
 
 export const stations: Record<string, string> = {
+  odakyu: "小田急線",
   hakoneyumoto: "箱根湯本",
   karakida: "唐木田",
   isehara: "伊勢原",
