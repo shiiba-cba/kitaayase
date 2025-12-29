@@ -28,7 +28,13 @@ if (!diagramDate) {
 // 入出力パス
 // --------------------------------------------------
 const RAW_FILE = path.join(REPO_ROOT, "public", "data", "raw", "current.json");
-const OUTPUT_BASE_DIR = path.join(REPO_ROOT, "public", "data", diagramDate);
+const OUTPUT_BASE_DIR = path.join(
+  REPO_ROOT,
+  "public",
+  "data",
+  diagramDate,
+  "timetable"
+);
 
 // --------------------------------------------------
 // 定義

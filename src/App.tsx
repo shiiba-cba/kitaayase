@@ -224,7 +224,7 @@ export default function App() {
           .then((res) => res.json())
           .then((j) => j.diagramDate);
 
-        const url = `${base}/${diagramDate}/${calendar}/${direction}/${stationKey}.json`;
+        const url = `${base}/${diagramDate}/timetable/${calendar}/${direction}/${stationKey}.json`;
 
         const data: TrainRow[] = await fetch(url, {
           signal: controller.signal,
