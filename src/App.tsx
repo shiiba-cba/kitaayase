@@ -175,6 +175,14 @@ function isThreeCars(detail: TrainDetail | null): boolean {
   return !!detail?.trainNumber?.includes("96S");
 }
 
+function formatTimeNoLeadingZero(time?: string | null): string {
+  if (!time) return "";
+  if (time === "--:--") return time;
+
+  const [h, m] = time.split(":");
+  return `${Number(h)}:${m}`;
+}
+
 export default function App() {
   // ===== 永続化された設定 =====
   const [direction, setDirection] = useState<
@@ -741,8 +749,12 @@ export default function App() {
                         alignItems="center"
                       >
                         <Text fontVariantNumeric="tabular-nums">
-                          {t.arrivalTime && <>{t.arrivalTime}着</>}
-                          {t.departureTime && <>{t.departureTime}発</>}
+                          {t.arrivalTime && (
+                            <>{formatTimeNoLeadingZero(t.arrivalTime)}着</>
+                          )}
+                          {t.departureTime && (
+                            <>{formatTimeNoLeadingZero(t.departureTime)}発</>
+                          )}
                           {!t.arrivalTime &&
                             !t.departureTime &&
                             direction === "for_yoyogiuehara" && <>--:--着</>}
