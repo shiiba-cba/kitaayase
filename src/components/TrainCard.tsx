@@ -54,33 +54,44 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     let depSuffix = "";
 
     if (direction === "for_yoyogiuehara") {
-      // 北綾瀬発時刻 or 綾瀬発時刻 or 始発駅発時刻(特急)
-      depTime = row.kitaAyaseDepartureTime ?? row.ayaseDepartureTime ?? row.originDepartureTime;
-      depLabel = depTime
-        ? row.kitaAyaseDepartureTime
-          ? stations["kitaayase"]
-          : row.ayaseDepartureTime
-            ? stations["ayase"]
-            : stations[row.originStationName.toLowerCase()] ||
-              row.originStationName
-        : "";
-    } else {
-      // for_kitaayase
-      // 選択駅発時刻 or 綾瀬発時刻 or 選択駅着時刻(特急)
-      depTime = row.stationDepartureTime ?? row.ayaseDepartureTime ?? row.stationArrivalTime;
-
-      if (row.trainNumber?.includes("96S") && depTime) {
+      // 北綾瀬→(綾瀬～代々木上原)
+      if (row.type === "LimitedExpress") {
+        // 発駅は北綾瀬固定の為、特急は始発駅発時刻(北千住始発 or 大手町始発)
+        if (row.originDepartureTime) {
+          depTime = row.originDepartureTime;
+          depLabel = stations[row.originStationName.toLowerCase()] || row.originStationName;
+        }
+      } else if (row.kitaAyaseDepartureTime) {
+        // 発駅は北綾瀬固定の為、特急以外はあれば北綾瀬発時刻(北綾瀬始発)
+        depTime = row.kitaAyaseDepartureTime;
+        depLabel = stations["kitaayase"];
+      } else if (row.ayaseDepartureTime) {
+        // 発駅は北綾瀬固定の為、特急以外はなければ綾瀬発時刻(綾瀬始発 or JR常磐緩行線からの直通)
+        depTime = row.ayaseDepartureTime;
         depLabel = stations["ayase"];
-        depSuffix = "0番線";
-      } else {
-        depLabel = depTime
-          ? row.stationDepartureTime
-            ? stationName
-            : row.ayaseDepartureTime
-              ? stations["ayase"]
-              : stations[row.stationName.toLowerCase()] ||
-                row.stationName
-          : "";
+      }
+    } else {
+      // (代々木上原～綾瀬)→北綾瀬
+      if (row.type === "LimitedExpress") {
+        // 特急は選択駅着時刻(表参道 or 霞ケ関 or 大手町 or 北千住)
+        if (row.stationArrivalTime) {
+          depTime = row.stationArrivalTime;
+          depLabel = stationName;
+        }
+      } else if (row.stationDepartureTime) {
+        // 特急以外はあれば選択駅発時刻(北綾瀬行 or JR常磐緩行線方面)
+        depTime = row.stationDepartureTime;
+        depLabel = stationName;
+      } else if (row.ayaseDepartureTime) {
+        // 特急以外はなければ綾瀬発時刻(綾瀬始発北綾瀬行 3両 or 10両)
+        depTime = row.ayaseDepartureTime;
+        depLabel = stations["ayase"];
+      }
+
+      if (row.trainNumber?.includes("96S")) {
+        // 綾瀬～北綾瀬区間列車
+        depLabel = depTime ? stations["ayase"] : "";
+        depSuffix = depTime ? "0番線" : "";
       }
     }
 
@@ -92,42 +103,42 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     let arrSuffix = "";
 
     if (direction === "for_yoyogiuehara") {
-      if (
-        row.stationName === "Ayase" &&
-        row.trainNumber?.includes("96S")
-      ) {
-        // 綾瀬駅選択時は次の条件に合致するため先に96Sを処理する
-        arrTime = row.stationArrivalTime;
-        arrLabel = stations["ayase"];
-        arrSuffix = "0番線";
-      } else if (row.stationArrivalTime || row.stationDepartureTime) {
-        // 選択駅着時刻 or 選択駅発時刻(途中駅)
+      // 北綾瀬→(綾瀬～代々木上原)
+      if (row.stationArrivalTime || row.stationDepartureTime) {
+        // 選択駅着時刻(終着駅) or 選択駅発時刻(途中駅)
         arrTime = row.stationArrivalTime ?? row.stationDepartureTime;
         arrLabel = stationName;
       } else if (row.destinationArrivalTime) {
-        // 終着駅着時刻
+        // 終着駅着時刻(途中駅止まり)
         arrTime = row.destinationArrivalTime;
-        if (row.trainNumber?.includes("96S")) {
-          arrLabel = stations["ayase"];
-          arrSuffix = "0番線";
-        } else {
-          arrLabel =
-            stations[row.destinationStationName.toLowerCase()] ||
-            row.destinationStationName;
-        }
+        arrLabel =
+          stations[row.destinationStationName.toLowerCase()] ||
+          row.destinationStationName;
+      }
+
+      if (row.trainNumber?.includes("96S")) {
+        // 綾瀬～北綾瀬区間列車
+        arrLabel = stations["ayase"];
+        arrSuffix = "0番線";
       }
     } else {
-      // for_kitaayase
-      // 北綾瀬着時刻 or 綾瀬着時刻 or 終着駅着時刻(特急)
-      arrTime = row.kitaAyaseArrivalTime ?? row.ayaseArrivalTime ?? row.destinationArrivalTime;
-      arrLabel = arrTime
-        ? row.kitaAyaseArrivalTime
-          ? stations["kitaayase"]
-          : row.ayaseArrivalTime
-            ? stations["ayase"]
-            : stations[row.destinationStationName.toLowerCase()] ||
-              row.destinationStationName
-        : "";
+      // (代々木上原～綾瀬)→北綾瀬
+      if (row.type === "LimitedExpress") {
+        // 着駅は北綾瀬固定の為、特急は終着駅着時刻(北千住行)
+        if (row.destinationArrivalTime) {
+          arrTime = row.destinationArrivalTime;
+          arrLabel = stations[row.destinationStationName.toLowerCase()] ||
+            row.destinationStationName;
+        }
+      } else if (row.kitaAyaseArrivalTime) {
+        // 着駅は北綾瀬固定の為、特急以外はあれば北綾瀬着時刻(北綾瀬行)
+        arrTime = row.kitaAyaseArrivalTime;
+        arrLabel = stations["kitaayase"];
+      } else if (row.ayaseArrivalTime) {
+        // 着駅は北綾瀬固定の為、特急以外はなければ綾瀬着時刻(綾瀬行 or JR常磐緩行線へ直通)
+        arrTime = row.ayaseArrivalTime;
+        arrLabel = stations["ayase"];
+      }
     }
 
     // ==================================================
