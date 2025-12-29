@@ -141,9 +141,15 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     // 発着駅が同一の場合の補正
     // ==================================================
     if (depLabel && arrLabel && depLabel === arrLabel) {
-      depTime = null; // → "--:--" 表示になる
-      depLabel = ""; // 発駅をブランクに
-      depSuffix = ""; // 念のため
+      if (direction === "for_yoyogiuehara") {
+        arrTime = null; // → "--:--" 表示になる
+        arrLabel = ""; // 着駅をブランクに
+        arrSuffix = ""; // 念のため
+      } else {
+        depTime = null; // → "--:--" 表示になる
+        depLabel = ""; // 発駅をブランクに
+        depSuffix = ""; // 念のため
+      }
     }
 
     // ==================================================
@@ -152,13 +158,36 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     let isDepartWrong = false;
     let isArrivalWrong = false;
 
+    // ----------
+    // direction別の基本判定
+    // ----------
     if (direction === "for_yoyogiuehara") {
+      // 北綾瀬→(綾瀬～代々木上原)
+      // 発：北綾瀬始発でない
       isDepartWrong = row.originStationName !== "KitaAyase";
+
+      // 着：選択駅に停車しない
       const passesStation = row.stationArrivalTime || row.stationDepartureTime;
+
       isArrivalWrong = !passesStation;
     } else {
+      // (代々木上原～綾瀬)→北綾瀬
+      // 発：選択駅に停車しない
       isDepartWrong = !row.stationDepartureTime;
+
+      // 着：北綾瀬に到着しない
       isArrivalWrong = !row.kitaAyaseArrivalTime;
+    }
+
+    // ----------
+    // 時刻が存在しない場合は必ず異常
+    // ----------
+    if (!depTime) {
+      isDepartWrong = true;
+    }
+
+    if (!arrTime) {
+      isArrivalWrong = true;
     }
 
     // ==================================================
@@ -229,38 +258,40 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 {formatTime(depTime)}
               </Text>
             </Box>
-            <Text
-              fontSize="sm"
-              fontWeight="500"
-              fontFamily='"Noto Sans JP", sans-serif'
-              letterSpacing="0.08em"
-              color={depColor}
-              opacity={0.9}
-              lineHeight={1.2}
-            >
-              {depLabel}
-              {depSuffix && (
-                <Text
-                  as="span"
-                  fontSize="xs"
-                  fontFamily='"Noto Sans JP", sans-serif'
-                  letterSpacing="0.04em"
-                  opacity={0.7}
-                  ml={1}
-                >
-                  {depSuffix}
-                </Text>
-              )}
-              {isDepartWrong && depLabel && (
-                <Icon
-                  as={MdWarning}
-                  ml={1}
-                  color="yellow.300"
-                  boxSize="1.4em"
-                  verticalAlign="middle"
-                />
-              )}
-            </Text>
+            <Flex align="center">
+              <Text
+                fontSize="sm"
+                fontWeight="500"
+                fontFamily='"Noto Sans JP", sans-serif'
+                letterSpacing="0.08em"
+                color={depColor}
+                opacity={0.9}
+                lineHeight={1.2}
+                display="flex"
+                alignItems="center"
+              >
+                {isDepartWrong && (
+                  <Icon
+                    as={MdWarning}
+                    mr={1}
+                    color="yellow.300"
+                    boxSize="1.4em"
+                  />
+                )}
+                {depLabel}
+                {depSuffix && (
+                  <Text
+                    as="span"
+                    fontSize="xs"
+                    letterSpacing="0.04em"
+                    opacity={0.7}
+                    ml={1}
+                  >
+                    {depSuffix}
+                  </Text>
+                )}
+              </Text>
+            </Flex>
           </VStack>
 
           {/* 中央：種別・行先 */}
@@ -346,38 +377,40 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 {formatTime(arrTime)}
               </Text>
             </Box>
-            <Text
-              fontSize="sm"
-              fontWeight="500"
-              fontFamily='"Noto Sans JP", sans-serif'
-              letterSpacing="0.08em"
-              color={arrColor}
-              opacity={0.9}
-              lineHeight={1.2}
-            >
-              {arrLabel}
-              {arrSuffix && (
-                <Text
-                  as="span"
-                  fontSize="xs"
-                  fontFamily='"Noto Sans JP", sans-serif'
-                  letterSpacing="0.04em"
-                  opacity={0.7}
-                  ml={1}
-                >
-                  {arrSuffix}
-                </Text>
-              )}
-              {isArrivalWrong && arrLabel && (
-                <Icon
-                  as={MdWarning}
-                  ml={1}
-                  color="yellow.300"
-                  boxSize="1.4em"
-                  verticalAlign="middle"
-                />
-              )}
-            </Text>
+            <Flex align="center">
+              <Text
+                fontSize="sm"
+                fontWeight="500"
+                fontFamily='"Noto Sans JP", sans-serif'
+                letterSpacing="0.08em"
+                color={arrColor}
+                opacity={0.9}
+                lineHeight={1.2}
+                display="flex"
+                alignItems="center"
+              >
+                {arrLabel}
+                {arrSuffix && (
+                  <Text
+                    as="span"
+                    fontSize="xs"
+                    letterSpacing="0.04em"
+                    opacity={0.7}
+                    ml={1}
+                  >
+                    {arrSuffix}
+                  </Text>
+                )}
+                {isArrivalWrong && (
+                  <Icon
+                    as={MdWarning}
+                    ml={1}
+                    color="yellow.300"
+                    boxSize="1.4em"
+                  />
+                )}
+              </Text>
+            </Flex>
           </VStack>
         </Flex>
       </Box>
