@@ -243,10 +243,6 @@ export default function App() {
     return () => controller.abort();
   }, [calendar, direction, stationKey]);
 
-  useEffect(() => {
-  console.log("isModalOpen =", isModalOpen);
-}, [isModalOpen]);
-
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
