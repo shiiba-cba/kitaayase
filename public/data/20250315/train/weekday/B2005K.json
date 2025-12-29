@@ -8,63 +8,51 @@
   "timetable": [
     {
       "station": "Kasumigaseki",
-      "arrivalTime": null,
       "departureTime": "20:12"
     },
     {
       "station": "Hibiya",
-      "arrivalTime": null,
       "departureTime": "20:14"
     },
     {
       "station": "Nijubashimae",
-      "arrivalTime": null,
       "departureTime": "20:17"
     },
     {
       "station": "Otemachi",
-      "arrivalTime": null,
       "departureTime": "20:18"
     },
     {
       "station": "ShinOchanomizu",
-      "arrivalTime": null,
       "departureTime": "20:21"
     },
     {
       "station": "Yushima",
-      "arrivalTime": null,
       "departureTime": "20:23"
     },
     {
       "station": "Nezu",
-      "arrivalTime": null,
       "departureTime": "20:24"
     },
     {
       "station": "Sendagi",
-      "arrivalTime": null,
       "departureTime": "20:27"
     },
     {
       "station": "NishiNippori",
-      "arrivalTime": null,
       "departureTime": "20:30"
     },
     {
       "station": "Machiya",
-      "arrivalTime": null,
       "departureTime": "20:32"
     },
     {
       "station": "KitaSenju",
-      "arrivalTime": null,
       "departureTime": "20:36"
     },
     {
       "station": "Ayase",
-      "arrivalTime": "20:39",
-      "departureTime": null
+      "arrivalTime": "20:39"
     }
   ]
 }

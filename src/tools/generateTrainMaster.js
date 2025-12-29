@@ -99,6 +99,14 @@ function resolveTrainType(id) {
   return TRAIN_TYPE_MAP[id] || id;
 }
 
+function removeNullFields(obj) {
+  return Object.fromEntries(
+    Object.entries(obj).filter(
+      ([_, v]) => v !== null && v !== undefined
+    )
+  );
+}
+
 // --------------------------------------------------
 // Main
 // --------------------------------------------------
@@ -130,14 +138,16 @@ for (const train of raw) {
       o["odpt:departureStation"] ?? o["odpt:arrivalStation"];
     if (!stationId) continue;
 
-    timetable.push({
-      station: resolveStationName(stationId),
-      arrivalTime: o["odpt:arrivalTime"] ?? null,
-      departureTime: o["odpt:departureTime"] ?? null,
-    });
+    timetable.push(
+      removeNullFields({
+        station: resolveStationName(stationId),
+        arrivalTime: o["odpt:arrivalTime"] ?? null,
+        departureTime: o["odpt:departureTime"] ?? null,
+      })
+    );
   }
 
-  const data = {
+  const rawData = {
     trainNumber,
     calendar,
     direction,
@@ -146,6 +156,8 @@ for (const train of raw) {
     destinationStation: resolveStationName(destId),
     timetable,
   };
+
+  const data = removeNullFields(rawData);
 
   fs.writeFileSync(
     path.join(outDir, `${trainNumber}.json`),

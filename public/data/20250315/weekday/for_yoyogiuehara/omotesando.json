@@ -4,34 +4,20 @@
     "type": "Local",
     "destinationStationName": "KitaSenju",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "04:41",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "04:38",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "04:38"
   },
   {
     "trainNumber": "A415K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "05:34",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:39",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:00",
-    "yoyogiUeharaArrivalTime": "05:39",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "05:39"
   },
   {
     "trainNumber": "A596S1",
@@ -40,15 +26,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "05:00",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:04",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:00",
-    "ayaseArrivalTime": "05:04",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "05:04"
   },
   {
     "trainNumber": "A501S",
@@ -58,14 +38,10 @@
     "originDepartureTime": "05:07",
     "stationName": "OmoteSando",
     "stationDepartureTime": "05:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:51",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:07",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:12",
-    "yoyogiUeharaArrivalTime": "05:51",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "05:51"
   },
   {
     "trainNumber": "A596S2",
@@ -74,32 +50,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "05:16",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:20",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:16",
-    "ayaseArrivalTime": "05:20",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "05:20"
   },
   {
     "trainNumber": "A441E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "05:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:02",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:23",
-    "yoyogiUeharaArrivalTime": "06:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:02"
   },
   {
     "trainNumber": "A503S",
@@ -109,14 +73,10 @@
     "originDepartureTime": "05:27",
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:12",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:27",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:33",
-    "yoyogiUeharaArrivalTime": "06:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:12"
   },
   {
     "trainNumber": "A596S3",
@@ -125,32 +85,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "05:34",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:38",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:34",
-    "ayaseArrivalTime": "05:38",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "05:38"
   },
   {
     "trainNumber": "A551S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:42",
-    "yoyogiUeharaArrivalTime": "06:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:22"
   },
   {
     "trainNumber": "A505S",
@@ -160,14 +108,10 @@
     "originDepartureTime": "05:40",
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:21",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:27",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:40",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:47",
-    "yoyogiUeharaArrivalTime": "06:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:27"
   },
   {
     "trainNumber": "A507S",
@@ -177,14 +121,10 @@
     "originDepartureTime": "05:46",
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:26",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:46",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:52",
-    "yoyogiUeharaArrivalTime": "06:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:32"
   },
   {
     "trainNumber": "A596S4",
@@ -193,15 +133,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "05:51",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:55",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "05:51",
-    "ayaseArrivalTime": "05:55",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "05:55"
   },
   {
     "trainNumber": "A511S",
@@ -211,14 +145,8 @@
     "originDepartureTime": "05:58",
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "05:58",
-    "yoyogiUeharaArrivalTime": "06:38",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:38"
   },
   {
     "trainNumber": "A613S",
@@ -228,31 +156,21 @@
     "originDepartureTime": "06:00",
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:39",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:44",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:00",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:05",
-    "yoyogiUeharaArrivalTime": "06:44",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:44"
   },
   {
     "trainNumber": "A501K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:45",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:50",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:11",
-    "yoyogiUeharaArrivalTime": "06:50",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:50"
   },
   {
     "trainNumber": "A696S1",
@@ -261,32 +179,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "06:07",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:11",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:07",
-    "ayaseArrivalTime": "06:11",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "06:11"
   },
   {
     "trainNumber": "A603K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:50",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:16",
-    "yoyogiUeharaArrivalTime": "06:55",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "06:55"
   },
   {
     "trainNumber": "A611K",
@@ -296,14 +201,10 @@
     "originDepartureTime": "06:14",
     "stationName": "OmoteSando",
     "stationDepartureTime": "06:56",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:01",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:14",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:21",
-    "yoyogiUeharaArrivalTime": "07:01",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:01"
   },
   {
     "trainNumber": "A602S",
@@ -312,32 +213,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "06:20",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:50",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:20",
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "06:25",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "06:25"
   },
   {
     "trainNumber": "A531S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:03",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:29",
-    "yoyogiUeharaArrivalTime": "07:08",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:08"
   },
   {
     "trainNumber": "A696S2",
@@ -346,32 +234,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "06:26",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:30",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:26",
-    "ayaseArrivalTime": "06:30",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "06:30"
   },
   {
     "trainNumber": "A609S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:08",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:33",
-    "yoyogiUeharaArrivalTime": "07:14",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:14"
   },
   {
     "trainNumber": "A621S",
@@ -381,31 +257,20 @@
     "originDepartureTime": "06:33",
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:13",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:19",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:33",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:38",
-    "yoyogiUeharaArrivalTime": "07:19",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:19"
   },
   {
     "trainNumber": "A617K",
     "type": "Local",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:17",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:42",
-    "yoyogiUeharaArrivalTime": "07:23",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:23"
   },
   {
     "trainNumber": "A623S",
@@ -415,14 +280,10 @@
     "originDepartureTime": "06:39",
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:21",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:27",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:39",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:46",
-    "yoyogiUeharaArrivalTime": "07:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:27"
   },
   {
     "trainNumber": "A696S3",
@@ -431,49 +292,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "06:44",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:48",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:44",
-    "ayaseArrivalTime": "06:48",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "06:48"
   },
   {
     "trainNumber": "A619K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:25",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:31",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:50",
-    "yoyogiUeharaArrivalTime": "07:31",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:31"
   },
   {
     "trainNumber": "A605K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:30",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:54",
-    "yoyogiUeharaArrivalTime": "07:36",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:36"
   },
   {
     "trainNumber": "A604S",
@@ -483,14 +325,10 @@
     "originDepartureTime": "06:51",
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:35",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:41",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:51",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "06:57",
-    "yoyogiUeharaArrivalTime": "07:41",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:41"
   },
   {
     "trainNumber": "A696S4",
@@ -499,49 +337,28 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "06:56",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:00",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "06:56",
-    "ayaseArrivalTime": "07:00",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "07:00"
   },
   {
     "trainNumber": "A621K",
     "type": "Local",
     "destinationStationName": "Kasumigaseki",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:27",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:01",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:01"
   },
   {
     "trainNumber": "A647S",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:40",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:05",
-    "yoyogiUeharaArrivalTime": "07:46",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:46"
   },
   {
     "trainNumber": "A725S",
@@ -551,31 +368,20 @@
     "originDepartureTime": "07:03",
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:03",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:08",
-    "yoyogiUeharaArrivalTime": "07:50",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:50"
   },
   {
     "trainNumber": "A607K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:49",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:11",
-    "yoyogiUeharaArrivalTime": "07:54",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:54"
   },
   {
     "trainNumber": "A796S1",
@@ -584,49 +390,28 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "07:08",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:12",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:08",
-    "ayaseArrivalTime": "07:12",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "07:12"
   },
   {
     "trainNumber": "A623K",
     "type": "Local",
     "destinationStationName": "Kasumigaseki",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:41",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:14",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:14"
   },
   {
     "trainNumber": "A609K",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:54",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:17",
-    "yoyogiUeharaArrivalTime": "07:59",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "07:59"
   },
   {
     "trainNumber": "A755E",
@@ -636,31 +421,20 @@
     "originDepartureTime": "07:14",
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:56",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:14",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:20",
-    "yoyogiUeharaArrivalTime": "08:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:02"
   },
   {
     "trainNumber": "A625K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "07:59",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:04",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:22",
-    "yoyogiUeharaArrivalTime": "08:04",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:04"
   },
   {
     "trainNumber": "A706S",
@@ -670,65 +444,41 @@
     "originDepartureTime": "07:20",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:01",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:07",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:20",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:25",
-    "yoyogiUeharaArrivalTime": "08:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:07"
   },
   {
     "trainNumber": "A635S",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:04",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:27",
-    "yoyogiUeharaArrivalTime": "08:09",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:09"
   },
   {
     "trainNumber": "A637S",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:06",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:29",
-    "yoyogiUeharaArrivalTime": "08:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:12"
   },
   {
     "trainNumber": "A739S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:09",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:32",
-    "yoyogiUeharaArrivalTime": "08:14",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:14"
   },
   {
     "trainNumber": "A796S2",
@@ -737,15 +487,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "07:28",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:28",
-    "ayaseArrivalTime": "07:32",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "07:32"
   },
   {
     "trainNumber": "A705S",
@@ -755,65 +499,40 @@
     "originDepartureTime": "07:34",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:11",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:17",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:34",
-    "yoyogiUeharaArrivalTime": "08:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:17"
   },
   {
     "trainNumber": "A615S2",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:13",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:37",
-    "yoyogiUeharaArrivalTime": "08:19",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:19"
   },
   {
     "trainNumber": "A727K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:39",
-    "yoyogiUeharaArrivalTime": "08:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:22"
   },
   {
     "trainNumber": "A741S",
     "type": "Local",
     "destinationStationName": "MeijiJingumae",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:18",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:19",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:41",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:41"
   },
   {
     "trainNumber": "A702S",
@@ -823,48 +542,30 @@
     "originDepartureTime": "07:37",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:21",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:26",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:37",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:43",
-    "yoyogiUeharaArrivalTime": "08:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:26"
   },
   {
     "trainNumber": "A717S",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:23",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:45",
-    "yoyogiUeharaArrivalTime": "08:28",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:28"
   },
   {
     "trainNumber": "A729K",
     "type": "Local",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:25",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:48",
-    "yoyogiUeharaArrivalTime": "08:31",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:31"
   },
   {
     "trainNumber": "A796S3",
@@ -873,15 +574,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "07:45",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:49",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:45",
-    "ayaseArrivalTime": "07:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "07:49"
   },
   {
     "trainNumber": "A727S",
@@ -891,65 +586,40 @@
     "originDepartureTime": "07:50",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:28",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:50",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:50"
   },
   {
     "trainNumber": "A715K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:29",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:35",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:52",
-    "yoyogiUeharaArrivalTime": "08:35",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:35"
   },
   {
     "trainNumber": "A741E",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:54",
-    "yoyogiUeharaArrivalTime": "08:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:37"
   },
   {
     "trainNumber": "A731K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:34",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:40",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:57",
-    "yoyogiUeharaArrivalTime": "08:40",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:40"
   },
   {
     "trainNumber": "A701K",
@@ -959,48 +629,30 @@
     "originDepartureTime": "07:54",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:36",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "07:54",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "07:59",
-    "yoyogiUeharaArrivalTime": "08:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:42"
   },
   {
     "trainNumber": "A745S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:38",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:45",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:01",
-    "yoyogiUeharaArrivalTime": "08:45",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:45"
   },
   {
     "trainNumber": "A719S",
     "type": "Local",
     "destinationStationName": "MeijiJingumae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:41",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:03",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:03"
   },
   {
     "trainNumber": "A729S",
@@ -1010,14 +662,9 @@
     "originDepartureTime": "08:05",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:43",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:49",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:05",
-    "yoyogiUeharaArrivalTime": "08:49",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:49"
   },
   {
     "trainNumber": "A896S1",
@@ -1026,49 +673,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "08:01",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:05",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:01",
-    "ayaseArrivalTime": "08:05",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "08:05"
   },
   {
     "trainNumber": "A749E",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:45",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:07",
-    "yoyogiUeharaArrivalTime": "08:51",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:51"
   },
   {
     "trainNumber": "A733S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:48",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:53",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:10",
-    "yoyogiUeharaArrivalTime": "08:53",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:53"
   },
   {
     "trainNumber": "A865E",
@@ -1078,48 +706,29 @@
     "originDepartureTime": "08:12",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:50",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:12",
-    "yoyogiUeharaArrivalTime": "08:56",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "08:56"
   },
   {
     "trainNumber": "A749S",
     "type": "Local",
     "destinationStationName": "MeijiJingumae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:53",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:14",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:14"
   },
   {
     "trainNumber": "A751E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:54",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:00",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:16",
-    "yoyogiUeharaArrivalTime": "09:00",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:00"
   },
   {
     "trainNumber": "A809S",
@@ -1129,48 +738,30 @@
     "originDepartureTime": "08:12",
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:57",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:12",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:18",
-    "yoyogiUeharaArrivalTime": "09:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:02"
   },
   {
     "trainNumber": "A701S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "08:59",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:06",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:20",
-    "yoyogiUeharaArrivalTime": "09:06",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:06"
   },
   {
     "trainNumber": "A743S",
     "type": "Local",
     "destinationStationName": "MeijiJingumae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:01",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:02",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:23",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:23"
   },
   {
     "trainNumber": "A896S2",
@@ -1179,15 +770,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "08:19",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:23",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:19",
-    "ayaseArrivalTime": "08:23",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "08:23"
   },
   {
     "trainNumber": "A859E",
@@ -1197,48 +782,30 @@
     "originDepartureTime": "08:25",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:04",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:25",
-    "yoyogiUeharaArrivalTime": "09:09",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:09"
   },
   {
     "trainNumber": "A811K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:05",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:11",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:27",
-    "yoyogiUeharaArrivalTime": "09:11",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:11"
   },
   {
     "trainNumber": "A807S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:08",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:29",
-    "yoyogiUeharaArrivalTime": "09:14",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:14"
   },
   {
     "trainNumber": "A861E",
@@ -1248,31 +815,19 @@
     "originDepartureTime": "08:31",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:10",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:11",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:31",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:31"
   },
   {
     "trainNumber": "A703S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:13",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:18",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:33",
-    "yoyogiUeharaArrivalTime": "09:18",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:18"
   },
   {
     "trainNumber": "A857S",
@@ -1282,31 +837,21 @@
     "originDepartureTime": "08:29",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:15",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:20",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:29",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:35",
-    "yoyogiUeharaArrivalTime": "09:20",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:20"
   },
   {
     "trainNumber": "A855S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:23",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:37",
-    "yoyogiUeharaArrivalTime": "09:23",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:23"
   },
   {
     "trainNumber": "A896S3",
@@ -1315,15 +860,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "08:34",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:38",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:34",
-    "ayaseArrivalTime": "08:38",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "08:38"
   },
   {
     "trainNumber": "A847E",
@@ -1333,31 +872,19 @@
     "originDepartureTime": "08:40",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:19",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:40",
-    "yoyogiUeharaArrivalTime": "09:25",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:25"
   },
   {
     "trainNumber": "A851S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:21",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:27",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:42",
-    "yoyogiUeharaArrivalTime": "09:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:27"
   },
   {
     "trainNumber": "A811S",
@@ -1367,31 +894,19 @@
     "originDepartureTime": "08:45",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:24",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:25",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:45",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:45"
   },
   {
     "trainNumber": "A823K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:26",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:32",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:47",
-    "yoyogiUeharaArrivalTime": "09:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:32"
   },
   {
     "trainNumber": "A804S",
@@ -1401,14 +916,9 @@
     "originDepartureTime": "08:50",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:29",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:50",
-    "yoyogiUeharaArrivalTime": "09:34",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:34"
   },
   {
     "trainNumber": "A896S4",
@@ -1417,32 +927,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "08:47",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:51",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:47",
-    "ayaseArrivalTime": "08:51",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "08:51"
   },
   {
     "trainNumber": "A813S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:38",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:53",
-    "yoyogiUeharaArrivalTime": "09:38",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:38"
   },
   {
     "trainNumber": "A859S",
@@ -1452,31 +950,18 @@
     "originDepartureTime": "08:56",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:35",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:56",
-    "yoyogiUeharaArrivalTime": "09:41",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:41"
   },
   {
     "trainNumber": "A853E",
     "type": "Local",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:38",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:59",
-    "yoyogiUeharaArrivalTime": "09:44",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:44"
   },
   {
     "trainNumber": "A807K",
@@ -1486,14 +971,10 @@
     "originDepartureTime": "08:57",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:41",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:47",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "08:57",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:02",
-    "yoyogiUeharaArrivalTime": "09:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:47"
   },
   {
     "trainNumber": "A953S",
@@ -1503,14 +984,8 @@
     "originDepartureTime": "09:06",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:06",
-    "yoyogiUeharaArrivalTime": "09:50",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:50"
   },
   {
     "trainNumber": "A996S1",
@@ -1519,32 +994,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "09:04",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:08",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "09:04",
-    "ayaseArrivalTime": "09:08",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "09:08"
   },
   {
     "trainNumber": "A843E",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:48",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:10",
-    "yoyogiUeharaArrivalTime": "09:54",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:54"
   },
   {
     "trainNumber": "A905S",
@@ -1554,31 +1016,20 @@
     "originDepartureTime": "09:14",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:58",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:14",
-    "yoyogiUeharaArrivalTime": "09:58",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "09:58"
   },
   {
     "trainNumber": "A821K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:55",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:01",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:17",
-    "yoyogiUeharaArrivalTime": "10:01",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:01"
   },
   {
     "trainNumber": "A939S",
@@ -1588,31 +1039,20 @@
     "originDepartureTime": "09:16",
     "stationName": "OmoteSando",
     "stationDepartureTime": "09:59",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:04",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "09:16",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:21",
-    "yoyogiUeharaArrivalTime": "10:04",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:04"
   },
   {
     "trainNumber": "A821S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:26",
-    "yoyogiUeharaArrivalTime": "10:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:07"
   },
   {
     "trainNumber": "A996S2",
@@ -1621,15 +1061,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "09:25",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:29",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "09:25",
-    "ayaseArrivalTime": "09:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "09:29"
   },
   {
     "trainNumber": "A927K",
@@ -1639,31 +1073,19 @@
     "originDepartureTime": "09:31",
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:06",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:31",
-    "yoyogiUeharaArrivalTime": "10:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:12"
   },
   {
     "trainNumber": "A919K",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:11",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:35",
-    "yoyogiUeharaArrivalTime": "10:16",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:16"
   },
   {
     "trainNumber": "A905K",
@@ -1673,14 +1095,9 @@
     "originDepartureTime": "09:40",
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:15",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:20",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:40",
-    "yoyogiUeharaArrivalTime": "10:20",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:20"
   },
   {
     "trainNumber": "A996S3",
@@ -1689,15 +1106,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "09:37",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:41",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "09:37",
-    "ayaseArrivalTime": "09:41",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "09:41"
   },
   {
     "trainNumber": "A901E",
@@ -1706,49 +1117,29 @@
     "originStationName": "KitaSenju",
     "originDepartureTime": "09:47",
     "stationName": "OmoteSando",
-    "stationDepartureTime": "10:18",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "stationDepartureTime": "10:18"
   },
   {
     "trainNumber": "A957E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:21",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:26",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:45",
-    "yoyogiUeharaArrivalTime": "10:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:26"
   },
   {
     "trainNumber": "A945E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:26",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:31",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:51",
-    "yoyogiUeharaArrivalTime": "10:31",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:31"
   },
   {
     "trainNumber": "A929S",
@@ -1758,14 +1149,8 @@
     "originDepartureTime": "09:56",
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:31",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:56",
-    "yoyogiUeharaArrivalTime": "10:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:37"
   },
   {
     "trainNumber": "A996S4",
@@ -1774,49 +1159,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "09:53",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:57",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "09:53",
-    "ayaseArrivalTime": "09:57",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "09:57"
   },
   {
     "trainNumber": "A903K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:01",
-    "yoyogiUeharaArrivalTime": "10:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:42"
   },
   {
     "trainNumber": "A931S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:07",
-    "yoyogiUeharaArrivalTime": "10:48",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:48"
   },
   {
     "trainNumber": "A1001S",
@@ -1826,31 +1192,21 @@
     "originDepartureTime": "10:05",
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "10:05",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:12",
-    "yoyogiUeharaArrivalTime": "10:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:52"
   },
   {
     "trainNumber": "A923S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:18",
-    "yoyogiUeharaArrivalTime": "10:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "10:57"
   },
   {
     "trainNumber": "A1025S",
@@ -1860,31 +1216,20 @@
     "originDepartureTime": "10:17",
     "stationName": "OmoteSando",
     "stationDepartureTime": "10:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:02",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "10:17",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:23",
-    "yoyogiUeharaArrivalTime": "11:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:02"
   },
   {
     "trainNumber": "A913K",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:28",
-    "yoyogiUeharaArrivalTime": "11:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:07"
   },
   {
     "trainNumber": "A1017S",
@@ -1894,14 +1239,9 @@
     "originDepartureTime": "10:33",
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:33",
-    "yoyogiUeharaArrivalTime": "11:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:12"
   },
   {
     "trainNumber": "A1096S1",
@@ -1910,32 +1250,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "10:29",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:33",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "10:29",
-    "ayaseArrivalTime": "10:33",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "10:33"
   },
   {
     "trainNumber": "A1017K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:12",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:17",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:38",
-    "yoyogiUeharaArrivalTime": "11:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:17"
   },
   {
     "trainNumber": "A1007K",
@@ -1945,14 +1273,9 @@
     "originDepartureTime": "10:43",
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:43",
-    "yoyogiUeharaArrivalTime": "11:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:22"
   },
   {
     "trainNumber": "A1096S2",
@@ -1961,32 +1284,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "10:43",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:47",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "10:43",
-    "ayaseArrivalTime": "10:47",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "10:47"
   },
   {
     "trainNumber": "A1061S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:48",
-    "yoyogiUeharaArrivalTime": "11:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:27"
   },
   {
     "trainNumber": "A1001K",
@@ -1996,31 +1306,20 @@
     "originDepartureTime": "10:53",
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:32",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:53",
-    "yoyogiUeharaArrivalTime": "11:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:32"
   },
   {
     "trainNumber": "A1047S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:37",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:58",
-    "yoyogiUeharaArrivalTime": "11:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:37"
   },
   {
     "trainNumber": "A1005S",
@@ -2030,31 +1329,20 @@
     "originDepartureTime": "10:58",
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:42",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "10:58",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:03",
-    "yoyogiUeharaArrivalTime": "11:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:42"
   },
   {
     "trainNumber": "A1009K",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:08",
-    "yoyogiUeharaArrivalTime": "11:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:47"
   },
   {
     "trainNumber": "A1196S1",
@@ -2063,15 +1351,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "11:06",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:10",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "11:06",
-    "ayaseArrivalTime": "11:10",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "11:10"
   },
   {
     "trainNumber": "A1149E",
@@ -2081,31 +1363,20 @@
     "originDepartureTime": "11:13",
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:52",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:13",
-    "yoyogiUeharaArrivalTime": "11:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:52"
   },
   {
     "trainNumber": "A1011K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:18",
-    "yoyogiUeharaArrivalTime": "11:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "11:57"
   },
   {
     "trainNumber": "A1137S",
@@ -2115,31 +1386,20 @@
     "originDepartureTime": "11:17",
     "stationName": "OmoteSando",
     "stationDepartureTime": "11:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:02",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "11:17",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:23",
-    "yoyogiUeharaArrivalTime": "12:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:02"
   },
   {
     "trainNumber": "A1057S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:28",
-    "yoyogiUeharaArrivalTime": "12:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:07"
   },
   {
     "trainNumber": "A1196S2",
@@ -2148,15 +1408,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "11:26",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:30",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "11:26",
-    "ayaseArrivalTime": "11:30",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "11:30"
   },
   {
     "trainNumber": "A1129K",
@@ -2166,31 +1420,20 @@
     "originDepartureTime": "11:33",
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:33",
-    "yoyogiUeharaArrivalTime": "12:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:12"
   },
   {
     "trainNumber": "A1123K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:12",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:17",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:38",
-    "yoyogiUeharaArrivalTime": "12:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:17"
   },
   {
     "trainNumber": "A1153S",
@@ -2200,31 +1443,20 @@
     "originDepartureTime": "11:37",
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:22",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "11:37",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:43",
-    "yoyogiUeharaArrivalTime": "12:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:22"
   },
   {
     "trainNumber": "A1113S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:48",
-    "yoyogiUeharaArrivalTime": "12:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:27"
   },
   {
     "trainNumber": "A1103K",
@@ -2234,31 +1466,21 @@
     "originDepartureTime": "11:47",
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "11:47",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:53",
-    "yoyogiUeharaArrivalTime": "12:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:32"
   },
   {
     "trainNumber": "A1121K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:37",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:58",
-    "yoyogiUeharaArrivalTime": "12:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:37"
   },
   {
     "trainNumber": "A1196S3",
@@ -2267,15 +1489,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "11:56",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:00",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "11:56",
-    "ayaseArrivalTime": "12:00",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "12:00"
   },
   {
     "trainNumber": "A1201S",
@@ -2285,31 +1501,19 @@
     "originDepartureTime": "12:03",
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:03",
-    "yoyogiUeharaArrivalTime": "12:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:42"
   },
   {
     "trainNumber": "A1103S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:08",
-    "yoyogiUeharaArrivalTime": "12:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:47"
   },
   {
     "trainNumber": "A1225S",
@@ -2319,31 +1523,21 @@
     "originDepartureTime": "12:07",
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "12:07",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:13",
-    "yoyogiUeharaArrivalTime": "12:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:52"
   },
   {
     "trainNumber": "A1105K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:18",
-    "yoyogiUeharaArrivalTime": "12:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "12:57"
   },
   {
     "trainNumber": "A1296S1",
@@ -2352,15 +1546,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "12:16",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:20",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "12:16",
-    "ayaseArrivalTime": "12:20",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "12:20"
   },
   {
     "trainNumber": "A1217S",
@@ -2370,31 +1558,19 @@
     "originDepartureTime": "12:23",
     "stationName": "OmoteSando",
     "stationDepartureTime": "12:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:02",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:23",
-    "yoyogiUeharaArrivalTime": "13:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:02"
   },
   {
     "trainNumber": "A1147E",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:28",
-    "yoyogiUeharaArrivalTime": "13:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:07"
   },
   {
     "trainNumber": "A1207K",
@@ -2404,31 +1580,21 @@
     "originDepartureTime": "12:27",
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:12",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "12:27",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:33",
-    "yoyogiUeharaArrivalTime": "13:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:12"
   },
   {
     "trainNumber": "A1245E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:12",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:17",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:38",
-    "yoyogiUeharaArrivalTime": "13:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:17"
   },
   {
     "trainNumber": "A1296S2",
@@ -2437,15 +1603,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "12:36",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:40",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "12:36",
-    "ayaseArrivalTime": "12:40",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "12:40"
   },
   {
     "trainNumber": "A1201K",
@@ -2455,31 +1615,19 @@
     "originDepartureTime": "12:43",
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:43",
-    "yoyogiUeharaArrivalTime": "13:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:22"
   },
   {
     "trainNumber": "A1235S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:48",
-    "yoyogiUeharaArrivalTime": "13:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:27"
   },
   {
     "trainNumber": "A1205S",
@@ -2489,31 +1637,21 @@
     "originDepartureTime": "12:47",
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "12:47",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:53",
-    "yoyogiUeharaArrivalTime": "13:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:32"
   },
   {
     "trainNumber": "A1223S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:37",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:58",
-    "yoyogiUeharaArrivalTime": "13:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:37"
   },
   {
     "trainNumber": "A1296S3",
@@ -2522,15 +1660,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "12:56",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:00",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "12:56",
-    "ayaseArrivalTime": "13:00",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "13:00"
   },
   {
     "trainNumber": "A1349E",
@@ -2540,31 +1672,19 @@
     "originDepartureTime": "13:03",
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:03",
-    "yoyogiUeharaArrivalTime": "13:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:42"
   },
   {
     "trainNumber": "A1259S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:08",
-    "yoyogiUeharaArrivalTime": "13:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:47"
   },
   {
     "trainNumber": "A1337S",
@@ -2574,31 +1694,21 @@
     "originDepartureTime": "13:07",
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "13:07",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:13",
-    "yoyogiUeharaArrivalTime": "13:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:52"
   },
   {
     "trainNumber": "A1217K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:18",
-    "yoyogiUeharaArrivalTime": "13:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "13:57"
   },
   {
     "trainNumber": "A1329K",
@@ -2608,31 +1718,20 @@
     "originDepartureTime": "13:17",
     "stationName": "OmoteSando",
     "stationDepartureTime": "13:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:02",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "13:17",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:23",
-    "yoyogiUeharaArrivalTime": "14:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:02"
   },
   {
     "trainNumber": "A1221S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:28",
-    "yoyogiUeharaArrivalTime": "14:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:07"
   },
   {
     "trainNumber": "A1396S1",
@@ -2641,15 +1740,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "13:26",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:30",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "13:26",
-    "ayaseArrivalTime": "13:30",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "13:30"
   },
   {
     "trainNumber": "A1353S",
@@ -2659,31 +1752,20 @@
     "originDepartureTime": "13:33",
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:33",
-    "yoyogiUeharaArrivalTime": "14:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:12"
   },
   {
     "trainNumber": "A1347S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:12",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:17",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:38",
-    "yoyogiUeharaArrivalTime": "14:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:17"
   },
   {
     "trainNumber": "A1303K",
@@ -2693,31 +1775,20 @@
     "originDepartureTime": "13:37",
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:22",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "13:37",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:43",
-    "yoyogiUeharaArrivalTime": "14:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:22"
   },
   {
     "trainNumber": "A1327K",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:48",
-    "yoyogiUeharaArrivalTime": "14:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:27"
   },
   {
     "trainNumber": "A1396S2",
@@ -2726,15 +1797,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "13:46",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:50",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "13:46",
-    "ayaseArrivalTime": "13:50",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "13:50"
   },
   {
     "trainNumber": "A1301S",
@@ -2744,31 +1809,20 @@
     "originDepartureTime": "13:53",
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:32",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:53",
-    "yoyogiUeharaArrivalTime": "14:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:32"
   },
   {
     "trainNumber": "A1311K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:37",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:58",
-    "yoyogiUeharaArrivalTime": "14:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:37"
   },
   {
     "trainNumber": "A1325S",
@@ -2778,31 +1832,20 @@
     "originDepartureTime": "13:57",
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:42",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "13:57",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:03",
-    "yoyogiUeharaArrivalTime": "14:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:42"
   },
   {
     "trainNumber": "A1331S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:08",
-    "yoyogiUeharaArrivalTime": "14:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:47"
   },
   {
     "trainNumber": "A1496S1",
@@ -2811,15 +1854,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "14:06",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:10",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "14:06",
-    "ayaseArrivalTime": "14:10",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "14:10"
   },
   {
     "trainNumber": "A1417S",
@@ -2829,31 +1866,20 @@
     "originDepartureTime": "14:13",
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:52",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:13",
-    "yoyogiUeharaArrivalTime": "14:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:52"
   },
   {
     "trainNumber": "A1323K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:18",
-    "yoyogiUeharaArrivalTime": "14:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "14:57"
   },
   {
     "trainNumber": "A1407K",
@@ -2863,31 +1889,20 @@
     "originDepartureTime": "14:17",
     "stationName": "OmoteSando",
     "stationDepartureTime": "14:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:02",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "14:17",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:23",
-    "yoyogiUeharaArrivalTime": "15:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:02"
   },
   {
     "trainNumber": "A1329S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:28",
-    "yoyogiUeharaArrivalTime": "15:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:07"
   },
   {
     "trainNumber": "A1401K",
@@ -2897,31 +1912,21 @@
     "originDepartureTime": "14:27",
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:12",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "14:27",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:33",
-    "yoyogiUeharaArrivalTime": "15:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:12"
   },
   {
     "trainNumber": "A1421K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:12",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:17",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:38",
-    "yoyogiUeharaArrivalTime": "15:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:17"
   },
   {
     "trainNumber": "A1496S2",
@@ -2930,15 +1935,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "14:36",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:40",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "14:36",
-    "ayaseArrivalTime": "14:40",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "14:40"
   },
   {
     "trainNumber": "A1405S",
@@ -2948,31 +1947,19 @@
     "originDepartureTime": "14:43",
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:43",
-    "yoyogiUeharaArrivalTime": "15:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:22"
   },
   {
     "trainNumber": "A1461S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:48",
-    "yoyogiUeharaArrivalTime": "15:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:27"
   },
   {
     "trainNumber": "A1449E",
@@ -2982,31 +1969,21 @@
     "originDepartureTime": "14:47",
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "14:47",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:53",
-    "yoyogiUeharaArrivalTime": "15:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:32"
   },
   {
     "trainNumber": "A1405K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:37",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:58",
-    "yoyogiUeharaArrivalTime": "15:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:37"
   },
   {
     "trainNumber": "A1496S3",
@@ -3015,15 +1992,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "14:56",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:00",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "14:56",
-    "ayaseArrivalTime": "15:00",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "15:00"
   },
   {
     "trainNumber": "A1537S",
@@ -3033,31 +2004,19 @@
     "originDepartureTime": "15:03",
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:03",
-    "yoyogiUeharaArrivalTime": "15:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:42"
   },
   {
     "trainNumber": "A1409K",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:08",
-    "yoyogiUeharaArrivalTime": "15:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:47"
   },
   {
     "trainNumber": "A1529K",
@@ -3067,31 +2026,21 @@
     "originDepartureTime": "15:07",
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "15:07",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:13",
-    "yoyogiUeharaArrivalTime": "15:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:52"
   },
   {
     "trainNumber": "A1445E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:51",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:17",
-    "yoyogiUeharaArrivalTime": "15:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "15:57"
   },
   {
     "trainNumber": "A1553S",
@@ -3101,31 +2050,20 @@
     "originDepartureTime": "15:17",
     "stationName": "OmoteSando",
     "stationDepartureTime": "15:56",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:02",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "15:17",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:22",
-    "yoyogiUeharaArrivalTime": "16:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:02"
   },
   {
     "trainNumber": "A1457S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:01",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:27",
-    "yoyogiUeharaArrivalTime": "16:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:07"
   },
   {
     "trainNumber": "A1596S1",
@@ -3134,15 +2072,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "15:27",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:31",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "15:27",
-    "ayaseArrivalTime": "15:31",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "15:31"
   },
   {
     "trainNumber": "A1555S",
@@ -3152,31 +2084,19 @@
     "originDepartureTime": "15:32",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:06",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:32",
-    "yoyogiUeharaArrivalTime": "16:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:12"
   },
   {
     "trainNumber": "A1523S",
     "type": "Local",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:37",
-    "yoyogiUeharaArrivalTime": "16:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:17"
   },
   {
     "trainNumber": "A1501S",
@@ -3186,14 +2106,10 @@
     "originDepartureTime": "15:37",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:22",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "15:37",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:42",
-    "yoyogiUeharaArrivalTime": "16:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:22"
   },
   {
     "trainNumber": "A1503K",
@@ -3203,31 +2119,19 @@
     "originDepartureTime": "15:46",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:20",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:46",
-    "yoyogiUeharaArrivalTime": "16:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:26"
   },
   {
     "trainNumber": "A1513K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:25",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:31",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:51",
-    "yoyogiUeharaArrivalTime": "16:31",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:31"
   },
   {
     "trainNumber": "A1525S",
@@ -3237,31 +2141,20 @@
     "originDepartureTime": "15:49",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:30",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "15:49",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:56",
-    "yoyogiUeharaArrivalTime": "16:36",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:36"
   },
   {
     "trainNumber": "A1517K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:34",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:40",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:00",
-    "yoyogiUeharaArrivalTime": "16:40",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:40"
   },
   {
     "trainNumber": "A1596S2",
@@ -3270,15 +2163,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "15:57",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:01",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "15:57",
-    "ayaseArrivalTime": "16:01",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "16:01"
   },
   {
     "trainNumber": "A1617S",
@@ -3288,31 +2175,19 @@
     "originDepartureTime": "16:04",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:38",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:44",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:04",
-    "yoyogiUeharaArrivalTime": "16:44",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:44"
   },
   {
     "trainNumber": "A1503S",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:08",
-    "yoyogiUeharaArrivalTime": "16:48",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:48"
   },
   {
     "trainNumber": "A1623K",
@@ -3322,48 +2197,32 @@
     "originDepartureTime": "16:07",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "16:07",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:12",
-    "yoyogiUeharaArrivalTime": "16:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:52"
   },
   {
     "trainNumber": "A1631K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:50",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:56",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:16",
-    "yoyogiUeharaArrivalTime": "16:56",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "16:56"
   },
   {
     "trainNumber": "A1547S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:55",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:00",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:21",
-    "yoyogiUeharaArrivalTime": "17:00",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:00"
   },
   {
     "trainNumber": "A1696S1",
@@ -3372,15 +2231,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "16:17",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:21",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "16:17",
-    "ayaseArrivalTime": "16:21",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "16:21"
   },
   {
     "trainNumber": "A1601K",
@@ -3390,31 +2243,19 @@
     "originDepartureTime": "16:25",
     "stationName": "OmoteSando",
     "stationDepartureTime": "16:59",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:25",
-    "yoyogiUeharaArrivalTime": "17:05",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:05"
   },
   {
     "trainNumber": "A1513S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:04",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:09",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:30",
-    "yoyogiUeharaArrivalTime": "17:09",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:09"
   },
   {
     "trainNumber": "A1605S",
@@ -3424,31 +2265,20 @@
     "originDepartureTime": "16:27",
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:08",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:14",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "16:27",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:34",
-    "yoyogiUeharaArrivalTime": "17:14",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:14"
   },
   {
     "trainNumber": "A1611K",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:13",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:39",
-    "yoyogiUeharaArrivalTime": "17:18",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:18"
   },
   {
     "trainNumber": "A1696S2",
@@ -3457,15 +2287,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "16:38",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:42",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "16:38",
-    "ayaseArrivalTime": "16:42",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "16:42"
   },
   {
     "trainNumber": "A1649E",
@@ -3475,31 +2299,19 @@
     "originDepartureTime": "16:43",
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:23",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:43",
-    "yoyogiUeharaArrivalTime": "17:23",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:23"
   },
   {
     "trainNumber": "A1635S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:48",
-    "yoyogiUeharaArrivalTime": "17:28",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:28"
   },
   {
     "trainNumber": "A1637S",
@@ -3509,31 +2321,20 @@
     "originDepartureTime": "16:47",
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "16:47",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:53",
-    "yoyogiUeharaArrivalTime": "17:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:32"
   },
   {
     "trainNumber": "A1607K",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:58",
-    "yoyogiUeharaArrivalTime": "17:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:37"
   },
   {
     "trainNumber": "A1629K",
@@ -3543,31 +2344,20 @@
     "originDepartureTime": "16:57",
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:36",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:42",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "16:57",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:02",
-    "yoyogiUeharaArrivalTime": "17:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:42"
   },
   {
     "trainNumber": "A1609S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:40",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:07",
-    "yoyogiUeharaArrivalTime": "17:46",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:46"
   },
   {
     "trainNumber": "A1711E",
@@ -3576,15 +2366,7 @@
     "originStationName": "Otemachi",
     "originDepartureTime": "17:30",
     "stationName": "OmoteSando",
-    "stationDepartureTime": "17:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "stationDepartureTime": "17:44"
   },
   {
     "trainNumber": "A1727S",
@@ -3594,14 +2376,10 @@
     "originDepartureTime": "17:06",
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:06",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:12",
-    "yoyogiUeharaArrivalTime": "17:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:52"
   },
   {
     "trainNumber": "A1796S1",
@@ -3610,32 +2388,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "17:11",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:15",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:11",
-    "ayaseArrivalTime": "17:15",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "17:15"
   },
   {
     "trainNumber": "A1659S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:17",
-    "yoyogiUeharaArrivalTime": "17:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "17:57"
   },
   {
     "trainNumber": "A1763E",
@@ -3645,31 +2410,19 @@
     "originDepartureTime": "17:22",
     "stationName": "OmoteSando",
     "stationDepartureTime": "17:56",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:02",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:22",
-    "yoyogiUeharaArrivalTime": "18:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:02"
   },
   {
     "trainNumber": "A1621K",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:00",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:26",
-    "yoyogiUeharaArrivalTime": "18:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:07"
   },
   {
     "trainNumber": "A1719S",
@@ -3679,31 +2432,21 @@
     "originDepartureTime": "17:25",
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:04",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:12",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:25",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:30",
-    "yoyogiUeharaArrivalTime": "18:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:12"
   },
   {
     "trainNumber": "A1751E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Matsudo",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:09",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:15",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:34",
-    "yoyogiUeharaArrivalTime": "18:15",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:15"
   },
   {
     "trainNumber": "A1729S",
@@ -3713,31 +2456,20 @@
     "originDepartureTime": "17:32",
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:32",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:37",
-    "yoyogiUeharaArrivalTime": "18:19",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:19"
   },
   {
     "trainNumber": "A1747E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:40",
-    "yoyogiUeharaArrivalTime": "18:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:22"
   },
   {
     "trainNumber": "A1796S2",
@@ -3746,32 +2478,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "17:37",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:41",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:37",
-    "ayaseArrivalTime": "17:41",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "17:41"
   },
   {
     "trainNumber": "A1705K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:20",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:26",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:46",
-    "yoyogiUeharaArrivalTime": "18:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:26"
   },
   {
     "trainNumber": "A1717S",
@@ -3781,14 +2501,9 @@
     "originDepartureTime": "17:44",
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:23",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:44",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:49",
-    "yoyogiUeharaArrivalTime": "18:29",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:29"
   },
   {
     "trainNumber": "A1796S3",
@@ -3797,49 +2512,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "17:49",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:53",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:49",
-    "ayaseArrivalTime": "17:53",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "17:53"
   },
   {
     "trainNumber": "A1727K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:33",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:54",
-    "yoyogiUeharaArrivalTime": "18:33",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:33"
   },
   {
     "trainNumber": "A1745E",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:58",
-    "yoyogiUeharaArrivalTime": "18:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:37"
   },
   {
     "trainNumber": "A1745S",
@@ -3849,31 +2545,20 @@
     "originDepartureTime": "17:56",
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:36",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:41",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "17:56",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:02",
-    "yoyogiUeharaArrivalTime": "18:41",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:41"
   },
   {
     "trainNumber": "A1753S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:40",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:06",
-    "yoyogiUeharaArrivalTime": "18:46",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:46"
   },
   {
     "trainNumber": "A1896S1",
@@ -3882,15 +2567,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "18:02",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:06",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:02",
-    "ayaseArrivalTime": "18:06",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "18:06"
   },
   {
     "trainNumber": "A1812E",
@@ -3899,32 +2578,18 @@
     "originStationName": "KitaSenju",
     "originDepartureTime": "18:14",
     "stationName": "OmoteSando",
-    "stationDepartureTime": "18:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "stationDepartureTime": "18:44"
   },
   {
     "trainNumber": "A1755S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:52",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:12",
-    "yoyogiUeharaArrivalTime": "18:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:52"
   },
   {
     "trainNumber": "A1843E",
@@ -3934,14 +2599,9 @@
     "originDepartureTime": "18:10",
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:50",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:10",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:16",
-    "yoyogiUeharaArrivalTime": "18:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "18:57"
   },
   {
     "trainNumber": "A1861E",
@@ -3951,31 +2611,21 @@
     "originDepartureTime": "18:15",
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:54",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:00",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:15",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:20",
-    "yoyogiUeharaArrivalTime": "19:00",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:00"
   },
   {
     "trainNumber": "A1701S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "18:58",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:04",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:25",
-    "yoyogiUeharaArrivalTime": "19:04",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:04"
   },
   {
     "trainNumber": "A1803K",
@@ -3985,31 +2635,20 @@
     "originDepartureTime": "18:24",
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:24",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:29",
-    "yoyogiUeharaArrivalTime": "19:08",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:08"
   },
   {
     "trainNumber": "A1813K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:33",
-    "yoyogiUeharaArrivalTime": "19:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:12"
   },
   {
     "trainNumber": "A1819K",
@@ -4019,14 +2658,9 @@
     "originDepartureTime": "18:31",
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:11",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:31",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:38",
-    "yoyogiUeharaArrivalTime": "19:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:17"
   },
   {
     "trainNumber": "A1896S2",
@@ -4035,49 +2669,31 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "18:37",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:41",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:37",
-    "ayaseArrivalTime": "18:41",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "18:41"
   },
   {
     "trainNumber": "A1815S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:21",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:42",
-    "yoyogiUeharaArrivalTime": "19:21",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:21"
   },
   {
     "trainNumber": "A1817K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:20",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:26",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:46",
-    "yoyogiUeharaArrivalTime": "19:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:26"
   },
   {
     "trainNumber": "A1829K",
@@ -4087,31 +2703,20 @@
     "originDepartureTime": "18:45",
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:24",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:45",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:50",
-    "yoyogiUeharaArrivalTime": "19:30",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:30"
   },
   {
     "trainNumber": "A1811S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:29",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:55",
-    "yoyogiUeharaArrivalTime": "19:34",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:34"
   },
   {
     "trainNumber": "A1853E",
@@ -4120,32 +2725,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "18:53",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:57",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:53",
-    "ayaseArrivalTime": "18:57",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "18:57"
   },
   {
     "trainNumber": "A1831K",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:33",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:59",
-    "yoyogiUeharaArrivalTime": "19:39",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:39"
   },
   {
     "trainNumber": "A1896S3",
@@ -4154,49 +2746,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "18:57",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:01",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "18:57",
-    "ayaseArrivalTime": "19:01",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "19:01"
   },
   {
     "trainNumber": "A1861S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:03",
-    "yoyogiUeharaArrivalTime": "19:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:42"
   },
   {
     "trainNumber": "A1823K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:40",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:06",
-    "yoyogiUeharaArrivalTime": "19:46",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:46"
   },
   {
     "trainNumber": "A1913E",
@@ -4205,32 +2778,18 @@
     "originStationName": "Otemachi",
     "originDepartureTime": "19:30",
     "stationName": "OmoteSando",
-    "stationDepartureTime": "19:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "stationDepartureTime": "19:44"
   },
   {
     "trainNumber": "A1833S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:52",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:12",
-    "yoyogiUeharaArrivalTime": "19:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:52"
   },
   {
     "trainNumber": "A1996S1",
@@ -4239,15 +2798,9 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "19:09",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:13",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "19:09",
-    "ayaseArrivalTime": "19:13",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "19:13"
   },
   {
     "trainNumber": "A1931S",
@@ -4257,48 +2810,30 @@
     "originDepartureTime": "19:17",
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:50",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:17",
-    "yoyogiUeharaArrivalTime": "19:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "19:57"
   },
   {
     "trainNumber": "A1813S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:55",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:00",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:21",
-    "yoyogiUeharaArrivalTime": "20:00",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:00"
   },
   {
     "trainNumber": "A1943S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "19:59",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:05",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:25",
-    "yoyogiUeharaArrivalTime": "20:05",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:05"
   },
   {
     "trainNumber": "A1996S2",
@@ -4307,66 +2842,40 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "19:21",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:25",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "19:21",
-    "ayaseArrivalTime": "19:25",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "19:25"
   },
   {
     "trainNumber": "A1849E",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:03",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:29",
-    "yoyogiUeharaArrivalTime": "20:09",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:09"
   },
   {
     "trainNumber": "A1857S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:08",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:13",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:34",
-    "yoyogiUeharaArrivalTime": "20:13",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:13"
   },
   {
     "trainNumber": "A1965E",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:38",
-    "yoyogiUeharaArrivalTime": "20:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:17"
   },
   {
     "trainNumber": "A1996S3",
@@ -4375,66 +2884,41 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "19:34",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:38",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "19:34",
-    "ayaseArrivalTime": "19:38",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "19:38"
   },
   {
     "trainNumber": "A1905S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:21",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:42",
-    "yoyogiUeharaArrivalTime": "20:21",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:21"
   },
   {
     "trainNumber": "A1949S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:20",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:46",
-    "yoyogiUeharaArrivalTime": "20:25",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:25"
   },
   {
     "trainNumber": "A1907S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:24",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:29",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:50",
-    "yoyogiUeharaArrivalTime": "20:29",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:29"
   },
   {
     "trainNumber": "A1945S",
@@ -4443,49 +2927,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "19:47",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:51",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "19:47",
-    "ayaseArrivalTime": "19:51",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "19:51"
   },
   {
     "trainNumber": "A1937S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:28",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:54",
-    "yoyogiUeharaArrivalTime": "20:34",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:34"
   },
   {
     "trainNumber": "A1927S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:38",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:58",
-    "yoyogiUeharaArrivalTime": "20:38",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:38"
   },
   {
     "trainNumber": "A1996S4",
@@ -4494,49 +2959,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "19:54",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:58",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "19:54",
-    "ayaseArrivalTime": "19:58",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "19:58"
   },
   {
     "trainNumber": "A1963E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:36",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:03",
-    "yoyogiUeharaArrivalTime": "20:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:42"
   },
   {
     "trainNumber": "A1923S",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:40",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:07",
-    "yoyogiUeharaArrivalTime": "20:46",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:46"
   },
   {
     "trainNumber": "A2014E",
@@ -4545,15 +2991,7 @@
     "originStationName": "Otemachi",
     "originDepartureTime": "20:30",
     "stationName": "OmoteSando",
-    "stationDepartureTime": "20:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "stationDepartureTime": "20:44"
   },
   {
     "trainNumber": "A2096S1",
@@ -4562,66 +3000,41 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "20:07",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:11",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "20:07",
-    "ayaseArrivalTime": "20:11",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "20:11"
   },
   {
     "trainNumber": "A1947S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:52",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:12",
-    "yoyogiUeharaArrivalTime": "20:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:52"
   },
   {
     "trainNumber": "A1903S",
     "type": "SemiExpress",
     "destinationStationName": "HonAtsugi",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:17",
-    "yoyogiUeharaArrivalTime": "20:57",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "20:57"
   },
   {
     "trainNumber": "A1901K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "20:56",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:02",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:22",
-    "yoyogiUeharaArrivalTime": "21:02",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:02"
   },
   {
     "trainNumber": "A2096S2",
@@ -4630,32 +3043,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "20:19",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:23",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "20:19",
-    "ayaseArrivalTime": "20:23",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "20:23"
   },
   {
     "trainNumber": "A2041S",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:01",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:27",
-    "yoyogiUeharaArrivalTime": "21:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:07"
   },
   {
     "trainNumber": "A2015S",
@@ -4664,49 +3064,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "20:26",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:30",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "20:26",
-    "ayaseArrivalTime": "20:30",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "20:30"
   },
   {
     "trainNumber": "A1921S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:06",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:12",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:32",
-    "yoyogiUeharaArrivalTime": "21:12",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:12"
   },
   {
     "trainNumber": "A1919S",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:11",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:37",
-    "yoyogiUeharaArrivalTime": "21:17",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:17"
   },
   {
     "trainNumber": "A2096S3",
@@ -4715,49 +3096,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "20:34",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:38",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "20:34",
-    "ayaseArrivalTime": "20:38",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "20:38"
   },
   {
     "trainNumber": "A2057E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:42",
-    "yoyogiUeharaArrivalTime": "21:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:22"
   },
   {
     "trainNumber": "A2047E",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:21",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:47",
-    "yoyogiUeharaArrivalTime": "21:27",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:27"
   },
   {
     "trainNumber": "A2096S4",
@@ -4766,66 +3128,41 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "20:46",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:50",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "20:46",
-    "ayaseArrivalTime": "20:50",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "20:50"
   },
   {
     "trainNumber": "A2055S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:26",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:32",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:52",
-    "yoyogiUeharaArrivalTime": "21:32",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:32"
   },
   {
     "trainNumber": "A2027K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Toride",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:31",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:57",
-    "yoyogiUeharaArrivalTime": "21:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:37"
   },
   {
     "trainNumber": "A2009S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:36",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:42",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:02",
-    "yoyogiUeharaArrivalTime": "21:42",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:42"
   },
   {
     "trainNumber": "A2096S5",
@@ -4834,32 +3171,19 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "20:58",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:02",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "20:58",
-    "ayaseArrivalTime": "21:02",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "21:02"
   },
   {
     "trainNumber": "A2061E",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:40",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:06",
-    "yoyogiUeharaArrivalTime": "21:46",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:46"
   },
   {
     "trainNumber": "A2115E",
@@ -4868,15 +3192,7 @@
     "originStationName": "Otemachi",
     "originDepartureTime": "21:30",
     "stationName": "OmoteSando",
-    "stationDepartureTime": "21:44",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "stationDepartureTime": "21:44"
   },
   {
     "trainNumber": "A2113S",
@@ -4886,31 +3202,21 @@
     "originDepartureTime": "21:06",
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:52",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "21:06",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:11",
-    "yoyogiUeharaArrivalTime": "21:52",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:52"
   },
   {
     "trainNumber": "A2001S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:50",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:56",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:16",
-    "yoyogiUeharaArrivalTime": "21:56",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "21:56"
   },
   {
     "trainNumber": "A2196S1",
@@ -4919,32 +3225,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "21:15",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:19",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "21:15",
-    "ayaseArrivalTime": "21:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "21:19"
   },
   {
     "trainNumber": "A2059S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:55",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:00",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:20",
-    "yoyogiUeharaArrivalTime": "22:00",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:00"
   },
   {
     "trainNumber": "A2151E",
@@ -4954,31 +3248,19 @@
     "originDepartureTime": "21:25",
     "stationName": "OmoteSando",
     "stationDepartureTime": "21:59",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:25",
-    "yoyogiUeharaArrivalTime": "22:05",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:05"
   },
   {
     "trainNumber": "A2009K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:04",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:09",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:30",
-    "yoyogiUeharaArrivalTime": "22:09",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:09"
   },
   {
     "trainNumber": "A2196S2",
@@ -4987,32 +3269,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "21:28",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:32",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "21:28",
-    "ayaseArrivalTime": "21:32",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "21:32"
   },
   {
     "trainNumber": "A2129S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:09",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:35",
-    "yoyogiUeharaArrivalTime": "22:14",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:14"
   },
   {
     "trainNumber": "A2119K",
@@ -5022,31 +3292,20 @@
     "originDepartureTime": "21:35",
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:14",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:20",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "21:35",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:40",
-    "yoyogiUeharaArrivalTime": "22:20",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:20"
   },
   {
     "trainNumber": "A2111S",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:20",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:46",
-    "yoyogiUeharaArrivalTime": "22:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:26"
   },
   {
     "trainNumber": "A2196S3",
@@ -5055,49 +3314,31 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "21:44",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:48",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "21:44",
-    "ayaseArrivalTime": "21:48",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "21:48"
   },
   {
     "trainNumber": "A2133S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Kashiwa",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:25",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:30",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:51",
-    "yoyogiUeharaArrivalTime": "22:30",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:30"
   },
   {
     "trainNumber": "A2105K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:31",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:36",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:57",
-    "yoyogiUeharaArrivalTime": "22:36",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:36"
   },
   {
     "trainNumber": "A2163E",
@@ -5107,31 +3348,21 @@
     "originDepartureTime": "21:55",
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:36",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:41",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "21:55",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:02",
-    "yoyogiUeharaArrivalTime": "22:41",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:41"
   },
   {
     "trainNumber": "A2111K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:42",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:47",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:08",
-    "yoyogiUeharaArrivalTime": "22:47",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:47"
   },
   {
     "trainNumber": "A2296S1",
@@ -5140,49 +3371,30 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "22:06",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:10",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "22:06",
-    "ayaseArrivalTime": "22:10",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "22:10"
   },
   {
     "trainNumber": "A2143E",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:48",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:14",
-    "yoyogiUeharaArrivalTime": "22:54",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "22:54"
   },
   {
     "trainNumber": "A2157S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "22:55",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:00",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:21",
-    "yoyogiUeharaArrivalTime": "23:00",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:00"
   },
   {
     "trainNumber": "A2203K",
@@ -5192,31 +3404,21 @@
     "originDepartureTime": "22:22",
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:01",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:07",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "22:22",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:27",
-    "yoyogiUeharaArrivalTime": "23:07",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:07"
   },
   {
     "trainNumber": "A2205S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:08",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:13",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:34",
-    "yoyogiUeharaArrivalTime": "23:13",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:13"
   },
   {
     "trainNumber": "A2296S2",
@@ -5225,32 +3427,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "22:30",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:34",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "22:30",
-    "ayaseArrivalTime": "22:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "22:34"
   },
   {
     "trainNumber": "A2207S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:15",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:20",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:41",
-    "yoyogiUeharaArrivalTime": "23:20",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:20"
   },
   {
     "trainNumber": "A2257E",
@@ -5260,14 +3450,8 @@
     "originDepartureTime": "22:46",
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:20",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:46",
-    "yoyogiUeharaArrivalTime": "23:26",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:26"
   },
   {
     "trainNumber": "A2296S3",
@@ -5276,32 +3460,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "22:43",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:47",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "22:43",
-    "ayaseArrivalTime": "22:47",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "22:47"
   },
   {
     "trainNumber": "A2231K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:25",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:31",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:52",
-    "yoyogiUeharaArrivalTime": "23:31",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:31"
   },
   {
     "trainNumber": "A2221K",
@@ -5311,14 +3483,9 @@
     "originDepartureTime": "22:57",
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:31",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:37",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:57",
-    "yoyogiUeharaArrivalTime": "23:37",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:37"
   },
   {
     "trainNumber": "A2296S4",
@@ -5327,49 +3494,31 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "22:55",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:59",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "22:55",
-    "ayaseArrivalTime": "22:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "22:59"
   },
   {
     "trainNumber": "A2231S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:38",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:43",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:04",
-    "yoyogiUeharaArrivalTime": "23:43",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:43"
   },
   {
     "trainNumber": "A2201K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:46",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:51",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:12",
-    "yoyogiUeharaArrivalTime": "23:51",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:51"
   },
   {
     "trainNumber": "A2396S1",
@@ -5378,32 +3527,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "23:09",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:13",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "23:09",
-    "ayaseArrivalTime": "23:13",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "23:13"
   },
   {
     "trainNumber": "A2221S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:53",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:59",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:20",
-    "yoyogiUeharaArrivalTime": "23:59",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "23:59"
   },
   {
     "trainNumber": "A2329S",
@@ -5413,14 +3550,10 @@
     "originDepartureTime": "23:20",
     "stationName": "OmoteSando",
     "stationDepartureTime": "23:59",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:05",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "23:20",
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:25",
-    "yoyogiUeharaArrivalTime": "00:05",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "00:05"
   },
   {
     "trainNumber": "A2396S2",
@@ -5429,49 +3562,31 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "23:26",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:30",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "23:26",
-    "ayaseArrivalTime": "23:30",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "23:30"
   },
   {
     "trainNumber": "A2355S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "00:05",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:11",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:31",
-    "yoyogiUeharaArrivalTime": "00:11",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "00:11"
   },
   {
     "trainNumber": "A2309S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "00:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:22",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:42",
-    "yoyogiUeharaArrivalTime": "00:22",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "00:22"
   },
   {
     "trainNumber": "A2396S3",
@@ -5480,32 +3595,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "23:41",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:45",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "23:41",
-    "ayaseArrivalTime": "23:45",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "23:45"
   },
   {
     "trainNumber": "A2323S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "00:25",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:30",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:51",
-    "yoyogiUeharaArrivalTime": "00:30",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "00:30"
   },
   {
     "trainNumber": "A2396S4",
@@ -5514,32 +3617,20 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "23:55",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:59",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "23:55",
-    "ayaseArrivalTime": "23:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "23:59"
   },
   {
     "trainNumber": "A2301S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
     "stationDepartureTime": "00:43",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:48",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "00:05",
-    "yoyogiUeharaArrivalTime": "00:48",
-    "yoyogiUeharaDepartureTime": null
+    "yoyogiUeharaArrivalTime": "00:48"
   },
   {
     "trainNumber": "A2496S",
@@ -5548,31 +3639,17 @@
     "originStationName": "KitaAyase",
     "originDepartureTime": "00:15",
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:19",
-    "kitaAyaseArrivalTime": null,
     "kitaAyaseDepartureTime": "00:15",
-    "ayaseArrivalTime": "00:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "00:19"
   },
   {
     "trainNumber": "A2319K",
     "type": "Local",
     "destinationStationName": "KitaSenju",
     "originStationName": "Abiko",
-    "originDepartureTime": null,
     "stationName": "OmoteSando",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:30",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "00:27",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "00:27"
   }
 ]

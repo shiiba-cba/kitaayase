@@ -7,29 +7,23 @@
   "destinationStation": "KitaSenju",
   "timetable": [
     {
-      "station": "YoyogiUehara",
-      "arrivalTime": null,
-      "departureTime": null
+      "station": "YoyogiUehara"
     },
     {
       "station": "OmoteSando",
-      "arrivalTime": "19:23",
-      "departureTime": null
+      "arrivalTime": "19:23"
     },
     {
       "station": "Kasumigaseki",
-      "arrivalTime": "19:31",
-      "departureTime": null
+      "arrivalTime": "19:31"
     },
     {
       "station": "Otemachi",
-      "arrivalTime": "19:37",
-      "departureTime": null
+      "arrivalTime": "19:37"
     },
     {
       "station": "KitaSenju",
-      "arrivalTime": "19:53",
-      "departureTime": null
+      "arrivalTime": "19:53"
     }
   ]
 }

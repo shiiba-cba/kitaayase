@@ -8,98 +8,79 @@
   "timetable": [
     {
       "station": "YoyogiUehara",
-      "arrivalTime": null,
       "departureTime": "13:14"
     },
     {
       "station": "YoyogiKoen",
-      "arrivalTime": null,
       "departureTime": "13:16"
     },
     {
       "station": "MeijiJingumae",
-      "arrivalTime": null,
       "departureTime": "13:19"
     },
     {
       "station": "OmoteSando",
-      "arrivalTime": null,
       "departureTime": "13:20"
     },
     {
       "station": "Nogizaka",
-      "arrivalTime": null,
       "departureTime": "13:23"
     },
     {
       "station": "Akasaka",
-      "arrivalTime": null,
       "departureTime": "13:25"
     },
     {
       "station": "KokkaiGijidomae",
-      "arrivalTime": null,
       "departureTime": "13:27"
     },
     {
       "station": "Kasumigaseki",
-      "arrivalTime": null,
       "departureTime": "13:29"
     },
     {
       "station": "Hibiya",
-      "arrivalTime": null,
       "departureTime": "13:31"
     },
     {
       "station": "Nijubashimae",
-      "arrivalTime": null,
       "departureTime": "13:33"
     },
     {
       "station": "Otemachi",
-      "arrivalTime": null,
       "departureTime": "13:34"
     },
     {
       "station": "ShinOchanomizu",
-      "arrivalTime": null,
       "departureTime": "13:37"
     },
     {
       "station": "Yushima",
-      "arrivalTime": null,
       "departureTime": "13:38"
     },
     {
       "station": "Nezu",
-      "arrivalTime": null,
       "departureTime": "13:40"
     },
     {
       "station": "Sendagi",
-      "arrivalTime": null,
       "departureTime": "13:43"
     },
     {
       "station": "NishiNippori",
-      "arrivalTime": null,
       "departureTime": "13:44"
     },
     {
       "station": "Machiya",
-      "arrivalTime": null,
       "departureTime": "13:47"
     },
     {
       "station": "KitaSenju",
-      "arrivalTime": null,
       "departureTime": "13:51"
     },
     {
       "station": "Ayase",
-      "arrivalTime": "13:54",
-      "departureTime": null
+      "arrivalTime": "13:54"
     }
   ]
 }

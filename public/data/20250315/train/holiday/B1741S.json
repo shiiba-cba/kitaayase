@@ -8,103 +8,83 @@
   "timetable": [
     {
       "station": "YoyogiUehara",
-      "arrivalTime": null,
       "departureTime": "17:43"
     },
     {
       "station": "YoyogiKoen",
-      "arrivalTime": null,
       "departureTime": "17:45"
     },
     {
       "station": "MeijiJingumae",
-      "arrivalTime": null,
       "departureTime": "17:48"
     },
     {
       "station": "OmoteSando",
-      "arrivalTime": null,
       "departureTime": "17:49"
     },
     {
       "station": "Nogizaka",
-      "arrivalTime": null,
       "departureTime": "17:52"
     },
     {
       "station": "Akasaka",
-      "arrivalTime": null,
       "departureTime": "17:54"
     },
     {
       "station": "KokkaiGijidomae",
-      "arrivalTime": null,
       "departureTime": "17:56"
     },
     {
       "station": "Kasumigaseki",
-      "arrivalTime": null,
       "departureTime": "17:58"
     },
     {
       "station": "Hibiya",
-      "arrivalTime": null,
       "departureTime": "18:00"
     },
     {
       "station": "Nijubashimae",
-      "arrivalTime": null,
       "departureTime": "18:02"
     },
     {
       "station": "Otemachi",
-      "arrivalTime": null,
       "departureTime": "18:03"
     },
     {
       "station": "ShinOchanomizu",
-      "arrivalTime": null,
       "departureTime": "18:06"
     },
     {
       "station": "Yushima",
-      "arrivalTime": null,
       "departureTime": "18:07"
     },
     {
       "station": "Nezu",
-      "arrivalTime": null,
       "departureTime": "18:09"
     },
     {
       "station": "Sendagi",
-      "arrivalTime": null,
       "departureTime": "18:12"
     },
     {
       "station": "NishiNippori",
-      "arrivalTime": null,
       "departureTime": "18:13"
     },
     {
       "station": "Machiya",
-      "arrivalTime": null,
       "departureTime": "18:16"
     },
     {
       "station": "KitaSenju",
-      "arrivalTime": null,
       "departureTime": "18:20"
     },
     {
       "station": "Ayase",
-      "arrivalTime": null,
       "departureTime": "18:27"
     },
     {
       "station": "KitaAyase",
-      "arrivalTime": "18:31",
-      "departureTime": null
+      "arrivalTime": "18:31"
     }
   ]
 }

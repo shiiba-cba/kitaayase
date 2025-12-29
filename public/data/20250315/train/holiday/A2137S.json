@@ -8,103 +8,83 @@
   "timetable": [
     {
       "station": "KitaAyase",
-      "arrivalTime": null,
       "departureTime": "21:01"
     },
     {
       "station": "Ayase",
-      "arrivalTime": null,
       "departureTime": "21:07"
     },
     {
       "station": "KitaSenju",
-      "arrivalTime": null,
       "departureTime": "21:11"
     },
     {
       "station": "Machiya",
-      "arrivalTime": null,
       "departureTime": "21:14"
     },
     {
       "station": "NishiNippori",
-      "arrivalTime": null,
       "departureTime": "21:17"
     },
     {
       "station": "Sendagi",
-      "arrivalTime": null,
       "departureTime": "21:19"
     },
     {
       "station": "Nezu",
-      "arrivalTime": null,
       "departureTime": "21:21"
     },
     {
       "station": "Yushima",
-      "arrivalTime": null,
       "departureTime": "21:23"
     },
     {
       "station": "ShinOchanomizu",
-      "arrivalTime": null,
       "departureTime": "21:25"
     },
     {
       "station": "Otemachi",
-      "arrivalTime": null,
       "departureTime": "21:27"
     },
     {
       "station": "Nijubashimae",
-      "arrivalTime": null,
       "departureTime": "21:29"
     },
     {
       "station": "Hibiya",
-      "arrivalTime": null,
       "departureTime": "21:31"
     },
     {
       "station": "Kasumigaseki",
-      "arrivalTime": null,
       "departureTime": "21:33"
     },
     {
       "station": "KokkaiGijidomae",
-      "arrivalTime": null,
       "departureTime": "21:35"
     },
     {
       "station": "Akasaka",
-      "arrivalTime": null,
       "departureTime": "21:37"
     },
     {
       "station": "Nogizaka",
-      "arrivalTime": null,
       "departureTime": "21:39"
     },
     {
       "station": "OmoteSando",
-      "arrivalTime": null,
       "departureTime": "21:41"
     },
     {
       "station": "MeijiJingumae",
-      "arrivalTime": null,
       "departureTime": "21:43"
     },
     {
       "station": "YoyogiKoen",
-      "arrivalTime": null,
       "departureTime": "21:45"
     },
     {
       "station": "YoyogiUehara",
-      "arrivalTime": "21:47",
-      "departureTime": null
+      "arrivalTime": "21:47"
     }
   ]
 }

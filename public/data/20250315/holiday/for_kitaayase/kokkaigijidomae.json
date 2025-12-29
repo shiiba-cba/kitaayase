@@ -6,15 +6,7 @@
     "originStationName": "KitaSenju",
     "originDepartureTime": "04:54",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": "04:57",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "04:57"
   },
   {
     "trainNumber": "B596S1",
@@ -23,15 +15,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "05:13",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:17",
     "kitaAyaseArrivalTime": "05:17",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "05:13",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "05:13"
   },
   {
     "trainNumber": "B513S",
@@ -40,15 +26,7 @@
     "originStationName": "Yushima",
     "originDepartureTime": "05:00",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": "05:18",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "05:18"
   },
   {
     "trainNumber": "B596S2",
@@ -57,15 +35,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "05:33",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:37",
     "kitaAyaseArrivalTime": "05:37",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "05:33",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "05:33"
   },
   {
     "trainNumber": "B529S",
@@ -75,13 +47,7 @@
     "originDepartureTime": "05:00",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "05:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "05:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "05:00"
   },
   {
@@ -92,13 +58,7 @@
     "originDepartureTime": "05:12",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "05:25",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "05:52",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "05:12"
   },
   {
@@ -108,15 +68,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "05:55",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "05:59",
     "kitaAyaseArrivalTime": "05:59",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "05:55",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "05:55"
   },
   {
     "trainNumber": "B519S",
@@ -126,13 +80,7 @@
     "originDepartureTime": "05:26",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "05:39",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "06:06",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "05:26"
   },
   {
@@ -142,15 +90,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "06:12",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:16",
     "kitaAyaseArrivalTime": "06:16",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "06:12",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "06:12"
   },
   {
     "trainNumber": "B521S",
@@ -160,13 +102,7 @@
     "originDepartureTime": "05:38",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "05:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "06:18",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "05:38"
   },
   {
@@ -176,15 +112,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "06:26",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:30",
     "kitaAyaseArrivalTime": "06:30",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "06:26",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "06:26"
   },
   {
     "trainNumber": "B515K",
@@ -194,13 +124,7 @@
     "originDepartureTime": "05:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:01",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "06:28",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "05:49"
   },
   {
@@ -211,13 +135,7 @@
     "originDepartureTime": "05:58",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:10",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "06:37",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "05:58"
   },
   {
@@ -227,15 +145,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "06:40",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:44",
     "kitaAyaseArrivalTime": "06:44",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "06:40",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "06:40"
   },
   {
     "trainNumber": "B601S",
@@ -245,13 +157,7 @@
     "originDepartureTime": "06:06",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:19",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "06:46",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:06"
   },
   {
@@ -261,15 +167,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "06:53",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "06:57",
     "kitaAyaseArrivalTime": "06:57",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "06:53",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "06:53"
   },
   {
     "trainNumber": "B641E",
@@ -279,13 +179,7 @@
     "originDepartureTime": "06:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:27",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "06:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:14"
   },
   {
@@ -296,13 +190,7 @@
     "originDepartureTime": "06:23",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:35",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:02",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:23"
   },
   {
@@ -312,15 +200,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "07:08",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:12",
     "kitaAyaseArrivalTime": "07:12",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:08",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:08"
   },
   {
     "trainNumber": "B617K",
@@ -330,30 +212,16 @@
     "originDepartureTime": "06:31",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:43",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:10",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:31"
   },
   {
     "trainNumber": "B537S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:18",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:38"
   },
   {
@@ -363,15 +231,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "07:23",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:27",
     "kitaAyaseArrivalTime": "07:27",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:23",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:23"
   },
   {
     "trainNumber": "B605K",
@@ -381,13 +243,8 @@
     "originDepartureTime": "06:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "06:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:24",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:24",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:44"
   },
   {
@@ -398,30 +255,16 @@
     "originDepartureTime": "06:51",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:03",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:30",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "06:51"
   },
   {
     "trainNumber": "B639S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:00"
   },
   {
@@ -431,15 +274,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "07:40",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:44",
     "kitaAyaseArrivalTime": "07:44",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:40",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:40"
   },
   {
     "trainNumber": "B719K",
@@ -449,13 +286,7 @@
     "originDepartureTime": "07:07",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:19",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:46",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:07"
   },
   {
@@ -465,15 +296,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "07:53",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:57",
     "kitaAyaseArrivalTime": "07:57",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "07:53",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "07:53"
   },
   {
     "trainNumber": "B701K",
@@ -483,13 +308,7 @@
     "originDepartureTime": "07:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:26",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "07:53",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:14"
   },
   {
@@ -499,31 +318,16 @@
     "originStationName": "Kasumigaseki",
     "originDepartureTime": "07:32",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "07:57",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": "07:57",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "07:57"
   },
   {
     "trainNumber": "B649E",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:34",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:01",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:21"
   },
   {
@@ -533,15 +337,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "08:07",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:11",
     "kitaAyaseArrivalTime": "08:11",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:07",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:07"
   },
   {
     "trainNumber": "B713S",
@@ -551,13 +349,7 @@
     "originDepartureTime": "07:28",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:41",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:08",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:28"
   },
   {
@@ -568,30 +360,18 @@
     "originDepartureTime": "07:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:22",
     "kitaAyaseArrivalTime": "08:22",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:18",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:34"
   },
   {
     "trainNumber": "B641S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:39"
   },
   {
@@ -602,13 +382,7 @@
     "originDepartureTime": "07:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "07:57",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:24",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:44"
   },
   {
@@ -619,13 +393,9 @@
     "originDepartureTime": "07:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:02",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:34",
     "kitaAyaseArrivalTime": "08:34",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:30",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:49"
   },
   {
@@ -636,13 +406,7 @@
     "originDepartureTime": "07:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:07",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:54"
   },
   {
@@ -652,31 +416,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "08:39",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:43",
     "kitaAyaseArrivalTime": "08:43",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:39",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:39"
   },
   {
     "trainNumber": "B645E",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:40",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "07:59"
   },
   {
@@ -687,13 +437,8 @@
     "originDepartureTime": "08:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:44",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:44",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:04"
   },
   {
@@ -704,13 +449,7 @@
     "originDepartureTime": "08:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:09"
   },
   {
@@ -720,15 +459,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "08:52",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "08:56",
     "kitaAyaseArrivalTime": "08:56",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "08:52",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "08:52"
   },
   {
     "trainNumber": "B819S",
@@ -738,30 +471,18 @@
     "originDepartureTime": "08:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:00",
     "kitaAyaseArrivalTime": "09:00",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "08:56",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:14"
   },
   {
     "trainNumber": "B829S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "08:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:19"
   },
   {
@@ -772,13 +493,9 @@
     "originDepartureTime": "08:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:09",
     "kitaAyaseArrivalTime": "09:09",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:05",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:24"
   },
   {
@@ -789,13 +506,7 @@
     "originDepartureTime": "08:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:29"
   },
   {
@@ -805,15 +516,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "09:14",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:18",
     "kitaAyaseArrivalTime": "09:18",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "09:14",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "09:14"
   },
   {
     "trainNumber": "B825K",
@@ -823,30 +528,18 @@
     "originDepartureTime": "08:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:47",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:34"
   },
   {
     "trainNumber": "B743S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:26",
     "kitaAyaseArrivalTime": "09:26",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:22",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:39"
   },
   {
@@ -857,13 +550,7 @@
     "originDepartureTime": "08:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "08:57",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:24",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:44"
   },
   {
@@ -873,15 +560,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "09:29",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:33",
     "kitaAyaseArrivalTime": "09:33",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "09:29",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "09:29"
   },
   {
     "trainNumber": "B801S",
@@ -891,13 +572,7 @@
     "originDepartureTime": "08:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:49"
   },
   {
@@ -908,13 +583,7 @@
     "originDepartureTime": "08:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:07",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:54"
   },
   {
@@ -924,31 +593,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "09:37",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:41",
     "kitaAyaseArrivalTime": "09:41",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "09:37",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "09:37"
   },
   {
     "trainNumber": "B821S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "08:59"
   },
   {
@@ -959,13 +614,9 @@
     "originDepartureTime": "09:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:16",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:49",
     "kitaAyaseArrivalTime": "09:49",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "09:45",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:04"
   },
   {
@@ -976,31 +627,15 @@
     "originDepartureTime": "09:08",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:21",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:48",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:08"
   },
   {
     "trainNumber": "B808E",
     "type": "LimitedExpress",
     "destinationStationName": "KitaSenju",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": "09:46",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "destinationArrivalTime": "09:46"
   },
   {
     "trainNumber": "B996S3",
@@ -1009,15 +644,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "09:54",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "09:58",
     "kitaAyaseArrivalTime": "09:58",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "09:54",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "09:54"
   },
   {
     "trainNumber": "B927K",
@@ -1027,30 +656,18 @@
     "originDepartureTime": "09:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:27",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "09:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:14"
   },
   {
     "trainNumber": "B909K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:04",
     "kitaAyaseArrivalTime": "10:04",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:00",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:19"
   },
   {
@@ -1061,13 +678,7 @@
     "originDepartureTime": "09:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:37",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:04",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:24"
   },
   {
@@ -1078,13 +689,7 @@
     "originDepartureTime": "09:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:29"
   },
   {
@@ -1094,15 +699,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "10:11",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:15",
     "kitaAyaseArrivalTime": "10:15",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "10:11",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "10:11"
   },
   {
     "trainNumber": "B903K",
@@ -1112,30 +711,18 @@
     "originDepartureTime": "09:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:21",
     "kitaAyaseArrivalTime": "10:21",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:17",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:34"
   },
   {
     "trainNumber": "B861E",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:39"
   },
   {
@@ -1146,13 +733,7 @@
     "originDepartureTime": "09:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "09:57",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:24",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:44"
   },
   {
@@ -1162,15 +743,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "10:27",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:31",
     "kitaAyaseArrivalTime": "10:31",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "10:27",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "10:27"
   },
   {
     "trainNumber": "B919K",
@@ -1180,13 +755,7 @@
     "originDepartureTime": "09:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:49"
   },
   {
@@ -1197,30 +766,17 @@
     "originDepartureTime": "09:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:54"
   },
   {
     "trainNumber": "B813K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "09:59"
   },
   {
@@ -1230,15 +786,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "10:40",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:44",
     "kitaAyaseArrivalTime": "10:44",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "10:40",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "10:40"
   },
   {
     "trainNumber": "B1019S",
@@ -1248,13 +798,9 @@
     "originDepartureTime": "10:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:51",
     "kitaAyaseArrivalTime": "10:51",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "10:47",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:04"
   },
   {
@@ -1265,13 +811,7 @@
     "originDepartureTime": "10:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:09"
   },
   {
@@ -1282,13 +822,8 @@
     "originDepartureTime": "10:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "10:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:14"
   },
   {
@@ -1298,31 +833,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "10:57",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:01",
     "kitaAyaseArrivalTime": "11:01",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "10:57",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "10:57"
   },
   {
     "trainNumber": "B1003S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "10:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:19"
   },
   {
@@ -1333,13 +854,9 @@
     "originDepartureTime": "10:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:11",
     "kitaAyaseArrivalTime": "11:11",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:07",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:24"
   },
   {
@@ -1350,13 +867,7 @@
     "originDepartureTime": "10:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:29"
   },
   {
@@ -1367,13 +878,8 @@
     "originDepartureTime": "10:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:34"
   },
   {
@@ -1383,31 +889,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "11:17",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:21",
     "kitaAyaseArrivalTime": "11:21",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "11:17",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "11:17"
   },
   {
     "trainNumber": "B1023K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:39"
   },
   {
@@ -1418,13 +910,9 @@
     "originDepartureTime": "10:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "10:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:30",
     "kitaAyaseArrivalTime": "11:30",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:26",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:44"
   },
   {
@@ -1435,13 +923,7 @@
     "originDepartureTime": "10:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:49"
   },
   {
@@ -1452,13 +934,8 @@
     "originDepartureTime": "10:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:54"
   },
   {
@@ -1468,31 +945,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "11:36",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:40",
     "kitaAyaseArrivalTime": "11:40",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "11:36",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "11:36"
   },
   {
     "trainNumber": "B1001K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "10:59"
   },
   {
@@ -1503,13 +966,9 @@
     "originDepartureTime": "11:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:50",
     "kitaAyaseArrivalTime": "11:50",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "11:46",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:04"
   },
   {
@@ -1520,13 +979,7 @@
     "originDepartureTime": "11:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:09"
   },
   {
@@ -1537,13 +990,8 @@
     "originDepartureTime": "11:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "11:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:14"
   },
   {
@@ -1553,31 +1001,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "11:56",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:00",
     "kitaAyaseArrivalTime": "12:00",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "11:56",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "11:56"
   },
   {
     "trainNumber": "B1013S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "11:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:19"
   },
   {
@@ -1588,13 +1022,9 @@
     "originDepartureTime": "11:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:10",
     "kitaAyaseArrivalTime": "12:10",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:06",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:24"
   },
   {
@@ -1605,13 +1035,7 @@
     "originDepartureTime": "11:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:29"
   },
   {
@@ -1622,13 +1046,8 @@
     "originDepartureTime": "11:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:34"
   },
   {
@@ -1638,31 +1057,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "12:16",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:20",
     "kitaAyaseArrivalTime": "12:20",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "12:16",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "12:16"
   },
   {
     "trainNumber": "B1133S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:39"
   },
   {
@@ -1673,13 +1078,9 @@
     "originDepartureTime": "11:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "11:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:30",
     "kitaAyaseArrivalTime": "12:30",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:26",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:44"
   },
   {
@@ -1690,13 +1091,7 @@
     "originDepartureTime": "11:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:49"
   },
   {
@@ -1707,13 +1102,8 @@
     "originDepartureTime": "11:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:54"
   },
   {
@@ -1723,31 +1113,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "12:36",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:40",
     "kitaAyaseArrivalTime": "12:40",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "12:36",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "12:36"
   },
   {
     "trainNumber": "B1131S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "11:59"
   },
   {
@@ -1758,13 +1134,9 @@
     "originDepartureTime": "12:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:50",
     "kitaAyaseArrivalTime": "12:50",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "12:46",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:04"
   },
   {
@@ -1775,31 +1147,15 @@
     "originDepartureTime": "12:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:21",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:48",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:09"
   },
   {
     "trainNumber": "B1002E",
     "type": "LimitedExpress",
     "destinationStationName": "KitaSenju",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": "12:47",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "destinationArrivalTime": "12:47"
   },
   {
     "trainNumber": "B1241S",
@@ -1809,13 +1165,8 @@
     "originDepartureTime": "12:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "12:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:14"
   },
   {
@@ -1825,31 +1176,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "12:56",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:00",
     "kitaAyaseArrivalTime": "13:00",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "12:56",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "12:56"
   },
   {
     "trainNumber": "B1149E",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "12:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:19"
   },
   {
@@ -1860,13 +1197,9 @@
     "originDepartureTime": "12:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:10",
     "kitaAyaseArrivalTime": "13:10",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:06",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:24"
   },
   {
@@ -1877,13 +1210,7 @@
     "originDepartureTime": "12:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:29"
   },
   {
@@ -1894,13 +1221,8 @@
     "originDepartureTime": "12:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:34"
   },
   {
@@ -1910,31 +1232,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "13:16",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:20",
     "kitaAyaseArrivalTime": "13:20",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "13:16",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "13:16"
   },
   {
     "trainNumber": "B1163E",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:39"
   },
   {
@@ -1945,13 +1253,9 @@
     "originDepartureTime": "12:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "12:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:30",
     "kitaAyaseArrivalTime": "13:30",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:26",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:44"
   },
   {
@@ -1962,13 +1266,7 @@
     "originDepartureTime": "12:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:49"
   },
   {
@@ -1979,13 +1277,8 @@
     "originDepartureTime": "12:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:54"
   },
   {
@@ -1995,31 +1288,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "13:36",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:40",
     "kitaAyaseArrivalTime": "13:40",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "13:36",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "13:36"
   },
   {
     "trainNumber": "B1229K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "12:59"
   },
   {
@@ -2030,13 +1309,9 @@
     "originDepartureTime": "13:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:50",
     "kitaAyaseArrivalTime": "13:50",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "13:46",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:04"
   },
   {
@@ -2047,13 +1322,7 @@
     "originDepartureTime": "13:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:09"
   },
   {
@@ -2064,13 +1333,8 @@
     "originDepartureTime": "13:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "13:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:14"
   },
   {
@@ -2080,31 +1344,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "13:56",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:00",
     "kitaAyaseArrivalTime": "14:00",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "13:56",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "13:56"
   },
   {
     "trainNumber": "B1227K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "13:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:19"
   },
   {
@@ -2115,13 +1365,9 @@
     "originDepartureTime": "13:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:10",
     "kitaAyaseArrivalTime": "14:10",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:06",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:24"
   },
   {
@@ -2132,13 +1378,7 @@
     "originDepartureTime": "13:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:29"
   },
   {
@@ -2149,13 +1389,8 @@
     "originDepartureTime": "13:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:34"
   },
   {
@@ -2165,31 +1400,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "14:16",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:20",
     "kitaAyaseArrivalTime": "14:20",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "14:16",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "14:16"
   },
   {
     "trainNumber": "B1207S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:39"
   },
   {
@@ -2200,13 +1421,9 @@
     "originDepartureTime": "13:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "13:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:30",
     "kitaAyaseArrivalTime": "14:30",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:26",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:44"
   },
   {
@@ -2217,13 +1434,7 @@
     "originDepartureTime": "13:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:49"
   },
   {
@@ -2234,13 +1445,8 @@
     "originDepartureTime": "13:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:54"
   },
   {
@@ -2250,31 +1456,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "14:36",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:40",
     "kitaAyaseArrivalTime": "14:40",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "14:36",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "14:36"
   },
   {
     "trainNumber": "B1313K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "13:59"
   },
   {
@@ -2285,13 +1477,9 @@
     "originDepartureTime": "14:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:50",
     "kitaAyaseArrivalTime": "14:50",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "14:46",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:04"
   },
   {
@@ -2302,13 +1490,7 @@
     "originDepartureTime": "14:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:09"
   },
   {
@@ -2319,13 +1501,8 @@
     "originDepartureTime": "14:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "14:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:14"
   },
   {
@@ -2335,31 +1512,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "14:56",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:00",
     "kitaAyaseArrivalTime": "15:00",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "14:56",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "14:56"
   },
   {
     "trainNumber": "B1321K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "14:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:19"
   },
   {
@@ -2370,13 +1533,9 @@
     "originDepartureTime": "14:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:11",
     "kitaAyaseArrivalTime": "15:11",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:07",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:24"
   },
   {
@@ -2387,13 +1546,7 @@
     "originDepartureTime": "14:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:29"
   },
   {
@@ -2404,13 +1557,8 @@
     "originDepartureTime": "14:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:34"
   },
   {
@@ -2420,31 +1568,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "15:18",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:22",
     "kitaAyaseArrivalTime": "15:22",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "15:18",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "15:18"
   },
   {
     "trainNumber": "B1323K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:39"
   },
   {
@@ -2455,13 +1589,9 @@
     "originDepartureTime": "14:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "14:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:31",
     "kitaAyaseArrivalTime": "15:31",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:27",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:44"
   },
   {
@@ -2472,13 +1602,7 @@
     "originDepartureTime": "14:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:49"
   },
   {
@@ -2489,13 +1613,8 @@
     "originDepartureTime": "14:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:54"
   },
   {
@@ -2505,31 +1624,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "15:38",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:42",
     "kitaAyaseArrivalTime": "15:42",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "15:38",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "15:38"
   },
   {
     "trainNumber": "B1403S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "14:59"
   },
   {
@@ -2540,13 +1645,9 @@
     "originDepartureTime": "15:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:51",
     "kitaAyaseArrivalTime": "15:51",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "15:47",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:04"
   },
   {
@@ -2557,13 +1658,7 @@
     "originDepartureTime": "15:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:09"
   },
   {
@@ -2574,13 +1669,8 @@
     "originDepartureTime": "15:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "15:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:14"
   },
   {
@@ -2590,31 +1680,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "15:58",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:02",
     "kitaAyaseArrivalTime": "16:02",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "15:58",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "15:58"
   },
   {
     "trainNumber": "B1401K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "15:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:19"
   },
   {
@@ -2625,13 +1701,9 @@
     "originDepartureTime": "15:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:11",
     "kitaAyaseArrivalTime": "16:11",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:07",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:24"
   },
   {
@@ -2642,13 +1714,7 @@
     "originDepartureTime": "15:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:29"
   },
   {
@@ -2659,30 +1725,18 @@
     "originDepartureTime": "15:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:22",
     "kitaAyaseArrivalTime": "16:22",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:18",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:34"
   },
   {
     "trainNumber": "B1433S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:39"
   },
   {
@@ -2693,13 +1747,8 @@
     "originDepartureTime": "15:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "15:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:24",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:24",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:44"
   },
   {
@@ -2709,15 +1758,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "16:28",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:32",
     "kitaAyaseArrivalTime": "16:32",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "16:28",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "16:28"
   },
   {
     "trainNumber": "B1543S",
@@ -2727,13 +1770,7 @@
     "originDepartureTime": "15:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:49"
   },
   {
@@ -2744,30 +1781,18 @@
     "originDepartureTime": "15:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:41",
     "kitaAyaseArrivalTime": "16:41",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:37",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:54"
   },
   {
     "trainNumber": "B1531S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "15:59"
   },
   {
@@ -2778,13 +1803,8 @@
     "originDepartureTime": "16:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:44",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:44",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:04"
   },
   {
@@ -2794,15 +1814,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "16:48",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "16:52",
     "kitaAyaseArrivalTime": "16:52",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "16:48",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "16:48"
   },
   {
     "trainNumber": "B1605K",
@@ -2812,13 +1826,7 @@
     "originDepartureTime": "16:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:09"
   },
   {
@@ -2829,30 +1837,18 @@
     "originDepartureTime": "16:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:01",
     "kitaAyaseArrivalTime": "17:01",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "16:57",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:14"
   },
   {
     "trainNumber": "B1549E",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "16:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:19"
   },
   {
@@ -2863,13 +1859,9 @@
     "originDepartureTime": "16:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:12",
     "kitaAyaseArrivalTime": "17:12",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:08",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:24"
   },
   {
@@ -2880,13 +1872,7 @@
     "originDepartureTime": "16:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:29"
   },
   {
@@ -2897,13 +1883,8 @@
     "originDepartureTime": "16:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:34"
   },
   {
@@ -2913,31 +1894,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "17:18",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:22",
     "kitaAyaseArrivalTime": "17:22",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "17:18",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "17:18"
   },
   {
     "trainNumber": "B1513S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:52",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:39"
   },
   {
@@ -2948,13 +1915,9 @@
     "originDepartureTime": "16:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "16:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:31",
     "kitaAyaseArrivalTime": "17:31",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:27",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:44"
   },
   {
@@ -2965,13 +1928,7 @@
     "originDepartureTime": "16:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:49"
   },
   {
@@ -2982,13 +1939,8 @@
     "originDepartureTime": "16:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:54"
   },
   {
@@ -2998,31 +1950,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "17:38",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:42",
     "kitaAyaseArrivalTime": "17:42",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "17:38",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "17:38"
   },
   {
     "trainNumber": "B1629K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "16:59"
   },
   {
@@ -3033,13 +1971,9 @@
     "originDepartureTime": "17:04",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:51",
     "kitaAyaseArrivalTime": "17:51",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "17:47",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:04"
   },
   {
@@ -3050,13 +1984,7 @@
     "originDepartureTime": "17:09",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:22",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:49",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:09"
   },
   {
@@ -3067,13 +1995,8 @@
     "originDepartureTime": "17:14",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:27",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "17:54",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:54",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:14"
   },
   {
@@ -3083,31 +2006,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "17:58",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:02",
     "kitaAyaseArrivalTime": "18:02",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "17:58",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "17:58"
   },
   {
     "trainNumber": "B1627K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:32",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "17:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:19"
   },
   {
@@ -3118,13 +2027,9 @@
     "originDepartureTime": "17:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:37",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:11",
     "kitaAyaseArrivalTime": "18:11",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:07",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:24"
   },
   {
@@ -3135,13 +2040,7 @@
     "originDepartureTime": "17:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "18:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:29"
   },
   {
@@ -3152,13 +2051,8 @@
     "originDepartureTime": "17:34",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:47",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:14",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "18:14",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:34"
   },
   {
@@ -3168,31 +2062,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "18:18",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:22",
     "kitaAyaseArrivalTime": "18:22",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "18:18",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "18:18"
   },
   {
     "trainNumber": "B1713K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "18:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:39"
   },
   {
@@ -3203,31 +2083,17 @@
     "originDepartureTime": "17:43",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "17:56",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:31",
     "kitaAyaseArrivalTime": "18:31",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:27",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:43"
   },
   {
     "trainNumber": "B1606E",
     "type": "LimitedExpress",
     "destinationStationName": "KitaSenju",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": "18:21",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "destinationArrivalTime": "18:21"
   },
   {
     "trainNumber": "B1725K",
@@ -3237,13 +2103,7 @@
     "originDepartureTime": "17:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "18:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:49"
   },
   {
@@ -3254,30 +2114,18 @@
     "originDepartureTime": "17:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:41",
     "kitaAyaseArrivalTime": "18:41",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:37",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:54"
   },
   {
     "trainNumber": "B1721K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "18:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "17:59"
   },
   {
@@ -3288,13 +2136,9 @@
     "originDepartureTime": "18:05",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "18:52",
     "kitaAyaseArrivalTime": "18:52",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:48",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:05"
   },
   {
@@ -3305,13 +2149,7 @@
     "originDepartureTime": "18:10",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:23",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "18:50",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:10"
   },
   {
@@ -3322,30 +2160,18 @@
     "originDepartureTime": "18:15",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:28",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:02",
     "kitaAyaseArrivalTime": "19:02",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "18:58",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:15"
   },
   {
     "trainNumber": "B1723K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:34",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:01",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:21"
   },
   {
@@ -3355,15 +2181,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "19:03",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:07",
     "kitaAyaseArrivalTime": "19:07",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "19:03",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "19:03"
   },
   {
     "trainNumber": "B1829S",
@@ -3373,13 +2193,9 @@
     "originDepartureTime": "18:27",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:39",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:12",
     "kitaAyaseArrivalTime": "19:12",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:08",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:27"
   },
   {
@@ -3390,30 +2206,16 @@
     "originDepartureTime": "18:32",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:45",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:12",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:32"
   },
   {
     "trainNumber": "B1803S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:50",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:17",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:38"
   },
   {
@@ -3423,15 +2225,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "19:18",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:22",
     "kitaAyaseArrivalTime": "19:22",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "19:18",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "19:18"
   },
   {
     "trainNumber": "B1831S",
@@ -3441,13 +2237,9 @@
     "originDepartureTime": "18:43",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "18:56",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:29",
     "kitaAyaseArrivalTime": "19:29",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:25",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:43"
   },
   {
@@ -3458,13 +2250,7 @@
     "originDepartureTime": "18:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:28",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:49"
   },
   {
@@ -3475,13 +2261,8 @@
     "originDepartureTime": "18:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:34",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:34",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:54"
   },
   {
@@ -3491,31 +2272,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "19:36",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:40",
     "kitaAyaseArrivalTime": "19:40",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "19:36",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "19:36"
   },
   {
     "trainNumber": "B1807S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:12",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:39",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "18:59"
   },
   {
@@ -3526,13 +2293,9 @@
     "originDepartureTime": "19:05",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:17",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "19:51",
     "kitaAyaseArrivalTime": "19:51",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:47",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:05"
   },
   {
@@ -3543,13 +2306,7 @@
     "originDepartureTime": "19:10",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:23",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "19:50",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:10"
   },
   {
@@ -3560,31 +2317,17 @@
     "originDepartureTime": "19:15",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:28",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:02",
     "kitaAyaseArrivalTime": "20:02",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "19:58",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:15"
   },
   {
     "trainNumber": "B1716E",
     "type": "LimitedExpress",
     "destinationStationName": "KitaSenju",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": "19:53",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "destinationArrivalTime": "19:53"
   },
   {
     "trainNumber": "B1913S",
@@ -3594,30 +2337,18 @@
     "originDepartureTime": "19:21",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:34",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:01",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:21"
   },
   {
     "trainNumber": "B1933S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:39",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:13",
     "kitaAyaseArrivalTime": "20:13",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:09",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:27"
   },
   {
@@ -3628,30 +2359,16 @@
     "originDepartureTime": "19:32",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:45",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:12",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:32"
   },
   {
     "trainNumber": "B1915K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:18",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:38"
   },
   {
@@ -3661,15 +2378,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "20:19",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:23",
     "kitaAyaseArrivalTime": "20:23",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "20:19",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "20:19"
   },
   {
     "trainNumber": "B1929K",
@@ -3679,13 +2390,9 @@
     "originDepartureTime": "19:44",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "19:57",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:31",
     "kitaAyaseArrivalTime": "20:31",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:27",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:44"
   },
   {
@@ -3696,30 +2403,18 @@
     "originDepartureTime": "19:50",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:02",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:29",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:50"
   },
   {
     "trainNumber": "B1963E",
     "type": "Local",
     "destinationStationName": "KitaAyase",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:08",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:40",
     "kitaAyaseArrivalTime": "20:40",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:36",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "19:56"
   },
   {
@@ -3730,13 +2425,7 @@
     "originDepartureTime": "20:01",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:14",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:41",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:01"
   },
   {
@@ -3746,15 +2435,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "20:42",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:46",
     "kitaAyaseArrivalTime": "20:46",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "20:42",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "20:42"
   },
   {
     "trainNumber": "B2037S",
@@ -3764,13 +2447,9 @@
     "originDepartureTime": "20:07",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:20",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:53",
     "kitaAyaseArrivalTime": "20:53",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "20:49",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:07"
   },
   {
@@ -3781,30 +2460,17 @@
     "originDepartureTime": "20:13",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:26",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:53",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:13"
   },
   {
     "trainNumber": "B2041S",
     "type": "Local",
     "destinationStationName": "Ayase",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "20:59",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "20:59",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:19"
   },
   {
@@ -3814,15 +2480,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "21:02",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:06",
     "kitaAyaseArrivalTime": "21:06",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "21:02",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "21:02"
   },
   {
     "trainNumber": "B2011K",
@@ -3832,13 +2492,7 @@
     "originDepartureTime": "20:25",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:38",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:05",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:25"
   },
   {
@@ -3849,30 +2503,18 @@
     "originDepartureTime": "20:31",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:44",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:16",
     "kitaAyaseArrivalTime": "21:16",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:12",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:31"
   },
   {
     "trainNumber": "B1909K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:49",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:16",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:37"
   },
   {
@@ -3882,15 +2524,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "21:17",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:21",
     "kitaAyaseArrivalTime": "21:21",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "21:17",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "21:17"
   },
   {
     "trainNumber": "B2021K",
@@ -3900,13 +2536,7 @@
     "originDepartureTime": "20:42",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "20:55",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:22",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:42"
   },
   {
@@ -3917,13 +2547,7 @@
     "originDepartureTime": "20:48",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:01",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:28",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:48"
   },
   {
@@ -3933,15 +2557,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "21:30",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:34",
     "kitaAyaseArrivalTime": "21:34",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "21:30",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "21:30"
   },
   {
     "trainNumber": "B2035S",
@@ -3951,13 +2569,9 @@
     "originDepartureTime": "20:54",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:07",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:39",
     "kitaAyaseArrivalTime": "21:39",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:35",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "20:54"
   },
   {
@@ -3968,13 +2582,7 @@
     "originDepartureTime": "21:00",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:13",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:40",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:00"
   },
   {
@@ -3984,31 +2592,17 @@
     "originStationName": "Ayase",
     "originDepartureTime": "21:45",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:49",
     "kitaAyaseArrivalTime": "21:49",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "21:45",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "21:45"
   },
   {
     "trainNumber": "B2013K",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:19",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:46",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:06"
   },
   {
@@ -4019,30 +2613,18 @@
     "originDepartureTime": "21:12",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:25",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "21:58",
     "kitaAyaseArrivalTime": "21:58",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "21:54",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:12"
   },
   {
     "trainNumber": "B2131S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:30",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "21:57",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:18"
   },
   {
@@ -4053,13 +2635,9 @@
     "originDepartureTime": "21:24",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:36",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:08",
     "kitaAyaseArrivalTime": "22:08",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:04",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:24"
   },
   {
@@ -4070,13 +2648,7 @@
     "originDepartureTime": "21:29",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:42",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "22:09",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:29"
   },
   {
@@ -4086,15 +2658,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "22:12",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:16",
     "kitaAyaseArrivalTime": "22:16",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "22:12",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "22:12"
   },
   {
     "trainNumber": "B2101K",
@@ -4104,30 +2670,18 @@
     "originDepartureTime": "21:36",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:48",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "22:15",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:36"
   },
   {
     "trainNumber": "B2053E",
     "type": "Local",
     "destinationStationName": "KitaAyase",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "21:55",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:28",
     "kitaAyaseArrivalTime": "22:28",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:24",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:42"
   },
   {
@@ -4138,13 +2692,7 @@
     "originDepartureTime": "21:48",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:01",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "22:28",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:48"
   },
   {
@@ -4154,15 +2702,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "22:29",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:33",
     "kitaAyaseArrivalTime": "22:33",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "22:29",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "22:29"
   },
   {
     "trainNumber": "B2101S",
@@ -4172,13 +2714,7 @@
     "originDepartureTime": "21:55",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:08",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "22:35",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "21:55"
   },
   {
@@ -4188,15 +2724,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "22:41",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:45",
     "kitaAyaseArrivalTime": "22:45",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "22:41",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "22:41"
   },
   {
     "trainNumber": "B2213S",
@@ -4206,30 +2736,18 @@
     "originDepartureTime": "22:03",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:15",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:51",
     "kitaAyaseArrivalTime": "22:51",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "22:47",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:03"
   },
   {
     "trainNumber": "B2133S",
     "type": "Local",
     "destinationStationName": "Abiko",
-    "originStationName": null,
-    "originDepartureTime": null,
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:23",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "22:51",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:11"
   },
   {
@@ -4239,15 +2757,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "22:55",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "22:59",
     "kitaAyaseArrivalTime": "22:59",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "22:55",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "22:55"
   },
   {
     "trainNumber": "B2239S",
@@ -4257,13 +2769,9 @@
     "originDepartureTime": "22:20",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:32",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:06",
     "kitaAyaseArrivalTime": "23:06",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:02",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:20"
   },
   {
@@ -4273,15 +2781,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "23:09",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:13",
     "kitaAyaseArrivalTime": "23:13",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "23:09",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "23:09"
   },
   {
     "trainNumber": "B2215K",
@@ -4291,13 +2793,7 @@
     "originDepartureTime": "22:31",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:43",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "23:10",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:31"
   },
   {
@@ -4308,13 +2804,8 @@
     "originDepartureTime": "22:39",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "22:52",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:19",
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "23:19",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:39"
   },
   {
@@ -4324,15 +2815,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "23:23",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:27",
     "kitaAyaseArrivalTime": "23:27",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "23:23",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "23:23"
   },
   {
     "trainNumber": "B2217K",
@@ -4342,13 +2827,7 @@
     "originDepartureTime": "22:49",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "23:01",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "23:28",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:49"
   },
   {
@@ -4359,13 +2838,9 @@
     "originDepartureTime": "22:58",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "23:11",
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:43",
     "kitaAyaseArrivalTime": "23:43",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
     "ayaseDepartureTime": "23:39",
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "22:58"
   },
   {
@@ -4375,15 +2850,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "23:44",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "23:48",
     "kitaAyaseArrivalTime": "23:48",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "23:44",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "23:44"
   },
   {
     "trainNumber": "B2311K",
@@ -4393,13 +2862,7 @@
     "originDepartureTime": "23:06",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "23:19",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "23:46",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "23:06"
   },
   {
@@ -4410,13 +2873,7 @@
     "originDepartureTime": "23:16",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "23:29",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "00:00",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "23:16"
   },
   {
@@ -4426,15 +2883,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "00:04",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:08",
     "kitaAyaseArrivalTime": "00:08",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "00:04",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "00:04"
   },
   {
     "trainNumber": "B2321K",
@@ -4444,13 +2895,7 @@
     "originDepartureTime": "23:27",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "23:39",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "00:07",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "23:27"
   },
   {
@@ -4461,13 +2906,7 @@
     "originDepartureTime": "23:38",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "23:51",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "00:21",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "23:38"
   },
   {
@@ -4477,15 +2916,9 @@
     "originStationName": "Ayase",
     "originDepartureTime": "00:25",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
     "destinationArrivalTime": "00:29",
     "kitaAyaseArrivalTime": "00:29",
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": null,
-    "ayaseDepartureTime": "00:25",
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseDepartureTime": "00:25"
   },
   {
     "trainNumber": "B2323S",
@@ -4495,13 +2928,7 @@
     "originDepartureTime": "23:55",
     "stationName": "KokkaiGijidomae",
     "stationDepartureTime": "00:07",
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
     "ayaseArrivalTime": "00:41",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
     "yoyogiUeharaDepartureTime": "23:55"
   },
   {
@@ -4511,14 +2938,6 @@
     "originStationName": "KitaSenju",
     "originDepartureTime": "00:48",
     "stationName": "KokkaiGijidomae",
-    "stationDepartureTime": null,
-    "stationArrivalTime": null,
-    "destinationArrivalTime": null,
-    "kitaAyaseArrivalTime": null,
-    "kitaAyaseDepartureTime": null,
-    "ayaseArrivalTime": "00:51",
-    "ayaseDepartureTime": null,
-    "yoyogiUeharaArrivalTime": null,
-    "yoyogiUeharaDepartureTime": null
+    "ayaseArrivalTime": "00:51"
   }
 ]

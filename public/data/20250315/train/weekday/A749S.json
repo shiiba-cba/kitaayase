@@ -8,88 +8,71 @@
   "timetable": [
     {
       "station": "Ayase",
-      "arrivalTime": null,
       "departureTime": "08:14"
     },
     {
       "station": "KitaSenju",
-      "arrivalTime": null,
       "departureTime": "08:18"
     },
     {
       "station": "Machiya",
-      "arrivalTime": null,
       "departureTime": "08:22"
     },
     {
       "station": "NishiNippori",
-      "arrivalTime": null,
       "departureTime": "08:25"
     },
     {
       "station": "Sendagi",
-      "arrivalTime": null,
       "departureTime": "08:27"
     },
     {
       "station": "Nezu",
-      "arrivalTime": null,
       "departureTime": "08:29"
     },
     {
       "station": "Yushima",
-      "arrivalTime": null,
       "departureTime": "08:32"
     },
     {
       "station": "ShinOchanomizu",
-      "arrivalTime": null,
       "departureTime": "08:34"
     },
     {
       "station": "Otemachi",
-      "arrivalTime": null,
       "departureTime": "08:37"
     },
     {
       "station": "Nijubashimae",
-      "arrivalTime": null,
       "departureTime": "08:39"
     },
     {
       "station": "Hibiya",
-      "arrivalTime": null,
       "departureTime": "08:41"
     },
     {
       "station": "Kasumigaseki",
-      "arrivalTime": null,
       "departureTime": "08:43"
     },
     {
       "station": "KokkaiGijidomae",
-      "arrivalTime": null,
       "departureTime": "08:45"
     },
     {
       "station": "Akasaka",
-      "arrivalTime": null,
       "departureTime": "08:47"
     },
     {
       "station": "Nogizaka",
-      "arrivalTime": null,
       "departureTime": "08:49"
     },
     {
       "station": "OmoteSando",
-      "arrivalTime": null,
       "departureTime": "08:52"
     },
     {
       "station": "MeijiJingumae",
-      "arrivalTime": "08:53",
-      "departureTime": null
+      "arrivalTime": "08:53"
     }
   ]
 }

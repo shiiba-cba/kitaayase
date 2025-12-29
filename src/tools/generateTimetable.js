@@ -261,6 +261,14 @@ function computeVirtualAyaseSortKey(train, ordered) {
   return virtualAyase * 10 + 1;
 }
 
+function removeNullFields(obj) {
+  return Object.fromEntries(
+    Object.entries(obj).filter(
+      ([_, v]) => v !== null && v !== undefined
+    )
+  );
+}
+
 // --------------------------------------------------
 // メイン
 // --------------------------------------------------
@@ -307,7 +315,7 @@ function buildTimetable(raw) {
     for (const stationKey of SELECTABLE_STATIONS) {
       const stationId = STATIONS[stationKey];
 
-      const row = {
+      const rawRow = {
         trainNumber: train["odpt:trainNumber"] || "",
         type: resolveTrainType(trainTypeId),
         destinationStationName: resolveStationName(destId),
@@ -334,6 +342,8 @@ function buildTimetable(raw) {
                 train["odpt:trainNumber"] || ""
               ),
       };
+
+      const row = removeNullFields(rawRow);
 
       if (!result[calendar]) result[calendar] = {};
       if (!result[calendar][direction]) result[calendar][direction] = {};
