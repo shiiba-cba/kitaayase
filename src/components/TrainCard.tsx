@@ -1,14 +1,7 @@
 import { Icon } from "@chakra-ui/react";
 import { MdWarning } from "react-icons/md";
 import { forwardRef } from "react";
-import {
-  Box,
-  Flex,
-  Text,
-  Badge,
-  VStack,
-  HStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, Badge, VStack, HStack } from "@chakra-ui/react";
 import { stations } from "../data/stations";
 import { trainTypes } from "../data/trainTypes";
 import { StationLabel } from "./StationLabel";
@@ -59,7 +52,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         // 発駅は北綾瀬固定の為、特急は始発駅発時刻(北千住始発 or 大手町始発)
         if (row.originDepartureTime) {
           depTime = row.originDepartureTime;
-          depLabel = stations[row.originStationName.toLowerCase()] || row.originStationName;
+          depLabel =
+            stations[row.originStationName.toLowerCase()] ||
+            row.originStationName;
         }
       } else if (row.kitaAyaseDepartureTime) {
         // 発駅は北綾瀬固定の為、特急以外はあれば北綾瀬発時刻(北綾瀬始発)
@@ -127,7 +122,8 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         // 着駅は北綾瀬固定の為、特急は終着駅着時刻(北千住行)
         if (row.destinationArrivalTime) {
           arrTime = row.destinationArrivalTime;
-          arrLabel = stations[row.destinationStationName.toLowerCase()] ||
+          arrLabel =
+            stations[row.destinationStationName.toLowerCase()] ||
             row.destinationStationName;
         }
       } else if (row.kitaAyaseArrivalTime) {
@@ -150,8 +146,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     if (direction === "for_yoyogiuehara") {
       isDepartWrong = row.originStationName !== "KitaAyase";
       const passesStation =
-        row.stationArrivalTime !== null ||
-        row.stationDepartureTime !== null;
+        row.stationArrivalTime !== null || row.stationDepartureTime !== null;
       isArrivalWrong = !passesStation;
     } else {
       isDepartWrong = row.stationDepartureTime === null;
@@ -181,15 +176,14 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     const depColor = isDepartWrong ? "whiteAlpha.700" : "white";
     const arrColor = isArrivalWrong ? "whiteAlpha.700" : "white";
 
-    const trainType =
-      trainTypes[row.type.toLowerCase()] || row.type;
+    const trainType = trainTypes[row.type.toLowerCase()] || row.type;
 
     const isOrigin =
       direction === "for_yoyogiuehara"
-        ? row.originStationName === "KitaAyase"
-          || row.originStationName === "Ayase"
-        : row.originStationName === row.stationName
-          || row.originStationName === "Ayase";
+        ? row.originStationName === "KitaAyase" ||
+          row.originStationName === "Ayase"
+        : row.originStationName === row.stationName ||
+          row.originStationName === "Ayase";
 
     const is3car = row.trainNumber.includes("96S");
 
@@ -201,15 +195,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         ref={ref}
         onClick={onClick}
         cursor="pointer"
-        bg={
-          isHighlight
-            ? CARD_HIGHLIGHT_BG
-            : CARD_NORMAL_BG
-        }
+        bg={isHighlight ? CARD_HIGHLIGHT_BG : CARD_NORMAL_BG}
         borderLeft={
-          isHighlight
-            ? `4px solid ${themeColor}`
-            : "4px solid transparent"
+          isHighlight ? `4px solid ${themeColor}` : "4px solid transparent"
         }
         borderRadius="md"
         w="100%"
@@ -271,24 +259,24 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           <VStack flex="1" align="left" gap={1}>
             <HStack gap={2}>
               {trainType && (
-              <Badge
-                w="66px"
-                justifyContent="center"
-                px={2}
-                py={0.5}
-                fontWeight="600"
-                fontFamily='"Noto Sans JP", sans-serif'
-                letterSpacing="0.04em"
-                color="#ffffff"
-                backgroundColor={
-                  row.type.includes("SemiExpress")
-                    ? "#007f00"
-                    : row.type.includes("LimitedExpress")
-                    ? "#c40000"
-                    : row.type.includes("Express")
-                    ? "#c40000"
-                    : "#004cb0"
-                }
+                <Badge
+                  w="66px"
+                  justifyContent="center"
+                  px={2}
+                  py={0.5}
+                  fontWeight="600"
+                  fontFamily='"Noto Sans JP", sans-serif'
+                  letterSpacing="0.04em"
+                  color="#ffffff"
+                  backgroundColor={
+                    row.type.includes("SemiExpress")
+                      ? "#007f00"
+                      : row.type.includes("LimitedExpress")
+                      ? "#c40000"
+                      : row.type.includes("Express")
+                      ? "#c40000"
+                      : "#004cb0"
+                  }
                 >
                   {trainType}
                 </Badge>
@@ -303,7 +291,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   color="#ff7f00"
                   backgroundColor="transparent"
                 >
-                  {row.originStationName === "Ayase" && stationKey !== "Ayase" ? "綾瀬始発" : "当駅始発"}
+                  {row.originStationName === "Ayase" && stationKey !== "Ayase"
+                    ? "綾瀬始発"
+                    : "当駅始発"}
                 </Badge>
               )}
               {is3car && (

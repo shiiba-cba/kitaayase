@@ -180,10 +180,14 @@ function extractTimes(train) {
 // --------------------------------------------------
 function computeSortKeyAyase(ayArr, ayDep, direction, trainNumber) {
   let sameTimeSortKey = 1;
-  if (direction === "for_yoyogiuehara" && trainNumber.includes("96S")) sameTimeSortKey = 2;
-  if (direction === "for_kitaayase" && trainNumber.includes("96S")) sameTimeSortKey = 0;
-  if (ayDep) return normalizeMinute(timeToMinutes(ayDep)) * 10 + sameTimeSortKey;
-  if (ayArr) return normalizeMinute(timeToMinutes(ayArr)) * 10 + sameTimeSortKey;
+  if (direction === "for_yoyogiuehara" && trainNumber.includes("96S"))
+    sameTimeSortKey = 2;
+  if (direction === "for_kitaayase" && trainNumber.includes("96S"))
+    sameTimeSortKey = 0;
+  if (ayDep)
+    return normalizeMinute(timeToMinutes(ayDep)) * 10 + sameTimeSortKey;
+  if (ayArr)
+    return normalizeMinute(timeToMinutes(ayArr)) * 10 + sameTimeSortKey;
   return 99999;
 }
 
@@ -192,7 +196,7 @@ function computeSortKeyAyase(ayArr, ayDep, direction, trainNumber) {
 // --------------------------------------------------
 function buildOtemachiOrder(trains) {
   return trains
-    .map(train => {
+    .map((train) => {
       const times = extractTimes(train);
       const ot = times.dep[STATIONS.otemachi] || times.arr[STATIONS.otemachi];
       if (!ot) return null;
@@ -208,7 +212,7 @@ function buildOtemachiOrder(trains) {
 
 function computeVirtualAyaseSortKey(train, ordered) {
   const trainNumber = train["odpt:trainNumber"] || "";
-  const idx = ordered.findIndex(v => v.trainNumber === trainNumber);
+  const idx = ordered.findIndex((v) => v.trainNumber === trainNumber);
   if (idx === -1) return 99999;
 
   let prev = null;
@@ -251,21 +255,16 @@ function computeVirtualAyaseSortKey(train, ordered) {
 
   // ★ 比率補間
   const selfMinute = ordered[idx].minute;
-  const ratio =
-    (selfMinute - prev.otemachi) /
-    (next.otemachi - prev.otemachi);
+  const ratio = (selfMinute - prev.otemachi) / (next.otemachi - prev.otemachi);
 
-  const virtualAyase =
-    prev.ayase + (next.ayase - prev.ayase) * ratio;
+  const virtualAyase = prev.ayase + (next.ayase - prev.ayase) * ratio;
 
   return virtualAyase * 10 + 1;
 }
 
 function removeNullFields(obj) {
   return Object.fromEntries(
-    Object.entries(obj).filter(
-      ([_, v]) => v !== null && v !== undefined
-    )
+    Object.entries(obj).filter(([, v]) => v !== null && v !== undefined)
   );
 }
 
@@ -283,12 +282,15 @@ function buildTimetable(raw) {
     if (!calendar || !direction) continue;
 
     if (!otemachiOrderedMap[calendar]) otemachiOrderedMap[calendar] = {};
-    if (!otemachiOrderedMap[calendar][direction]) otemachiOrderedMap[calendar][direction] = [];
+    if (!otemachiOrderedMap[calendar][direction])
+      otemachiOrderedMap[calendar][direction] = [];
     otemachiOrderedMap[calendar][direction].push(train);
   }
   for (const cal of Object.keys(otemachiOrderedMap)) {
     for (const dir of Object.keys(otemachiOrderedMap[cal])) {
-      otemachiOrderedMap[cal][dir] = buildOtemachiOrder(otemachiOrderedMap[cal][dir]);
+      otemachiOrderedMap[cal][dir] = buildOtemachiOrder(
+        otemachiOrderedMap[cal][dir]
+      );
     }
   }
 
@@ -357,8 +359,10 @@ function buildTimetable(raw) {
   for (const cal of Object.keys(result)) {
     for (const dir of Object.keys(result[cal])) {
       for (const station of Object.keys(result[cal][dir])) {
-        result[cal][dir][station].sort((a, b) => a.sortKeyAyase - b.sortKeyAyase);
-        result[cal][dir][station].forEach(r => delete r.sortKeyAyase);
+        result[cal][dir][station].sort(
+          (a, b) => a.sortKeyAyase - b.sortKeyAyase
+        );
+        result[cal][dir][station].forEach((r) => delete r.sortKeyAyase);
       }
     }
   }

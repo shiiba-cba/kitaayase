@@ -18,13 +18,7 @@ if (!diagramDate) {
   process.exit(1);
 }
 
-const RAW_FILE = path.join(
-  REPO_ROOT,
-  "public",
-  "data",
-  "raw",
-  "current.json"
-);
+const RAW_FILE = path.join(REPO_ROOT, "public", "data", "raw", "current.json");
 
 const OUTPUT_BASE = path.join(
   REPO_ROOT,
@@ -101,9 +95,7 @@ function resolveTrainType(id) {
 
 function removeNullFields(obj) {
   return Object.fromEntries(
-    Object.entries(obj).filter(
-      ([_, v]) => v !== null && v !== undefined
-    )
+    Object.entries(obj).filter(([, v]) => v !== null && v !== undefined)
   );
 }
 
@@ -134,8 +126,7 @@ for (const train of raw) {
   const timetable = [];
 
   for (const o of train["odpt:trainTimetableObject"] || []) {
-    const stationId =
-      o["odpt:departureStation"] ?? o["odpt:arrivalStation"];
+    const stationId = o["odpt:departureStation"] ?? o["odpt:arrivalStation"];
     if (!stationId) continue;
 
     timetable.push(

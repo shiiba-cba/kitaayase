@@ -15,7 +15,7 @@ import {
   DialogBody,
   DialogCloseTrigger,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { LuArrowLeftRight, LuClock, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
@@ -51,9 +51,7 @@ function getOperationTitle(text: string): string {
   }
 
   if (text.includes("運転を再開")) {
-    return text.includes("ダイヤが乱れ")
-      ? "運転再開・ダイヤ乱れ"
-      : "運転再開";
+    return text.includes("ダイヤが乱れ") ? "運転再開・ダイヤ乱れ" : "運転再開";
   }
 
   if (text.includes("直通運転を中止")) {
@@ -126,23 +124,21 @@ export default function App() {
 
   const [calendar, setCalendar] = useState<"weekday" | "holiday">("weekday");
 
-  const [stationKey, setStationKey] = useState<
-    keyof typeof selectStations
-  >(
+  const [stationKey, setStationKey] = useState<keyof typeof selectStations>(
     (localStorage.getItem("stationKey") as keyof typeof selectStations) ??
       "otemachi"
   );
 
   const [rows, setRows] = useState<TrainRow[]>([]);
 
-  const [trainDetail, setTrainDetail] =
-    useState<TrainDetail | null>(null);
+  const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // ===== 運行情報 =====
-  const [operationInfo, setOperationInfo] =
-    useState<OperationInfo | null>(null);
+  const [operationInfo, setOperationInfo] = useState<OperationInfo | null>(
+    null
+  );
 
   // ===== 運行情報 折りたたみ =====
   const [isOperationOpen, setIsOperationOpen] = useState(true);
@@ -256,39 +252,42 @@ export default function App() {
   /* ==================================================
    * ④ 現在時刻へスクロール
    * ================================================== */
-  const scrollToNow = (behavior: ScrollBehavior = "smooth") => {
-    if (rows.length === 0) return;
+  const scrollToNow = useCallback(
+    (behavior: ScrollBehavior = "smooth") => {
+      if (rows.length === 0) return;
 
-    const now = new Date();
-    let currentMinutes = now.getHours() * 60 + now.getMinutes();
-    if (currentMinutes < 240) currentMinutes += 1440;
+      const now = new Date();
+      let currentMinutes = now.getHours() * 60 + now.getMinutes();
+      if (currentMinutes < 240) currentMinutes += 1440;
 
-    const targetIndex = rows.findIndex((row) => {
-      const t =
-        direction === "for_yoyogiuehara"
-          ? row.kitaAyaseDepartureTime
-          : row.stationDepartureTime;
-      if (!t) return false;
+      const targetIndex = rows.findIndex((row) => {
+        const t =
+          direction === "for_yoyogiuehara"
+            ? row.kitaAyaseDepartureTime
+            : row.stationDepartureTime;
+        if (!t) return false;
 
-      let [h, m] = t.split(":").map(Number);
-      let trainMinutes = h * 60 + m;
-      if (trainMinutes < 240) trainMinutes += 1440;
+        const [h, m] = t.split(":").map(Number);
+        let trainMinutes = h * 60 + m;
+        if (trainMinutes < 240) trainMinutes += 1440;
 
-      return trainMinutes >= currentMinutes;
-    });
+        return trainMinutes >= currentMinutes;
+      });
 
-    const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
-    const el = cardRefs.current[index];
-    if (!el) return;
+      const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
+      const el = cardRefs.current[index];
+      if (!el) return;
 
-    const headerHeight = headerRef.current?.offsetHeight ?? 0;
-    const top = el.getBoundingClientRect().top + window.scrollY;
+      const headerHeight = headerRef.current?.offsetHeight ?? 0;
+      const top = el.getBoundingClientRect().top + window.scrollY;
 
-    window.scrollTo({
-      top: top - headerHeight - 8,
-      behavior,
-    });
-  };
+      window.scrollTo({
+        top: top - headerHeight - 8,
+        behavior,
+      });
+    },
+    [rows, direction]
+  );
 
   const fetchTrainDetail = async (trainNumber: string) => {
     const base = "/kitaayase/data";
@@ -297,8 +296,7 @@ export default function App() {
       .then((r) => r.json())
       .then((j) => j.diagramDate);
 
-    const url =
-      `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
+    const url = `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
 
     const data = await fetch(url).then((r) => r.json());
     setTrainDetail(data);
@@ -306,7 +304,7 @@ export default function App() {
 
   useEffect(() => {
     scrollToNow("smooth");
-  }, [rows, direction]);
+  }, [scrollToNow]);
 
   /* ==================================================
    * UI
@@ -344,14 +342,14 @@ export default function App() {
               <Text fontSize="sm" fontWeight="bold">
                 {operationTitle} {isOperationOpen ? "▲" : "▼"}
               </Text>
-            
+
               {/* 本文（折りたたみ対象） */}
               {isOperationOpen && (
                 <Text fontSize="sm" mt={1}>
                   {operationInfo.text}
                 </Text>
               )}
-  
+
               {/* 最終更新（常に表示） */}
               <Text fontSize="xs" opacity={0.8} mt={1}>
                 最終更新：
@@ -365,7 +363,7 @@ export default function App() {
               </Text>
             </Box>
           )}
-  
+
           <VStack gap={4} pb={3} pt={3}>
             {/* ==== 方面 ==== */}
             <Flex w="100%" align="center">
@@ -381,7 +379,7 @@ export default function App() {
                   }
                 />
               </Flex>
-  
+
               <IconButton
                 aria-label="方向入れ替え"
                 size="md"
@@ -397,7 +395,7 @@ export default function App() {
               >
                 <LuArrowLeftRight />
               </IconButton>
-  
+
               <Flex flex="1" justify="center">
                 <StationLabel
                   stationKey={
@@ -411,7 +409,7 @@ export default function App() {
                 />
               </Flex>
             </Flex>
-  
+
             {/* ==== 駅選択（スマホネイティブ <select>） ==== */}
             <select
               value={stationKey}
@@ -434,12 +432,11 @@ export default function App() {
                 </option>
               ))}
             </select>
-  
+
             {/* ==== 平日 / 休日 ==== */}
             <Flex w="100%" align="center">
-              <Flex flex="1" justify="center">
-              </Flex>
-  
+              <Flex flex="1" justify="center"></Flex>
+
               <Flex flex="0" px={1}>
                 <HStack gap={4}>
                   <Button
@@ -453,7 +450,7 @@ export default function App() {
                   >
                     平日
                   </Button>
-      
+
                   <Button
                     w="90px"
                     bg={calendar === "holiday" ? METRO_RED : "gray.700"}
@@ -467,7 +464,7 @@ export default function App() {
                   </Button>
                 </HStack>
               </Flex>
-  
+
               <Flex flex="1" justify="center">
                 <IconButton
                   aria-label="現在時刻へスクロール"
@@ -479,7 +476,7 @@ export default function App() {
                     bg: "rgba(0,187,133,0.15)",
                   }}
                   onClick={async () => {
-                    await fetchOperationInfo();   // ← 追加
+                    await fetchOperationInfo(); // ← 追加
                     scrollToNow("smooth");
                   }}
                 >
@@ -489,7 +486,7 @@ export default function App() {
             </Flex>
           </VStack>
         </Box>
-  
+
         {/* ===== 時刻表一覧 ===== */}
         <VStack gap={4} w="100%" pt={2}>
           {rows.map((row, i) => (
@@ -510,7 +507,7 @@ export default function App() {
           ))}
         </VStack>
       </Box>
-  
+
       <DialogRoot
         open={isModalOpen}
         onOpenChange={(e) => setIsModalOpen(e.open)}
@@ -518,12 +515,12 @@ export default function App() {
         closeOnEscape
       >
         <DialogBackdrop />
-      
+
         <DialogPositioner>
           <DialogContent
             bg="#111"
             color="white"
-            maxH="90dvh"        // 画面に収める
+            maxH="90dvh" // 画面に収める
             display="flex"
             flexDirection="column"
             position="relative"
@@ -543,32 +540,24 @@ export default function App() {
                 <LuX size={18} />
               </IconButton>
             </DialogCloseTrigger>
-      
+
             {/* ヘッダー（固定） */}
             <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
               <DialogTitle>
                 {trainDetail?.trainNumber}&nbsp;
-                {
-                  trainDetail?.originStation
-                    ? toJaStationName(trainDetail.originStation)
-                    : "小田急線"
-                }
-                →
-                {toJaStationName(trainDetail?.destinationStation)}
+                {trainDetail?.originStation
+                  ? toJaStationName(trainDetail.originStation)
+                  : "小田急線"}
+                →{toJaStationName(trainDetail?.destinationStation)}
               </DialogTitle>
             </DialogHeader>
-      
+
             {/* 本文（ここだけスクロール） */}
-            <DialogBody
-              flex="1"
-              overflowY="auto"
-              py={3}
-            >
+            <DialogBody flex="1" overflowY="auto" py={3}>
               <VStack align="stretch" gap={2}>
                 {trainDetail?.timetable.map((t, i) => {
-                  const isCurrent =
-                    t.station.toLowerCase() === stationKey;
-      
+                  const isCurrent = t.station.toLowerCase() === stationKey;
+
                   return (
                     <Flex
                       key={i}
@@ -582,7 +571,8 @@ export default function App() {
                         {toJaStationName(t.station)}
                       </Text>
                       <Text fontVariantNumeric="tabular-nums">
-                        {t.arrivalTime ?? "--:--"} / {t.departureTime ?? "--:--"}
+                        {t.arrivalTime ?? "--:--"} /{" "}
+                        {t.departureTime ?? "--:--"}
                       </Text>
                     </Flex>
                   );
