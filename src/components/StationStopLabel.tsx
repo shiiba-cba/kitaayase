@@ -1,4 +1,4 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image, Text, Box } from "@chakra-ui/react";
 import { stationNumberImageMap } from "../data/stationNumberImageMap";
 import { stations } from "../data/stations";
 
@@ -12,23 +12,19 @@ export const StationStopLabel = ({ stationKey, highlight }: Props) => {
   const name = stations[stationKey] ?? stationKey;
 
   return (
-    <HStack gap={2}>
-      {img && (
-        <Image
-          src={img}
-          alt={name}
-          boxSize="24px"
-          objectFit="contain"
-          opacity={highlight ? 1 : 0.85}
-        />
-      )}
-      <Text
-        fontSize="sm"
-        fontWeight={highlight ? "bold" : "normal"}
-        whiteSpace="nowrap"
-      >
-        {name}
-      </Text>
+    <HStack gap={2} align="center">
+      {img && <Image src={img} alt={name} boxSize="24px" objectFit="contain" />}
+
+      <Box height="24px" display="flex" alignItems="center">
+        <Text
+          fontSize="sm"
+          fontWeight={highlight ? "bold" : "normal"}
+          lineHeight="1"
+          whiteSpace="nowrap"
+        >
+          {name}
+        </Text>
+      </Box>
     </HStack>
   );
 };

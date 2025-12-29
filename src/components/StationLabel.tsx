@@ -12,25 +12,33 @@ export const StationLabel = ({ stationKey, stationName, textColor }: Props) => {
   const img = stationNumberImageMap[stationKey];
 
   return (
-    <HStack width="134px" gap={1}>
+    <HStack width="134px" gap={1} align="center">
       {img && (
         <Image src={img} alt={stationName} boxSize="32px" objectFit="contain" />
       )}
-      <Box width="98px" textAlign="center">
+
+      <Box
+        width="98px"
+        height="32px"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        transform={
+          stationName.length >= 6
+            ? "scaleX(0.67)"
+            : stationName.length >= 5
+            ? "scaleX(0.80)"
+            : undefined
+        }
+        transformOrigin="center"
+      >
         <Text
           fontSize="2xl"
           fontWeight="500"
           fontFamily='"Noto Sans JP", sans-serif'
           letterSpacing="0.02em"
           color={textColor}
-          transform={
-            stationName.length >= 6
-              ? "scaleX(0.67)"
-              : stationName.length >= 5
-              ? "scaleX(0.80)"
-              : ""
-          }
-          transformOrigin="center left"
+          lineHeight="1"
           whiteSpace="nowrap"
         >
           {formatStationName(stationName)}

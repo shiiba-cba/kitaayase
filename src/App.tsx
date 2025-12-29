@@ -613,10 +613,15 @@ export default function App() {
             {/* ヘッダー（固定） */}
             <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
               <VStack align="start" gap={2}>
-                {/* 列車番号 */}
                 <DialogTitle>
-                  <HStack gap={2}>
-                    {trainDetail?.trainNumber}
+                  <HStack gap={2} align="center">
+                    {/* 列車番号 */}
+                    <Box height="32px" display="flex" alignItems="center">
+                      <Text fontSize="md" fontWeight="600">
+                        {trainDetail?.trainNumber}
+                      </Text>
+                    </Box>
+
                     {/* 種別 */}
                     {trainDetail?.trainType &&
                       (() => {
@@ -624,21 +629,24 @@ export default function App() {
                         return (
                           t && (
                             <Box
+                              height="32px"
                               px={2}
-                              py={0.5}
                               borderRadius="md"
                               bg={t.bg}
                               color="white"
                               fontSize="xs"
                               fontWeight="600"
+                              display="flex"
+                              alignItems="center"
+                              justifyContent="center"
+                              textAlign="center"
+                              lineHeight="1.2"
                             >
                               {t.label === "各駅停車" ? (
                                 <>
-                                  <Text lineHeight={1.5}>
-                                    各駅
-                                    <br />
-                                    停車
-                                  </Text>
+                                  各駅
+                                  <br />
+                                  停車
                                 </>
                               ) : (
                                 t.label
@@ -647,6 +655,8 @@ export default function App() {
                           )
                         );
                       })()}
+
+                    {/* 行先 */}
                     <StationLabel
                       stationKey={
                         trainDetail?.destinationStation.toLowerCase() || ""
@@ -655,16 +665,21 @@ export default function App() {
                         trainDetail?.destinationStation
                       )}
                     />
+
                     {/* 3両 */}
                     {isThreeCars(trainDetail) && (
                       <Box
+                        height="32px"
                         px={2}
-                        py={0.5}
                         borderRadius="md"
                         bg="#808080"
                         color="white"
                         fontSize="xs"
                         fontWeight="600"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        lineHeight="1"
                       >
                         3両
                       </Box>
@@ -672,18 +687,21 @@ export default function App() {
                   </HStack>
                 </DialogTitle>
 
-                {/* 行先 */}
+                {/* 始発駅 → 終着駅 */}
                 <HStack gap={3} flexWrap="wrap" align="center">
-                  {/* ===== 行先 ===== */}
                   <StationStopLabel
                     stationKey={
                       trainDetail?.originStation.toLowerCase() || "odakyu"
                     }
                     highlight={false}
                   />
-                  <Text fontSize="sm" opacity={0.9}>
-                    →
-                  </Text>
+
+                  <Box height="24px" display="flex" alignItems="center">
+                    <Text fontSize="sm" opacity={0.9}>
+                      →
+                    </Text>
+                  </Box>
+
                   <StationStopLabel
                     stationKey={
                       trainDetail?.destinationStation.toLowerCase() || ""
@@ -708,21 +726,29 @@ export default function App() {
                       borderRadius="md"
                       bg={isCurrent ? "whiteAlpha.200" : "transparent"}
                       justify="space-between"
+                      align="center" // ← 重要
                     >
                       <StationStopLabel
                         stationKey={t.station.toLowerCase()}
                         highlight={isCurrent}
                       />
-                      <Text fontVariantNumeric="tabular-nums">
-                        {t.arrivalTime && <>{t.arrivalTime}着</>}
-                        {t.departureTime && <>{t.departureTime}発</>}
-                        {!t.arrivalTime &&
-                          !t.departureTime &&
-                          direction === "for_yoyogiuehara" && <>--:--着</>}
-                        {!t.arrivalTime &&
-                          !t.departureTime &&
-                          direction === "for_kitaayase" && <>--:--発</>}
-                      </Text>
+
+                      <Box
+                        height="24px" // ← StationStopLabel と揃える
+                        display="flex"
+                        alignItems="center"
+                      >
+                        <Text fontVariantNumeric="tabular-nums">
+                          {t.arrivalTime && <>{t.arrivalTime}着</>}
+                          {t.departureTime && <>{t.departureTime}発</>}
+                          {!t.arrivalTime &&
+                            !t.departureTime &&
+                            direction === "for_yoyogiuehara" && <>--:--着</>}
+                          {!t.arrivalTime &&
+                            !t.departureTime &&
+                            direction === "for_kitaayase" && <>--:--発</>}
+                        </Text>
+                      </Box>
                     </Flex>
                   );
                 })}
