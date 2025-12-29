@@ -665,7 +665,12 @@ export default function App() {
                       <Text fontVariantNumeric="tabular-nums">
                         {t.arrivalTime && <>{t.arrivalTime}着</>}
                         {t.departureTime && <>{t.departureTime}発</>}
-                        {!t.arrivalTime && !t.departureTime && <>--:--着</>}
+                        {!t.arrivalTime &&
+                          !t.departureTime &&
+                          direction === "for_yoyogiuehara" && <>--:--着</>}
+                        {!t.arrivalTime &&
+                          !t.departureTime &&
+                          direction === "for_kitaayase" && <>--:--発</>}
                       </Text>
                     </Flex>
                   );
