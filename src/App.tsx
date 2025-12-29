@@ -112,6 +112,28 @@ function toJaStationName(raw?: string | null): string {
   return stations[key] ?? raw;
 }
 
+/* ==================================================
+ * モーダル用 列車バッジ判定（TrainCard互換）
+ * ================================================== */
+function getTrainTypeInfo(type?: string) {
+  switch (type) {
+    case "Local":
+      return { label: "各駅停車", bg: "#004cb0" };
+    case "SemiExpress":
+      return { label: "準急", bg: "#007f00" };
+    case "Express":
+      return { label: "急行", bg: "#c40000" };
+    case "LimitedExpress":
+      return { label: "特急", bg: "#c40000" };
+    default:
+      return null;
+  }
+}
+
+function isThreeCars(detail: TrainDetail | null): boolean {
+  return !!detail?.trainNumber?.includes("96S");
+}
+
 export default function App() {
   // ===== 永続化された設定 =====
   const [direction, setDirection] = useState<
@@ -535,6 +557,12 @@ export default function App() {
                 position="absolute"
                 top="3"
                 right="3"
+                border="none"
+                outline="none"
+                boxShadow="none"
+                _focus={{ boxShadow: "none" }}
+                _focusVisible={{ boxShadow: "none" }}
+                _active={{ boxShadow: "none" }}
                 _hover={{ bg: "whiteAlpha.200", color: "white" }}
               >
                 <LuX size={18} />
@@ -543,13 +571,77 @@ export default function App() {
 
             {/* ヘッダー（固定） */}
             <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
-              <DialogTitle>
-                {trainDetail?.trainNumber}&nbsp;
-                {trainDetail?.originStation
-                  ? toJaStationName(trainDetail.originStation)
-                  : "小田急線"}
-                →{toJaStationName(trainDetail?.destinationStation)}
-              </DialogTitle>
+              <VStack align="start" gap={2}>
+                {/* 列車番号 */}
+                <DialogTitle>
+                  <HStack gap={2}>
+                    {trainDetail?.trainNumber}
+                    {/* 種別 */}
+                    {trainDetail?.trainType &&
+                      (() => {
+                        const t = getTrainTypeInfo(trainDetail.trainType);
+                        return (
+                          t && (
+                            <Box
+                              px={2}
+                              py={0.5}
+                              borderRadius="md"
+                              bg={t.bg}
+                              color="white"
+                              fontSize="xs"
+                              fontWeight="600"
+                            >
+                              {t.label === "各駅停車" ? (
+                                <>
+                                  <Text lineHeight={1.5}>
+                                    各駅
+                                    <br />
+                                    停車
+                                  </Text>
+                                </>
+                              ) : (
+                                t.label
+                              )}
+                            </Box>
+                          )
+                        );
+                      })()}
+                    <StationLabel
+                      stationKey={
+                        trainDetail?.destinationStation.toLowerCase() || ""
+                      }
+                      stationName={toJaStationName(
+                        trainDetail?.destinationStation
+                      )}
+                    />
+                    {/* 3両 */}
+                    {isThreeCars(trainDetail) && (
+                      <Box
+                        px={2}
+                        py={0.5}
+                        borderRadius="md"
+                        bg="#808080"
+                        color="white"
+                        fontSize="xs"
+                        fontWeight="600"
+                      >
+                        3両
+                      </Box>
+                    )}
+                  </HStack>
+                </DialogTitle>
+
+                {/* 行先 */}
+                <HStack gap={3} flexWrap="wrap" align="center">
+                  {/* ===== 行先 ===== */}
+                  <Text fontSize="sm" opacity={0.9}>
+                    {trainDetail?.originStation
+                      ? toJaStationName(trainDetail.originStation)
+                      : "小田急線"}
+                    →{toJaStationName(trainDetail?.destinationStation)}
+                  </Text>
+                </HStack>
+              </VStack>
             </DialogHeader>
 
             {/* 本文（ここだけスクロール） */}
@@ -571,8 +663,9 @@ export default function App() {
                         {toJaStationName(t.station)}
                       </Text>
                       <Text fontVariantNumeric="tabular-nums">
-                        {t.arrivalTime ?? "--:--"} /{" "}
-                        {t.departureTime ?? "--:--"}
+                        {t.arrivalTime && <>{t.arrivalTime}着</>}
+                        {t.departureTime && <>{t.departureTime}発</>}
+                        {!t.arrivalTime && !t.departureTime && <>--:--着</>}
                       </Text>
                     </Flex>
                   );
