@@ -206,6 +206,8 @@ export default function App() {
   // ===== 運行情報 折りたたみ =====
   const [isOperationOpen, setIsOperationOpen] = useState(true);
 
+  const [isClosing, setIsClosing] = useState(false);
+
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -588,23 +590,34 @@ export default function App() {
             flexDirection="column"
             position="relative"
           >
-            {/* ×ボタン（控えめ） */}
+            {/* ×ボタン */}
             <DialogCloseTrigger asChild>
               <IconButton
                 aria-label="close"
-                size="sm"
-                variant="ghost"
-                color="whiteAlpha.700"
+                tabIndex={-1}
                 position="absolute"
                 top="3"
                 right="3"
-                border="none"
-                outline="none"
-                boxShadow="none"
-                _focus={{ boxShadow: "none" }}
-                _focusVisible={{ boxShadow: "none" }}
-                _active={{ boxShadow: "none" }}
-                _hover={{ bg: "whiteAlpha.200", color: "white" }}
+                zIndex={10}
+                minW="40px"
+                minH="40px"
+                borderRadius="full"
+                bg={isClosing ? "whiteAlpha.400" : "whiteAlpha.200"}
+                color="white"
+                transform={isClosing ? "scale(0.9)" : "scale(1)"}
+                transition="background-color 0.12s ease, transform 0.12s ease"
+                onPointerDown={() => {
+                  setIsClosing(true);
+
+                  // 👇 押下状態を描画してから閉じる
+                  setTimeout(() => {
+                    setIsModalOpen(false);
+                    setIsClosing(false);
+                  }, 120); // ← ここが重要
+                }}
+                userSelect="none"
+                WebkitUserSelect="none"
+                touchAction="manipulation"
               >
                 <LuX size={18} />
               </IconButton>

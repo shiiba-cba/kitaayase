@@ -236,8 +236,15 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     return (
       <Box
         ref={ref}
-        onClick={onClick}
+        onPointerDown={onClick}
         cursor="pointer"
+        userSelect="none"
+        WebkitUserSelect="none"
+        WebkitTouchCallout="none"
+        touchAction="manipulation"
+        transition="background-color 0.1s ease"
+        _hover={{ bg: "rgba(255,255,255,0.18)" }}
+        _active={{ bg: "rgba(255,255,255,0.28)" }}
         bg={isHighlight ? CARD_HIGHLIGHT_BG : CARD_NORMAL_BG}
         borderLeft={
           isHighlight ? `4px solid ${themeColor}` : "4px solid transparent"
