@@ -81,6 +81,12 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         // 特急以外はなければ綾瀬発時刻(綾瀬始発北綾瀬行 3両 or 10両)
         depTime = row.ayaseDepartureTime;
         depLabel = stations["ayase"];
+      } else if (row.originDepartureTime) {
+        // 特急以外はなければ始発駅発時刻(途中駅始発)
+        depTime = row.originDepartureTime;
+        depLabel =
+          stations[row.originStationName.toLowerCase()] ||
+          row.originStationName;
       }
 
       if (row.trainNumber?.includes("96S")) {
