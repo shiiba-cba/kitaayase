@@ -731,7 +731,7 @@ export default function App() {
 
             {/* 本文（ここだけスクロール） */}
             <DialogBody flex="1" overflowY="auto" py={3}>
-              <VStack align="stretch" gap={2}>
+              <VStack align="stretch" gap={0}>
                 {trainDetail?.timetable.map((t, i) => {
                   const isCurrent = t.station.toLowerCase() === stationKey;
 

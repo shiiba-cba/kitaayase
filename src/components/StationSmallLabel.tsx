@@ -30,10 +30,10 @@ export const StationSmallLabel = ({
           <Box
             position="absolute"
             left="50%"
-            top="-10px"
+            top="-20px"
             transform="translateX(-50%)"
             width="3px"
-            height="10px"
+            height="20px"
             bg={connectorColor}
             borderRadius="full"
             opacity={0.95}
@@ -44,10 +44,10 @@ export const StationSmallLabel = ({
           <Box
             position="absolute"
             left="50%"
-            bottom="-10px"
+            bottom="-20px"
             transform="translateX(-50%)"
             width="3px"
-            height="10px"
+            height="20px"
             bg={connectorColor}
             borderRadius="full"
             opacity={0.95}
