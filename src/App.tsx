@@ -218,10 +218,8 @@ export default function App() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
 
-  /* ==================================================
-   * ① 4:00基準の休日判定
-   * ================================================== */
-  useEffect(() => {
+  const detectCalendarForNow = useCallback(async () => {
+    // 4:00 までは前日扱い
     const now = new Date();
     if (now.getHours() < 4) {
       now.setDate(now.getDate() - 1);
@@ -235,15 +233,24 @@ export default function App() {
     const day = now.getDay();
     const isWeekend = day === 0 || day === 6;
 
-    (async () => {
-      try {
-        const isNatHoliday = await isHoliday(dateStr);
-        setCalendar(isWeekend || isNatHoliday ? "holiday" : "weekday");
-      } catch {
-        setCalendar(isWeekend ? "holiday" : "weekday");
-      }
-    })();
+    try {
+      const isNatHoliday = await isHoliday(dateStr);
+      return isWeekend || isNatHoliday ? "holiday" : "weekday";
+    } catch {
+      // 祝日データが取れない場合は土日だけを休日扱い
+      return isWeekend ? "holiday" : "weekday";
+    }
   }, []);
+
+  /* ==================================================
+   * ① 4:00基準の休日判定（初期表示）
+   * ================================================== */
+  useEffect(() => {
+    (async () => {
+      const detected = await detectCalendarForNow();
+      setCalendar(detected);
+    })();
+  }, [detectCalendarForNow]);
 
   const OPERATION_URL =
     "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
@@ -547,7 +554,17 @@ export default function App() {
                     bg: "rgba(0,187,133,0.15)",
                   }}
                   onClick={async () => {
-                    await fetchOperationInfo(); // ← 追加
+                    await fetchOperationInfo();
+
+                    // 「現在時刻へ」ボタン押下時は、現在日時に応じて
+                    // 平日/土・休日を自動で切り替えてからスクロールする
+                    const detected = await detectCalendarForNow();
+                    if (detected !== calendar) {
+                      onCalendarChange(detected);
+                      // rows が切り替わった後に scrollToNow が発火する（useEffect）
+                      return;
+                    }
+
                     scrollToNow("smooth");
                   }}
                 >
