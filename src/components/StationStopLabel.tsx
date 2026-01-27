@@ -1,6 +1,7 @@
 import { HStack, Image, Text, Box } from "@chakra-ui/react";
 import { stationNumberImageMap } from "../data/stationNumberImageMap";
 import { stations } from "../data/stations";
+import { FONT_JP } from "../styles/fonts";
 
 type Props = {
   stationKey: string;
@@ -21,7 +22,7 @@ export const StationStopLabel = ({ stationKey, highlight }: Props) => {
           fontWeight={highlight ? "bold" : "normal"}
           lineHeight="1"
           whiteSpace="nowrap"
-          fontFamily='"Noto Sans JP", sans-serif'
+          fontFamily={FONT_JP}
         >
           {name}
         </Text>

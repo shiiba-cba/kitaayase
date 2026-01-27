@@ -1,6 +1,7 @@
 import { stationNumberImageMap } from "../data/stationNumberImageMap";
 import { Text, HStack, Image, Box } from "@chakra-ui/react";
 import { formatStationName } from "../utils/formatStationName";
+import { FONT_JP } from "../styles/fonts";
 
 type Props = {
   stationKey: string;
@@ -35,7 +36,7 @@ export const StationLabel = ({ stationKey, stationName, textColor }: Props) => {
         <Text
           fontSize="2xl"
           fontWeight="500"
-          fontFamily='"Noto Sans JP", sans-serif'
+          fontFamily={FONT_JP}
           letterSpacing="0.02em"
           color={textColor}
           lineHeight="1"

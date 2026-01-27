@@ -26,6 +26,7 @@ import { isHoliday } from "./utils/holiday";
 import { StationLabel } from "./components/StationLabel";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationStopLabel } from "./components/StationStopLabel";
+import { FONT_JP, FONT_NUM } from "./styles/fonts";
 
 /* ==================================================
  * 運行情報型
@@ -624,7 +625,7 @@ export default function App() {
             display="flex"
             flexDirection="column"
             position="relative"
-            fontFamily='"Noto Sans JP", sans-serif'
+            fontFamily={FONT_JP}
           >
             {/* ×ボタン */}
             <DialogCloseTrigger asChild>
@@ -660,7 +661,7 @@ export default function App() {
                       <Text
                         fontSize="md"
                         fontWeight="600"
-                        fontFamily='"Open Sans", sans-serif'
+                        fontFamily={FONT_NUM}
                         fontVariantNumeric="tabular-nums"
                         fontFeatureSettings="'tnum' 1"
                       >
@@ -682,7 +683,7 @@ export default function App() {
                               color="white"
                               fontSize="xs"
                               fontWeight="600"
-                              fontFamily='"Noto Sans JP", sans-serif'
+                              fontFamily={FONT_JP}
                               display="flex"
                               alignItems="center"
                               justifyContent="center"
@@ -723,7 +724,7 @@ export default function App() {
                         color="white"
                         fontSize="xs"
                         fontWeight="600"
-                        fontFamily='"Noto Sans JP", sans-serif'
+                        fontFamily={FONT_JP}
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
@@ -787,7 +788,7 @@ export default function App() {
                         alignItems="center"
                       >
                         <Text
-                          fontFamily='"Open Sans", sans-serif'
+                          fontFamily={FONT_NUM}
                           fontVariantNumeric="tabular-nums"
                           fontFeatureSettings="'tnum' 1"
                         >

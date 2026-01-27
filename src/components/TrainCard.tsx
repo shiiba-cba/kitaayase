@@ -5,6 +5,7 @@ import { Box, Flex, Text, Badge, VStack, HStack } from "@chakra-ui/react";
 import { stations } from "../data/stations";
 import { trainTypes } from "../data/trainTypes";
 import { StationLabel } from "./StationLabel";
+import { FONT_JP, FONT_NUM } from "../styles/fonts";
 
 export type TrainRow = {
   trainNumber: string;
@@ -260,7 +261,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               <Text
                 fontSize="3xl"
                 fontWeight="600"
-                fontFamily='"Open Sans", sans-serif'
+                fontFamily={FONT_NUM}
                 fontVariantNumeric="tabular-nums"
                 fontFeatureSettings="'tnum' 1"
                 color={depColor}
@@ -275,7 +276,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               <Text
                 fontSize="sm"
                 fontWeight="500"
-                fontFamily='"Noto Sans JP", sans-serif'
+                fontFamily={FONT_JP}
                 letterSpacing="0.08em"
                 color={depColor}
                 opacity={0.9}
@@ -317,7 +318,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   px={2}
                   py={0.5}
                   fontWeight="600"
-                  fontFamily='"Noto Sans JP", sans-serif'
+                  fontFamily={FONT_JP}
                   letterSpacing="0.04em"
                   color="#ffffff"
                   backgroundColor={
@@ -338,7 +339,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   px={0}
                   py={0.5}
                   fontWeight="600"
-                  fontFamily='"Noto Sans JP", sans-serif'
+                  fontFamily={FONT_JP}
                   letterSpacing="0.04em"
                   color="#ff7f00"
                   backgroundColor="transparent"
@@ -353,7 +354,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   px={2}
                   py={0.5}
                   fontWeight="600"
-                  fontFamily='"Noto Sans JP", sans-serif'
+                  fontFamily={FONT_JP}
                   letterSpacing="0.04em"
                   color="#ffffff"
                   backgroundColor="#808080"
@@ -379,7 +380,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               <Text
                 fontSize="3xl"
                 fontWeight="600"
-                fontFamily='"Open Sans", sans-serif'
+                fontFamily={FONT_NUM}
                 fontVariantNumeric="tabular-nums"
                 fontFeatureSettings="'tnum' 1"
                 color={arrColor}
@@ -394,7 +395,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               <Text
                 fontSize="sm"
                 fontWeight="500"
-                fontFamily='"Noto Sans JP", sans-serif'
+                fontFamily={FONT_JP}
                 letterSpacing="0.08em"
                 color={arrColor}
                 opacity={0.9}
