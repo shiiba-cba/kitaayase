@@ -748,6 +748,10 @@ export default function App() {
                       <StationSmallLabel
                         stationKey={t.station.toLowerCase()}
                         highlight={isCurrent}
+                        showTopConnector={i !== 0}
+                        showBottomConnector={
+                          i !== (trainDetail?.timetable.length ?? 1) - 1
+                        }
                       />
 
                       <Box
