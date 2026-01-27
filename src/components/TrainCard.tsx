@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import { Box, Flex, Text, Badge, VStack, HStack } from "@chakra-ui/react";
 import { stations } from "../data/stations";
 import { trainTypes } from "../data/trainTypes";
-import { StationLabel } from "./StationLabel";
+import { StationLargeLabel } from "./StationLargeLabel";
 import { FONT_JP, FONT_NUM } from "../styles/fonts";
 
 export type TrainRow = {
@@ -364,7 +364,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               )}
             </HStack>
 
-            <StationLabel
+            <StationLargeLabel
               stationKey={row.destinationStationName.toLowerCase()}
               stationName={
                 stations[row.destinationStationName.toLowerCase()] ||

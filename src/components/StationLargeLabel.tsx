@@ -9,7 +9,11 @@ type Props = {
   textColor?: string;
 };
 
-export const StationLabel = ({ stationKey, stationName, textColor }: Props) => {
+export const StationLargeLabel = ({
+  stationKey,
+  stationName,
+  textColor,
+}: Props) => {
   const img = stationNumberImageMap[stationKey];
 
   return (

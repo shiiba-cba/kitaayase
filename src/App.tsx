@@ -22,9 +22,9 @@ import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
 import { stations } from "./data/stations";
-import { StationLabel } from "./components/StationLabel";
+import { StationLargeLabel } from "./components/StationLargeLabel";
 import type { TrainDetail } from "./types/TrainDetail";
-import { StationStopLabel } from "./components/StationStopLabel";
+import { StationSmallLabel } from "./components/StationSmallLabel";
 import { FONT_JP, FONT_NUM } from "./styles/fonts";
 import { OperationInfoBanner } from "./components/OperationInfoBanner";
 import type { OperationInfo } from "./types/OperationInfo";
@@ -427,7 +427,7 @@ export default function App() {
             {/* ==== 方面 ==== */}
             <Flex w="100%" align="center">
               <Flex flex="1" justify="center">
-                <StationLabel
+                <StationLargeLabel
                   stationKey={
                     direction === "for_yoyogiuehara" ? "kitaayase" : stationKey
                   }
@@ -456,7 +456,7 @@ export default function App() {
               </IconButton>
 
               <Flex flex="1" justify="center">
-                <StationLabel
+                <StationLargeLabel
                   stationKey={
                     direction === "for_yoyogiuehara" ? stationKey : "kitaayase"
                   }
@@ -673,7 +673,7 @@ export default function App() {
                       })()}
 
                     {/* 行先 */}
-                    <StationLabel
+                    <StationLargeLabel
                       stationKey={
                         trainDetail?.destinationStation.toLowerCase() || ""
                       }
@@ -706,7 +706,7 @@ export default function App() {
 
                 {/* 始発駅 → 終着駅 */}
                 <HStack gap={3} flexWrap="wrap" align="center">
-                  <StationStopLabel
+                  <StationSmallLabel
                     stationKey={
                       trainDetail?.originStation.toLowerCase() || "odakyu"
                     }
@@ -719,7 +719,7 @@ export default function App() {
                     </Text>
                   </Box>
 
-                  <StationStopLabel
+                  <StationSmallLabel
                     stationKey={
                       trainDetail?.destinationStation.toLowerCase() || ""
                     }
@@ -745,7 +745,7 @@ export default function App() {
                       justify="space-between"
                       align="center" // ← 重要
                     >
-                      <StationStopLabel
+                      <StationSmallLabel
                         stationKey={t.station.toLowerCase()}
                         highlight={isCurrent}
                       />

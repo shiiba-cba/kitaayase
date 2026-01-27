@@ -8,7 +8,7 @@ type Props = {
   highlight?: boolean;
 };
 
-export const StationStopLabel = ({ stationKey, highlight }: Props) => {
+export const StationSmallLabel = ({ stationKey, highlight }: Props) => {
   const img = stationNumberImageMap[stationKey];
   const name = stations[stationKey] ?? stationKey;
 
