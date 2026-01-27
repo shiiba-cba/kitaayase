@@ -42,6 +42,35 @@ function isAbortError(e: unknown): boolean {
   );
 }
 
+const CHIYODA_GREEN = "#00bb85";
+const JOBAN_LOCAL_GRAY = "#A8A39D";
+const ODAKYU_BLUE = "#06559D";
+
+const JOBAN_LOCAL_STATIONS = new Set(["matsudo", "kashiwa", "abiko", "toride"]);
+const ODAKYU_STATIONS = new Set([
+  "odakyu",
+  "hakoneyumoto",
+  "karakida",
+  "isehara",
+  "honatsugi",
+  "sagamiono",
+  "mukogaokayuen",
+  "seijogakuenmae",
+]);
+
+function getThroughLineColorForStationKey(
+  stationKey: string | null | undefined,
+  opts?: { treatMissingAsOdakyu?: boolean }
+): string | null {
+  const key = (stationKey ?? "").toLowerCase();
+
+  if (!key) return opts?.treatMissingAsOdakyu ? ODAKYU_BLUE : null;
+
+  if (JOBAN_LOCAL_STATIONS.has(key)) return JOBAN_LOCAL_GRAY;
+  if (ODAKYU_STATIONS.has(key)) return ODAKYU_BLUE;
+  return null;
+}
+
 /* ==================================================
  * 運行情報の見出し取得
  * ================================================== */
@@ -735,6 +764,22 @@ export default function App() {
                 {trainDetail?.timetable.map((t, i) => {
                   const isCurrent = t.station.toLowerCase() === stationKey;
 
+                  const lastIndex = (trainDetail?.timetable.length ?? 1) - 1;
+
+                  // 直通線（小田急 / 常磐緩行）を最初/最後にだけ色付きで表示
+                  const topExtraColor =
+                    i === 0
+                      ? getThroughLineColorForStationKey(
+                          trainDetail?.originStation,
+                          { treatMissingAsOdakyu: true }
+                        )
+                      : null;
+
+                  const bottomExtraColor =
+                    i === lastIndex
+                      ? getThroughLineColorForStationKey(trainDetail?.destinationStation)
+                      : null;
+
                   return (
                     <Flex
                       key={i}
@@ -748,10 +793,11 @@ export default function App() {
                       <StationSmallLabel
                         stationKey={t.station.toLowerCase()}
                         highlight={isCurrent}
-                        showTopConnector={i !== 0}
-                        showBottomConnector={
-                          i !== (trainDetail?.timetable.length ?? 1) - 1
-                        }
+                        connectorColor={CHIYODA_GREEN}
+                        showTopConnector={i !== 0 || !!topExtraColor}
+                        showBottomConnector={i !== lastIndex || !!bottomExtraColor}
+                        topConnectorColor={topExtraColor ?? undefined}
+                        bottomConnectorColor={bottomExtraColor ?? undefined}
                       />
 
                       <Box

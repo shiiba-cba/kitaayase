@@ -9,7 +9,10 @@ type Props = {
   /** stop list connector line */
   showTopConnector?: boolean;
   showBottomConnector?: boolean;
+  /** default connector color (used when top/bottom color not specified) */
   connectorColor?: string;
+  topConnectorColor?: string;
+  bottomConnectorColor?: string;
 };
 
 export const StationSmallLabel = ({
@@ -18,6 +21,8 @@ export const StationSmallLabel = ({
   showTopConnector,
   showBottomConnector,
   connectorColor = "#00bb85", // 千代田線カラー
+  topConnectorColor,
+  bottomConnectorColor,
 }: Props) => {
   const img = stationNumberImageMap[stationKey];
   const name = stations[stationKey] ?? stationKey;
@@ -34,7 +39,7 @@ export const StationSmallLabel = ({
             transform="translateX(-50%)"
             width="3px"
             height="20px"
-            bg={connectorColor}
+            bg={topConnectorColor ?? connectorColor}
             borderRadius="full"
             opacity={0.95}
           />
@@ -48,7 +53,7 @@ export const StationSmallLabel = ({
             transform="translateX(-50%)"
             width="3px"
             height="20px"
-            bg={connectorColor}
+            bg={bottomConnectorColor ?? connectorColor}
             borderRadius="full"
             opacity={0.95}
           />
