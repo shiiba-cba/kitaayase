@@ -279,7 +279,8 @@ export default function App() {
     if (!operationInfo) return;
     if (operationOpenInitialized.current) return;
 
-    const state = operationInfo.state ?? getOperationVisualState(operationInfo.text);
+    // UIの表示ロジック（parseOperationInfo/getOperationVisualState）と揃えるため、本文から判定する
+    const state = getOperationVisualState(operationInfo.text);
     setIsOperationOpen(state !== "normal");
     operationOpenInitialized.current = true;
   }, [operationInfo]);
