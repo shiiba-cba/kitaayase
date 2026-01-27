@@ -216,13 +216,24 @@ export default function App() {
   const OPERATION_URL =
     "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
 
+  const operationAbortRef = useRef<AbortController | null>(null);
+
   const fetchOperationInfo = async () => {
+    // 連打・再取得で古いレスポンスが刺さらないようにする
+    operationAbortRef.current?.abort();
+    const controller = new AbortController();
+    operationAbortRef.current = controller;
+
     try {
-      const res = await fetch(OPERATION_URL, { cache: "no-store" });
+      const res = await fetch(OPERATION_URL, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
       if (!res.ok) throw new Error("failed to fetch operation info");
       const data: OperationInfo = await res.json();
       setOperationInfo(data);
-    } catch {
+    } catch (e: unknown) {
+      if (e instanceof DOMException && e.name === "AbortError") return;
       setOperationInfo(null);
     }
   };
@@ -232,6 +243,10 @@ export default function App() {
    * ================================================== */
   useEffect(() => {
     fetchOperationInfo();
+
+    return () => {
+      operationAbortRef.current?.abort();
+    };
   }, []);
 
   // 運行情報が平常運転でない場合は自動で開く（重要情報の見逃し防止）
@@ -330,17 +345,34 @@ export default function App() {
     [rows, direction]
   );
 
+  const trainDetailAbortRef = useRef<AbortController | null>(null);
+
   const fetchTrainDetail = async (trainNumber: string) => {
+    // 連打で古いレスポンスが刺さらないようにする
+    trainDetailAbortRef.current?.abort();
+    const controller = new AbortController();
+    trainDetailAbortRef.current = controller;
+
     const base = "/kitaayase/data";
 
-    const diagramDate = await fetch(`${base}/latest.json`)
-      .then((r) => r.json())
-      .then((j) => j.diagramDate);
+    try {
+      const diagramDate = await fetch(`${base}/latest.json`, {
+        signal: controller.signal,
+      })
+        .then((r) => r.json())
+        .then((j) => j.diagramDate);
 
-    const url = `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
+      const url = `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
 
-    const data = await fetch(url).then((r) => r.json());
-    setTrainDetail(data);
+      const data = await fetch(url, { signal: controller.signal }).then((r) =>
+        r.json()
+      );
+      setTrainDetail(data);
+    } catch (e: unknown) {
+      if (e instanceof DOMException && e.name === "AbortError") return;
+      // ここは UI 側で null 許容のはずなので握りつぶし
+      setTrainDetail(null);
+    }
   };
 
   useEffect(() => {
