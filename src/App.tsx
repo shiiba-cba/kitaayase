@@ -213,6 +213,7 @@ export default function App() {
 
   // ===== 運行情報 折りたたみ =====
   const [isOperationOpen, setIsOperationOpen] = useState(true);
+  const operationOpenInitialized = useRef(false);
 
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -272,6 +273,16 @@ export default function App() {
   useEffect(() => {
     fetchOperationInfo();
   }, []);
+
+  // 初期表示時のみ：平常運転なら折りたたみ、異常時は展開
+  useEffect(() => {
+    if (!operationInfo) return;
+    if (operationOpenInitialized.current) return;
+
+    const state = operationInfo.state ?? getOperationVisualState(operationInfo.text);
+    setIsOperationOpen(state !== "normal");
+    operationOpenInitialized.current = true;
+  }, [operationInfo]);
 
   // 永続化
   useEffect(() => {
