@@ -22,7 +22,6 @@ import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
 import { stations } from "./data/stations";
-import { isHoliday } from "./utils/holiday";
 import { StationLabel } from "./components/StationLabel";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationStopLabel } from "./components/StationStopLabel";
@@ -30,6 +29,7 @@ import { FONT_JP, FONT_NUM } from "./styles/fonts";
 import { OperationInfoBanner } from "./components/OperationInfoBanner";
 import type { OperationInfo } from "./types/OperationInfo";
 import type { OperationVisualState } from "./types/OperationVisualState";
+import { useCalendar } from "./hooks/useCalendar";
 
 /* (moved) OperationInfo type is now in src/types/OperationInfo.ts */
 
@@ -187,7 +187,7 @@ export default function App() {
       | "for_kitaayase") ?? "for_yoyogiuehara"
   );
 
-  const [calendar, setCalendar] = useState<"weekday" | "holiday">("weekday");
+  const { calendar, onCalendarChange, detectCalendarForNow } = useCalendar();
 
   const [stationKey, setStationKey] = useState<keyof typeof selectStations>(
     (localStorage.getItem("stationKey") as keyof typeof selectStations) ??
@@ -212,40 +212,6 @@ export default function App() {
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
-
-  const detectCalendarForNow = useCallback(async () => {
-    // 4:00 までは前日扱い
-    const now = new Date();
-    if (now.getHours() < 4) {
-      now.setDate(now.getDate() - 1);
-    }
-
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, "0");
-    const dd = String(now.getDate()).padStart(2, "0");
-    const dateStr = `${yyyy}-${mm}-${dd}`;
-
-    const day = now.getDay();
-    const isWeekend = day === 0 || day === 6;
-
-    try {
-      const isNatHoliday = await isHoliday(dateStr);
-      return isWeekend || isNatHoliday ? "holiday" : "weekday";
-    } catch {
-      // 祝日データが取れない場合は土日だけを休日扱い
-      return isWeekend ? "holiday" : "weekday";
-    }
-  }, []);
-
-  /* ==================================================
-   * ① 4:00基準の休日判定（初期表示）
-   * ================================================== */
-  useEffect(() => {
-    (async () => {
-      const detected = await detectCalendarForNow();
-      setCalendar(detected);
-    })();
-  }, [detectCalendarForNow]);
 
   const OPERATION_URL =
     "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
@@ -287,11 +253,6 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("stationKey", stationKey);
   }, [stationKey]);
-
-  const onCalendarChange = (v: "weekday" | "holiday") => {
-    setCalendar(v);
-    localStorage.setItem("calendar", v);
-  };
 
   /* ==================================================
    * ③ 時刻表 JSON 読み込み
