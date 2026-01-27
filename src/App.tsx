@@ -624,6 +624,7 @@ export default function App() {
             display="flex"
             flexDirection="column"
             position="relative"
+            fontFamily='"Noto Sans JP", sans-serif'
           >
             {/* ×ボタン */}
             <DialogCloseTrigger asChild>
@@ -656,7 +657,13 @@ export default function App() {
                   <HStack gap={2} align="center">
                     {/* 列車番号 */}
                     <Box height="32px" display="flex" alignItems="center">
-                      <Text fontSize="md" fontWeight="600">
+                      <Text
+                        fontSize="md"
+                        fontWeight="600"
+                        fontFamily='"Open Sans", sans-serif'
+                        fontVariantNumeric="tabular-nums"
+                        fontFeatureSettings="'tnum' 1"
+                      >
                         {trainDetail?.trainNumber}
                       </Text>
                     </Box>
@@ -675,6 +682,7 @@ export default function App() {
                               color="white"
                               fontSize="xs"
                               fontWeight="600"
+                              fontFamily='"Noto Sans JP", sans-serif'
                               display="flex"
                               alignItems="center"
                               justifyContent="center"
@@ -715,6 +723,7 @@ export default function App() {
                         color="white"
                         fontSize="xs"
                         fontWeight="600"
+                        fontFamily='"Noto Sans JP", sans-serif'
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
@@ -777,7 +786,11 @@ export default function App() {
                         display="flex"
                         alignItems="center"
                       >
-                        <Text fontVariantNumeric="tabular-nums">
+                        <Text
+                          fontFamily='"Open Sans", sans-serif'
+                          fontVariantNumeric="tabular-nums"
+                          fontFeatureSettings="'tnum' 1"
+                        >
                           {t.arrivalTime && (
                             <>{formatTimeNoLeadingZero(t.arrivalTime)}着</>
                           )}

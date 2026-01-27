@@ -21,6 +21,7 @@ export const StationStopLabel = ({ stationKey, highlight }: Props) => {
           fontWeight={highlight ? "bold" : "normal"}
           lineHeight="1"
           whiteSpace="nowrap"
+          fontFamily='"Noto Sans JP", sans-serif'
         >
           {name}
         </Text>
