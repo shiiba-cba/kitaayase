@@ -444,8 +444,8 @@ export default function App() {
               <Text fontSize="xs" opacity={0.8} mt={1}>
                 最終更新：
                 {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
-                  month: "2-digit",
-                  day: "2-digit",
+                  month: "numeric",
+                  day: "numeric",
                   hour: "2-digit",
                   minute: "2-digit",
                 })}
