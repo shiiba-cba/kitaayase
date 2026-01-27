@@ -212,8 +212,8 @@ export default function App() {
   );
 
   // ===== 運行情報 折りたたみ =====
-  const [isOperationOpen, setIsOperationOpen] = useState(true);
-  const operationOpenInitialized = useRef(false);
+  // デフォルトは折りたたみ（平常運転時にスッキリ見せる）
+  const [isOperationOpen, setIsOperationOpen] = useState(false);
 
   // TrainCard refs
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -274,15 +274,15 @@ export default function App() {
     fetchOperationInfo();
   }, []);
 
-  // 初期表示時のみ：平常運転なら折りたたみ、異常時は展開
+  // 運行情報が平常運転でない場合は自動で開く（重要情報の見逃し防止）
+  // ※平常運転に戻ったときは自動で閉じない（ユーザー操作を尊重）
   useEffect(() => {
     if (!operationInfo) return;
-    if (operationOpenInitialized.current) return;
 
-    // UIの表示ロジック（parseOperationInfo/getOperationVisualState）と揃えるため、本文から判定する
     const state = getOperationVisualState(operationInfo.text);
-    setIsOperationOpen(state !== "normal");
-    operationOpenInitialized.current = true;
+    if (state !== "normal") {
+      setIsOperationOpen(true);
+    }
   }, [operationInfo]);
 
   // 永続化
