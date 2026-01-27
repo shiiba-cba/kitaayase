@@ -27,18 +27,11 @@ import { StationLabel } from "./components/StationLabel";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationStopLabel } from "./components/StationStopLabel";
 import { FONT_JP, FONT_NUM } from "./styles/fonts";
+import { OperationInfoBanner } from "./components/OperationInfoBanner";
+import type { OperationInfo } from "./types/OperationInfo";
+import type { OperationVisualState } from "./types/OperationVisualState";
 
-/* ==================================================
- * 運行情報型
- * ================================================== */
-type OperationInfo = {
-  railway: string;
-  state: "normal" | "delay" | "suspended";
-  text: string;
-  operationDate?: string;
-  originTime?: string | null;
-  updatedAt: string;
-};
+/* (moved) OperationInfo type is now in src/types/OperationInfo.ts */
 
 /* ==================================================
  * 運行情報の見出し取得
@@ -85,7 +78,7 @@ function getOperationTitle(text: string): string {
   return "運行情報";
 }
 
-type OperationVisualState = "normal" | "delay" | "suspended";
+// (moved) OperationVisualState type is now in src/types/OperationVisualState.ts
 
 function getOperationVisualState(text: string): OperationVisualState {
   // 最優先：運転見合わせ
@@ -414,45 +407,13 @@ export default function App() {
         >
           {/* ==== 運行情報 ==== */}
           {operationInfo && parsedOperationInfo && (
-            <Box
-              w="100%"
-              px={4}
-              py={2}
-              bg={
-                parsedOperationInfo.state === "normal"
-                  ? "gray.700"
-                  : parsedOperationInfo.state === "delay"
-                  ? "orange.500"
-                  : "red.600"
-              }
-              textAlign="center"
-              cursor="pointer"
-              onClick={() => setIsOperationOpen((v) => !v)}
-            >
-              {/* 折りたたみ時も見えるヘッダー */}
-              <Text fontSize="sm" fontWeight="bold">
-                {parsedOperationInfo.title} {isOperationOpen ? "▲" : "▼"}
-              </Text>
-
-              {/* 本文（折りたたみ対象） */}
-              {isOperationOpen && (
-                <Text fontSize="sm" mt={1}>
-                  {operationInfo.text}
-                </Text>
-              )}
-
-              {/* 最終更新（常に表示） */}
-              <Text fontSize="xs" opacity={0.8} mt={1}>
-                最終更新：
-                {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
-                  month: "numeric",
-                  day: "numeric",
-                  hour: "numeric",
-                  minute: "2-digit",
-                })}
-                （{formatRelativeTime(operationInfo.updatedAt)}）
-              </Text>
-            </Box>
+            <OperationInfoBanner
+              operationInfo={operationInfo}
+              parsed={parsedOperationInfo}
+              isOpen={isOperationOpen}
+              onToggle={() => setIsOperationOpen((v) => !v)}
+              relativeText={formatRelativeTime(operationInfo.updatedAt)}
+            />
           )}
 
           <VStack gap={4} pb={3} pt={3}>
