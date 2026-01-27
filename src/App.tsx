@@ -33,6 +33,15 @@ import { useCalendar } from "./hooks/useCalendar";
 
 /* (moved) OperationInfo type is now in src/types/OperationInfo.ts */
 
+function isAbortError(e: unknown): boolean {
+  return (
+    typeof e === "object" &&
+    e !== null &&
+    "name" in e &&
+    (e as { name?: unknown }).name === "AbortError"
+  );
+}
+
 /* ==================================================
  * 運行情報の見出し取得
  * ================================================== */
@@ -233,7 +242,7 @@ export default function App() {
       const data: OperationInfo = await res.json();
       setOperationInfo(data);
     } catch (e: unknown) {
-      if (e instanceof DOMException && e.name === "AbortError") return;
+      if (isAbortError(e)) return;
       setOperationInfo(null);
     }
   };
@@ -347,6 +356,11 @@ export default function App() {
 
   const trainDetailAbortRef = useRef<AbortController | null>(null);
 
+  // calendar 切替時に、進行中の詳細取得が旧calendarで刺さらないように abort
+  useEffect(() => {
+    trainDetailAbortRef.current?.abort();
+  }, [calendar]);
+
   const fetchTrainDetail = async (trainNumber: string) => {
     // 連打で古いレスポンスが刺さらないようにする
     trainDetailAbortRef.current?.abort();
@@ -369,7 +383,7 @@ export default function App() {
       );
       setTrainDetail(data);
     } catch (e: unknown) {
-      if (e instanceof DOMException && e.name === "AbortError") return;
+      if (isAbortError(e)) return;
       // ここは UI 側で null 許容のはずなので握りつぶし
       setTrainDetail(null);
     }
