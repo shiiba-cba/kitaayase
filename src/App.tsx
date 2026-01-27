@@ -446,7 +446,7 @@ export default function App() {
                 {new Date(operationInfo.updatedAt).toLocaleString("ja-JP", {
                   month: "numeric",
                   day: "numeric",
-                  hour: "2-digit",
+                  hour: "numeric",
                   minute: "2-digit",
                 })}
                 （{formatRelativeTime(operationInfo.updatedAt)}）
