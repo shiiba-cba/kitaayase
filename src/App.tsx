@@ -42,6 +42,10 @@ function isAbortError(e: unknown): boolean {
   );
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, ms));
+}
+
 const CHIYODA_GREEN = "#00bb85";
 const JOBAN_LOCAL_GRAY = "#A8A39D";
 const ODAKYU_BLUE = "#06559D";
@@ -257,25 +261,29 @@ export default function App() {
   const operationAbortRef = useRef<AbortController | null>(null);
 
   const fetchOperationInfo = useCallback(
-    async (opts?: { preserveOnError?: boolean }) => {
+    async (opts?: { preserveOnError?: boolean; bustCache?: boolean }) => {
       // 連打・再取得で古いレスポンスが刺さらないようにする
       operationAbortRef.current?.abort();
       const controller = new AbortController();
       operationAbortRef.current = controller;
 
       try {
-        const res = await fetch(OPERATION_URL, {
+        const url = opts?.bustCache ? `${OPERATION_URL}?t=${Date.now()}` : OPERATION_URL;
+
+        const res = await fetch(url, {
           cache: "no-store",
           signal: controller.signal,
         });
         if (!res.ok) throw new Error("failed to fetch operation info");
         const data: OperationInfo = await res.json();
         setOperationInfo(data);
+        return true;
       } catch (e: unknown) {
-        if (isAbortError(e)) return;
+        if (isAbortError(e)) return false;
         if (!opts?.preserveOnError) {
           setOperationInfo(null);
         }
+        return false;
       }
     },
     []
@@ -368,8 +376,18 @@ export default function App() {
 
       // ダイヤ/運行情報を取り直し
       setTimetableReloadNonce((n) => n + 1);
+
+      // 運行情報は復帰直後に失敗しがちなので、キャッシュバスター + リトライ
       // 取得失敗でも前回表示を消さない（ネットワーク復帰直後で落ちやすい）
-      await fetchOperationInfo({ preserveOnError: true });
+      const backoffMs = [0, 1000, 3000];
+      for (const ms of backoffMs) {
+        if (ms) await sleep(ms);
+        const ok = await fetchOperationInfo({
+          preserveOnError: true,
+          bustCache: true,
+        });
+        if (ok) break;
+      }
     } finally {
       refreshingRef.current = false;
     }
