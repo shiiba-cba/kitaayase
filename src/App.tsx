@@ -256,7 +256,7 @@ export default function App() {
 
   const operationAbortRef = useRef<AbortController | null>(null);
 
-  const fetchOperationInfo = async () => {
+  const fetchOperationInfo = useCallback(async () => {
     // 連打・再取得で古いレスポンスが刺さらないようにする
     operationAbortRef.current?.abort();
     const controller = new AbortController();
@@ -274,7 +274,8 @@ export default function App() {
       if (isAbortError(e)) return;
       setOperationInfo(null);
     }
-  };
+  }, []);
+
 
   /* ==================================================
    * ② 運行情報取得（raw 直参照）
@@ -285,7 +286,7 @@ export default function App() {
     return () => {
       operationAbortRef.current?.abort();
     };
-  }, []);
+  }, [fetchOperationInfo]);
 
   // 運行情報が平常運転でない場合は自動で開く（重要情報の見逃し防止）
   // ※平常運転に戻ったときは自動で閉じない（ユーザー操作を尊重）
@@ -306,6 +307,8 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("stationKey", stationKey);
   }, [stationKey]);
+
+  const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
 
   /* ==================================================
    * ③ 時刻表 JSON 読み込み
@@ -335,11 +338,70 @@ export default function App() {
     })();
 
     return () => controller.abort();
-  }, [calendar, direction, stationKey]);
+  }, [calendar, direction, stationKey, timetableReloadNonce]);
 
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
+
+  // ===== 復帰時リフレッシュ（5分以上経過なら初回起動相当） =====
+  const backgroundedAtRef = useRef<number | null>(null);
+  const refreshingRef = useRef(false);
+
+  const refreshOnResume = useCallback(async () => {
+    if (refreshingRef.current) return;
+    refreshingRef.current = true;
+
+    try {
+      // モーダルを閉じる（初回起動相当）
+      setIsModalOpen(false);
+      setTrainDetail(null);
+
+      // 平日/休日を現在日時で上書き
+      const detected = await detectCalendarForNow();
+      onCalendarChange(detected);
+
+      // ダイヤ/運行情報を取り直し
+      setTimetableReloadNonce((n) => n + 1);
+      await fetchOperationInfo();
+    } finally {
+      refreshingRef.current = false;
+    }
+  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo]);
+
+  useEffect(() => {
+    const THRESHOLD_MS = 5 * 60 * 1000;
+
+    const onHidden = () => {
+      backgroundedAtRef.current = Date.now();
+    };
+
+    const onVisible = () => {
+      const bgAt = backgroundedAtRef.current;
+      if (!bgAt) return;
+      const elapsed = Date.now() - bgAt;
+      backgroundedAtRef.current = null;
+
+      if (elapsed >= THRESHOLD_MS) {
+        refreshOnResume();
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.hidden) onHidden();
+      else onVisible();
+    };
+
+    window.addEventListener("blur", onHidden);
+    window.addEventListener("focus", onVisible);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    return () => {
+      window.removeEventListener("blur", onHidden);
+      window.removeEventListener("focus", onVisible);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, [refreshOnResume]);
 
   const currentStationName = selectStations[stationKey];
 
