@@ -256,25 +256,30 @@ export default function App() {
 
   const operationAbortRef = useRef<AbortController | null>(null);
 
-  const fetchOperationInfo = useCallback(async () => {
-    // 連打・再取得で古いレスポンスが刺さらないようにする
-    operationAbortRef.current?.abort();
-    const controller = new AbortController();
-    operationAbortRef.current = controller;
+  const fetchOperationInfo = useCallback(
+    async (opts?: { preserveOnError?: boolean }) => {
+      // 連打・再取得で古いレスポンスが刺さらないようにする
+      operationAbortRef.current?.abort();
+      const controller = new AbortController();
+      operationAbortRef.current = controller;
 
-    try {
-      const res = await fetch(OPERATION_URL, {
-        cache: "no-store",
-        signal: controller.signal,
-      });
-      if (!res.ok) throw new Error("failed to fetch operation info");
-      const data: OperationInfo = await res.json();
-      setOperationInfo(data);
-    } catch (e: unknown) {
-      if (isAbortError(e)) return;
-      setOperationInfo(null);
-    }
-  }, []);
+      try {
+        const res = await fetch(OPERATION_URL, {
+          cache: "no-store",
+          signal: controller.signal,
+        });
+        if (!res.ok) throw new Error("failed to fetch operation info");
+        const data: OperationInfo = await res.json();
+        setOperationInfo(data);
+      } catch (e: unknown) {
+        if (isAbortError(e)) return;
+        if (!opts?.preserveOnError) {
+          setOperationInfo(null);
+        }
+      }
+    },
+    []
+  );
 
 
   /* ==================================================
@@ -363,7 +368,8 @@ export default function App() {
 
       // ダイヤ/運行情報を取り直し
       setTimetableReloadNonce((n) => n + 1);
-      await fetchOperationInfo();
+      // 取得失敗でも前回表示を消さない（ネットワーク復帰直後で落ちやすい）
+      await fetchOperationInfo({ preserveOnError: true });
     } finally {
       refreshingRef.current = false;
     }
