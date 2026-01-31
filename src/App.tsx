@@ -498,13 +498,13 @@ export default function App() {
       const el = cardRefs.current[index];
       if (!el) return;
 
-      const headerHeight = headerRef.current?.offsetHeight ?? 0;
-      const top = el.getBoundingClientRect().top + window.scrollY;
-
-      window.scrollTo({
-        top: top - headerHeight - 8,
+      el.scrollIntoView({
         behavior,
+        block: "start",
       });
+
+      const headerHeight = headerRef.current?.offsetHeight ?? 0;
+      window.scrollBy(0, -headerHeight - 8);
     },
     [rows, direction]
   );
