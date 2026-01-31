@@ -283,6 +283,11 @@ export default function App() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const headerRef = useRef<HTMLDivElement | null>(null);
 
+  // Sync refs array length with rows
+  useEffect(() => {
+    cardRefs.current = cardRefs.current.slice(0, rows.length);
+  }, [rows]);
+
   const OPERATION_URL =
     "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
 
@@ -483,8 +488,9 @@ export default function App() {
       const targetIndex = rows.findIndex((row) => {
         const t =
           direction === "for_yoyogiuehara"
-            ? row.kitaAyaseDepartureTime
-            : row.stationDepartureTime;
+            ? row.kitaAyaseDepartureTime || row.ayaseDepartureTime || row.originDepartureTime
+            : row.stationDepartureTime || row.ayaseDepartureTime || row.originDepartureTime;
+        
         if (!t) return false;
 
         const [h, m] = t.split(":").map(Number);
@@ -498,13 +504,31 @@ export default function App() {
       const el = cardRefs.current[index];
       if (!el) return;
 
-      el.scrollIntoView({
-        behavior,
-        block: "start",
-      });
-
       const headerHeight = headerRef.current?.offsetHeight ?? 0;
-      window.scrollBy(0, -headerHeight - 8);
+
+      try {
+        // First attempt with scrollIntoView
+        el.scrollIntoView({
+          behavior,
+          block: "start",
+        });
+
+        // scrollIntoView scrolls to the very top, we need to adjust for sticky header
+        if (behavior === "smooth") {
+          // For smooth scroll, we wait a bit then adjust
+          setTimeout(() => {
+            window.scrollBy(0, -headerHeight - 8);
+          }, 500); // 500ms is usually enough for smooth scroll to finish or be near end
+        } else {
+          window.scrollBy(0, -headerHeight - 8);
+        }
+      } catch (err) {
+        // Fallback to manual calculation
+        const rect = el.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetY = rect.top + scrollTop - headerHeight - 8;
+        window.scrollTo({ top: targetY, behavior });
+      }
     },
     [rows, direction]
   );
@@ -545,12 +569,14 @@ export default function App() {
   };
 
   useEffect(() => {
-    // 100ms 待つことで、ブラウザのレイアウト計算（カードの高さ確定）が完了するのを待つ
-    const timer = setTimeout(() => {
-      scrollToNow("smooth");
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [scrollToNow]);
+    if (rows.length > 0) {
+      // 100ms 待つことで、ブラウザのレイアウト計算（カードの高さ確定）が完了するのを待つ
+      const timer = setTimeout(() => {
+        scrollToNow("smooth");
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [rows, scrollToNow]);
 
   const parsedOperationInfo = operationInfo
     ? parseOperationInfo(operationInfo.text)
@@ -603,13 +629,14 @@ export default function App() {
                 size="md"
                 bg={METRO_GREEN}
                 _hover={{ bg: METRO_GREEN }}
-                onClick={() =>
+                onClick={() => {
                   setDirection(
                     direction === "for_yoyogiuehara"
                       ? "for_kitaayase"
                       : "for_yoyogiuehara"
-                  )
-                }
+                  );
+                  // scrollToNow is triggered by rows change (due to direction change)
+                }}
               >
                 <LuArrowLeftRight />
               </IconButton>
