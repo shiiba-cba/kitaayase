@@ -280,12 +280,13 @@ export default function App() {
   const [isOperationOpen, setIsOperationOpen] = useState(false);
 
   // TrainCard refs
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
   const headerRef = useRef<HTMLDivElement | null>(null);
 
-  // Sync refs array length with rows
+  // Sync refs map with rows
   useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, rows.length);
+    // rows が変わったら一旦クリアして、無効な ref が残らないようにする
+    cardRefs.current.clear();
   }, [rows]);
 
   const OPERATION_URL =
@@ -501,34 +502,20 @@ export default function App() {
       });
 
       const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
-      const el = cardRefs.current[index];
+      const el = cardRefs.current.get(index);
       if (!el) return;
 
       const headerHeight = headerRef.current?.offsetHeight ?? 0;
 
-      try {
-        // First attempt with scrollIntoView
-        el.scrollIntoView({
-          behavior,
-          block: "start",
-        });
+      // 要素の絶対座標を計算して、ヘッダー分だけ引いた位置にスクロール
+      const rect = el.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+      const targetY = absoluteTop - headerHeight - 8;
 
-        // scrollIntoView scrolls to the very top, we need to adjust for sticky header
-        if (behavior === "smooth") {
-          // For smooth scroll, we wait a bit then adjust
-          setTimeout(() => {
-            window.scrollBy(0, -headerHeight - 8);
-          }, 500); // 500ms is usually enough for smooth scroll to finish or be near end
-        } else {
-          window.scrollBy(0, -headerHeight - 8);
-        }
-      } catch (err) {
-        // Fallback to manual calculation
-        const rect = el.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const targetY = rect.top + scrollTop - headerHeight - 8;
-        window.scrollTo({ top: targetY, behavior });
-      }
+      window.scrollTo({
+        top: targetY,
+        behavior
+      });
     },
     [rows, direction]
   );
@@ -757,7 +744,7 @@ export default function App() {
                 setIsModalOpen(true);
               }}
               ref={(el) => {
-                cardRefs.current[i] = el;
+                cardRefs.current.set(i, el);
               }}
             />
           ))}
