@@ -240,8 +240,11 @@ export default function App() {
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
 
   const rowsWithConnection = useMemo(() => {
-    return rows.map((row) => {
+    return rows.map((row, index) => {
       let hasAyaseConnection = false;
+      let transferInfo: { label: string; color: string } | null = null;
+
+      // Existing connection logic for for_yoyogiuehara (shuttle to 10-car)
       if (
         direction === "for_yoyogiuehara" &&
         row.trainNumber.includes("96S") &&
@@ -262,9 +265,46 @@ export default function App() {
           return diff >= 3 && diff <= 5;
         });
       }
-      return { ...row, hasAyaseConnection };
+
+      // New complex transfer logic for for_kitaayase
+      if (
+        direction === "for_kitaayase" &&
+        stationKey !== "ayase" &&
+        row.destinationStationName !== "KitaAyase"
+      ) {
+        const currentAyaseArrival = row.ayaseArrivalTime;
+
+        if (currentAyaseArrival) {
+          const [arrH, arrM] = currentAyaseArrival.split(":").map(Number);
+          let arrTotal = arrH * 60 + arrM;
+          if (arrTotal < 240) arrTotal += 1440;
+
+          // Find the VERY NEXT train in rows that IS bound for Kita-Ayase
+          // Rows are already filtered for direction=for_kitaayase and stationKey.
+          // However, the "timetable" for transfer should be at Ayase.
+          // Since `rows` are all trains in this direction, we can look ahead in `rows`.
+          const nextKitaAyaseTrain = rows.slice(index + 1).find((r) => r.destinationStationName === "KitaAyase");
+
+          if (nextKitaAyaseTrain && nextKitaAyaseTrain.ayaseDepartureTime) {
+            const [depH, depM] = nextKitaAyaseTrain.ayaseDepartureTime.split(":").map(Number);
+            let depTotal = depH * 60 + depM;
+            if (depTotal < 240) depTotal += 1440;
+
+            const diff = depTotal - arrTotal;
+            const isShuttle = nextKitaAyaseTrain.trainNumber.includes("96S");
+
+            if (isShuttle && diff >= 3) {
+              transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
+            } else {
+              transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
+            }
+          }
+        }
+      }
+
+      return { ...row, hasAyaseConnection, transferInfo };
     });
-  }, [rows, ayaseTimetable, direction]);
+  }, [rows, ayaseTimetable, direction, stationKey]);
 
   const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
@@ -739,6 +779,7 @@ export default function App() {
               direction={direction}
               themeColor={themeColor}
               hasAyaseConnection={row.hasAyaseConnection}
+              transferInfo={row.transferInfo}
               onClick={async () => {
                 await fetchTrainDetail(row.trainNumber);
                 setIsModalOpen(true);

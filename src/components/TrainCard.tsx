@@ -31,6 +31,7 @@ type Props = {
   direction: "for_yoyogiuehara" | "for_kitaayase";
   themeColor: string;
   hasAyaseConnection?: boolean;
+  transferInfo?: { label: string; color: string } | null;
   onClick?: () => void;
 };
 
@@ -38,7 +39,7 @@ type Props = {
 // TrainCard
 // --------------------------------------------------
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
-  ({ row, stationKey, direction, themeColor, hasAyaseConnection, onClick }, ref) => {
+  ({ row, stationKey, direction, themeColor, hasAyaseConnection, transferInfo, onClick }, ref) => {
     const stationName = stations[stationKey];
 
     // ==================================================
@@ -392,6 +393,22 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   </Badge>
                 </Box>
               )}
+
+            {transferInfo && (
+              <Box mt={-1}>
+                <Badge
+                  px={0}
+                  py={0.5}
+                  fontWeight="700"
+                  fontFamily={FONT_JP}
+                  letterSpacing="0.04em"
+                  color={transferInfo.color}
+                  backgroundColor="transparent"
+                >
+                  {transferInfo.label}
+                </Badge>
+              </Box>
+            )}
           </VStack>
 
           {/* 右：着 */}
