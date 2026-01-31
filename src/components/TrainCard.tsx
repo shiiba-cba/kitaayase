@@ -310,8 +310,8 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           </VStack>
 
           {/* 中央：種別・行先 */}
-          <VStack flex="1" align="left" gap={1}>
-            <HStack gap={2}>
+          <VStack flex="1" align="left" gap={0}>
+            <HStack gap={2} mb={1}>
               {trainType && (
                 <Badge
                   w="66px"
@@ -345,7 +345,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   color="#ff7f00"
                   backgroundColor="transparent"
                 >
-                  {row.originStationName === "Ayase" && stationKey !== "Ayase"
+                  {row.originStationName === "Ayase" && stationKey !== "ayase"
                     ? "綾瀬始発"
                     : "当駅始発"}
                 </Badge>
@@ -374,21 +374,24 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               textColor={depColor}
             />
 
-            {direction === "for_yoyogiuehara" && is3car && hasAyaseConnection && (
-              <Box>
-                <Badge
-                  px={0}
-                  py={0.5}
-                  fontWeight="700"
-                  fontFamily={FONT_JP}
-                  letterSpacing="0.04em"
-                  color="#ff7f00"
-                  backgroundColor="transparent"
-                >
-                  綾瀬始発にのりかえ
-                </Badge>
-              </Box>
-            )}
+            {direction === "for_yoyogiuehara" &&
+              is3car &&
+              hasAyaseConnection &&
+              stationKey !== "ayase" && (
+                <Box mt={-1}>
+                  <Badge
+                    px={0}
+                    py={0.5}
+                    fontWeight="700"
+                    fontFamily={FONT_JP}
+                    letterSpacing="0.04em"
+                    color="#ff7f00"
+                    backgroundColor="transparent"
+                  >
+                    綾瀬始発にのりかえ
+                  </Badge>
+                </Box>
+              )}
           </VStack>
 
           {/* 右：着 */}
