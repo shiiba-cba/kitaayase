@@ -484,8 +484,8 @@ export default function App() {
       const targetIndex = rows.findIndex((row) => {
         const t =
           direction === "for_yoyogiuehara"
-            ? row.kitaAyaseDepartureTime || row.ayaseDepartureTime || row.originDepartureTime
-            : row.stationDepartureTime || row.ayaseDepartureTime || row.originDepartureTime;
+            ? row.kitaAyaseDepartureTime
+            : row.stationDepartureTime;
         
         if (!t) return false;
 
