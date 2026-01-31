@@ -500,22 +500,33 @@ export default function App() {
         });
         if (ok) break;
       }
+
+      // データの再読み込みが完了するまで少し待ってからスクロール
+      // (rows の更新を待つ必要があるため)
+      setTimeout(() => {
+        scrollToNow("smooth");
+      }, 500);
     } finally {
       refreshingRef.current = false;
     }
-  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo]);
+  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo, scrollToNow]);
 
   useEffect(() => {
     const THRESHOLD_MS = 5 * 60 * 1000;
 
     const onHidden = () => {
-      backgroundedAtRef.current = Date.now();
+      // 既に背景にいる場合は上書きしない（最初の隠れた時間を保持）
+      if (backgroundedAtRef.current === null) {
+        backgroundedAtRef.current = Date.now();
+      }
     };
 
     const onVisible = () => {
       const bgAt = backgroundedAtRef.current;
-      if (!bgAt) return;
+      if (bgAt === null) return;
+      
       const elapsed = Date.now() - bgAt;
+      // 判定が終わったらクリア
       backgroundedAtRef.current = null;
 
       if (elapsed >= THRESHOLD_MS) {
@@ -524,10 +535,15 @@ export default function App() {
     };
 
     const onVisibilityChange = () => {
-      if (document.hidden) onHidden();
-      else onVisible();
+      if (document.hidden) {
+        onHidden();
+      } else {
+        onVisible();
+      }
     };
 
+    // iOS/Android PWA 等では blur/focus だけだと不十分な場合があるため
+    // visibilitychange を主軸にしつつ、補完的に window focus も拾う
     window.addEventListener("blur", onHidden);
     window.addEventListener("focus", onVisible);
     document.addEventListener("visibilitychange", onVisibilityChange);
