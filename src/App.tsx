@@ -469,6 +469,51 @@ export default function App() {
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
 
+  /* ==================================================
+   * ④ 現在時刻へスクロール
+   * ================================================== */
+  const scrollToNow = useCallback(
+    (behavior: ScrollBehavior = "smooth") => {
+      if (rows.length === 0) return;
+
+      const now = new Date();
+      let currentMinutes = now.getHours() * 60 + now.getMinutes();
+      if (currentMinutes < 240) currentMinutes += 1440;
+
+      const targetIndex = rows.findIndex((row) => {
+        const t =
+          direction === "for_yoyogiuehara"
+            ? row.kitaAyaseDepartureTime || row.ayaseDepartureTime || row.originDepartureTime
+            : row.stationDepartureTime || row.ayaseDepartureTime || row.originDepartureTime;
+        
+        if (!t) return false;
+
+        const [h, m] = t.split(":").map(Number);
+        let trainMinutes = h * 60 + m;
+        if (trainMinutes < 240) trainMinutes += 1440;
+
+        return trainMinutes >= currentMinutes;
+      });
+
+      const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
+      const el = cardRefs.current.get(index);
+      if (!el) return;
+
+      const headerHeight = headerRef.current?.offsetHeight ?? 0;
+
+      // 要素の絶対座標を計算して、ヘッダー分だけ引いた位置にスクロール
+      const rect = el.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+      const targetY = absoluteTop - headerHeight - 8;
+
+      window.scrollTo({
+        top: targetY,
+        behavior
+      });
+    },
+    [rows, direction]
+  );
+
   // ===== 復帰時リフレッシュ（5分以上経過なら初回起動相当） =====
   const backgroundedAtRef = useRef<number | null>(null);
   const refreshingRef = useRef(false);
@@ -556,51 +601,6 @@ export default function App() {
   }, [refreshOnResume]);
 
   const currentStationName = selectStations[stationKey];
-
-  /* ==================================================
-   * ④ 現在時刻へスクロール
-   * ================================================== */
-  const scrollToNow = useCallback(
-    (behavior: ScrollBehavior = "smooth") => {
-      if (rows.length === 0) return;
-
-      const now = new Date();
-      let currentMinutes = now.getHours() * 60 + now.getMinutes();
-      if (currentMinutes < 240) currentMinutes += 1440;
-
-      const targetIndex = rows.findIndex((row) => {
-        const t =
-          direction === "for_yoyogiuehara"
-            ? row.kitaAyaseDepartureTime || row.ayaseDepartureTime || row.originDepartureTime
-            : row.stationDepartureTime || row.ayaseDepartureTime || row.originDepartureTime;
-        
-        if (!t) return false;
-
-        const [h, m] = t.split(":").map(Number);
-        let trainMinutes = h * 60 + m;
-        if (trainMinutes < 240) trainMinutes += 1440;
-
-        return trainMinutes >= currentMinutes;
-      });
-
-      const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
-      const el = cardRefs.current.get(index);
-      if (!el) return;
-
-      const headerHeight = headerRef.current?.offsetHeight ?? 0;
-
-      // 要素の絶対座標を計算して、ヘッダー分だけ引いた位置にスクロール
-      const rect = el.getBoundingClientRect();
-      const absoluteTop = window.pageYOffset + rect.top;
-      const targetY = absoluteTop - headerHeight - 8;
-
-      window.scrollTo({
-        top: targetY,
-        behavior
-      });
-    },
-    [rows, direction]
-  );
 
   const trainDetailAbortRef = useRef<AbortController | null>(null);
 
