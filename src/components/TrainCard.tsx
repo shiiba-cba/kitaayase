@@ -385,7 +385,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   color="#ff7f00"
                   backgroundColor="transparent"
                 >
-                  綾瀬始発にのりかえできます
+                  綾瀬始発にのりかえ
                 </Badge>
               </Box>
             )}
