@@ -422,6 +422,7 @@ export default function App() {
   }, [stationKey]);
 
   const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
+  const [shouldScrollAfterLoad, setShouldScrollAfterLoad] = useState(false);
 
   /* ==================================================
    * ③ 時刻表 JSON 読み込み
@@ -523,6 +524,7 @@ export default function App() {
     refreshingRef.current = true;
 
     try {
+      console.log("[Resume] Triggering refresh...");
       // モーダルを閉じる（初回起動相当）
       setIsModalOpen(false);
       setTrainDetail(null);
@@ -532,6 +534,7 @@ export default function App() {
       onCalendarChange(detected);
 
       // ダイヤ/運行情報を取り直し
+      setShouldScrollAfterLoad(true);
       setTimetableReloadNonce((n) => n + 1);
 
       // 運行情報は復帰直後に失敗しがちなので、キャッシュバスター + リトライ
@@ -545,16 +548,10 @@ export default function App() {
         });
         if (ok) break;
       }
-
-      // データの再読み込みが完了するまで少し待ってからスクロール
-      // (rows の更新を待つ必要があるため)
-      setTimeout(() => {
-        scrollToNow("smooth");
-      }, 500);
     } finally {
       refreshingRef.current = false;
     }
-  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo, scrollToNow]);
+  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo]);
 
   useEffect(() => {
     const THRESHOLD_MS = 5 * 60 * 1000;
@@ -571,10 +568,13 @@ export default function App() {
       if (bgAt === null) return;
       
       const elapsed = Date.now() - bgAt;
+      console.log(`[Resume] Visibility changed to visible. Elapsed: ${Math.floor(elapsed / 1000)}s`);
+      
       // 判定が終わったらクリア
       backgroundedAtRef.current = null;
 
       if (elapsed >= THRESHOLD_MS) {
+        console.log("[Resume] Threshold exceeded. Refreshing...");
         refreshOnResume();
       }
     };
@@ -642,10 +642,14 @@ export default function App() {
       // 100ms 待つことで、ブラウザのレイアウト計算（カードの高さ確定）が完了するのを待つ
       const timer = setTimeout(() => {
         scrollToNow("smooth");
+        if (shouldScrollAfterLoad) {
+          console.log("[Resume] Scrolled after refresh.");
+          setShouldScrollAfterLoad(false);
+        }
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [rows, scrollToNow]);
+  }, [rows, scrollToNow, shouldScrollAfterLoad]);
 
   const parsedOperationInfo = operationInfo
     ? parseOperationInfo(operationInfo.text)
