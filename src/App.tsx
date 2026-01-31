@@ -279,25 +279,51 @@ export default function App() {
           let arrTotal = arrH * 60 + arrM;
           if (arrTotal < 240) arrTotal += 1440;
 
-          // Find the VERY NEXT train in rows that IS bound for Kita-Ayase
-          // Rows are already filtered for direction=for_kitaayase and stationKey.
-          // However, the "timetable" for transfer should be at Ayase.
-          // Since `rows` are all trains in this direction, we can look ahead in `rows`.
-          const nextKitaAyaseTrain = rows.slice(index + 1).find((r) => r.destinationStationName === "KitaAyase");
+          // 1. Find the earliest Kita-Ayase bound train (B) that starts from Ayase ('96S') 
+          //    and is reachable from (A) with >= 3 mins transfer time.
+          const reachableShuttle = ayaseTimetable.find((conn) => {
+            if (!conn.trainNumber.includes("96S")) return false;
+            if (!conn.ayaseDepartureTime) return false;
 
-          if (nextKitaAyaseTrain && nextKitaAyaseTrain.ayaseDepartureTime) {
-            const [depH, depM] = nextKitaAyaseTrain.ayaseDepartureTime.split(":").map(Number);
+            const [depH, depM] = conn.ayaseDepartureTime.split(":").map(Number);
             let depTotal = depH * 60 + depM;
             if (depTotal < 240) depTotal += 1440;
 
             const diff = depTotal - arrTotal;
-            const isShuttle = nextKitaAyaseTrain.trainNumber.includes("96S");
+            return diff >= 3;
+          });
 
-            if (isShuttle && diff >= 3) {
+          // 2. Find the earliest Kita-Ayase bound train (C) that is a direct through train (10-car) 
+          //    and departs from the CURRENT station after (A).
+          const nextThroughTrain = rows.slice(index + 1).find((r) => 
+            r.destinationStationName === "KitaAyase" && !r.trainNumber.includes("96S")
+          );
+
+          // 3. Comparison
+          if (reachableShuttle) {
+            // (B) exists
+            if (!nextThroughTrain) {
+              // (C) does not exist
               transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
             } else {
-              transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
+              // (C) exists, compare arrival times at Kita-Ayase
+              const [sArrH, sArrM] = (reachableShuttle.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
+              let sArrTotal = sArrH * 60 + sArrM;
+              if (sArrTotal < 240) sArrTotal += 1440;
+
+              const [tArrH, tArrM] = (nextThroughTrain.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
+              let tArrTotal = tArrH * 60 + tArrM;
+              if (tArrTotal < 240) tArrTotal += 1440;
+
+              if (sArrTotal <= tArrTotal) {
+                transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
+              } else {
+                transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
+              }
             }
+          } else if (nextThroughTrain) {
+            // (B) does not exist, but (C) exists
+            transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
           }
         }
       }
@@ -421,7 +447,7 @@ export default function App() {
         setRows(data);
 
         // 綾瀬始発のりかえ判定用に、綾瀬駅の時刻表（同方面）を並行して取得
-        if (direction === "for_yoyogiuehara") {
+        if (direction === "for_yoyogiuehara" || direction === "for_kitaayase") {
           const ayaseUrl = `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`;
           fetch(ayaseUrl, { signal: controller.signal })
             .then((res) => res.json())
