@@ -362,6 +362,19 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   3両
                 </Badge>
               )}
+              {direction === "for_yoyogiuehara" && is3car && (
+                <Badge
+                  px={0}
+                  py={0.5}
+                  fontWeight="700"
+                  fontFamily={FONT_JP}
+                  letterSpacing="0.04em"
+                  color="#ff7f00"
+                  backgroundColor="transparent"
+                >
+                  綾瀬始発にのりかえできます
+                </Badge>
+              )}
             </HStack>
 
             <StationLargeLabel
