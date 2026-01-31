@@ -30,6 +30,7 @@ type Props = {
   stationKey: keyof typeof stations;
   direction: "for_yoyogiuehara" | "for_kitaayase";
   themeColor: string;
+  hasAyaseConnection?: boolean;
   onClick?: () => void;
 };
 
@@ -37,7 +38,7 @@ type Props = {
 // TrainCard
 // --------------------------------------------------
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
-  ({ row, stationKey, direction, themeColor, onClick }, ref) => {
+  ({ row, stationKey, direction, themeColor, hasAyaseConnection, onClick }, ref) => {
     const stationName = stations[stationKey];
 
     // ==================================================
@@ -373,7 +374,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
               textColor={depColor}
             />
 
-            {direction === "for_yoyogiuehara" && is3car && (
+            {direction === "for_yoyogiuehara" && is3car && hasAyaseConnection && (
               <Box>
                 <Badge
                   px={0}

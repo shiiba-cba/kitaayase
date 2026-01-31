@@ -15,7 +15,7 @@ import {
   DialogBody,
   DialogCloseTrigger,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { LuArrowLeftRight, LuClock, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
@@ -237,6 +237,34 @@ export default function App() {
   );
 
   const [rows, setRows] = useState<TrainRow[]>([]);
+  const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
+
+  const rowsWithConnection = useMemo(() => {
+    return rows.map((row) => {
+      let hasAyaseConnection = false;
+      if (
+        direction === "for_yoyogiuehara" &&
+        row.trainNumber.includes("96S") &&
+        row.ayaseArrivalTime
+      ) {
+        const [arrH, arrM] = row.ayaseArrivalTime.split(":").map(Number);
+        const arrTotal = arrH * 60 + arrM;
+
+        hasAyaseConnection = ayaseTimetable.some((conn) => {
+          if (conn.originStationName !== "Ayase") return false;
+          if (conn.trainNumber.includes("96S")) return false;
+          if (!conn.ayaseDepartureTime) return false;
+
+          const [depH, depM] = conn.ayaseDepartureTime.split(":").map(Number);
+          const depTotal = depH * 60 + depM;
+          const diff = depTotal - arrTotal;
+
+          return diff >= 3 && diff <= 5;
+        });
+      }
+      return { ...row, hasAyaseConnection };
+    });
+  }, [rows, ayaseTimetable, direction]);
 
   const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
@@ -345,8 +373,20 @@ export default function App() {
         }).then((res) => res.json());
 
         setRows(data);
+
+        // 綾瀬始発のりかえ判定用に、綾瀬駅の時刻表（同方面）を並行して取得
+        if (direction === "for_yoyogiuehara") {
+          const ayaseUrl = `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`;
+          fetch(ayaseUrl, { signal: controller.signal })
+            .then((res) => res.json())
+            .then((d) => setAyaseTimetable(d))
+            .catch(() => setAyaseTimetable([]));
+        } else {
+          setAyaseTimetable([]);
+        }
       } catch {
         setRows([]);
+        setAyaseTimetable([]);
       }
     })();
 
@@ -673,13 +713,14 @@ export default function App() {
 
         {/* ===== 時刻表一覧 ===== */}
         <VStack gap={4} w="100%" pt={2}>
-          {rows.map((row, i) => (
+          {rowsWithConnection.map((row, i) => (
             <TrainCard
               key={i}
               row={row}
               stationKey={stationKey}
               direction={direction}
               themeColor={themeColor}
+              hasAyaseConnection={row.hasAyaseConnection}
               onClick={async () => {
                 await fetchTrainDetail(row.trainNumber);
                 setIsModalOpen(true);
