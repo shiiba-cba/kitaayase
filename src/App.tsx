@@ -545,7 +545,11 @@ export default function App() {
   };
 
   useEffect(() => {
-    scrollToNow("smooth");
+    // 100ms 待つことで、ブラウザのレイアウト計算（カードの高さ確定）が完了するのを待つ
+    const timer = setTimeout(() => {
+      scrollToNow("smooth");
+    }, 100);
+    return () => clearTimeout(timer);
   }, [scrollToNow]);
 
   const parsedOperationInfo = operationInfo
