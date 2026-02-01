@@ -220,12 +220,16 @@ function formatTimeNoLeadingZero(time?: string | null): string {
 }
 
 export function App() {
-  const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(
-    (localStorage.getItem("direction") as "for_yoyogiuehara" | "for_kitaayase") || "for_yoyogiuehara"
-  );
-  const [stationKey, setStationKey] = useState<string>(
-    localStorage.getItem("stationKey") || "kitaayase"
-  );
+  const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(() => {
+    const saved = localStorage.getItem("direction");
+    if (saved === "for_yoyogiuehara" || saved === "for_kitaayase") {
+      return saved;
+    }
+    return "for_yoyogiuehara";
+  });
+  const [stationKey, setStationKey] = useState<string>(() => {
+    return localStorage.getItem("stationKey") || "kitaayase";
+  });
 
   const {
     calendar,
