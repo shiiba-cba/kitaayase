@@ -229,7 +229,30 @@ export default function App() {
       | "for_kitaayase") ?? "for_yoyogiuehara"
   );
 
-  const { calendar, onCalendarChange, detectCalendarForNow } = useCalendar();
+  const {
+    calendar,
+    onCalendarChange: baseOnCalendarChange,
+    detectCalendarForNow,
+  } = useCalendar();
+
+  // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
+  const onCalendarChange = useCallback(
+    async (target: "weekday" | "holiday") => {
+      // 1. Fetch latest operation info
+      await fetchOperationInfo({ bustCache: true });
+
+      // 2. Refresh timetable if date boundary (4 AM) was crossed
+      // This is handled via setTimetableReloadNonce which triggers useEffect for rows
+      setTimetableReloadNonce((c) => c + 1);
+
+      // 3. Set calendar (via the original onCalendarChange)
+      baseOnCalendarChange(target);
+
+      // 4. Trigger scroll to now after load
+      setShouldScrollAfterLoad(true);
+    },
+    [fetchOperationInfo, baseOnCalendarChange]
+  );
 
   const [stationKey, setStationKey] = useState<keyof typeof selectStations>(
     (localStorage.getItem("stationKey") as keyof typeof selectStations) ??
@@ -783,34 +806,7 @@ export default function App() {
                 </HStack>
               </Flex>
 
-              <Flex flex="1" justify="center">
-                <IconButton
-                  aria-label="現在時刻へスクロール"
-                  size="md"
-                  variant="outline"
-                  color={METRO_GREEN}
-                  borderColor={METRO_GREEN}
-                  _hover={{
-                    bg: "rgba(0,187,133,0.15)",
-                  }}
-                  onClick={async () => {
-                    await fetchOperationInfo();
-
-                    // 「現在時刻へ」ボタン押下時は、現在日時に応じて
-                    // 平日/土・休日を自動で切り替えてからスクロールする
-                    const detected = await detectCalendarForNow();
-                    if (detected !== calendar) {
-                      onCalendarChange(detected);
-                      // rows が切り替わった後に scrollToNow が発火する（useEffect）
-                      return;
-                    }
-
-                    scrollToNow("smooth");
-                  }}
-                >
-                  <LuClock />
-                </IconButton>
-              </Flex>
+              <Flex flex="1" justify="center"></Flex>
             </Flex>
           </VStack>
         </Box>
