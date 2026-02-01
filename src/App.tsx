@@ -221,10 +221,10 @@ function formatTimeNoLeadingZero(time?: string | null): string {
 
 export function App() {
   const [stationKey, setStationKey] = useState<string>(() => {
-    return localStorage.getItem("stationKey") || "kitaayase";
+    return localStorage.getItem("stationKey") || "otemachi";
   });
   const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(() => {
-    const savedStationKey = localStorage.getItem("stationKey") || "kitaayase";
+    const savedStationKey = localStorage.getItem("stationKey") || "otemachi";
     if (savedStationKey === "kitaayase") {
       return "for_yoyogiuehara";
     }
