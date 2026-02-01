@@ -317,6 +317,9 @@ export function App() {
     []
   );
 
+  const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
+  const [shouldScrollAfterLoad, setShouldScrollAfterLoad] = useState(false);
+
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
     async (target: "weekday" | "holiday") => {
@@ -335,7 +338,6 @@ export function App() {
     },
     [fetchOperationInfo, baseOnCalendarChange]
   );
-
 
   /* ==================================================
    * ② 運行情報取得（raw 直参照）
@@ -367,9 +369,6 @@ export function App() {
   useEffect(() => {
     localStorage.setItem("stationKey", stationKey);
   }, [stationKey]);
-
-  const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
-  const [shouldScrollAfterLoad, setShouldScrollAfterLoad] = useState(false);
 
   /* ==================================================
    * ③ 時刻表 JSON 読み込み
