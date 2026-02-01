@@ -160,9 +160,19 @@ export function App() {
 
   const {
     calendar,
+    setCalendar,
     onCalendarChange: baseOnCalendarChange,
     detectCalendarForNow,
   } = useCalendar();
+
+  // 初期表示時の自動判定
+  useEffect(() => {
+    (async () => {
+      const detected = await detectCalendarForNow();
+      setCalendar(detected);
+      setShouldScrollAfterLoad(true);
+    })();
+  }, [detectCalendarForNow, setCalendar]);
 
   const [rows, setRows] = useState<TrainRow[]>([]);
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
