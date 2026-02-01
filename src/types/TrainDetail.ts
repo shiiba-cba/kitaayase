@@ -1,3 +1,10 @@
+export type TrainStop = {
+  stationName: string;
+  arrivalTime: string | null;
+  departureTime: string | null;
+  isPassed: boolean;
+};
+
 export type TrainDetail = {
   trainNumber: string;
   calendar: "weekday" | "holiday";
@@ -5,9 +12,5 @@ export type TrainDetail = {
   trainType: string;
   originStation: string;
   destinationStation: string;
-  timetable: {
-    station: string;
-    arrivalTime: string | null;
-    departureTime: string | null;
-  }[];
+  stops: TrainStop[];
 };

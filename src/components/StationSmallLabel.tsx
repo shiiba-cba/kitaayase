@@ -4,7 +4,9 @@ import { stations } from "../data/stations";
 import { FONT_JP } from "../styles/fonts";
 
 type Props = {
-  stationKey: string;
+  stationKey?: string;
+  stationName?: string;
+  isPassed?: boolean;
   highlight?: boolean;
   /** stop list connector line */
   showTopConnector?: boolean;
@@ -17,6 +19,8 @@ type Props = {
 
 export const StationSmallLabel = ({
   stationKey,
+  stationName,
+  isPassed,
   highlight,
   showTopConnector,
   showBottomConnector,
@@ -24,8 +28,9 @@ export const StationSmallLabel = ({
   topConnectorColor,
   bottomConnectorColor,
 }: Props) => {
-  const img = stationNumberImageMap[stationKey];
-  const name = stations[stationKey] ?? stationKey;
+  const effectiveKey = stationKey ?? (stationName ? "" : "unknown");
+  const img = stationNumberImageMap[effectiveKey.toLowerCase()];
+  const name = stationName ?? stations[effectiveKey.toLowerCase()] ?? effectiveKey;
 
   return (
     <HStack gap={2} align="center">
@@ -60,7 +65,13 @@ export const StationSmallLabel = ({
         )}
 
         {img && (
-          <Image src={img} alt={name} boxSize="24px" objectFit="contain" />
+          <Image 
+            src={img} 
+            alt={name} 
+            boxSize="24px" 
+            objectFit="contain" 
+            filter={isPassed ? "grayscale(100%) opacity(50%)" : undefined}
+          />
         )}
       </Box>
 
@@ -71,6 +82,7 @@ export const StationSmallLabel = ({
           lineHeight="1"
           whiteSpace="nowrap"
           fontFamily={FONT_JP}
+          color={isPassed ? "gray.500" : "inherit"}
         >
           {name}
         </Text>

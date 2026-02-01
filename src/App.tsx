@@ -21,6 +21,7 @@ import { LuArrowLeftRight, LuX } from "react-icons/lu";
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
+import { stations } from "./data/stations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
@@ -148,6 +149,15 @@ function formatRelativeTime(dateString: string): string {
 
   const diffDay = Math.floor(diffHour / 24);
   return `${diffDay}日前`;
+}
+
+/* ==================================================
+ * 駅名変換
+ * ================================================== */
+function toJaStationName(raw?: string | null): string {
+  if (!raw) return "";
+  const key = raw.trim().toLowerCase();
+  return stations[key] ?? raw;
 }
 
 export function App() {
@@ -819,8 +829,9 @@ export function App() {
                 </Box>
               ) : (
                 <VStack align="stretch" gap={0} maxH="60vh" overflowY="auto">
-                  {trainDetail.timetable.map((stop, idx) => {
-                    const isTerminal = idx === trainDetail.timetable.length - 1;
+                  {trainDetail.stops.map((stop, idx) => {
+                    const isPassed = stop.isPassed;
+                    const isTerminal = idx === trainDetail.stops.length - 1;
 
                     return (
                       <Flex
@@ -829,11 +840,13 @@ export function App() {
                         px={4}
                         py={3}
                         borderBottom="1px solid #333"
+                        bg={isPassed ? "whiteAlpha.50" : "transparent"}
                       >
                         {/* 駅名 */}
                         <Box flex="1">
                           <StationSmallLabel
-                            stationKey={stop.station.toLowerCase()}
+                            stationName={toJaStationName(stop.stationName)}
+                            isPassed={isPassed}
                           />
                         </Box>
 
@@ -851,7 +864,7 @@ export function App() {
                               fontSize="md"
                               fontWeight="bold"
                               fontFamily={FONT_NUM}
-                              color="white"
+                              color={isPassed ? "gray.500" : "white"}
                             >
                               {isTerminal
                                 ? stop.arrivalTime
