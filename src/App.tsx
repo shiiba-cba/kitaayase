@@ -16,7 +16,7 @@ import {
   DialogCloseTrigger,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { LuArrowLeftRight, LuClock, LuX } from "react-icons/lu";
+import { LuArrowLeftRight, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
@@ -197,36 +197,22 @@ function getTrainTypeInfo(type?: string) {
     case "Local":
       return { label: "各駅停車", bg: "#004cb0" };
     case "SemiExpress":
-      return { label: "準急", bg: "#007f00" };
+      return { label: "準急", bg: "#00bb85" };
     case "Express":
-      return { label: "急行", bg: "#c40000" };
-    case "LimitedExpress":
-      return { label: "特急", bg: "#c40000" };
+      return { label: "急行", bg: "#f62e36" };
+    case "ChiyodaSemiExpress":
+      return { label: "千代田準急", bg: "#00bb85" };
     default:
-      return null;
+      return { label: "各駅停車", bg: "#004cb0" };
   }
 }
 
-function isThreeCars(detail: TrainDetail | null): boolean {
-  return !!detail?.trainNumber?.includes("96S");
-}
-
-function formatTimeNoLeadingZero(time?: string | null): string {
-  if (!time) return "";
-  if (time === "--:--") return time;
-
-  const [h, m] = time.split(":");
-  return `${Number(h)}:${m}`;
-}
-
-export default function App() {
-  // ===== 永続化された設定 =====
-  const [direction, setDirection] = useState<
-    "for_yoyogiuehara" | "for_kitaayase"
-  >(
-    (localStorage.getItem("direction") as
-      | "for_yoyogiuehara"
-      | "for_kitaayase") ?? "for_yoyogiuehara"
+export function App() {
+  const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(
+    (localStorage.getItem("direction") as any) || "for_yoyogiuehara"
+  );
+  const [stationKey, setStationKey] = useState<string>(
+    localStorage.getItem("stationKey") || "kitaayase"
   );
 
   const {
@@ -235,39 +221,15 @@ export default function App() {
     detectCalendarForNow,
   } = useCalendar();
 
-  // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
-  const onCalendarChange = useCallback(
-    async (target: "weekday" | "holiday") => {
-      // 1. Fetch latest operation info
-      await fetchOperationInfo({ bustCache: true });
-
-      // 2. Refresh timetable if date boundary (4 AM) was crossed
-      // This is handled via setTimetableReloadNonce which triggers useEffect for rows
-      setTimetableReloadNonce((c) => c + 1);
-
-      // 3. Set calendar (via the original onCalendarChange)
-      baseOnCalendarChange(target);
-
-      // 4. Trigger scroll to now after load
-      setShouldScrollAfterLoad(true);
-    },
-    [fetchOperationInfo, baseOnCalendarChange]
-  );
-
-  const [stationKey, setStationKey] = useState<keyof typeof selectStations>(
-    (localStorage.getItem("stationKey") as keyof typeof selectStations) ??
-      "otemachi"
-  );
-
   const [rows, setRows] = useState<TrainRow[]>([]);
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
 
   const rowsWithConnection = useMemo(() => {
     return rows.map((row, index) => {
       let hasAyaseConnection = false;
-      let transferInfo: { label: string; color: string } | null = null;
+      let transferInfo: { label: string; color: string } | undefined = undefined;
 
-      // Existing connection logic for for_yoyogiuehara (shuttle to 10-car)
+      // Old connection logic for for_yoyogiuehara
       if (
         direction === "for_yoyogiuehara" &&
         row.trainNumber.includes("96S") &&
@@ -412,6 +374,25 @@ export default function App() {
     []
   );
 
+  // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
+  const onCalendarChange = useCallback(
+    async (target: "weekday" | "holiday") => {
+      // 1. Fetch latest operation info
+      await fetchOperationInfo({ bustCache: true });
+
+      // 2. Refresh timetable if date boundary (4 AM) was crossed
+      // This is handled via setTimetableReloadNonce which triggers useEffect for rows
+      setTimetableReloadNonce((c) => c + 1);
+
+      // 3. Set calendar (via the original onCalendarChange)
+      baseOnCalendarChange(target);
+
+      // 4. Trigger scroll to now after load
+      setShouldScrollAfterLoad(true);
+    },
+    [fetchOperationInfo, baseOnCalendarChange]
+  );
+
 
   /* ==================================================
    * ② 運行情報取得（raw 直参照）
@@ -547,7 +528,7 @@ export default function App() {
     refreshingRef.current = true;
 
     try {
-      console.log("[Resume] Triggering refresh...");
+      console.warn("[Resume] Triggering refresh...");
       // モーダルを閉じる（初回起動相当）
       setIsModalOpen(false);
       setTrainDetail(null);
@@ -591,13 +572,13 @@ export default function App() {
       if (bgAt === null) return;
       
       const elapsed = Date.now() - bgAt;
-      console.log(`[Resume] Visibility changed to visible. Elapsed: ${Math.floor(elapsed / 1000)}s`);
+      console.warn(`[Resume] Visibility changed to visible. Elapsed: ${Math.floor(elapsed / 1000)}s`);
       
       // 判定が終わったらクリア
       backgroundedAtRef.current = null;
 
       if (elapsed >= THRESHOLD_MS) {
-        console.log("[Resume] Threshold exceeded. Refreshing...");
+        console.warn("[Resume] Threshold exceeded. Refreshing...");
         refreshOnResume();
       }
     };
@@ -661,25 +642,22 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (rows.length > 0) {
-      // 100ms 待つことで、ブラウザのレイアウト計算（カードの高さ確定）が完了するのを待つ
-      const timer = setTimeout(() => {
+    const timer = setTimeout(() => {
+      if (shouldScrollAfterLoad && rows.length > 0) {
         scrollToNow("smooth");
-        if (shouldScrollAfterLoad) {
-          console.log("[Resume] Scrolled after refresh.");
-          setShouldScrollAfterLoad(false);
-        }
-      }, 100);
-      return () => clearTimeout(timer);
-    }
+        setShouldScrollAfterLoad(false);
+      }
+    }, 100);
+    return () => clearTimeout(timer);
   }, [rows, scrollToNow, shouldScrollAfterLoad]);
 
-  const parsedOperationInfo = operationInfo
-    ? parseOperationInfo(operationInfo.text)
-    : null;
+  const parsedOperationInfo = useMemo(() => {
+    if (!operationInfo) return null;
+    return parseOperationInfo(operationInfo.text);
+  }, [operationInfo]);
 
   /* ==================================================
-   * UI
+   * メインレンダリング
    * ================================================== */
   return (
     <>
@@ -731,7 +709,6 @@ export default function App() {
                       ? "for_kitaayase"
                       : "for_yoyogiuehara"
                   );
-                  // scrollToNow is triggered by rows change (due to direction change)
                 }}
               >
                 <LuArrowLeftRight />
@@ -751,21 +728,19 @@ export default function App() {
               </Flex>
             </Flex>
 
-            {/* ==== 駅選択（スマホネイティブ <select>） ==== */}
+            {/* ==== 駅選択 ==== */}
             <select
-              value={stationKey}
-              onChange={(e) =>
-                setStationKey(e.target.value as keyof typeof selectStations)
-              }
               style={{
                 width: "90%",
-                padding: "14px",
-                fontSize: "18px",
-                borderRadius: "8px",
-                backgroundColor: "#333",
+                background: "#222",
                 color: "white",
-                border: "1px solid #555",
+                padding: "8px",
+                borderRadius: "4px",
+                border: "1px solid #444",
+                fontFamily: FONT_JP,
               }}
+              value={stationKey}
+              onChange={(e) => setStationKey(e.target.value)}
             >
               {Object.entries(selectStations).map(([key, name]) => (
                 <option key={key} value={key}>
@@ -844,218 +819,86 @@ export default function App() {
 
         <DialogPositioner>
           <DialogContent
-            bg="#111"
+            bg="#222"
             color="white"
-            maxH="90dvh" // 画面に収める
-            display="flex"
-            flexDirection="column"
-            position="relative"
-            fontFamily={FONT_JP}
+            borderRadius="md"
+            maxW="95vw"
+            mt="15vh"
           >
-            {/* ×ボタン */}
-            <DialogCloseTrigger asChild>
-              <IconButton
-                aria-label="close"
-                tabIndex={-1}
-                position="absolute"
-                top="3"
-                right="3"
-                zIndex={10}
-                minW="40px"
-                minH="40px"
-                borderRadius="full"
-                color="white"
-                onClick={() => setIsModalOpen(false)}
-                userSelect="none"
-                WebkitUserSelect="none"
-                touchAction="manipulation"
-                _hover={{ bg: "whiteAlpha.300" }}
-                _active={{ bg: "whiteAlpha.400" }}
-              >
-                <LuX size={18} />
-              </IconButton>
-            </DialogCloseTrigger>
-
-            {/* ヘッダー（固定） */}
-            <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
-              <VStack align="start" gap={2}>
-                <DialogTitle>
-                  <HStack gap={2} align="center">
-                    {/* 列車番号 */}
-                    <Box height="32px" display="flex" alignItems="center">
-                      <Text
-                        fontSize="md"
-                        fontWeight="600"
-                        fontFamily={FONT_NUM}
-                        fontVariantNumeric="tabular-nums"
-                        fontFeatureSettings="'tnum' 1"
-                      >
-                        {trainDetail?.trainNumber}
-                      </Text>
-                    </Box>
-
-                    {/* 種別 */}
-                    {trainDetail?.trainType &&
-                      (() => {
-                        const t = getTrainTypeInfo(trainDetail.trainType);
-                        return (
-                          t && (
-                            <Box
-                              height="32px"
-                              px={2}
-                              borderRadius="md"
-                              bg={t.bg}
-                              color="white"
-                              fontSize="xs"
-                              fontWeight="600"
-                              fontFamily={FONT_JP}
-                              display="flex"
-                              alignItems="center"
-                              justifyContent="center"
-                              textAlign="center"
-                              lineHeight="1.2"
-                            >
-                              {t.label === "各駅停車" ? (
-                                <>
-                                  各駅
-                                  <br />
-                                  停車
-                                </>
-                              ) : (
-                                t.label
-                              )}
-                            </Box>
-                          )
-                        );
-                      })()}
-
-                    {/* 行先 */}
-                    <StationLargeLabel
-                      stationKey={
-                        trainDetail?.destinationStation.toLowerCase() || ""
-                      }
-                      stationName={toJaStationName(
-                        trainDetail?.destinationStation
-                      )}
-                    />
-
-                    {/* 3両 */}
-                    {isThreeCars(trainDetail) && (
-                      <Box
-                        height="32px"
-                        px={2}
-                        borderRadius="md"
-                        bg="#808080"
-                        color="white"
-                        fontSize="xs"
-                        fontWeight="600"
-                        fontFamily={FONT_JP}
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        lineHeight="1"
-                      >
-                        3両
-                      </Box>
-                    )}
-                  </HStack>
+            <DialogHeader borderBottom="1px solid #444" py={3}>
+              <Flex justify="space-between" align="center">
+                <DialogTitle fontSize="md" fontWeight="bold" fontFamily={FONT_JP}>
+                  列車詳細 ({trainDetail?.trainNumber})
                 </DialogTitle>
-
-                {/* 始発駅 → 終着駅 */}
-                <HStack gap={3} flexWrap="wrap" align="center">
-                  <StationSmallLabel
-                    stationKey={
-                      trainDetail?.originStation.toLowerCase() || "odakyu"
-                    }
-                    highlight={false}
-                  />
-
-                  <Box height="24px" display="flex" alignItems="center">
-                    <Text fontSize="sm" opacity={0.9}>
-                      →
-                    </Text>
-                  </Box>
-
-                  <StationSmallLabel
-                    stationKey={
-                      trainDetail?.destinationStation.toLowerCase() || ""
-                    }
-                    highlight={false}
-                  />
-                </HStack>
-              </VStack>
+                <DialogCloseTrigger asChild>
+                  <IconButton
+                    aria-label="閉じる"
+                    size="sm"
+                    variant="ghost"
+                    color="gray.400"
+                    _hover={{ color: "white", bg: "whiteAlpha.200" }}
+                  >
+                    <LuX size={20} />
+                  </IconButton>
+                </DialogCloseTrigger>
+              </Flex>
             </DialogHeader>
 
-            {/* 本文（ここだけスクロール） */}
-            <DialogBody flex="1" overflowY="auto" py={3}>
-              <VStack align="stretch" gap={0}>
-                {trainDetail?.timetable.map((t, i) => {
-                  const isCurrent = t.station.toLowerCase() === stationKey;
+            <DialogBody p={0}>
+              {!trainDetail ? (
+                <Box p={8} textAlign="center">
+                  <Text color="gray.400">読み込み中...</Text>
+                </Box>
+              ) : (
+                <VStack align="stretch" gap={0} maxH="60vh" overflowY="auto">
+                  {trainDetail.stops.map((stop, idx) => {
+                    const isPassed = stop.isPassed;
+                    const isTerminal = idx === trainDetail.stops.length - 1;
 
-                  const lastIndex = (trainDetail?.timetable.length ?? 1) - 1;
-
-                  // 直通線（小田急 / 常磐緩行）を最初/最後にだけ色付きで表示
-                  const topExtraColor =
-                    i === 0
-                      ? getThroughLineColorForStationKey(
-                          trainDetail?.originStation,
-                          { treatMissingAsOdakyu: true }
-                        )
-                      : null;
-
-                  const bottomExtraColor =
-                    i === lastIndex
-                      ? getThroughLineColorForStationKey(trainDetail?.destinationStation)
-                      : null;
-
-                  return (
-                    <Flex
-                      key={i}
-                      px={3}
-                      py={2}
-                      borderRadius="md"
-                      bg={isCurrent ? "whiteAlpha.200" : "transparent"}
-                      justify="space-between"
-                      align="center" // ← 重要
-                    >
-                      <StationSmallLabel
-                        stationKey={t.station.toLowerCase()}
-                        highlight={isCurrent}
-                        connectorColor={CHIYODA_GREEN}
-                        showTopConnector={i !== 0 || !!topExtraColor}
-                        showBottomConnector={i !== lastIndex || !!bottomExtraColor}
-                        topConnectorColor={topExtraColor ?? undefined}
-                        bottomConnectorColor={bottomExtraColor ?? undefined}
-                      />
-
-                      <Box
-                        height="24px" // ← StationStopLabel と揃える
-                        display="flex"
-                        alignItems="center"
+                    return (
+                      <Flex
+                        key={idx}
+                        align="center"
+                        px={4}
+                        py={3}
+                        borderBottom="1px solid #333"
+                        bg={isPassed ? "whiteAlpha.50" : "transparent"}
                       >
-                        <Text
-                          fontFamily={FONT_NUM}
-                          fontVariantNumeric="tabular-nums"
-                          fontFeatureSettings="'tnum' 1"
-                        >
-                          {t.arrivalTime && (
-                            <>{formatTimeNoLeadingZero(t.arrivalTime)}着</>
-                          )}
-                          {t.departureTime && (
-                            <>{formatTimeNoLeadingZero(t.departureTime)}発</>
-                          )}
-                          {!t.arrivalTime &&
-                            !t.departureTime &&
-                            direction === "for_yoyogiuehara" && <>--:--着</>}
-                          {!t.arrivalTime &&
-                            !t.departureTime &&
-                            direction === "for_kitaayase" && <>--:--発</>}
-                        </Text>
-                      </Box>
-                    </Flex>
-                  );
-                })}
-              </VStack>
+                        {/* 駅名 */}
+                        <Box flex="1">
+                          <StationSmallLabel
+                            stationName={toJaStationName(stop.stationName)}
+                            isPassed={isPassed}
+                          />
+                        </Box>
+
+                        {/* 時刻 */}
+                        <HStack gap={4} justify="flex-end" w="120px">
+                          <VStack align="flex-end" gap={0}>
+                            <Text
+                              fontSize="xs"
+                              color="gray.500"
+                              fontFamily={FONT_JP}
+                            >
+                              {isTerminal ? "到着" : "出発"}
+                            </Text>
+                            <Text
+                              fontSize="md"
+                              fontWeight="bold"
+                              fontFamily={FONT_NUM}
+                              color={isPassed ? "gray.500" : "white"}
+                            >
+                              {isTerminal
+                                ? stop.arrivalTime
+                                : stop.departureTime}
+                            </Text>
+                          </VStack>
+                        </HStack>
+                      </Flex>
+                    );
+                  })}
+                </VStack>
+              )}
             </DialogBody>
           </DialogContent>
         </DialogPositioner>
