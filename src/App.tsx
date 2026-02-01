@@ -46,6 +46,35 @@ function sleep(ms: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, ms));
 }
 
+const CHIYODA_GREEN = "#00bb85";
+const JOBAN_LOCAL_GRAY = "#A8A39D";
+const ODAKYU_BLUE = "#06559D";
+
+const JOBAN_LOCAL_STATIONS = new Set(["matsudo", "kashiwa", "abiko", "toride"]);
+const ODAKYU_STATIONS = new Set([
+  "odakyu",
+  "hakoneyumoto",
+  "karakida",
+  "isehara",
+  "honatsugi",
+  "sagamiono",
+  "mukogaokayuen",
+  "seijogakuenmae",
+]);
+
+function getThroughLineColorForStationKey(
+  stationKey: string | null | undefined,
+  opts?: { treatMissingAsOdakyu?: boolean }
+): string | null {
+  const key = (stationKey ?? "").toLowerCase();
+
+  if (!key) return opts?.treatMissingAsOdakyu ? ODAKYU_BLUE : null;
+
+  if (JOBAN_LOCAL_STATIONS.has(key)) return JOBAN_LOCAL_GRAY;
+  if (ODAKYU_STATIONS.has(key)) return ODAKYU_BLUE;
+  return null;
+}
+
 /* ==================================================
  * 運行情報の見出し取得
  * ================================================== */
@@ -158,6 +187,36 @@ function toJaStationName(raw?: string | null): string {
   if (!raw) return "";
   const key = raw.trim().toLowerCase();
   return stations[key] ?? raw;
+}
+
+/* ==================================================
+ * モーダル用 列車バッジ判定（TrainCard互換）
+ * ================================================== */
+function getTrainTypeInfo(type?: string) {
+  switch (type) {
+    case "Local":
+      return { label: "各駅停車", bg: "#004cb0" };
+    case "SemiExpress":
+      return { label: "準急", bg: "#007f00" };
+    case "Express":
+      return { label: "急行", bg: "#c40000" };
+    case "LimitedExpress":
+      return { label: "特急", bg: "#c40000" };
+    default:
+      return null;
+  }
+}
+
+function isThreeCars(detail: TrainDetail | null): boolean {
+  return !!detail?.trainNumber?.includes("96S");
+}
+
+function formatTimeNoLeadingZero(time?: string | null): string {
+  if (!time) return "";
+  if (time === "--:--") return time;
+
+  const [h, m] = time.split(":");
+  return `${Number(h)}:${m}`;
 }
 
 export function App() {
@@ -570,7 +629,7 @@ export function App() {
     };
   }, [refreshOnResume]);
 
-  const currentStationName = selectStations[stationKey];
+  const currentStationName = selectStations[stationKey as keyof typeof selectStations] || stationKey;
 
   const trainDetailAbortRef = useRef<AbortController | null>(null);
 
@@ -797,86 +856,218 @@ export function App() {
 
         <DialogPositioner>
           <DialogContent
-            bg="#222"
+            bg="#111"
             color="white"
-            borderRadius="md"
-            maxW="95vw"
-            mt="15vh"
+            maxH="90dvh" // 画面に収める
+            display="flex"
+            flexDirection="column"
+            position="relative"
+            fontFamily={FONT_JP}
           >
-            <DialogHeader borderBottom="1px solid #444" py={3}>
-              <Flex justify="space-between" align="center">
-                <DialogTitle fontSize="md" fontWeight="bold" fontFamily={FONT_JP}>
-                  列車詳細 ({trainDetail?.trainNumber})
+            {/* ×ボタン */}
+            <DialogCloseTrigger asChild>
+              <IconButton
+                aria-label="close"
+                tabIndex={-1}
+                position="absolute"
+                top="3"
+                right="3"
+                zIndex={10}
+                minW="40px"
+                minH="40px"
+                borderRadius="full"
+                color="white"
+                onClick={() => setIsModalOpen(false)}
+                userSelect="none"
+                WebkitUserSelect="none"
+                touchAction="manipulation"
+                _hover={{ bg: "whiteAlpha.300" }}
+                _active={{ bg: "whiteAlpha.400" }}
+              >
+                <LuX size={18} />
+              </IconButton>
+            </DialogCloseTrigger>
+
+            {/* ヘッダー（固定） */}
+            <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
+              <VStack align="start" gap={2}>
+                <DialogTitle>
+                  <HStack gap={2} align="center">
+                    {/* 列車番号 */}
+                    <Box height="32px" display="flex" alignItems="center">
+                      <Text
+                        fontSize="md"
+                        fontWeight="600"
+                        fontFamily={FONT_NUM}
+                        fontVariantNumeric="tabular-nums"
+                        fontFeatureSettings="'tnum' 1"
+                      >
+                        {trainDetail?.trainNumber}
+                      </Text>
+                    </Box>
+
+                    {/* 種別 */}
+                    {trainDetail?.trainType &&
+                      (() => {
+                        const t = getTrainTypeInfo(trainDetail.trainType);
+                        return (
+                          t && (
+                            <Box
+                              height="32px"
+                              px={2}
+                              borderRadius="md"
+                              bg={t.bg}
+                              color="white"
+                              fontSize="xs"
+                              fontWeight="600"
+                              fontFamily={FONT_JP}
+                              display="flex"
+                              alignItems="center"
+                              justifyContent="center"
+                              textAlign="center"
+                              lineHeight="1.2"
+                            >
+                              {t.label === "各駅停車" ? (
+                                <>
+                                  各駅
+                                  <br />
+                                  停車
+                                </>
+                              ) : (
+                                t.label
+                              )}
+                            </Box>
+                          )
+                        );
+                      })()}
+
+                    {/* 行先 */}
+                    <StationLargeLabel
+                      stationKey={
+                        trainDetail?.destinationStation.toLowerCase() || ""
+                      }
+                      stationName={toJaStationName(
+                        trainDetail?.destinationStation
+                      )}
+                    />
+
+                    {/* 3両 */}
+                    {isThreeCars(trainDetail) && (
+                      <Box
+                        height="32px"
+                        px={2}
+                        borderRadius="md"
+                        bg="#808080"
+                        color="white"
+                        fontSize="xs"
+                        fontWeight="600"
+                        fontFamily={FONT_JP}
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        lineHeight="1"
+                      >
+                        3両
+                      </Box>
+                    )}
+                  </HStack>
                 </DialogTitle>
-                <DialogCloseTrigger asChild>
-                  <IconButton
-                    aria-label="閉じる"
-                    size="sm"
-                    variant="ghost"
-                    color="gray.400"
-                    _hover={{ color: "white", bg: "whiteAlpha.200" }}
-                  >
-                    <LuX size={20} />
-                  </IconButton>
-                </DialogCloseTrigger>
-              </Flex>
+
+                {/* 始発駅 → 終着駅 */}
+                <HStack gap={3} flexWrap="wrap" align="center">
+                  <StationSmallLabel
+                    stationKey={
+                      trainDetail?.originStation.toLowerCase() || "odakyu"
+                    }
+                    highlight={false}
+                  />
+
+                  <Box height="24px" display="flex" alignItems="center">
+                    <Text fontSize="sm" opacity={0.9}>
+                      →
+                    </Text>
+                  </Box>
+
+                  <StationSmallLabel
+                    stationKey={
+                      trainDetail?.destinationStation.toLowerCase() || ""
+                    }
+                    highlight={false}
+                  />
+                </HStack>
+              </VStack>
             </DialogHeader>
 
-            <DialogBody p={0}>
-              {!trainDetail ? (
-                <Box p={8} textAlign="center">
-                  <Text color="gray.400">読み込み中...</Text>
-                </Box>
-              ) : (
-                <VStack align="stretch" gap={0} maxH="60vh" overflowY="auto">
-                  {trainDetail.stops.map((stop, idx) => {
-                    const isPassed = stop.isPassed;
-                    const isTerminal = idx === trainDetail.stops.length - 1;
+            {/* 本文（ここだけスクロール） */}
+            <DialogBody flex="1" overflowY="auto" py={3}>
+              <VStack align="stretch" gap={0}>
+                {trainDetail?.timetable.map((t, i) => {
+                  const isCurrent = t.station.toLowerCase() === stationKey;
 
-                    return (
-                      <Flex
-                        key={idx}
-                        align="center"
-                        px={4}
-                        py={3}
-                        borderBottom="1px solid #333"
-                        bg={isPassed ? "whiteAlpha.50" : "transparent"}
+                  const lastIndex = (trainDetail?.timetable.length ?? 1) - 1;
+
+                  // 直通線（小田急 / 常磐緩行）を最初/最後にだけ色付きで表示
+                  const topExtraColor =
+                    i === 0
+                      ? getThroughLineColorForStationKey(
+                          trainDetail?.originStation,
+                          { treatMissingAsOdakyu: true }
+                        )
+                      : null;
+
+                  const bottomExtraColor =
+                    i === lastIndex
+                      ? getThroughLineColorForStationKey(trainDetail?.destinationStation)
+                      : null;
+
+                  return (
+                    <Flex
+                      key={i}
+                      px={3}
+                      py={2}
+                      borderRadius="md"
+                      bg={isCurrent ? "whiteAlpha.200" : "transparent"}
+                      justify="space-between"
+                      align="center" // ← 重要
+                    >
+                      <StationSmallLabel
+                        stationKey={t.station.toLowerCase()}
+                        highlight={isCurrent}
+                        connectorColor={CHIYODA_GREEN}
+                        showTopConnector={i !== 0 || !!topExtraColor}
+                        showBottomConnector={i !== lastIndex || !!bottomExtraColor}
+                        topConnectorColor={topExtraColor ?? undefined}
+                        bottomConnectorColor={bottomExtraColor ?? undefined}
+                      />
+
+                      <Box
+                        height="24px" // ← StationStopLabel と揃える
+                        display="flex"
+                        alignItems="center"
                       >
-                        {/* 駅名 */}
-                        <Box flex="1">
-                          <StationSmallLabel
-                            stationName={toJaStationName(stop.stationName)}
-                            isPassed={isPassed}
-                          />
-                        </Box>
-
-                        {/* 時刻 */}
-                        <HStack gap={4} justify="flex-end" w="120px">
-                          <VStack align="flex-end" gap={0}>
-                            <Text
-                              fontSize="xs"
-                              color="gray.500"
-                              fontFamily={FONT_JP}
-                            >
-                              {isTerminal ? "到着" : "出発"}
-                            </Text>
-                            <Text
-                              fontSize="md"
-                              fontWeight="bold"
-                              fontFamily={FONT_NUM}
-                              color={isPassed ? "gray.500" : "white"}
-                            >
-                              {isTerminal
-                                ? stop.arrivalTime
-                                : stop.departureTime}
-                            </Text>
-                          </VStack>
-                        </HStack>
-                      </Flex>
-                    );
-                  })}
-                </VStack>
-              )}
+                        <Text
+                          fontFamily={FONT_NUM}
+                          fontVariantNumeric="tabular-nums"
+                          fontFeatureSettings="'tnum' 1"
+                        >
+                          {t.arrivalTime && (
+                            <>{formatTimeNoLeadingZero(t.arrivalTime)}着</>
+                          )}
+                          {t.departureTime && (
+                            <>{formatTimeNoLeadingZero(t.departureTime)}発</>
+                          )}
+                          {!t.arrivalTime &&
+                            !t.departureTime &&
+                            direction === "for_yoyogiuehara" && <>--:--着</>}
+                          {!t.arrivalTime &&
+                            !t.departureTime &&
+                            direction === "for_kitaayase" && <>--:--発</>}
+                        </Text>
+                      </Box>
+                    </Flex>
+                  );
+                })}
+              </VStack>
             </DialogBody>
           </DialogContent>
         </DialogPositioner>

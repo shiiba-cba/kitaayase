@@ -1,8 +1,7 @@
 export type TrainStop = {
-  stationName: string;
+  station: string;
   arrivalTime: string | null;
   departureTime: string | null;
-  isPassed: boolean;
 };
 
 export type TrainDetail = {
@@ -12,5 +11,5 @@ export type TrainDetail = {
   trainType: string;
   originStation: string;
   destinationStation: string;
-  stops: TrainStop[];
+  timetable: TrainStop[];
 };
