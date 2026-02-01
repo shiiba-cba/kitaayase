@@ -21,7 +21,6 @@ import { LuArrowLeftRight, LuX } from "react-icons/lu";
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
-import { stations } from "./data/stations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
@@ -44,35 +43,6 @@ function isAbortError(e: unknown): boolean {
 
 function sleep(ms: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, ms));
-}
-
-const CHIYODA_GREEN = "#00bb85";
-const JOBAN_LOCAL_GRAY = "#A8A39D";
-const ODAKYU_BLUE = "#06559D";
-
-const JOBAN_LOCAL_STATIONS = new Set(["matsudo", "kashiwa", "abiko", "toride"]);
-const ODAKYU_STATIONS = new Set([
-  "odakyu",
-  "hakoneyumoto",
-  "karakida",
-  "isehara",
-  "honatsugi",
-  "sagamiono",
-  "mukogaokayuen",
-  "seijogakuenmae",
-]);
-
-function getThroughLineColorForStationKey(
-  stationKey: string | null | undefined,
-  opts?: { treatMissingAsOdakyu?: boolean }
-): string | null {
-  const key = (stationKey ?? "").toLowerCase();
-
-  if (!key) return opts?.treatMissingAsOdakyu ? ODAKYU_BLUE : null;
-
-  if (JOBAN_LOCAL_STATIONS.has(key)) return JOBAN_LOCAL_GRAY;
-  if (ODAKYU_STATIONS.has(key)) return ODAKYU_BLUE;
-  return null;
 }
 
 /* ==================================================
@@ -180,36 +150,9 @@ function formatRelativeTime(dateString: string): string {
   return `${diffDay}日前`;
 }
 
-/* ==================================================
- * 駅名変換
- * ================================================== */
-function toJaStationName(raw?: string | null): string {
-  if (!raw) return "";
-  const key = raw.trim().toLowerCase();
-  return stations[key] ?? raw;
-}
-
-/* ==================================================
- * モーダル用 列車バッジ判定（TrainCard互換）
- * ================================================== */
-function getTrainTypeInfo(type?: string) {
-  switch (type) {
-    case "Local":
-      return { label: "各駅停車", bg: "#004cb0" };
-    case "SemiExpress":
-      return { label: "準急", bg: "#00bb85" };
-    case "Express":
-      return { label: "急行", bg: "#f62e36" };
-    case "ChiyodaSemiExpress":
-      return { label: "千代田準急", bg: "#00bb85" };
-    default:
-      return { label: "各駅停車", bg: "#004cb0" };
-  }
-}
-
 export function App() {
   const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(
-    (localStorage.getItem("direction") as any) || "for_yoyogiuehara"
+    (localStorage.getItem("direction") as "for_yoyogiuehara" | "for_kitaayase") || "for_yoyogiuehara"
   );
   const [stationKey, setStationKey] = useState<string>(
     localStorage.getItem("stationKey") || "kitaayase"
@@ -851,9 +794,8 @@ export function App() {
                 </Box>
               ) : (
                 <VStack align="stretch" gap={0} maxH="60vh" overflowY="auto">
-                  {trainDetail.stops.map((stop, idx) => {
-                    const isPassed = stop.isPassed;
-                    const isTerminal = idx === trainDetail.stops.length - 1;
+                  {trainDetail.timetable.map((stop, idx) => {
+                    const isTerminal = idx === trainDetail.timetable.length - 1;
 
                     return (
                       <Flex
@@ -862,13 +804,11 @@ export function App() {
                         px={4}
                         py={3}
                         borderBottom="1px solid #333"
-                        bg={isPassed ? "whiteAlpha.50" : "transparent"}
                       >
                         {/* 駅名 */}
                         <Box flex="1">
                           <StationSmallLabel
-                            stationName={toJaStationName(stop.stationName)}
-                            isPassed={isPassed}
+                            stationKey={stop.station.toLowerCase()}
                           />
                         </Box>
 
@@ -886,7 +826,7 @@ export function App() {
                               fontSize="md"
                               fontWeight="bold"
                               fontFamily={FONT_NUM}
-                              color={isPassed ? "gray.500" : "white"}
+                              color="white"
                             >
                               {isTerminal
                                 ? stop.arrivalTime
