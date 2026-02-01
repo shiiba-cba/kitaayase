@@ -220,8 +220,10 @@ function formatTimeNoLeadingZero(time?: string | null): string {
 }
 
 export function App() {
+  const [stationKey, setStationKey] = useState<string>(() => {
+    return localStorage.getItem("stationKey") || "kitaayase";
+  });
   const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(() => {
-    // stationKeyの初期値を先に確定させる
     const savedStationKey = localStorage.getItem("stationKey") || "kitaayase";
     if (savedStationKey === "kitaayase") {
       return "for_yoyogiuehara";
@@ -232,9 +234,6 @@ export function App() {
       return saved;
     }
     return "for_yoyogiuehara";
-  });
-  const [stationKey, setStationKey] = useState<string>(() => {
-    return localStorage.getItem("stationKey") || "kitaayase";
   });
 
   const {
