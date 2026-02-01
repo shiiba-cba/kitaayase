@@ -7,6 +7,12 @@ import { trainTypes } from "../data/trainTypes";
 import { StationLargeLabel } from "./StationLargeLabel";
 import { FONT_JP, FONT_NUM } from "../styles/fonts";
 
+import {
+  getTrainTypeInfo,
+  formatTime,
+  isThreeCars,
+} from "../utils/trainUtils";
+
 export type TrainRow = {
   trainNumber: string;
   type: string;
@@ -92,7 +98,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           row.originStationName;
       }
 
-      if (row.trainNumber?.includes("96S")) {
+      if (isThreeCars(row.trainNumber)) {
         // 綾瀬～北綾瀬区間列車
         depLabel = depTime ? stations["ayase"] : "";
         depSuffix = depTime ? "0番線" : "";
@@ -120,7 +126,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           row.destinationStationName;
       }
 
-      if (row.trainNumber?.includes("96S")) {
+      if (isThreeCars(row.trainNumber)) {
         // 綾瀬～北綾瀬区間列車
         arrLabel = stations["ayase"];
         arrSuffix = "0番線";
@@ -213,16 +219,11 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     const CARD_NORMAL_BG = "rgba(255,255,255,0.04)";
     const CARD_HIGHLIGHT_BG = "rgba(255,255,255,0.12)";
 
-    const formatTime = (t: string | null) => {
-      if (!t) return "--:--";
-      const [h, m] = t.split(":").map(Number);
-      return `${h}:${m.toString().padStart(2, "0")}`;
-    };
-
     const depColor = isDepartWrong ? "whiteAlpha.700" : "white";
     const arrColor = isArrivalWrong ? "whiteAlpha.700" : "white";
 
-    const trainType = trainTypes[row.type.toLowerCase()] || row.type;
+    const typeInfo = getTrainTypeInfo(row.type);
+    const trainTypeLabel = typeInfo ? typeInfo.label : (trainTypes[row.type.toLowerCase()] || row.type);
 
     const isOrigin =
       direction === "for_yoyogiuehara"
@@ -231,7 +232,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         : row.originStationName === row.stationName ||
           row.originStationName === "Ayase";
 
-    const is3car = row.trainNumber.includes("96S");
+    const is3car = isThreeCars(row.trainNumber);
 
     // ==================================================
     // 描画
@@ -313,7 +314,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
           {/* 中央：種別・行先 */}
           <VStack flex="1" align="left" gap={0}>
             <HStack gap={2} mb={1}>
-              {trainType && (
+              {trainTypeLabel && (
                 <Badge
                   w="66px"
                   justifyContent="center"
@@ -324,16 +325,18 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   letterSpacing="0.04em"
                   color="#ffffff"
                   backgroundColor={
-                    row.type.includes("SemiExpress")
-                      ? "#007f00"
-                      : row.type.includes("LimitedExpress")
-                      ? "#c40000"
-                      : row.type.includes("Express")
-                      ? "#c40000"
-                      : "#004cb0"
+                    typeInfo ? typeInfo.bg : (
+                      row.type.includes("SemiExpress")
+                        ? "#007f00"
+                        : row.type.includes("LimitedExpress")
+                        ? "#c40000"
+                        : row.type.includes("Express")
+                        ? "#c40000"
+                        : "#004cb0"
+                    )
                   }
                 >
-                  {trainType}
+                  {trainTypeLabel}
                 </Badge>
               )}
               {isOrigin && !is3car && (

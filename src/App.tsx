@@ -21,7 +21,6 @@ import { LuArrowLeftRight, LuX } from "react-icons/lu";
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
-import { stations } from "./data/stations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
@@ -30,8 +29,15 @@ import { OperationInfoBanner } from "./components/OperationInfoBanner";
 import type { OperationInfo } from "./types/OperationInfo";
 import type { OperationVisualState } from "./types/OperationVisualState";
 import { useCalendar } from "./hooks/useCalendar";
-
-/* (moved) OperationInfo type is now in src/types/OperationInfo.ts */
+import {
+  formatRelativeTime,
+  toJaStationName,
+  getTrainTypeInfo,
+  isThreeCars,
+  formatTimeNoLeadingZero,
+  getThroughLineColorForStationKey,
+} from "./utils/trainUtils";
+import { calculateTransferInfo } from "./utils/transferLogic";
 
 function isAbortError(e: unknown): boolean {
   return (
@@ -47,33 +53,6 @@ function sleep(ms: number) {
 }
 
 const CHIYODA_GREEN = "#00bb85";
-const JOBAN_LOCAL_GRAY = "#A8A39D";
-const ODAKYU_BLUE = "#06559D";
-
-const JOBAN_LOCAL_STATIONS = new Set(["matsudo", "kashiwa", "abiko", "toride"]);
-const ODAKYU_STATIONS = new Set([
-  "odakyu",
-  "hakoneyumoto",
-  "karakida",
-  "isehara",
-  "honatsugi",
-  "sagamiono",
-  "mukogaokayuen",
-  "seijogakuenmae",
-]);
-
-function getThroughLineColorForStationKey(
-  stationKey: string | null | undefined,
-  opts?: { treatMissingAsOdakyu?: boolean }
-): string | null {
-  const key = (stationKey ?? "").toLowerCase();
-
-  if (!key) return opts?.treatMissingAsOdakyu ? ODAKYU_BLUE : null;
-
-  if (JOBAN_LOCAL_STATIONS.has(key)) return JOBAN_LOCAL_GRAY;
-  if (ODAKYU_STATIONS.has(key)) return ODAKYU_BLUE;
-  return null;
-}
 
 /* ==================================================
  * 運行情報の見出し取得
@@ -120,8 +99,6 @@ function getOperationTitle(text: string): string {
   return "運行情報";
 }
 
-// (moved) OperationVisualState type is now in src/types/OperationVisualState.ts
-
 function getOperationVisualState(text: string): OperationVisualState {
   // 最優先：運転見合わせ
   if (text.includes("運転を見合わせ")) {
@@ -158,65 +135,6 @@ function parseOperationInfo(text: string) {
     title: getOperationTitle(text),
     state: getOperationVisualState(text),
   };
-}
-
-/* ==================================================
- * 相対時間表示
- * ================================================== */
-function formatRelativeTime(dateString: string): string {
-  const updatedAt = new Date(dateString);
-  const now = new Date();
-
-  const diffMs = now.getTime() - updatedAt.getTime();
-  const diffMin = Math.floor(diffMs / 60000);
-
-  if (diffMin < 5) return "数分前";
-  if (diffMin < 60) return `${diffMin}分前`;
-
-  const diffHour = Math.floor(diffMin / 60);
-  if (diffHour < 24) return `${diffHour}時間前`;
-
-  const diffDay = Math.floor(diffHour / 24);
-  return `${diffDay}日前`;
-}
-
-/* ==================================================
- * 駅名変換
- * ================================================== */
-function toJaStationName(raw?: string | null): string {
-  if (!raw) return "";
-  const key = raw.trim().toLowerCase();
-  return stations[key] ?? raw;
-}
-
-/* ==================================================
- * モーダル用 列車バッジ判定（TrainCard互換）
- * ================================================== */
-function getTrainTypeInfo(type?: string) {
-  switch (type) {
-    case "Local":
-      return { label: "各駅停車", bg: "#004cb0" };
-    case "SemiExpress":
-      return { label: "準急", bg: "#007f00" };
-    case "Express":
-      return { label: "急行", bg: "#c40000" };
-    case "LimitedExpress":
-      return { label: "特急", bg: "#c40000" };
-    default:
-      return null;
-  }
-}
-
-function isThreeCars(detail: TrainDetail | null): boolean {
-  return !!detail?.trainNumber?.includes("96S");
-}
-
-function formatTimeNoLeadingZero(time?: string | null): string {
-  if (!time) return "";
-  if (time === "--:--") return time;
-
-  const [h, m] = time.split(":");
-  return `${Number(h)}:${m}`;
 }
 
 export function App() {
@@ -257,92 +175,14 @@ export function App() {
 
   const rowsWithConnection = useMemo(() => {
     return rows.map((row, index) => {
-      let hasAyaseConnection = false;
-      let transferInfo: { label: string; color: string } | undefined = undefined;
-
-      // Old connection logic for for_yoyogiuehara
-      if (
-        direction === "for_yoyogiuehara" &&
-        row.trainNumber.includes("96S") &&
-        row.ayaseArrivalTime
-      ) {
-        const [arrH, arrM] = row.ayaseArrivalTime.split(":").map(Number);
-        const arrTotal = arrH * 60 + arrM;
-
-        hasAyaseConnection = ayaseTimetable.some((conn) => {
-          if (conn.originStationName !== "Ayase") return false;
-          if (conn.trainNumber.includes("96S")) return false;
-          if (!conn.ayaseDepartureTime) return false;
-
-          const [depH, depM] = conn.ayaseDepartureTime.split(":").map(Number);
-          const depTotal = depH * 60 + depM;
-          const diff = depTotal - arrTotal;
-
-          return diff >= 3 && diff <= 5;
-        });
-      }
-
-      // New complex transfer logic for for_kitaayase
-      if (
-        direction === "for_kitaayase" &&
-        stationKey !== "ayase" &&
-        row.destinationStationName !== "KitaAyase"
-      ) {
-        const currentAyaseArrival = row.ayaseArrivalTime;
-
-        if (currentAyaseArrival) {
-          const [arrH, arrM] = currentAyaseArrival.split(":").map(Number);
-          let arrTotal = arrH * 60 + arrM;
-          if (arrTotal < 240) arrTotal += 1440;
-
-          // 1. Find the earliest Kita-Ayase bound train (B) that starts from Ayase ('96S') 
-          //    and is reachable from (A) with >= 3 mins transfer time.
-          const reachableShuttle = ayaseTimetable.find((conn) => {
-            if (!conn.trainNumber.includes("96S")) return false;
-            if (!conn.ayaseDepartureTime) return false;
-
-            const [depH, depM] = conn.ayaseDepartureTime.split(":").map(Number);
-            let depTotal = depH * 60 + depM;
-            if (depTotal < 240) depTotal += 1440;
-
-            const diff = depTotal - arrTotal;
-            return diff >= 3;
-          });
-
-          // 2. Find the earliest Kita-Ayase bound train (C) that is a direct through train (10-car) 
-          //    and departs from the CURRENT station after (A).
-          const nextThroughTrain = rows.slice(index + 1).find((r) => 
-            r.destinationStationName === "KitaAyase" && !r.trainNumber.includes("96S")
-          );
-
-          // 3. Comparison
-          if (reachableShuttle) {
-            // (B) exists
-            if (!nextThroughTrain) {
-              // (C) does not exist
-              transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
-            } else {
-              // (C) exists, compare arrival times at Kita-Ayase
-              const [sArrH, sArrM] = (reachableShuttle.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
-              let sArrTotal = sArrH * 60 + sArrM;
-              if (sArrTotal < 240) sArrTotal += 1440;
-
-              const [tArrH, tArrM] = (nextThroughTrain.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
-              let tArrTotal = tArrH * 60 + tArrM;
-              if (tArrTotal < 240) tArrTotal += 1440;
-
-              if (sArrTotal <= tArrTotal) {
-                transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
-              } else {
-                transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
-              }
-            }
-          } else if (nextThroughTrain) {
-            // (B) does not exist, but (C) exists
-            transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
-          }
-        }
-      }
+      const { hasAyaseConnection, transferInfo } = calculateTransferInfo(
+        direction,
+        stationKey,
+        row,
+        index,
+        rows,
+        ayaseTimetable
+      );
 
       return { ...row, hasAyaseConnection, transferInfo };
     });
@@ -967,7 +807,7 @@ export function App() {
                     />
 
                     {/* 3両 */}
-                    {isThreeCars(trainDetail) && (
+                    {isThreeCars(trainDetail?.trainNumber) && (
                       <Box
                         height="32px"
                         px={2}
