@@ -170,11 +170,11 @@ export function App() {
     (async () => {
       const detected = await detectCalendarForNow();
       setCalendar(detected);
-      setShouldScrollAfterLoad(true);
     })();
   }, [detectCalendarForNow, setCalendar]);
 
   const [rows, setRows] = useState<TrainRow[]>([]);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
 
   const rowsWithConnection = useMemo(() => {
@@ -402,6 +402,10 @@ export function App() {
         }).then((res) => res.json());
 
         setRows(data);
+        if (isInitialLoad) {
+          setShouldScrollAfterLoad(true);
+          setIsInitialLoad(false);
+        }
 
         // 綾瀬始発のりかえ判定用に、綾瀬駅の時刻表（同方面）を並行して取得
         if (direction === "for_yoyogiuehara" || direction === "for_kitaayase") {
@@ -420,7 +424,7 @@ export function App() {
     })();
 
     return () => controller.abort();
-  }, [calendar, direction, stationKey, timetableReloadNonce]);
+  }, [calendar, direction, stationKey, timetableReloadNonce, isInitialLoad]);
 
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
@@ -594,13 +598,25 @@ export function App() {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (shouldScrollAfterLoad && rows.length > 0) {
-        scrollToNow("smooth");
-        setShouldScrollAfterLoad(false);
-      }
-    }, 100);
-    return () => clearTimeout(timer);
+    if (shouldScrollAfterLoad && rows.length > 0) {
+      // 100ms is often enough, but for initial load or slow devices, 
+      // we add a slightly longer delay or verify refs are ready.
+      const timer = setTimeout(() => {
+        // Double check rows haven't changed and refs are populated
+        if (cardRefs.current.size >= rows.length) {
+          scrollToNow("smooth");
+          setShouldScrollAfterLoad(false);
+        } else {
+          // Retry once if refs aren't ready
+          console.warn("[Scroll] Refs not ready, retrying...");
+          setTimeout(() => {
+            scrollToNow("smooth");
+            setShouldScrollAfterLoad(false);
+          }, 200);
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
   }, [rows, scrollToNow, shouldScrollAfterLoad]);
 
   const parsedOperationInfo = useMemo(() => {
