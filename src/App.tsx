@@ -221,6 +221,12 @@ function formatTimeNoLeadingZero(time?: string | null): string {
 
 export function App() {
   const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(() => {
+    // stationKeyの初期値を先に確定させる
+    const savedStationKey = localStorage.getItem("stationKey") || "kitaayase";
+    if (savedStationKey === "kitaayase") {
+      return "for_yoyogiuehara";
+    }
+
     const saved = localStorage.getItem("direction");
     if (saved === "for_yoyogiuehara" || saved === "for_kitaayase") {
       return saved;
@@ -781,7 +787,13 @@ export function App() {
                 fontFamily: FONT_JP,
               }}
               value={stationKey}
-              onChange={(e) => setStationKey(e.target.value)}
+              onChange={(e) => {
+                const newStationKey = e.target.value;
+                setStationKey(newStationKey);
+                if (newStationKey === "kitaayase") {
+                  setDirection("for_yoyogiuehara");
+                }
+              }}
             >
               {Object.entries(selectStations).map(([key, name]) => (
                 <option key={key} value={key}>
