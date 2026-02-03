@@ -247,6 +247,7 @@ export function App() {
 
   const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
   const [shouldScrollAfterLoad, setShouldScrollAfterLoad] = useState(false);
+  const scrollRequestRef = useRef(false);
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
@@ -262,7 +263,8 @@ export function App() {
       baseOnCalendarChange(target);
 
       // 4. Trigger scroll to now after load
-      setShouldScrollAfterLoad(true);
+      // setShouldScrollAfterLoad(true); // ← ここでフラグを立てると、データ取得前にスクロールが走ってしまう
+      scrollRequestRef.current = true; // ← データ取得完了後にスクロールするための予約を入れる
     },
     [fetchOperationInfo, baseOnCalendarChange]
   );
@@ -320,9 +322,10 @@ export function App() {
         }).then((res) => res.json());
 
         setRows(data);
-        if (isInitialLoad) {
+        if (isInitialLoad || scrollRequestRef.current) {
           setShouldScrollAfterLoad(true);
           setIsInitialLoad(false);
+          scrollRequestRef.current = false;
         }
 
         // 綾瀬始発のりかえ判定用に、綾瀬駅の時刻表（同方面）を並行して取得
@@ -412,7 +415,7 @@ export function App() {
       onCalendarChange(detected);
 
       // ダイヤ/運行情報を取り直し
-      setShouldScrollAfterLoad(true);
+      // setShouldScrollAfterLoad(true); // onCalendarChange 内で予約済み
       setTimetableReloadNonce((n) => n + 1);
 
       // 運行情報は復帰直後に失敗しがちなので、キャッシュバスター + リトライ
