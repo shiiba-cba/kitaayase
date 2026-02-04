@@ -598,6 +598,7 @@ export function App() {
                       ? "for_kitaayase"
                       : "for_yoyogiuehara"
                   );
+                  scrollRequestRef.current = true;
                 }}
               >
                 <LuArrowLeftRight />
