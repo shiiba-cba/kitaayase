@@ -170,7 +170,7 @@ export function App() {
   }, [detectCalendarForNow, setCalendar]);
 
   const [rows, setRows] = useState<TrainRow[]>([]);
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const isInitialLoadRef = useRef(true);
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
 
   const rowsWithConnection = useMemo(() => {
@@ -322,9 +322,9 @@ export function App() {
         }).then((res) => res.json());
 
         setRows(data);
-        if (isInitialLoad || scrollRequestRef.current) {
+        if (isInitialLoadRef.current || scrollRequestRef.current) {
           setShouldScrollAfterLoad(true);
-          setIsInitialLoad(false);
+          isInitialLoadRef.current = false;
           scrollRequestRef.current = false;
         }
 
@@ -345,7 +345,7 @@ export function App() {
     })();
 
     return () => controller.abort();
-  }, [calendar, direction, stationKey, timetableReloadNonce, isInitialLoad]);
+  }, [calendar, direction, stationKey, timetableReloadNonce]);
 
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
