@@ -629,7 +629,14 @@ export function App() {
               value={stationKey}
               onChange={(e) => {
                 const newStationKey = e.target.value;
-                scrollRequestRef.current = true;
+                const willChangeStation = newStationKey !== stationKey;
+                const willChangeDirection =
+                  newStationKey === "kitaayase" && direction !== "for_yoyogiuehara";
+
+                if (willChangeStation || willChangeDirection) {
+                  scrollRequestRef.current = true;
+                }
+
                 setStationKey(newStationKey);
                 if (newStationKey === "kitaayase") {
                   setDirection("for_yoyogiuehara");
