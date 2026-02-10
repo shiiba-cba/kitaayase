@@ -114,11 +114,11 @@ export function calculateTransferInfo(
           if (sArrTotal <= tArrTotal) {
             transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
           } else {
-            transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
+            transferInfo = { label: "綾瀬で後続の北綾瀬行に接続", color: "#ff7f00" };
           }
         }
       } else if (nextThroughTrain) {
-        transferInfo = { label: "後続の北綾瀬行まち", color: "#ff7f00" };
+        transferInfo = { label: "綾瀬で後続の北綾瀬行に接続", color: "#ff7f00" };
       }
     }
   }
