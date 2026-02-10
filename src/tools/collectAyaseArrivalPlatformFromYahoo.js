@@ -12,13 +12,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, "../..");
 
-const OUTPUT_DIR = path.join(
-  REPO_ROOT,
-  "public",
-  "data",
-  "raw",
-  "yahoo-ayase-platform"
-);
+function resolveOutputDir(diagramDate) {
+  return path.join(
+    REPO_ROOT,
+    "public",
+    "data",
+    diagramDate,
+    "yahoo-ayase-platform"
+  );
+}
 
 const YAHOO_BASE = "https://transit.yahoo.co.jp/search/result";
 
@@ -26,6 +28,54 @@ function parseArg(name, fallback = null) {
   const idx = process.argv.indexOf(name);
   if (idx === -1) return fallback;
   return process.argv[idx + 1] ?? fallback;
+}
+
+
+function parseDiagramDate(diagramDate) {
+  const m = /^(\d{4})(\d{2})(\d{2})$/.exec(diagramDate || "");
+  if (!m) throw new Error(`Invalid diagram date: ${diagramDate} (expected YYYYMMDD)`);
+  return { y: Number(m[1]), m: Number(m[2]), d: Number(m[3]) };
+}
+
+function formatDateYYYYMMDD(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+function loadHolidaySet() {
+  const holidayFile = path.join(REPO_ROOT, "public", "data", "holidays.json");
+  const raw = JSON.parse(fs.readFileSync(holidayFile, "utf-8"));
+  return new Set(Object.keys(raw));
+}
+
+function resolveSamplingDates(diagramDate) {
+  const { y, m, d } = parseDiagramDate(diagramDate);
+  const start = new Date(y, m - 1, d);
+  const holidaySet = loadHolidaySet();
+
+  let weekday = null;
+  let holiday = null;
+
+  for (let i = 0; i < 366 && (!weekday || !holiday); i += 1) {
+    const cur = new Date(start);
+    cur.setDate(start.getDate() + i);
+
+    const dateStr = formatDateYYYYMMDD(cur);
+    const day = cur.getDay();
+    const isWeekend = day === 0 || day === 6;
+    const isHoliday = isWeekend || holidaySet.has(dateStr);
+
+    if (!holiday && isHoliday) holiday = dateStr;
+    if (!weekday && !isHoliday) weekday = dateStr;
+  }
+
+  if (!weekday || !holiday) {
+    throw new Error(`Failed to resolve weekday/holiday from diagramDate=${diagramDate}`);
+  }
+
+  return { weekday, holiday };
 }
 
 function parseDate(dateStr) {
@@ -206,12 +256,15 @@ function writeJson(filePath, data) {
 }
 
 async function main() {
-  const weekdayDate = parseArg("--weekday", "2026-02-10");
-  const holidayDate = parseArg("--holiday", "2026-02-11");
+  const diagramDate = parseArg("--diagram-date", "20250315");
+  const autoDates = resolveSamplingDates(diagramDate);
+  const weekdayDate = parseArg("--weekday", autoDates.weekday);
+  const holidayDate = parseArg("--holiday", autoDates.holiday);
   const stepMin = Number(parseArg("--step", "5"));
+  const OUTPUT_DIR = resolveOutputDir(diagramDate);
 
   console.log(
-    `[collect] weekday=${weekdayDate}, holiday=${holidayDate}, step=${stepMin}min`
+    `[collect] diagramDate=${diagramDate}, weekday=${weekdayDate}, holiday=${holidayDate}, step=${stepMin}min`
   );
 
   const weekday = await collectForDate(weekdayDate, { stepMin });
@@ -219,6 +272,7 @@ async function main() {
 
   const meta = {
     generatedAt: new Date().toISOString(),
+    diagramDate,
     from: "北千住",
     to: "綾瀬",
     source: "https://transit.yahoo.co.jp/",
