@@ -242,9 +242,14 @@ export function App() {
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
-    async (target: "weekday" | "holiday") => {
+    async (
+      target: "weekday" | "holiday",
+      opts?: { skipOperationFetch?: boolean }
+    ) => {
       // 1. Fetch latest operation info
-      await fetchOperationInfo({ bustCache: true });
+      if (!opts?.skipOperationFetch) {
+        await fetchOperationInfo({ bustCache: true });
+      }
 
       // 2. Refresh timetable if date boundary (4 AM) was crossed
       // This is handled via setTimetableReloadNonce which triggers useEffect for rows
@@ -403,7 +408,7 @@ export function App() {
 
       // 平日/休日を現在日時で上書き
       const detected = await detectCalendarForNow();
-      await onCalendarChange(detected);
+      await onCalendarChange(detected, { skipOperationFetch: true });
 
       // ダイヤ/運行情報を取り直し
       // setShouldScrollAfterLoad(true); // onCalendarChange 内で予約済み
