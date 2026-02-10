@@ -407,7 +407,6 @@ export function App() {
 
       // ダイヤ/運行情報を取り直し
       // setShouldScrollAfterLoad(true); // onCalendarChange 内で予約済み
-      setTimetableReloadNonce((n) => n + 1);
 
       // 運行情報は復帰直後に失敗しがちなので、キャッシュバスター + リトライ
       // 取得失敗でも前回表示を消さない（ネットワーク復帰直後で落ちやすい）
