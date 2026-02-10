@@ -38,6 +38,7 @@ type Props = {
   themeColor: string;
   hasAyaseConnection?: boolean;
   transferInfo?: { label: string; color: string } | null;
+  showAyaseTrack2Label?: boolean;
   onClick?: () => void;
 };
 
@@ -45,7 +46,7 @@ type Props = {
 // TrainCard
 // --------------------------------------------------
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
-  ({ row, stationKey, direction, themeColor, hasAyaseConnection, transferInfo, onClick }, ref) => {
+  ({ row, stationKey, direction, themeColor, hasAyaseConnection, transferInfo, showAyaseTrack2Label, onClick }, ref) => {
     const stationName = stations[stationKey];
 
     // ==================================================
@@ -149,6 +150,11 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         // 着駅は北綾瀬固定の為、特急以外はなければ綾瀬着時刻(綾瀬行 or JR常磐緩行線へ直通)
         arrTime = row.ayaseArrivalTime;
         arrLabel = stations["ayase"];
+      }
+
+      if (showAyaseTrack2Label && row.ayaseArrivalTime) {
+        arrLabel = stations["ayase"];
+        arrSuffix = "2番線";
       }
     }
 

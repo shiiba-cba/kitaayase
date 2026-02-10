@@ -177,7 +177,24 @@ export function App() {
         ayaseArrivalPlatformsByTime
       );
 
-      return { ...row, hasAyaseConnection, transferInfo };
+      const platforms = row.ayaseArrivalTime
+        ? ayaseArrivalPlatformsByTime?.[row.ayaseArrivalTime] ?? []
+        : [];
+      const isAyaseTrack3Only =
+        platforms.length > 0 && platforms.every((p) => p === "3番線");
+
+      const showAyaseTrack2Label =
+        direction === "for_kitaayase" &&
+        row.destinationStationName !== "KitaAyase" &&
+        !!row.ayaseArrivalTime &&
+        isAyaseTrack3Only;
+
+      return {
+        ...row,
+        hasAyaseConnection,
+        transferInfo,
+        showAyaseTrack2Label,
+      };
     });
   }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, direction, stationKey]);
 
@@ -722,6 +739,7 @@ export function App() {
               themeColor={themeColor}
               hasAyaseConnection={row.hasAyaseConnection}
               transferInfo={row.transferInfo}
+              showAyaseTrack2Label={row.showAyaseTrack2Label}
               onClick={async () => {
                 const ok = await fetchTrainDetail(row.trainNumber);
                 if (ok) {
