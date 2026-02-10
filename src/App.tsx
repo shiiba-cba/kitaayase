@@ -163,6 +163,7 @@ export function App() {
   const [rows, setRows] = useState<TrainRow[]>([]);
   const isInitialLoadRef = useRef(true);
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
+  const [ayaseArrivalPlatformsByTime, setAyaseArrivalPlatformsByTime] = useState<Record<string, string[]> | null>(null);
 
   const rowsWithConnection = useMemo(() => {
     return rows.map((row, index) => {
@@ -172,12 +173,13 @@ export function App() {
         row,
         index,
         rows,
-        ayaseTimetable
+        ayaseTimetable,
+        ayaseArrivalPlatformsByTime
       );
 
       return { ...row, hasAyaseConnection, transferInfo };
     });
-  }, [rows, ayaseTimetable, direction, stationKey]);
+  }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, direction, stationKey]);
 
   const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
@@ -334,9 +336,31 @@ export function App() {
         } else {
           setAyaseTimetable([]);
         }
+
+        // 綾瀬到着番線データ（あれば利用、なければ null）
+        const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
+        fetch(platformUrl, { signal: controller.signal })
+          .then((res) => {
+            if (!res.ok) throw new Error("platform file not found");
+            return res.json();
+          })
+          .then((j) => {
+            const byTime: Record<string, string[]> = {};
+            const rows = Array.isArray(j?.rows) ? j.rows : [];
+            for (const r of rows) {
+              const t = r?.arrivalTime;
+              const p = r?.arrivalPlatform;
+              if (!t || !p) continue;
+              if (!byTime[t]) byTime[t] = [];
+              byTime[t].push(p);
+            }
+            setAyaseArrivalPlatformsByTime(byTime);
+          })
+          .catch(() => setAyaseArrivalPlatformsByTime(null));
       } catch {
         setRows([]);
         setAyaseTimetable([]);
+        setAyaseArrivalPlatformsByTime(null);
       }
     })();
 

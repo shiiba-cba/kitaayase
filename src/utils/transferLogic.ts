@@ -5,6 +5,23 @@ export interface TransferInfo {
   color: string;
 }
 
+function requiredTransferMinutes(
+  ayaseArrivalTime: string,
+  ayaseArrivalPlatformsByTime: Record<string, string[]> | null
+): number {
+  // データファイルがない場合は 3 分
+  if (!ayaseArrivalPlatformsByTime) return 3;
+
+  const platforms = ayaseArrivalPlatformsByTime[ayaseArrivalTime] ?? [];
+
+  // 一致データがない場合は保守的に 3 分
+  if (platforms.length === 0) return 3;
+
+  // 一致データがすべて「3番線」の場合のみ 2 分
+  const allTrack3 = platforms.every((p) => p === "3番線");
+  return allTrack3 ? 2 : 3;
+}
+
 /**
  * 綾瀬駅での乗り換え情報を計算する
  */
@@ -14,7 +31,8 @@ export function calculateTransferInfo(
   row: TrainRow,
   index: number,
   allRows: TrainRow[],
-  ayaseTimetable: TrainRow[]
+  ayaseTimetable: TrainRow[],
+  ayaseArrivalPlatformsByTime: Record<string, string[]> | null
 ): { hasAyaseConnection: boolean; transferInfo?: TransferInfo } {
   let hasAyaseConnection = false;
   let transferInfo: TransferInfo | undefined = undefined;
@@ -57,7 +75,12 @@ export function calculateTransferInfo(
       let arrTotal = arrH * 60 + arrM;
       if (arrTotal < 240) arrTotal += 1440; // 4:00 AM 境界
 
-      // (B) 綾瀬始発の北綾瀬行(3両)で、3分以上の乗り換え時間がある最初の列車を探す
+      const minTransferMinutes = requiredTransferMinutes(
+        currentAyaseArrival,
+        ayaseArrivalPlatformsByTime
+      );
+
+      // (B) 綾瀬始発の北綾瀬行(3両)で、必要乗り換え時間以上がある最初の列車を探す
       const reachableShuttle = ayaseTimetable.find((conn) => {
         if (!conn.trainNumber.includes("96S")) return false;
         if (!conn.ayaseDepartureTime) return false;
@@ -67,7 +90,7 @@ export function calculateTransferInfo(
         if (depTotal < 240) depTotal += 1440;
 
         const diff = depTotal - arrTotal;
-        return diff >= 3;
+        return diff >= minTransferMinutes;
       });
 
       // (C) 現在の駅から、後続の北綾瀬行(直通10両)を探す
