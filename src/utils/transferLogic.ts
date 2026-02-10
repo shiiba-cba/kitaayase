@@ -56,8 +56,8 @@ export function calculateTransferInfo(
       const depTotal = depH * 60 + depM;
       const diff = depTotal - arrTotal;
 
-      // 乗り換え時間は3分から5分の間を想定
-      return diff >= 3 && diff <= 5;
+      // 乗り換え時間は2分から5分の間を想定
+      return diff >= 2 && diff <= 5;
     });
   }
 
