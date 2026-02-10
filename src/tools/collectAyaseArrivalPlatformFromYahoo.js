@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { setTimeout as sleep } from "node:timers/promises";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -107,14 +108,23 @@ function extractRoutes(nextData, requestedAt) {
 
 async function fetchOne({ y, m, d, hh, mm }) {
   const url = buildUrl({ y, m, d, hh, mm });
-  const res = await fetch(url, {
-    signal: AbortSignal.timeout(5000),
-    headers: {
-      "user-agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
-      accept: "text/html,application/xhtml+xml",
-    },
-  });
+
+  const controller = new globalThis.AbortController();
+
+  const res = await Promise.race([
+    fetch(url, {
+      signal: controller.signal,
+      headers: {
+        "user-agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+        accept: "text/html,application/xhtml+xml",
+      },
+    }),
+    sleep(5000).then(() => {
+      controller.abort();
+      throw new Error(`Yahoo fetch timeout: ${url}`);
+    }),
+  ]);
 
   if (!res.ok) {
     throw new Error(`Yahoo fetch failed: ${res.status} ${url}`);
@@ -176,7 +186,7 @@ async function collectForDate(dateStr, opts = {}) {
       }
 
       // 過剰アクセスを避ける
-      await new Promise((r) => setTimeout(r, 30));
+      await sleep(30);
     }
   }
 
