@@ -501,10 +501,12 @@ export function App() {
         r.json()
       );
       setTrainDetail(data);
+      return true;
     } catch (e: unknown) {
-      if (isAbortError(e)) return;
+      if (isAbortError(e)) return false;
       // ここは UI 側で null 許容のはずなので握りつぶし
       setTrainDetail(null);
+      return false;
     }
   };
 
@@ -685,8 +687,10 @@ export function App() {
               hasAyaseConnection={row.hasAyaseConnection}
               transferInfo={row.transferInfo}
               onClick={async () => {
-                await fetchTrainDetail(row.trainNumber);
-                setIsModalOpen(true);
+                const ok = await fetchTrainDetail(row.trainNumber);
+                if (ok) {
+                  setIsModalOpen(true);
+                }
               }}
               ref={(el) => {
                 cardRefs.current.set(i, el);
