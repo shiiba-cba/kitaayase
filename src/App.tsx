@@ -403,7 +403,7 @@ export function App() {
 
       // 平日/休日を現在日時で上書き
       const detected = await detectCalendarForNow();
-      onCalendarChange(detected);
+      await onCalendarChange(detected);
 
       // ダイヤ/運行情報を取り直し
       // setShouldScrollAfterLoad(true); // onCalendarChange 内で予約済み
