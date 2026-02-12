@@ -390,6 +390,9 @@ export function App() {
       target: "weekday" | "holiday",
       opts?: { skipOperationFetch?: boolean }
     ) => {
+      // スクロール予約は先に立てる（fetch/再描画の競合で取りこぼさないため）
+      scrollRequestRef.current = true;
+
       // 1. Fetch latest operation info
       if (!opts?.skipOperationFetch) {
         await fetchOperationInfo({ bustCache: true });
@@ -404,7 +407,6 @@ export function App() {
 
       // 4. Trigger scroll to now after load
       // setShouldScrollAfterLoad(true); // ← ここでフラグを立てると、データ取得前にスクロールが走ってしまう
-      scrollRequestRef.current = true; // ← データ取得完了後にスクロールするための予約を入れる
     },
     [fetchOperationInfo, baseOnCalendarChange]
   );
