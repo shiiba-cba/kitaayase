@@ -56,13 +56,29 @@ const CHIYODA_GREEN = "#00bb85";
 
 const jsonCache = new Map<string, unknown>();
 const jsonPromiseCache = new Map<string, Promise<unknown>>();
+const MAX_JSON_CACHE_ENTRIES = 160;
 
 const LATEST_CACHE_KEY = "kitaayase:latestDiagramDate:v1";
 const LATEST_CACHE_TTL_MS = 5 * 60 * 1000;
 
-async function fetchJsonCached<T>(url: string, init?: RequestInit): Promise<T> {
+function touchJsonCache(key: string, value: unknown) {
+  if (jsonCache.has(key)) {
+    jsonCache.delete(key);
+  }
+  jsonCache.set(key, value);
+
+  while (jsonCache.size > MAX_JSON_CACHE_ENTRIES) {
+    const oldestKey = jsonCache.keys().next().value;
+    if (!oldestKey) break;
+    jsonCache.delete(oldestKey);
+  }
+}
+
+async function fetchJsonCached<T>(url: string, init?: Omit<RequestInit, "signal">): Promise<T> {
   if (jsonCache.has(url)) {
-    return jsonCache.get(url) as T;
+    const cached = jsonCache.get(url) as T;
+    touchJsonCache(url, cached);
+    return cached;
   }
 
   const cachedPromise = jsonPromiseCache.get(url);
@@ -76,7 +92,7 @@ async function fetchJsonCached<T>(url: string, init?: RequestInit): Promise<T> {
       return res.json();
     })
     .then((data) => {
-      jsonCache.set(url, data);
+      touchJsonCache(url, data);
       return data;
     })
     .finally(() => {
@@ -85,6 +101,15 @@ async function fetchJsonCached<T>(url: string, init?: RequestInit): Promise<T> {
 
   jsonPromiseCache.set(url, p);
   return p as Promise<T>;
+}
+
+async function fetchJsonNoStore<T>(url: string, signal?: AbortSignal): Promise<T> {
+  const res = await fetch(url, {
+    cache: "no-store",
+    signal,
+  });
+  if (!res.ok) throw new Error(`failed to fetch: ${url}`);
+  return res.json();
 }
 
 function readLatestDiagramDateCache(): { diagramDate: string; fetchedAt: number } | null {
@@ -308,6 +333,7 @@ export function App() {
     "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
 
   const operationAbortRef = useRef<AbortController | null>(null);
+  const operationEtagRef = useRef<string | null>(null);
 
   const fetchOperationInfo = useCallback(
     async (opts?: { preserveOnError?: boolean; bustCache?: boolean }) => {
@@ -322,8 +348,24 @@ export function App() {
         const res = await fetch(url, {
           cache: "no-store",
           signal: controller.signal,
+          headers: operationEtagRef.current
+            ? {
+                "If-None-Match": operationEtagRef.current,
+              }
+            : undefined,
         });
+
+        if (res.status === 304) {
+          return true;
+        }
+
         if (!res.ok) throw new Error("failed to fetch operation info");
+
+        const etag = res.headers.get("etag");
+        if (etag) {
+          operationEtagRef.current = etag;
+        }
+
         const data: OperationInfo = await res.json();
         setOperationInfo(data);
         return true;
@@ -415,12 +457,9 @@ export function App() {
 
         if (!diagramDate) {
           try {
-            const latest = await fetchJsonCached<{ diagramDate: string }>(
-              `${base}/latest.json?t=${Math.floor(Date.now() / LATEST_CACHE_TTL_MS)}`,
-              {
-                signal: controller.signal,
-                cache: "no-store",
-              }
+            const latest = await fetchJsonNoStore<{ diagramDate: string }>(
+              `${base}/latest.json`,
+              controller.signal
             );
             diagramDate = latest.diagramDate;
             writeLatestDiagramDateCache(diagramDate);
@@ -439,9 +478,10 @@ export function App() {
         const url = `${base}/${diagramDate}/timetable/${calendar}/${direction}/${stationKey}.json`;
 
         const data = await fetchJsonCached<TrainRow[]>(url, {
-          signal: controller.signal,
           cache: "force-cache",
         });
+
+        if (controller.signal.aborted) return;
 
         setRows(data);
         if (isInitialLoadRef.current || scrollRequestRef.current) {
@@ -454,11 +494,16 @@ export function App() {
         if (direction === "for_yoyogiuehara" || direction === "for_kitaayase") {
           const ayaseUrl = `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`;
           fetchJsonCached<TrainRow[]>(ayaseUrl, {
-            signal: controller.signal,
             cache: "force-cache",
           })
-            .then((d) => setAyaseTimetable(d))
-            .catch(() => setAyaseTimetable([]));
+            .then((d) => {
+              if (controller.signal.aborted) return;
+              setAyaseTimetable(d);
+            })
+            .catch(() => {
+              if (controller.signal.aborted) return;
+              setAyaseTimetable([]);
+            });
         } else {
           setAyaseTimetable([]);
         }
@@ -466,10 +511,10 @@ export function App() {
         // 綾瀬到着番線データ（あれば利用、なければ null）
         const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
         fetchJsonCached<{ rows?: Array<{ arrivalTime?: string; arrivalPlatform?: string }> }>(platformUrl, {
-          signal: controller.signal,
           cache: "force-cache",
         })
           .then((j) => {
+            if (controller.signal.aborted) return;
             const byTime: Record<string, string[]> = {};
             const rows = Array.isArray(j?.rows) ? j.rows : [];
             for (const r of rows) {
@@ -481,15 +526,18 @@ export function App() {
             }
             setAyaseArrivalPlatformsByTime(byTime);
           })
-          .catch(() => setAyaseArrivalPlatformsByTime(null));
+          .catch(() => {
+            if (controller.signal.aborted) return;
+            setAyaseArrivalPlatformsByTime(null);
+          });
 
         // 綾瀬発番線データ（あれば利用、なければ null）
         const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
         fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(departurePlatformUrl, {
-          signal: controller.signal,
           cache: "force-cache",
         })
           .then((j) => {
+            if (controller.signal.aborted) return;
             const byTime: Record<string, string[]> = {};
             const rows = Array.isArray(j?.rows) ? j.rows : [];
             for (const r of rows) {
@@ -501,8 +549,12 @@ export function App() {
             }
             setAyaseDeparturePlatformsByTime(byTime);
           })
-          .catch(() => setAyaseDeparturePlatformsByTime(null));
+          .catch(() => {
+            if (controller.signal.aborted) return;
+            setAyaseDeparturePlatformsByTime(null);
+          });
       } catch {
+        if (controller.signal.aborted) return;
         setRows([]);
         setAyaseTimetable([]);
         setAyaseArrivalPlatformsByTime(null);
@@ -671,12 +723,9 @@ export function App() {
       let diagramDate = latestIsFresh ? latestCache.diagramDate : null;
 
       if (!diagramDate) {
-        const latest = await fetchJsonCached<{ diagramDate: string }>(
-          `${base}/latest.json?t=${Math.floor(Date.now() / LATEST_CACHE_TTL_MS)}`,
-          {
-            signal: controller.signal,
-            cache: "no-store",
-          }
+        const latest = await fetchJsonNoStore<{ diagramDate: string }>(
+          `${base}/latest.json`,
+          controller.signal
         );
         diagramDate = latest.diagramDate;
         writeLatestDiagramDateCache(diagramDate);
@@ -687,9 +736,11 @@ export function App() {
       const url = `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
 
       const data = await fetchJsonCached<TrainDetail>(url, {
-        signal: controller.signal,
         cache: "force-cache",
       });
+
+      if (controller.signal.aborted) return false;
+
       setTrainDetail(data);
       return true;
     } catch (e: unknown) {
