@@ -116,6 +116,13 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         depLabel = stations["ayase"];
         depSuffix = "3番線";
       }
+
+      // 北綾瀬方面かつ綾瀬選択時、北綾瀬行でない列車は発時刻を表示しない
+      if (stationKey === "ayase" && !row.kitaAyaseArrivalTime) {
+        depTime = null;
+        depLabel = "";
+        depSuffix = "";
+      }
     }
 
     // ==================================================
