@@ -40,6 +40,7 @@ type Props = {
   transferInfo?: { label: string; color: string } | null;
   showAyaseTrack2Label?: boolean;
   showAyaseDepartureTrack2Label?: boolean;
+  showAyaseDepartureTrack3Label?: boolean;
   onClick?: () => void;
 };
 
@@ -47,7 +48,7 @@ type Props = {
 // TrainCard
 // --------------------------------------------------
 export const TrainCard = forwardRef<HTMLDivElement, Props>(
-  ({ row, stationKey, direction, themeColor, hasAyaseConnection, transferInfo, showAyaseTrack2Label, showAyaseDepartureTrack2Label, onClick }, ref) => {
+  ({ row, stationKey, direction, themeColor, hasAyaseConnection, transferInfo, showAyaseTrack2Label, showAyaseDepartureTrack2Label, showAyaseDepartureTrack3Label, onClick }, ref) => {
     const stationName = stations[stationKey];
 
     // ==================================================
@@ -109,6 +110,11 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
         // 綾瀬～北綾瀬区間列車
         depLabel = depTime ? stations["ayase"] : "";
         depSuffix = depTime ? "0番線" : "";
+      }
+
+      if (showAyaseDepartureTrack3Label && row.ayaseDepartureTime) {
+        depLabel = stations["ayase"];
+        depSuffix = "3番線";
       }
     }
 

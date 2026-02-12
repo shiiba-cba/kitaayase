@@ -268,6 +268,7 @@ export function App() {
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
   const [ayaseArrivalPlatformsByTime, setAyaseArrivalPlatformsByTime] = useState<Record<string, string[]> | null>(null);
   const [ayaseDeparturePlatformsByTime, setAyaseDeparturePlatformsByTime] = useState<Record<string, string[]> | null>(null);
+  const [ayaseToKitaAyaseDeparturePlatformsByTime, setAyaseToKitaAyaseDeparturePlatformsByTime] = useState<Record<string, string[]> | null>(null);
 
   const rowsWithConnection = useMemo(() => {
     return rows.map((row, index) => {
@@ -306,15 +307,30 @@ export function App() {
         !!row.ayaseDepartureTime &&
         isAyaseDepartureTrack2Only;
 
+      const toKitaAyaseDeparturePlatforms = row.ayaseDepartureTime
+        ? ayaseToKitaAyaseDeparturePlatformsByTime?.[row.ayaseDepartureTime] ?? []
+        : [];
+      const isAyaseToKitaAyaseDepartureTrack3Only =
+        toKitaAyaseDeparturePlatforms.length > 0 &&
+        toKitaAyaseDeparturePlatforms.every((p) => p === "3番線");
+
+      const showAyaseDepartureTrack3Label =
+        direction === "for_kitaayase" &&
+        stationKey === "ayase" &&
+        row.originStationName === "Ayase" &&
+        !!row.ayaseDepartureTime &&
+        isAyaseToKitaAyaseDepartureTrack3Only;
+
       return {
         ...row,
         hasAyaseConnection,
         transferInfo,
         showAyaseTrack2Label,
         showAyaseDepartureTrack2Label,
+        showAyaseDepartureTrack3Label,
       };
     });
-  }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, ayaseDeparturePlatformsByTime, direction, stationKey]);
+  }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, ayaseDeparturePlatformsByTime, ayaseToKitaAyaseDeparturePlatformsByTime, direction, stationKey]);
 
   const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
@@ -489,15 +505,17 @@ export function App() {
           : null;
         const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
         const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
+        const toKitaAyaseDeparturePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-to-kitaayase-platform/${calendar}.json`;
 
         // 全てのデータを並行して取得（一貫性の確保）
-        const [data, ayaseData, platformJson, departurePlatformJson] = await Promise.all([
+        const [data, ayaseData, platformJson, departurePlatformJson, toKitaAyasePlatformJson] = await Promise.all([
           fetchJsonCached<TrainRow[]>(url, { cache: "force-cache" }),
           ayaseUrl 
             ? fetchJsonCached<TrainRow[]>(ayaseUrl, { cache: "force-cache" }).catch(() => [])
             : Promise.resolve([]),
           fetchJsonCached<{ rows?: Array<{ arrivalTime?: string; arrivalPlatform?: string }> }>(platformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
           fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(departurePlatformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
+          fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(toKitaAyaseDeparturePlatformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
         ]);
 
         if (controller.signal.aborted) return;
@@ -521,10 +539,20 @@ export function App() {
           }
         }
 
+        const toKitaAyaseByTime: Record<string, string[]> = {};
+        const tkRows = Array.isArray(toKitaAyasePlatformJson?.rows) ? toKitaAyasePlatformJson.rows : [];
+        for (const r of tkRows) {
+          if (r?.departureTime && r?.departurePlatform) {
+            if (!toKitaAyaseByTime[r.departureTime]) toKitaAyaseByTime[r.departureTime] = [];
+            toKitaAyaseByTime[r.departureTime].push(r.departurePlatform);
+          }
+        }
+
         // 状態をまとめて更新
         setAyaseTimetable(ayaseData);
         setAyaseArrivalPlatformsByTime(arrivalByTime);
         setAyaseDeparturePlatformsByTime(departureByTime);
+        setAyaseToKitaAyaseDeparturePlatformsByTime(toKitaAyaseByTime);
         setRows(data);
 
         if (isInitialLoadRef.current || scrollRequestRef.current) {
@@ -926,6 +954,7 @@ export function App() {
               transferInfo={row.transferInfo}
               showAyaseTrack2Label={row.showAyaseTrack2Label}
               showAyaseDepartureTrack2Label={row.showAyaseDepartureTrack2Label}
+              showAyaseDepartureTrack3Label={row.showAyaseDepartureTrack3Label}
               onClick={async () => {
                 const ok = await fetchTrainDetail(row.trainNumber);
                 if (ok) {
