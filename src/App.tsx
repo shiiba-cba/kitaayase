@@ -398,17 +398,19 @@ export function App() {
         await fetchOperationInfo({ bustCache: true });
       }
 
-      // 2. Refresh timetable if date boundary (4 AM) was crossed
-      // This is handled via setTimetableReloadNonce which triggers useEffect for rows
-      setTimetableReloadNonce((c) => c + 1);
-
-      // 3. Set calendar (via the original onCalendarChange)
+      // 2. Set calendar first
       baseOnCalendarChange(target);
+
+      // 3. Refresh timetable only when calendar value itself does not change
+      // （同じボタン再押下や 4:00 境界リフレッシュ用途）
+      if (target === calendar) {
+        setTimetableReloadNonce((c) => c + 1);
+      }
 
       // 4. Trigger scroll to now after load
       // setShouldScrollAfterLoad(true); // ← ここでフラグを立てると、データ取得前にスクロールが走ってしまう
     },
-    [fetchOperationInfo, baseOnCalendarChange]
+    [fetchOperationInfo, baseOnCalendarChange, calendar]
   );
 
   /* ==================================================
