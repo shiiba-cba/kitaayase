@@ -333,12 +333,6 @@ export function App() {
   const cardRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
   const headerRef = useRef<HTMLDivElement | null>(null);
 
-  // Sync refs map with rows
-  useEffect(() => {
-    // rows が変わったら一旦クリアして、無効な ref が残らないようにする
-    cardRefs.current.clear();
-  }, [rows]);
-
   const OPERATION_URL =
     "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
 
@@ -479,7 +473,6 @@ export function App() {
             diagramDate = latest.diagramDate;
             writeLatestDiagramDateCache(diagramDate);
           } catch {
-            // latest 取得失敗時はキャッシュにフォールバック
             if (latestCache?.diagramDate) {
               diagramDate = latestCache.diagramDate;
             } else {
@@ -491,85 +484,57 @@ export function App() {
         if (!diagramDate) throw new Error("diagramDate unavailable");
 
         const url = `${base}/${diagramDate}/timetable/${calendar}/${direction}/${stationKey}.json`;
+        const ayaseUrl = (direction === "for_yoyogiuehara" || direction === "for_kitaayase")
+          ? `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`
+          : null;
+        const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
+        const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
 
-        const data = await fetchJsonCached<TrainRow[]>(url, {
-          cache: "force-cache",
-        });
+        // 全てのデータを並行して取得（一貫性の確保）
+        const [data, ayaseData, platformJson, departurePlatformJson] = await Promise.all([
+          fetchJsonCached<TrainRow[]>(url, { cache: "force-cache" }),
+          ayaseUrl 
+            ? fetchJsonCached<TrainRow[]>(ayaseUrl, { cache: "force-cache" }).catch(() => [])
+            : Promise.resolve([]),
+          fetchJsonCached<{ rows?: Array<{ arrivalTime?: string; arrivalPlatform?: string }> }>(platformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
+          fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(departurePlatformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
+        ]);
 
         if (controller.signal.aborted) return;
 
+        // プラットフォームデータのパース
+        const arrivalByTime: Record<string, string[]> = {};
+        const aRows = Array.isArray(platformJson?.rows) ? platformJson.rows : [];
+        for (const r of aRows) {
+          if (r?.arrivalTime && r?.arrivalPlatform) {
+            if (!arrivalByTime[r.arrivalTime]) arrivalByTime[r.arrivalTime] = [];
+            arrivalByTime[r.arrivalTime].push(r.arrivalPlatform);
+          }
+        }
+
+        const departureByTime: Record<string, string[]> = {};
+        const dRows = Array.isArray(departurePlatformJson?.rows) ? departurePlatformJson.rows : [];
+        for (const r of dRows) {
+          if (r?.departureTime && r?.departurePlatform) {
+            if (!departureByTime[r.departureTime]) departureByTime[r.departureTime] = [];
+            departureByTime[r.departureTime].push(r.departurePlatform);
+          }
+        }
+
+        // 状態をまとめて更新
+        setAyaseTimetable(ayaseData);
+        setAyaseArrivalPlatformsByTime(arrivalByTime);
+        setAyaseDeparturePlatformsByTime(departureByTime);
         setRows(data);
+
         if (isInitialLoadRef.current || scrollRequestRef.current) {
           setScrollTrigger((v) => v + 1);
           isInitialLoadRef.current = false;
           scrollRequestRef.current = false;
         }
-
-        // 綾瀬始発のりかえ判定用に、綾瀬駅の時刻表（同方面）を並行して取得
-        if (direction === "for_yoyogiuehara" || direction === "for_kitaayase") {
-          const ayaseUrl = `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`;
-          fetchJsonCached<TrainRow[]>(ayaseUrl, {
-            cache: "force-cache",
-          })
-            .then((d) => {
-              if (controller.signal.aborted) return;
-              setAyaseTimetable(d);
-            })
-            .catch(() => {
-              if (controller.signal.aborted) return;
-              setAyaseTimetable([]);
-            });
-        } else {
-          setAyaseTimetable([]);
-        }
-
-        // 綾瀬到着番線データ（あれば利用、なければ null）
-        const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
-        fetchJsonCached<{ rows?: Array<{ arrivalTime?: string; arrivalPlatform?: string }> }>(platformUrl, {
-          cache: "force-cache",
-        })
-          .then((j) => {
-            if (controller.signal.aborted) return;
-            const byTime: Record<string, string[]> = {};
-            const rows = Array.isArray(j?.rows) ? j.rows : [];
-            for (const r of rows) {
-              const t = r?.arrivalTime;
-              const p = r?.arrivalPlatform;
-              if (!t || !p) continue;
-              if (!byTime[t]) byTime[t] = [];
-              byTime[t].push(p);
-            }
-            setAyaseArrivalPlatformsByTime(byTime);
-          })
-          .catch(() => {
-            if (controller.signal.aborted) return;
-            setAyaseArrivalPlatformsByTime(null);
-          });
-
-        // 綾瀬発番線データ（あれば利用、なければ null）
-        const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
-        fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(departurePlatformUrl, {
-          cache: "force-cache",
-        })
-          .then((j) => {
-            if (controller.signal.aborted) return;
-            const byTime: Record<string, string[]> = {};
-            const rows = Array.isArray(j?.rows) ? j.rows : [];
-            for (const r of rows) {
-              const t = r?.departureTime;
-              const p = r?.departurePlatform;
-              if (!t || !p) continue;
-              if (!byTime[t]) byTime[t] = [];
-              byTime[t].push(p);
-            }
-            setAyaseDeparturePlatformsByTime(byTime);
-          })
-          .catch(() => {
-            if (controller.signal.aborted) return;
-            setAyaseDeparturePlatformsByTime(null);
-          });
-      } catch {
+      } catch (e) {
         if (controller.signal.aborted) return;
+        console.error("[Fetch] Error loading data:", e);
         setRows([]);
         setAyaseTimetable([]);
         setAyaseArrivalPlatformsByTime(null);
@@ -771,26 +736,31 @@ export function App() {
     if (rows.length === 0) return;
     if (scrollTrigger === handledScrollTriggerRef.current) return;
 
-    // 100ms is often enough, but for initial load or slow devices,
-    // we add a slightly longer delay or verify refs are ready.
-    const timer = setTimeout(() => {
-      // Double check refs are populated
+    let timeoutId: number;
+    let retryCount = 0;
+
+    const attemptScroll = () => {
+      // DOM が準備できているか（少なくとも必要な枚数のカードがマウントされているか）確認
       if (cardRefs.current.size >= rows.length) {
         if (scrollToNow("smooth")) {
           handledScrollTriggerRef.current = scrollTrigger;
+          return;
         }
-      } else {
-        // Retry once if refs aren't ready
-        console.warn("[Scroll] Refs not ready, retrying...");
-        setTimeout(() => {
-          if (scrollToNow("smooth")) {
-            handledScrollTriggerRef.current = scrollTrigger;
-          }
-        }, 200);
       }
-    }, 150);
 
-    return () => clearTimeout(timer);
+      if (retryCount < 10) {
+        retryCount++;
+        timeoutId = window.setTimeout(attemptScroll, 100);
+      } else {
+        // 諦めるが、リクエストは「処理済み」にしてスタックを防ぐ
+        handledScrollTriggerRef.current = scrollTrigger;
+      }
+    };
+
+    // 初回試行
+    timeoutId = window.setTimeout(attemptScroll, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [rows, scrollToNow, scrollTrigger]);
 
   const parsedOperationInfo = useMemo(() => {
@@ -963,7 +933,11 @@ export function App() {
                 }
               }}
               ref={(el) => {
-                cardRefs.current.set(i, el);
+                if (el) {
+                  cardRefs.current.set(i, el);
+                } else {
+                  cardRefs.current.delete(i);
+                }
               }}
             />
           ))}
