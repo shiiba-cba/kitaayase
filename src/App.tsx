@@ -381,7 +381,8 @@ export function App() {
   );
 
   const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
-  const [shouldScrollAfterLoad, setShouldScrollAfterLoad] = useState(false);
+  const [scrollTrigger, setScrollTrigger] = useState(0);
+  const handledScrollTriggerRef = useRef(0);
   const scrollRequestRef = useRef(false);
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
@@ -408,7 +409,7 @@ export function App() {
       }
 
       // 4. Trigger scroll to now after load
-      // setShouldScrollAfterLoad(true); // ← ここでフラグを立てると、データ取得前にスクロールが走ってしまう
+      // （scrollRequestRef を使ってデータ取得完了後に scrollTrigger を進める）
     },
     [fetchOperationInfo, baseOnCalendarChange, calendar]
   );
@@ -489,7 +490,7 @@ export function App() {
 
         setRows(data);
         if (isInitialLoadRef.current || scrollRequestRef.current) {
-          setShouldScrollAfterLoad(true);
+          setScrollTrigger((v) => v + 1);
           isInitialLoadRef.current = false;
           scrollRequestRef.current = false;
         }
@@ -637,7 +638,7 @@ export function App() {
       await onCalendarChange(detected, { skipOperationFetch: true });
 
       // ダイヤ/運行情報を取り直し
-      // setShouldScrollAfterLoad(true); // onCalendarChange 内で予約済み
+      // スクロール予約は onCalendarChange 内で設定済み
 
       // 運行情報は復帰直後に失敗しがちなので、キャッシュバスター + リトライ
       // 取得失敗でも前回表示を消さない（ネットワーク復帰直後で落ちやすい）
@@ -756,26 +757,28 @@ export function App() {
   };
 
   useEffect(() => {
-    if (shouldScrollAfterLoad && rows.length > 0) {
-      // 100ms is often enough, but for initial load or slow devices, 
-      // we add a slightly longer delay or verify refs are ready.
-      const timer = setTimeout(() => {
-        // Double check rows haven't changed and refs are populated
-        if (cardRefs.current.size >= rows.length) {
+    if (rows.length === 0) return;
+    if (scrollTrigger === handledScrollTriggerRef.current) return;
+
+    // 100ms is often enough, but for initial load or slow devices,
+    // we add a slightly longer delay or verify refs are ready.
+    const timer = setTimeout(() => {
+      // Double check refs are populated
+      if (cardRefs.current.size >= rows.length) {
+        scrollToNow("smooth");
+        handledScrollTriggerRef.current = scrollTrigger;
+      } else {
+        // Retry once if refs aren't ready
+        console.warn("[Scroll] Refs not ready, retrying...");
+        setTimeout(() => {
           scrollToNow("smooth");
-          setShouldScrollAfterLoad(false);
-        } else {
-          // Retry once if refs aren't ready
-          console.warn("[Scroll] Refs not ready, retrying...");
-          setTimeout(() => {
-            scrollToNow("smooth");
-            setShouldScrollAfterLoad(false);
-          }, 200);
-        }
-      }, 150);
-      return () => clearTimeout(timer);
-    }
-  }, [rows, scrollToNow, shouldScrollAfterLoad]);
+          handledScrollTriggerRef.current = scrollTrigger;
+        }, 200);
+      }
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [rows, scrollToNow, scrollTrigger]);
 
   const parsedOperationInfo = useMemo(() => {
     if (!operationInfo) return null;
