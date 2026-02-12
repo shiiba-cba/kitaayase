@@ -54,6 +54,74 @@ function sleep(ms: number) {
 
 const CHIYODA_GREEN = "#00bb85";
 
+const jsonCache = new Map<string, unknown>();
+const jsonPromiseCache = new Map<string, Promise<unknown>>();
+
+const LATEST_CACHE_KEY = "kitaayase:latestDiagramDate:v1";
+const LATEST_CACHE_TTL_MS = 5 * 60 * 1000;
+
+async function fetchJsonCached<T>(url: string, init?: RequestInit): Promise<T> {
+  if (jsonCache.has(url)) {
+    return jsonCache.get(url) as T;
+  }
+
+  const cachedPromise = jsonPromiseCache.get(url);
+  if (cachedPromise) {
+    return cachedPromise as Promise<T>;
+  }
+
+  const p = fetch(url, init)
+    .then((res) => {
+      if (!res.ok) throw new Error(`failed to fetch: ${url}`);
+      return res.json();
+    })
+    .then((data) => {
+      jsonCache.set(url, data);
+      return data;
+    })
+    .finally(() => {
+      jsonPromiseCache.delete(url);
+    });
+
+  jsonPromiseCache.set(url, p);
+  return p as Promise<T>;
+}
+
+function readLatestDiagramDateCache(): { diagramDate: string; fetchedAt: number } | null {
+  try {
+    const raw = localStorage.getItem(LATEST_CACHE_KEY);
+    if (!raw) return null;
+
+    const parsed = JSON.parse(raw) as {
+      diagramDate?: string;
+      fetchedAt?: number;
+    };
+
+    if (!parsed.diagramDate || !parsed.fetchedAt) return null;
+
+    return {
+      diagramDate: parsed.diagramDate,
+      fetchedAt: parsed.fetchedAt,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function writeLatestDiagramDateCache(diagramDate: string) {
+  try {
+    localStorage.setItem(
+      LATEST_CACHE_KEY,
+      JSON.stringify({
+        diagramDate,
+        fetchedAt: Date.now(),
+      })
+    );
+  } catch {
+    // noop
+  }
+}
+
 /* ==================================================
  * 運行情報の見出し取得
  * ================================================== */
@@ -339,17 +407,41 @@ export function App() {
 
     (async () => {
       try {
-        const diagramDate = await fetch(`${base}/latest.json`, {
-          signal: controller.signal,
-        })
-          .then((res) => res.json())
-          .then((j) => j.diagramDate);
+        const latestCache = readLatestDiagramDateCache();
+        const latestIsFresh =
+          !!latestCache && Date.now() - latestCache.fetchedAt < LATEST_CACHE_TTL_MS;
+
+        let diagramDate = latestIsFresh ? latestCache.diagramDate : null;
+
+        if (!diagramDate) {
+          try {
+            const latest = await fetchJsonCached<{ diagramDate: string }>(
+              `${base}/latest.json?t=${Math.floor(Date.now() / LATEST_CACHE_TTL_MS)}`,
+              {
+                signal: controller.signal,
+                cache: "no-store",
+              }
+            );
+            diagramDate = latest.diagramDate;
+            writeLatestDiagramDateCache(diagramDate);
+          } catch {
+            // latest 取得失敗時はキャッシュにフォールバック
+            if (latestCache?.diagramDate) {
+              diagramDate = latestCache.diagramDate;
+            } else {
+              throw new Error("latest.json fetch failed");
+            }
+          }
+        }
+
+        if (!diagramDate) throw new Error("diagramDate unavailable");
 
         const url = `${base}/${diagramDate}/timetable/${calendar}/${direction}/${stationKey}.json`;
 
-        const data: TrainRow[] = await fetch(url, {
+        const data = await fetchJsonCached<TrainRow[]>(url, {
           signal: controller.signal,
-        }).then((res) => res.json());
+          cache: "force-cache",
+        });
 
         setRows(data);
         if (isInitialLoadRef.current || scrollRequestRef.current) {
@@ -361,8 +453,10 @@ export function App() {
         // 綾瀬始発のりかえ判定用に、綾瀬駅の時刻表（同方面）を並行して取得
         if (direction === "for_yoyogiuehara" || direction === "for_kitaayase") {
           const ayaseUrl = `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`;
-          fetch(ayaseUrl, { signal: controller.signal })
-            .then((res) => res.json())
+          fetchJsonCached<TrainRow[]>(ayaseUrl, {
+            signal: controller.signal,
+            cache: "force-cache",
+          })
             .then((d) => setAyaseTimetable(d))
             .catch(() => setAyaseTimetable([]));
         } else {
@@ -371,11 +465,10 @@ export function App() {
 
         // 綾瀬到着番線データ（あれば利用、なければ null）
         const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
-        fetch(platformUrl, { signal: controller.signal })
-          .then((res) => {
-            if (!res.ok) throw new Error("platform file not found");
-            return res.json();
-          })
+        fetchJsonCached<{ rows?: Array<{ arrivalTime?: string; arrivalPlatform?: string }> }>(platformUrl, {
+          signal: controller.signal,
+          cache: "force-cache",
+        })
           .then((j) => {
             const byTime: Record<string, string[]> = {};
             const rows = Array.isArray(j?.rows) ? j.rows : [];
@@ -392,11 +485,10 @@ export function App() {
 
         // 綾瀬発番線データ（あれば利用、なければ null）
         const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
-        fetch(departurePlatformUrl, { signal: controller.signal })
-          .then((res) => {
-            if (!res.ok) throw new Error("departure platform file not found");
-            return res.json();
-          })
+        fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(departurePlatformUrl, {
+          signal: controller.signal,
+          cache: "force-cache",
+        })
           .then((j) => {
             const byTime: Record<string, string[]> = {};
             const rows = Array.isArray(j?.rows) ? j.rows : [];
@@ -572,17 +664,32 @@ export function App() {
     const base = "/kitaayase/data";
 
     try {
-      const diagramDate = await fetch(`${base}/latest.json`, {
-        signal: controller.signal,
-      })
-        .then((r) => r.json())
-        .then((j) => j.diagramDate);
+      const latestCache = readLatestDiagramDateCache();
+      const latestIsFresh =
+        !!latestCache && Date.now() - latestCache.fetchedAt < LATEST_CACHE_TTL_MS;
+
+      let diagramDate = latestIsFresh ? latestCache.diagramDate : null;
+
+      if (!diagramDate) {
+        const latest = await fetchJsonCached<{ diagramDate: string }>(
+          `${base}/latest.json?t=${Math.floor(Date.now() / LATEST_CACHE_TTL_MS)}`,
+          {
+            signal: controller.signal,
+            cache: "no-store",
+          }
+        );
+        diagramDate = latest.diagramDate;
+        writeLatestDiagramDateCache(diagramDate);
+      }
+
+      if (!diagramDate) throw new Error("diagramDate unavailable");
 
       const url = `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
 
-      const data = await fetch(url, { signal: controller.signal }).then((r) =>
-        r.json()
-      );
+      const data = await fetchJsonCached<TrainDetail>(url, {
+        signal: controller.signal,
+        cache: "force-cache",
+      });
       setTrainDetail(data);
       return true;
     } catch (e: unknown) {
