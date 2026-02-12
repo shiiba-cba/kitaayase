@@ -1,6 +1,6 @@
 // ==========================================
-// Yahoo!路線情報（綾瀬→北千住）から
-// 綾瀬発時刻・発番線・行先を収集する
+// Yahoo!路線情報（北千住→綾瀬）から
+// 綾瀬到着時刻・到着番線・行先を収集する
 // ==========================================
 
 import fs from "fs";
@@ -18,7 +18,7 @@ function resolveOutputDir(diagramDate) {
     "public",
     "data",
     diagramDate,
-    "yahoo-ayase-departure-platform"
+    "yahoo-platform-kitasenju-ayase"
   );
 }
 
@@ -92,8 +92,8 @@ function toHourMin(totalMin) {
 
 function buildUrl({ y, m, d, hh, mm }) {
   const url = new URL(YAHOO_BASE);
-  url.searchParams.set("from", "綾瀬");
-  url.searchParams.set("to", "北千住");
+  url.searchParams.set("from", "北千住");
+  url.searchParams.set("to", "綾瀬");
   url.searchParams.set("y", y);
   url.searchParams.set("m", m);
   url.searchParams.set("d", d);
@@ -131,24 +131,25 @@ function extractRoutes(nextData, requestedAt) {
 
   for (const f of featureInfoList) {
     const edges = f?.edgeInfoList ?? [];
-    const departureEdge = edges.find((e) => e?.stationName === "綾瀬");
-    if (!departureEdge) continue;
+    const arrivalEdge = edges.find((e) => e?.stationName === "綾瀬");
+    if (!arrivalEdge) continue;
 
-    const departureTime =
-      departureEdge?.timeInfo?.[0]?.time ?? f?.summaryInfo?.departureTime ?? null;
+    const arrivalTime =
+      arrivalEdge?.timeInfo?.[0]?.time ?? f?.summaryInfo?.arrivalTime ?? null;
 
-    const destination = f?.summaryInfo?.destination ?? departureEdge?.destination ?? null;
-    const departurePlatform = normalizePlatform(
-      departureEdge?.ridingPositionInfo?.departure ?? departureEdge?.ridingPositionInfo?.arrival
+    const destination = arrivalEdge?.destination ?? null;
+    const arrivalPlatform = normalizePlatform(
+      arrivalEdge?.ridingPositionInfo?.arrival
     );
 
     rows.push({
       requestedAt,
-      departureTime,
+      departureTime: f?.summaryInfo?.departureTime ?? null,
+      arrivalTime,
       destination,
-      departurePlatform,
-      railName: departureEdge?.railNameExcludingDestination ?? null,
-      stationCode: departureEdge?.stationCode ?? null,
+      arrivalPlatform,
+      railName: arrivalEdge?.railNameExcludingDestination ?? null,
+      stationCode: arrivalEdge?.stationCode ?? null,
     });
   }
 
@@ -191,15 +192,15 @@ async function fetchOne({ y, m, d, hh, mm }) {
 function dedupeRows(rows) {
   const map = new Map();
   for (const r of rows) {
-    const key = [r.departureTime, r.destination, r.departurePlatform].join("|");
+    const key = [r.arrivalTime, r.destination, r.arrivalPlatform].join("|");
     if (!map.has(key)) map.set(key, r);
   }
 
   return [...map.values()].sort((a, b) => {
-    if (a.departureTime === b.departureTime) {
+    if (a.arrivalTime === b.arrivalTime) {
       return (a.destination || "").localeCompare(b.destination || "", "ja");
     }
-    return (a.departureTime || "").localeCompare(b.departureTime || "");
+    return (a.arrivalTime || "").localeCompare(b.arrivalTime || "");
   });
 }
 
@@ -272,8 +273,8 @@ async function main() {
   const meta = {
     generatedAt: new Date().toISOString(),
     diagramDate,
-    from: "綾瀬",
-    to: "北千住",
+    from: "北千住",
+    to: "綾瀬",
     source: "https://transit.yahoo.co.jp/",
     note: "Yahoo!路線情報の検索結果（__NEXT_DATA__）から抽出。利用規約・権利条件に注意。",
     query: { stepMin },

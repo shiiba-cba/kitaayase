@@ -18,7 +18,7 @@ function resolveOutputDir(diagramDate) {
     "public",
     "data",
     diagramDate,
-    "yahoo-ayase-to-kitaayase-platform"
+    "yahoo-platform-ayase-kitaayase"
   );
 }
 

@@ -503,9 +503,9 @@ export function App() {
         const ayaseUrl = (direction === "for_yoyogiuehara" || direction === "for_kitaayase")
           ? `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`
           : null;
-        const platformUrl = `${base}/${diagramDate}/yahoo-ayase-platform/${calendar}.json`;
-        const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
-        const toKitaAyaseDeparturePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-to-kitaayase-platform/${calendar}.json`;
+        const platformUrl = `${base}/${diagramDate}/yahoo-platform-kitasenju-ayase/${calendar}.json`;
+        const departurePlatformUrl = `${base}/${diagramDate}/yahoo-platform-ayase-kitasenju/${calendar}.json`;
+        const toKitaAyaseDeparturePlatformUrl = `${base}/${diagramDate}/yahoo-platform-ayase-kitaayase/${calendar}.json`;
 
         // 全てのデータを並行して取得（一貫性の確保）
         const [data, ayaseData, platformJson, departurePlatformJson, toKitaAyasePlatformJson] = await Promise.all([
