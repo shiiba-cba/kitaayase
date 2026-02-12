@@ -45,20 +45,35 @@ export function calculateTransferInfo(
     row.ayaseArrivalTime
   ) {
     const [arrH, arrM] = row.ayaseArrivalTime.split(":").map(Number);
-    const arrTotal = arrH * 60 + arrM;
+    let arrTotal = arrH * 60 + arrM;
+    if (arrTotal < 240) arrTotal += 1440; // 4:00 AM 境界
 
-    hasAyaseConnection = ayaseTimetable.some((conn) => {
-      if (conn.originStationName !== "Ayase") return false;
-      if (conn.trainNumber.includes("96S")) return false;
-      if (!conn.ayaseDepartureTime) return false;
+    // 2分後以降に発車する「次の電車」を特定し、
+    // その電車が綾瀬始発なら乗り換え可にする
+    const nextTrainAfterTransfer = ayaseTimetable
+      .filter((conn) => {
+        if (!conn.ayaseDepartureTime) return false;
+        if (conn.trainNumber.includes("96S")) return false;
 
-      const [depH, depM] = conn.ayaseDepartureTime.split(":").map(Number);
-      const depTotal = depH * 60 + depM;
-      const diff = depTotal - arrTotal;
+        const [depH, depM] = conn.ayaseDepartureTime.split(":").map(Number);
+        let depTotal = depH * 60 + depM;
+        if (depTotal < 240) depTotal += 1440;
 
-      // 乗り換え時間は2分から5分の間を想定
-      return diff >= 2 && diff <= 5;
-    });
+        return depTotal - arrTotal >= 2;
+      })
+      .sort((a, b) => {
+        const [aH, aM] = (a.ayaseDepartureTime || "00:00").split(":").map(Number);
+        const [bH, bM] = (b.ayaseDepartureTime || "00:00").split(":").map(Number);
+
+        let aTotal = aH * 60 + aM;
+        let bTotal = bH * 60 + bM;
+        if (aTotal < 240) aTotal += 1440;
+        if (bTotal < 240) bTotal += 1440;
+
+        return aTotal - bTotal;
+      })[0];
+
+    hasAyaseConnection = nextTrainAfterTransfer?.originStationName === "Ayase";
   }
 
   // 2. 代々木上原 -> 北綾瀬方面の複雑な乗り換え判定
