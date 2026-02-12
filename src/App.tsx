@@ -78,7 +78,12 @@ async function fetchJsonCached<T>(url: string, init?: Omit<RequestInit, "signal"
   if (jsonCache.has(url)) {
     const cached = jsonCache.get(url) as T;
     touchJsonCache(url, cached);
-    return cached;
+    // React の再レンダリング検知を確実にするため、常にクローンを返す
+    return Array.isArray(cached)
+      ? ([...cached] as unknown as T)
+      : typeof cached === "object" && cached !== null
+      ? ({ ...cached } as T)
+      : cached;
   }
 
   const cachedPromise = jsonPromiseCache.get(url);
@@ -93,7 +98,12 @@ async function fetchJsonCached<T>(url: string, init?: Omit<RequestInit, "signal"
     })
     .then((data) => {
       touchJsonCache(url, data);
-      return data;
+      // 初回取得時もクローンを返す（一貫性のため）
+      return Array.isArray(data)
+        ? ([...data] as unknown as T)
+        : typeof data === "object" && data !== null
+        ? ({ ...data } as T)
+        : data;
     })
     .finally(() => {
       jsonPromiseCache.delete(url);
@@ -387,7 +397,7 @@ export function App() {
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
-    async (
+    (
       target: "weekday" | "holiday",
       opts?: { skipOperationFetch?: boolean }
     ) => {
@@ -396,7 +406,7 @@ export function App() {
 
       // 1. Fetch latest operation info
       if (!opts?.skipOperationFetch) {
-        await fetchOperationInfo({ bustCache: true });
+        fetchOperationInfo({ bustCache: true }); // Await しないことで状態変更を即座に行う
       }
 
       // 2. Set calendar first
@@ -579,7 +589,7 @@ export function App() {
    * ================================================== */
   const scrollToNow = useCallback(
     (behavior: ScrollBehavior = "smooth") => {
-      if (rows.length === 0) return;
+      if (rows.length === 0) return false;
 
       const now = new Date();
       let currentMinutes = now.getHours() * 60 + now.getMinutes();
@@ -602,7 +612,7 @@ export function App() {
 
       const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
       const el = cardRefs.current.get(index);
-      if (!el) return;
+      if (!el) return false;
 
       const headerHeight = headerRef.current?.offsetHeight ?? 0;
 
@@ -615,6 +625,7 @@ export function App() {
         top: targetY,
         behavior
       });
+      return true;
     },
     [rows, direction]
   );
@@ -765,14 +776,16 @@ export function App() {
     const timer = setTimeout(() => {
       // Double check refs are populated
       if (cardRefs.current.size >= rows.length) {
-        scrollToNow("smooth");
-        handledScrollTriggerRef.current = scrollTrigger;
+        if (scrollToNow("smooth")) {
+          handledScrollTriggerRef.current = scrollTrigger;
+        }
       } else {
         // Retry once if refs aren't ready
         console.warn("[Scroll] Refs not ready, retrying...");
         setTimeout(() => {
-          scrollToNow("smooth");
-          handledScrollTriggerRef.current = scrollTrigger;
+          if (scrollToNow("smooth")) {
+            handledScrollTriggerRef.current = scrollTrigger;
+          }
         }, 200);
       }
     }, 150);
