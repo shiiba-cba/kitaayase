@@ -1,0 +1,1616 @@
+{
+  "generatedAt": "2026-02-12T10:02:16.400Z",
+  "diagramDate": "20250315",
+  "from": "綾瀬",
+  "to": "北千住",
+  "source": "https://transit.yahoo.co.jp/",
+  "note": "Yahoo!路線情報の検索結果（__NEXT_DATA__）から抽出。利用規約・権利条件に注意。",
+  "query": {
+    "stepMin": 3
+  },
+  "type": "holiday",
+  "date": "2025-03-15",
+  "rows": [
+    {
+      "requestedAt": "23:33",
+      "departureTime": "00:04",
+      "destination": "霞ケ関行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:48",
+      "departureTime": "00:27",
+      "destination": "北千住行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:12",
+      "departureTime": "04:38",
+      "destination": "北千住行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:12",
+      "departureTime": "05:00",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:12",
+      "departureTime": "05:12",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:39",
+      "departureTime": "05:23",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:06",
+      "departureTime": "05:33",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:18",
+      "departureTime": "05:42",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:24",
+      "departureTime": "05:52",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:39",
+      "departureTime": "06:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:45",
+      "departureTime": "06:12",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:54",
+      "departureTime": "06:20",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:06",
+      "departureTime": "06:30",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:18",
+      "departureTime": "06:40",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:21",
+      "departureTime": "06:48",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:33",
+      "departureTime": "06:57",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:42",
+      "departureTime": "07:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:51",
+      "departureTime": "07:09",
+      "destination": "相模大野行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:00",
+      "departureTime": "07:14",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:09",
+      "departureTime": "07:19",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:12",
+      "departureTime": "07:24",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:15",
+      "departureTime": "07:29",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:21",
+      "departureTime": "07:34",
+      "destination": "代々木上原行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:30",
+      "departureTime": "07:39",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:30",
+      "departureTime": "07:44",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:36",
+      "departureTime": "07:48",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:42",
+      "departureTime": "07:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:45",
+      "departureTime": "07:59",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:51",
+      "departureTime": "08:04",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:54",
+      "departureTime": "08:09",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:06",
+      "departureTime": "08:15",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:06",
+      "departureTime": "08:20",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:12",
+      "departureTime": "08:26",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:18",
+      "departureTime": "08:32",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:24",
+      "departureTime": "08:37",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:27",
+      "departureTime": "08:43",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:36",
+      "departureTime": "08:48",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:39",
+      "departureTime": "08:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:45",
+      "departureTime": "08:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:51",
+      "departureTime": "09:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:57",
+      "departureTime": "09:08",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:00",
+      "departureTime": "09:12",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:09",
+      "departureTime": "09:17",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:09",
+      "departureTime": "09:22",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:18",
+      "departureTime": "09:27",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:18",
+      "departureTime": "09:32",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:24",
+      "departureTime": "09:37",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:30",
+      "departureTime": "09:42",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:33",
+      "departureTime": "09:48",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:39",
+      "departureTime": "09:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:48",
+      "departureTime": "09:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:51",
+      "departureTime": "10:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:54",
+      "departureTime": "10:08",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:00",
+      "departureTime": "10:12",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:06",
+      "departureTime": "10:17",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:09",
+      "departureTime": "10:21",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:15",
+      "departureTime": "10:25",
+      "destination": "成城学園前行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:18",
+      "departureTime": "10:31",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:24",
+      "departureTime": "10:37",
+      "destination": "代々木上原行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:27",
+      "departureTime": "10:42",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:33",
+      "departureTime": "10:47",
+      "destination": "唐木田行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:39",
+      "departureTime": "10:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:48",
+      "departureTime": "10:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:48",
+      "departureTime": "11:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:54",
+      "departureTime": "11:08",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:03",
+      "departureTime": "11:13",
+      "destination": "代々木上原行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:06",
+      "departureTime": "11:18",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:09",
+      "departureTime": "11:23",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:15",
+      "departureTime": "11:28",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:21",
+      "departureTime": "11:33",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:27",
+      "departureTime": "11:38",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:30",
+      "departureTime": "11:43",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:39",
+      "departureTime": "11:48",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:39",
+      "departureTime": "11:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:45",
+      "departureTime": "11:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:51",
+      "departureTime": "12:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:54",
+      "departureTime": "12:08",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:00",
+      "departureTime": "12:13",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:09",
+      "departureTime": "12:18",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:09",
+      "departureTime": "12:23",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:15",
+      "departureTime": "12:28",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:21",
+      "departureTime": "12:33",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:27",
+      "departureTime": "12:38",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:30",
+      "departureTime": "12:43",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:36",
+      "departureTime": "12:48",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:42",
+      "departureTime": "12:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:45",
+      "departureTime": "12:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:51",
+      "departureTime": "13:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:54",
+      "departureTime": "13:08",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:00",
+      "departureTime": "13:13",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:12",
+      "departureTime": "13:18",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:12",
+      "departureTime": "13:23",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:18",
+      "departureTime": "13:28",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:21",
+      "departureTime": "13:33",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:24",
+      "departureTime": "13:38",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:30",
+      "departureTime": "13:43",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:36",
+      "departureTime": "13:48",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:42",
+      "departureTime": "13:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:45",
+      "departureTime": "13:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:51",
+      "departureTime": "14:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:54",
+      "departureTime": "14:08",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:00",
+      "departureTime": "14:13",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:06",
+      "departureTime": "14:18",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:09",
+      "departureTime": "14:23",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:15",
+      "departureTime": "14:28",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:21",
+      "departureTime": "14:33",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:24",
+      "departureTime": "14:38",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:33",
+      "departureTime": "14:43",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:36",
+      "departureTime": "14:48",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:39",
+      "departureTime": "14:53",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:48",
+      "departureTime": "14:58",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:54",
+      "departureTime": "15:03",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:54",
+      "departureTime": "15:08",
+      "destination": "唐木田行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:00",
+      "departureTime": "15:12",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:09",
+      "departureTime": "15:15",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:09",
+      "departureTime": "15:21",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:18",
+      "departureTime": "15:26",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:18",
+      "departureTime": "15:31",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:30",
+      "departureTime": "15:36",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:30",
+      "departureTime": "15:41",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:33",
+      "departureTime": "15:46",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:39",
+      "departureTime": "15:51",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:42",
+      "departureTime": "15:56",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:51",
+      "departureTime": "16:01",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:54",
+      "departureTime": "16:06",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:57",
+      "departureTime": "16:11",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:06",
+      "departureTime": "16:16",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:12",
+      "departureTime": "16:21",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:12",
+      "departureTime": "16:26",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:18",
+      "departureTime": "16:31",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:27",
+      "departureTime": "16:36",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:27",
+      "departureTime": "16:41",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:36",
+      "departureTime": "16:46",
+      "destination": "代々木上原行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:39",
+      "departureTime": "16:51",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:42",
+      "departureTime": "16:56",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:48",
+      "departureTime": "17:01",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:57",
+      "departureTime": "17:06",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:57",
+      "departureTime": "17:11",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:03",
+      "departureTime": "17:16",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:09",
+      "departureTime": "17:21",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:18",
+      "departureTime": "17:26",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:18",
+      "departureTime": "17:31",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:24",
+      "departureTime": "17:36",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:27",
+      "departureTime": "17:41",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:33",
+      "departureTime": "17:46",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:39",
+      "departureTime": "17:51",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:45",
+      "departureTime": "17:56",
+      "destination": "代々木上原行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:54",
+      "departureTime": "18:01",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:54",
+      "departureTime": "18:06",
+      "destination": "成城学園前行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:57",
+      "departureTime": "18:11",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:03",
+      "departureTime": "18:16",
+      "destination": "成城学園前行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線準急",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:12",
+      "departureTime": "18:21",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:12",
+      "departureTime": "18:26",
+      "destination": "唐木田行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:21",
+      "departureTime": "18:31",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:27",
+      "departureTime": "18:36",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:27",
+      "departureTime": "18:41",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:33",
+      "departureTime": "18:46",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:39",
+      "departureTime": "18:51",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:42",
+      "departureTime": "18:56",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:48",
+      "departureTime": "19:02",
+      "destination": "成城学園前行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:57",
+      "departureTime": "19:07",
+      "destination": "伊勢原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:57",
+      "departureTime": "19:12",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:03",
+      "departureTime": "19:17",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:09",
+      "departureTime": "19:22",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:15",
+      "departureTime": "19:27",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:18",
+      "departureTime": "19:34",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:24",
+      "departureTime": "19:38",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:30",
+      "departureTime": "19:44",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:39",
+      "departureTime": "19:49",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:39",
+      "departureTime": "19:55",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:45",
+      "departureTime": "20:00",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:54",
+      "departureTime": "20:06",
+      "destination": "本厚木行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:57",
+      "departureTime": "20:11",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:03",
+      "departureTime": "20:17",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:09",
+      "departureTime": "20:22",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:12",
+      "departureTime": "20:27",
+      "destination": "向ケ丘遊園行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:18",
+      "departureTime": "20:34",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:24",
+      "departureTime": "20:40",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:30",
+      "departureTime": "20:46",
+      "destination": "伊勢原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:36",
+      "departureTime": "20:52",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:42",
+      "departureTime": "20:59",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:51",
+      "departureTime": "21:07",
+      "destination": "伊勢原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:54",
+      "departureTime": "21:16",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:00",
+      "departureTime": "21:24",
+      "destination": "伊勢原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:09",
+      "departureTime": "21:32",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:18",
+      "departureTime": "21:40",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:33",
+      "departureTime": "21:48",
+      "destination": "伊勢原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:33",
+      "departureTime": "21:56",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:45",
+      "departureTime": "22:04",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:51",
+      "departureTime": "22:12",
+      "destination": "伊勢原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線急行",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:57",
+      "departureTime": "22:20",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:06",
+      "departureTime": "22:30",
+      "destination": "代々木上原行",
+      "departurePlatform": "1番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:15",
+      "departureTime": "22:40",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:27",
+      "departureTime": "22:50",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:36",
+      "departureTime": "22:59",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:42",
+      "departureTime": "23:08",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:54",
+      "departureTime": "23:21",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:00",
+      "departureTime": "23:31",
+      "destination": "代々木上原行",
+      "departurePlatform": "2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:09",
+      "departureTime": "23:41",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:24",
+      "departureTime": "23:51",
+      "destination": "代々木上原行",
+      "departurePlatform": "1・2番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    }
+  ],
+  "errors": []
+}

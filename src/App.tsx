@@ -164,6 +164,7 @@ export function App() {
   const isInitialLoadRef = useRef(true);
   const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
   const [ayaseArrivalPlatformsByTime, setAyaseArrivalPlatformsByTime] = useState<Record<string, string[]> | null>(null);
+  const [ayaseDeparturePlatformsByTime, setAyaseDeparturePlatformsByTime] = useState<Record<string, string[]> | null>(null);
 
   const rowsWithConnection = useMemo(() => {
     return rows.map((row, index) => {
@@ -189,14 +190,28 @@ export function App() {
         !!row.ayaseArrivalTime &&
         isAyaseTrack3Only;
 
+      const departurePlatforms = row.ayaseDepartureTime
+        ? ayaseDeparturePlatformsByTime?.[row.ayaseDepartureTime] ?? []
+        : [];
+      const isAyaseDepartureTrack2Only =
+        departurePlatforms.length > 0 &&
+        departurePlatforms.every((p) => p === "2番線");
+
+      const showAyaseDepartureTrack2Label =
+        direction === "for_yoyogiuehara" &&
+        row.originStationName !== "KitaAyase" &&
+        !!row.ayaseDepartureTime &&
+        isAyaseDepartureTrack2Only;
+
       return {
         ...row,
         hasAyaseConnection,
         transferInfo,
         showAyaseTrack2Label,
+        showAyaseDepartureTrack2Label,
       };
     });
-  }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, direction, stationKey]);
+  }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, ayaseDeparturePlatformsByTime, direction, stationKey]);
 
   const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
@@ -374,10 +389,32 @@ export function App() {
             setAyaseArrivalPlatformsByTime(byTime);
           })
           .catch(() => setAyaseArrivalPlatformsByTime(null));
+
+        // 綾瀬発番線データ（あれば利用、なければ null）
+        const departurePlatformUrl = `${base}/${diagramDate}/yahoo-ayase-departure-platform/${calendar}.json`;
+        fetch(departurePlatformUrl, { signal: controller.signal })
+          .then((res) => {
+            if (!res.ok) throw new Error("departure platform file not found");
+            return res.json();
+          })
+          .then((j) => {
+            const byTime: Record<string, string[]> = {};
+            const rows = Array.isArray(j?.rows) ? j.rows : [];
+            for (const r of rows) {
+              const t = r?.departureTime;
+              const p = r?.departurePlatform;
+              if (!t || !p) continue;
+              if (!byTime[t]) byTime[t] = [];
+              byTime[t].push(p);
+            }
+            setAyaseDeparturePlatformsByTime(byTime);
+          })
+          .catch(() => setAyaseDeparturePlatformsByTime(null));
       } catch {
         setRows([]);
         setAyaseTimetable([]);
         setAyaseArrivalPlatformsByTime(null);
+        setAyaseDeparturePlatformsByTime(null);
       }
     })();
 
@@ -740,6 +777,7 @@ export function App() {
               hasAyaseConnection={row.hasAyaseConnection}
               transferInfo={row.transferInfo}
               showAyaseTrack2Label={row.showAyaseTrack2Label}
+              showAyaseDepartureTrack2Label={row.showAyaseDepartureTrack2Label}
               onClick={async () => {
                 const ok = await fetchTrainDetail(row.trainNumber);
                 if (ok) {
