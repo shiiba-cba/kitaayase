@@ -941,36 +941,22 @@ export function App() {
                 />
               </Flex>
 
-              <HStack gap={2}>
-                <IconButton
-                  aria-label="方向入れ替え"
-                  size="md"
-                  bg={METRO_GREEN}
-                  _hover={{ bg: METRO_GREEN }}
-                  onClick={() => {
-                    setDirection(
-                      direction === "for_yoyogiuehara"
-                        ? "for_kitaayase"
-                        : "for_yoyogiuehara"
-                    );
-                    scrollRequestRef.current = true;
-                  }}
-                >
-                  <LuArrowLeftRight />
-                </IconButton>
-
-                <IconButton
-                  aria-label="表示方面の自動設定"
-                  size="md"
-                  variant="outline"
-                  borderColor="whiteAlpha.500"
-                  color="white"
-                  _hover={{ bg: "whiteAlpha.200" }}
-                  onClick={() => setIsSettingsOpen(true)}
-                >
-                  <LuSettings2 />
-                </IconButton>
-              </HStack>
+              <IconButton
+                aria-label="方向入れ替え"
+                size="md"
+                bg={METRO_GREEN}
+                _hover={{ bg: METRO_GREEN }}
+                onClick={() => {
+                  setDirection(
+                    direction === "for_yoyogiuehara"
+                      ? "for_kitaayase"
+                      : "for_yoyogiuehara"
+                  );
+                  scrollRequestRef.current = true;
+                }}
+              >
+                <LuArrowLeftRight />
+              </IconButton>
 
               <Flex flex="1" justify="center">
                 <StationLargeLabel
@@ -1053,7 +1039,19 @@ export function App() {
                 </HStack>
               </Flex>
 
-              <Flex flex="1" justify="center"></Flex>
+              <Flex flex="1" justify="end" pr={4}>
+                <IconButton
+                  aria-label="表示方面の自動設定"
+                  size="md"
+                  variant="outline"
+                  borderColor="whiteAlpha.500"
+                  color="white"
+                  _hover={{ bg: "whiteAlpha.200" }}
+                  onClick={() => setIsSettingsOpen(true)}
+                >
+                  <LuSettings2 />
+                </IconButton>
+              </Flex>
             </Flex>
           </VStack>
         </Box>
