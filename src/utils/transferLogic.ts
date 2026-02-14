@@ -1,4 +1,4 @@
-import type { TrainRow } from "../components/TrainCard";
+import type { TrainRow } from "../types/TrainRow";
 
 export interface TransferInfo {
   label: string;

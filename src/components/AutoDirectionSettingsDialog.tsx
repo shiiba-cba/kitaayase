@@ -14,8 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { LuX } from "react-icons/lu";
 import { UI_TEXT } from "../constants/uiText";
-
-type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
+import type { DirectionKey } from "../utils/autoDirection";
 
 type Props = {
   open: boolean;

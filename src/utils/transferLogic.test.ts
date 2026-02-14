@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { calculateTransferInfo } from "./transferLogic";
-import type { TrainRow } from "../components/TrainCard";
+import type { TrainRow } from "../types/TrainRow";
 
 function makeRow(overrides: Partial<TrainRow> = {}): TrainRow {
   return {

@@ -1,18 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dispatch, MutableRefObject, SetStateAction } from "react";
 import { STORAGE_KEYS } from "../constants/storageKeys";
-import type { TrainRow } from "../components/TrainCard";
+import type { TrainRow } from "../types/TrainRow";
 import type { TrainDetail } from "../types/TrainDetail";
 import type { DirectionKey } from "../utils/autoDirection";
-
-function isAbortError(e: unknown): boolean {
-  return (
-    typeof e === "object" &&
-    e !== null &&
-    "name" in e &&
-    (e as { name?: unknown }).name === "AbortError"
-  );
-}
+import { isAbortError } from "../utils/isAbortError";
 
 const jsonCache = new Map<string, unknown>();
 const jsonPromiseCache = new Map<string, Promise<unknown>>();

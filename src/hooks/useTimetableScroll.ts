@@ -1,9 +1,8 @@
 import { useCallback, useLayoutEffect } from "react";
 import type { MutableRefObject, RefObject } from "react";
-import type { TrainRow } from "../components/TrainCard";
+import type { TrainRow } from "../types/TrainRow";
+import type { DirectionKey } from "../utils/autoDirection";
 import { parseTimeToServiceDayMinutes } from "../utils/time";
-
-type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
 
 type Params = {
   displayedRows: TrainRow[];

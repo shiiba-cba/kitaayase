@@ -1,15 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { OperationInfo } from "../types/OperationInfo";
 import type { OperationVisualState } from "../types/OperationVisualState";
-
-function isAbortError(e: unknown): boolean {
-  return (
-    typeof e === "object" &&
-    e !== null &&
-    "name" in e &&
-    (e as { name?: unknown }).name === "AbortError"
-  );
-}
+import { isAbortError } from "../utils/isAbortError";
 
 function getOperationTitle(text: string): string {
   if (text.includes("運転を見合わせ")) return "運転見合わせ";
