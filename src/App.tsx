@@ -738,6 +738,41 @@ export function App() {
     scrollBehaviorOverrideRef,
   });
 
+  const toggleDirection = useCallback(() => {
+    setDirection((prev) =>
+      prev === "for_yoyogiuehara" ? "for_kitaayase" : "for_yoyogiuehara"
+    );
+    scrollRequestRef.current = true;
+  }, []);
+
+  const changeStation = useCallback(
+    (newStationKey: string) => {
+      const willChangeStation = newStationKey !== stationKey;
+      const willChangeDirection =
+        newStationKey === "kitaayase" && direction !== "for_yoyogiuehara";
+
+      if (willChangeStation || willChangeDirection) {
+        scrollRequestRef.current = true;
+      }
+
+      setStationKey(newStationKey);
+      if (newStationKey === "kitaayase") {
+        setDirection("for_yoyogiuehara");
+      }
+    },
+    [stationKey, direction]
+  );
+
+  const toggleDepartureOnly = useCallback(
+    (checked: boolean) => {
+      preserveScrollDepartureMinutesRef.current = captureVisibleDepartureMinutes();
+      scrollBehaviorOverrideRef.current = "auto";
+      setShowOnlyDepartures(checked);
+      setScrollTrigger((c) => c + 1);
+    },
+    [captureVisibleDepartureMinutes]
+  );
+
   // ===== 復帰時リフレッシュ（5分以上経過なら初回起動相当） =====
   const backgroundedAtRef = useRef<number | null>(null);
   const refreshingRef = useRef(false);
@@ -934,14 +969,7 @@ export function App() {
                 size="md"
                 bg={METRO_GREEN}
                 _hover={{ bg: METRO_GREEN }}
-                onClick={() => {
-                  setDirection(
-                    direction === "for_yoyogiuehara"
-                      ? "for_kitaayase"
-                      : "for_yoyogiuehara"
-                  );
-                  scrollRequestRef.current = true;
-                }}
+                onClick={toggleDirection}
               >
                 <LuArrowLeftRight />
               </IconButton>
@@ -973,19 +1001,7 @@ export function App() {
               }}
               value={stationKey}
               onChange={(e) => {
-                const newStationKey = e.target.value;
-                const willChangeStation = newStationKey !== stationKey;
-                const willChangeDirection =
-                  newStationKey === "kitaayase" && direction !== "for_yoyogiuehara";
-
-                if (willChangeStation || willChangeDirection) {
-                  scrollRequestRef.current = true;
-                }
-
-                setStationKey(newStationKey);
-                if (newStationKey === "kitaayase") {
-                  setDirection("for_yoyogiuehara");
-                }
+                changeStation(e.target.value);
               }}
             >
               {Object.entries(selectStations).map(([key, name]) => (
@@ -1001,11 +1017,7 @@ export function App() {
                   type="checkbox"
                   checked={showOnlyDepartures}
                   onChange={(e) => {
-                    preserveScrollDepartureMinutesRef.current =
-                      captureVisibleDepartureMinutes();
-                    scrollBehaviorOverrideRef.current = "auto";
-                    setShowOnlyDepartures(e.target.checked);
-                    setScrollTrigger((c) => c + 1);
+                    toggleDepartureOnly(e.target.checked);
                   }}
                 />
                 <Text fontSize="sm" color="whiteAlpha.900">
