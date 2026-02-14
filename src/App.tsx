@@ -31,6 +31,8 @@ import type { OperationInfo } from "./types/OperationInfo";
 import type { OperationVisualState } from "./types/OperationVisualState";
 import { useCalendar } from "./hooks/useCalendar";
 import { useTimetableScroll } from "./hooks/useTimetableScroll";
+import { STORAGE_KEYS } from "./constants/storageKeys";
+import { UI_TEXT } from "./constants/uiText";
 import {
   formatRelativeTime,
   toJaStationName,
@@ -60,7 +62,7 @@ const jsonCache = new Map<string, unknown>();
 const jsonPromiseCache = new Map<string, Promise<unknown>>();
 const MAX_JSON_CACHE_ENTRIES = 160;
 
-const LATEST_CACHE_KEY = "kitaayase:latestDiagramDate:v1";
+const LATEST_CACHE_KEY = STORAGE_KEYS.latestDiagramDate;
 const LATEST_CACHE_TTL_MS = 5 * 60 * 1000;
 
 function touchJsonCache(key: string, value: unknown) {
@@ -251,8 +253,8 @@ type AutoDirectionSettings = {
   afterCutoffDirection: DirectionKey;
 };
 
-const AUTO_DIRECTION_SETTINGS_KEY = "kitaayase:autoDirectionSettings:v1";
-const SHOW_ONLY_DEPARTURES_KEY = "kitaayase:showOnlyDepartures:v1";
+const AUTO_DIRECTION_SETTINGS_KEY = STORAGE_KEYS.autoDirectionSettings;
+const SHOW_ONLY_DEPARTURES_KEY = STORAGE_KEYS.showOnlyDepartures;
 
 const DEFAULT_AUTO_DIRECTION_SETTINGS: AutoDirectionSettings = {
   enabled: false,
@@ -323,10 +325,10 @@ function pickDirectionBySettings(
 
 export function App() {
   const [stationKey, setStationKey] = useState<string>(() => {
-    return localStorage.getItem("stationKey") || "otemachi";
+    return localStorage.getItem(STORAGE_KEYS.stationKey) || "otemachi";
   });
   const [direction, setDirection] = useState<DirectionKey>(() => {
-    const savedStationKey = localStorage.getItem("stationKey") || "otemachi";
+    const savedStationKey = localStorage.getItem(STORAGE_KEYS.stationKey) || "otemachi";
     if (savedStationKey === "kitaayase") {
       return "for_yoyogiuehara";
     }
@@ -336,7 +338,7 @@ export function App() {
       return pickDirectionBySettings(auto);
     }
 
-    const saved = localStorage.getItem("direction");
+    const saved = localStorage.getItem(STORAGE_KEYS.direction);
     if (saved === "for_yoyogiuehara" || saved === "for_kitaayase") {
       return saved;
     }
@@ -578,11 +580,11 @@ export function App() {
 
   // 永続化
   useEffect(() => {
-    localStorage.setItem("direction", direction);
+    localStorage.setItem(STORAGE_KEYS.direction, direction);
   }, [direction]);
 
   useEffect(() => {
-    localStorage.setItem("stationKey", stationKey);
+    localStorage.setItem(STORAGE_KEYS.stationKey, stationKey);
   }, [stationKey]);
 
   useEffect(() => {
@@ -1008,7 +1010,7 @@ export function App() {
                 />
                 <Text fontSize="sm" color="whiteAlpha.900">
                   {direction === "for_yoyogiuehara"
-                    ? "北綾瀬を発車する電車のみ表示"
+                    ? UI_TEXT.departureOnlyKitaAyase
                     : `${currentStationName}を発車する電車のみ表示`}
                 </Text>
               </label>
@@ -1029,7 +1031,7 @@ export function App() {
                     color="white"
                     onClick={() => onCalendarChange("weekday")}
                   >
-                    平日
+                    {UI_TEXT.weekday}
                   </Button>
 
                   <Button
@@ -1041,14 +1043,14 @@ export function App() {
                     color="white"
                     onClick={() => onCalendarChange("holiday")}
                   >
-                    土・休日
+                    {UI_TEXT.holiday}
                   </Button>
                 </HStack>
               </Flex>
 
               <Flex flex="1" justify="end" pr={4}>
                 <IconButton
-                  aria-label="表示方面の自動設定"
+                  aria-label={UI_TEXT.settingsAriaLabel}
                   size="md"
                   variant="outline"
                   borderColor="whiteAlpha.500"
@@ -1067,7 +1069,7 @@ export function App() {
         <VStack gap={4} w="100%" pt={2}>
           {displayedRows.length === 0 && (
             <Text color="whiteAlpha.700" fontFamily={FONT_JP}>
-              条件に一致する列車がありません
+              {UI_TEXT.noMatchingTrains}
             </Text>
           )}
 

@@ -13,6 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { LuX } from "react-icons/lu";
+import { UI_TEXT } from "../constants/uiText";
 
 type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
 
@@ -80,7 +81,7 @@ export function AutoDirectionSettingsDialog({
           </DialogCloseTrigger>
 
           <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
-            <DialogTitle>表示方面の自動設定</DialogTitle>
+            <DialogTitle>{UI_TEXT.autoDirectionSettingsTitle}</DialogTitle>
           </DialogHeader>
 
           <DialogBody py={4}>
@@ -91,12 +92,12 @@ export function AutoDirectionSettingsDialog({
                   checked={enabled}
                   onChange={(e) => onEnabledChange(e.target.checked)}
                 />
-                <Text>初期表示・復帰時に時刻で方面を自動切替する</Text>
+                <Text>{UI_TEXT.autoDirectionToggle}</Text>
               </label>
 
               <Box>
                 <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                  表示方面（切替前）
+                  {UI_TEXT.directionBeforeCutoff}
                 </Text>
                 <select
                   value={beforeCutoffDirection}
@@ -120,7 +121,7 @@ export function AutoDirectionSettingsDialog({
 
               <Box>
                 <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                  切替時刻
+                  {UI_TEXT.cutoffTime}
                 </Text>
                 <input
                   type="time"
@@ -140,7 +141,7 @@ export function AutoDirectionSettingsDialog({
 
               <Box>
                 <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                  表示方面（切替後）
+                  {UI_TEXT.directionAfterCutoff}
                 </Text>
                 <Box
                   width="100%"

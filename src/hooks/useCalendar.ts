@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { STORAGE_KEYS } from "../constants/storageKeys";
 import { isHoliday as isHolidayDefault } from "../utils/holiday";
 
 export type CalendarType = "weekday" | "holiday";
@@ -52,7 +53,7 @@ export function useCalendar(opts?: {
   persistKey?: string;
 }) {
   const initial = opts?.initial ?? "weekday";
-  const persistKey = opts?.persistKey ?? "calendar";
+  const persistKey = opts?.persistKey ?? STORAGE_KEYS.calendar;
   const isHoliday = opts?.isHoliday ?? isHolidayDefault;
 
   const [calendar, setCalendar] = useState<CalendarType>(initial);
