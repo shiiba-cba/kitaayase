@@ -19,16 +19,15 @@ import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { LuArrowLeftRight, LuSettings2, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
-import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
 import { AutoDirectionSettingsDialog } from "./components/AutoDirectionSettingsDialog";
-import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
 import { FONT_JP, FONT_NUM } from "./styles/fonts";
 import { OperationInfoBanner } from "./components/OperationInfoBanner";
 import { useCalendar } from "./hooks/useCalendar";
 import { useTimetableScroll } from "./hooks/useTimetableScroll";
+import { useTimetableData } from "./hooks/useTimetableData";
 import { useUiActions } from "./hooks/useUiActions";
 import { useOperationInfo } from "./hooks/useOperationInfo";
 import { STORAGE_KEYS } from "./constants/storageKeys";
@@ -51,123 +50,11 @@ import {
 } from "./utils/autoDirection";
 
 
-function isAbortError(e: unknown): boolean {
-  return (
-    typeof e === "object" &&
-    e !== null &&
-    "name" in e &&
-    (e as { name?: unknown }).name === "AbortError"
-  );
-}
-
 function sleep(ms: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, ms));
 }
 
 const CHIYODA_GREEN = "#00bb85";
-
-const jsonCache = new Map<string, unknown>();
-const jsonPromiseCache = new Map<string, Promise<unknown>>();
-const MAX_JSON_CACHE_ENTRIES = 160;
-
-const LATEST_CACHE_KEY = STORAGE_KEYS.latestDiagramDate;
-const LATEST_CACHE_TTL_MS = 5 * 60 * 1000;
-
-function touchJsonCache(key: string, value: unknown) {
-  if (jsonCache.has(key)) {
-    jsonCache.delete(key);
-  }
-  jsonCache.set(key, value);
-
-  while (jsonCache.size > MAX_JSON_CACHE_ENTRIES) {
-    const oldestKey = jsonCache.keys().next().value;
-    if (!oldestKey) break;
-    jsonCache.delete(oldestKey);
-  }
-}
-
-async function fetchJsonCached<T>(url: string, init?: Omit<RequestInit, "signal">): Promise<T> {
-  if (jsonCache.has(url)) {
-    const cached = jsonCache.get(url) as T;
-    touchJsonCache(url, cached);
-    // React の再レンダリング検知を確実にするため、常にクローンを返す
-    return Array.isArray(cached)
-      ? ([...cached] as unknown as T)
-      : typeof cached === "object" && cached !== null
-      ? ({ ...cached } as T)
-      : cached;
-  }
-
-  const cachedPromise = jsonPromiseCache.get(url);
-  if (cachedPromise) {
-    return cachedPromise as Promise<T>;
-  }
-
-  const p = fetch(url, init)
-    .then((res) => {
-      if (!res.ok) throw new Error(`failed to fetch: ${url}`);
-      return res.json();
-    })
-    .then((data) => {
-      touchJsonCache(url, data);
-      // 初回取得時もクローンを返す（一貫性のため）
-      return Array.isArray(data)
-        ? ([...data] as unknown as T)
-        : typeof data === "object" && data !== null
-        ? ({ ...data } as T)
-        : data;
-    })
-    .finally(() => {
-      jsonPromiseCache.delete(url);
-    });
-
-  jsonPromiseCache.set(url, p);
-  return p as Promise<T>;
-}
-
-async function fetchJsonNoStore<T>(url: string, signal?: AbortSignal): Promise<T> {
-  const res = await fetch(url, {
-    cache: "no-store",
-    signal,
-  });
-  if (!res.ok) throw new Error(`failed to fetch: ${url}`);
-  return res.json();
-}
-
-function readLatestDiagramDateCache(): { diagramDate: string; fetchedAt: number } | null {
-  try {
-    const raw = localStorage.getItem(LATEST_CACHE_KEY);
-    if (!raw) return null;
-
-    const parsed = JSON.parse(raw) as {
-      diagramDate?: string;
-      fetchedAt?: number;
-    };
-
-    if (!parsed.diagramDate || !parsed.fetchedAt) return null;
-
-    return {
-      diagramDate: parsed.diagramDate,
-      fetchedAt: parsed.fetchedAt,
-    };
-  } catch {
-    return null;
-  }
-}
-
-function writeLatestDiagramDateCache(diagramDate: string) {
-  try {
-    localStorage.setItem(
-      LATEST_CACHE_KEY,
-      JSON.stringify({
-        diagramDate,
-        fetchedAt: Date.now(),
-      })
-    );
-  } catch {
-    // noop
-  }
-}
 
 /* ==================================================
  * 運行情報の見出し取得
@@ -201,12 +88,33 @@ export function App() {
     detectCalendarForNow,
   } = useCalendar();
 
-  const [rows, setRows] = useState<TrainRow[]>([]);
   const isInitialLoadRef = useRef(true);
-  const [ayaseTimetable, setAyaseTimetable] = useState<TrainRow[]>([]);
-  const [ayaseArrivalPlatformsByTime, setAyaseArrivalPlatformsByTime] = useState<Record<string, string[]> | null>(null);
-  const [ayaseDeparturePlatformsByTime, setAyaseDeparturePlatformsByTime] = useState<Record<string, string[]> | null>(null);
-  const [ayaseToKitaAyaseDeparturePlatformsByTime, setAyaseToKitaAyaseDeparturePlatformsByTime] = useState<Record<string, string[]> | null>(null);
+  const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
+  const [scrollTrigger, setScrollTrigger] = useState(0);
+  const handledScrollTriggerRef = useRef(0);
+  const scrollRequestRef = useRef(false);
+  const preserveScrollDepartureMinutesRef = useRef<number | null>(null);
+  const scrollBehaviorOverrideRef = useRef<ScrollBehavior | null>(null);
+
+  const {
+    rows,
+    ayaseTimetable,
+    ayaseArrivalPlatformsByTime,
+    ayaseDeparturePlatformsByTime,
+    ayaseToKitaAyaseDeparturePlatformsByTime,
+    trainDetail,
+    setTrainDetail,
+    fetchTrainDetail,
+  } = useTimetableData({
+    calendar,
+    calendarReady,
+    direction,
+    stationKey,
+    timetableReloadNonce,
+    setScrollTrigger,
+    scrollRequestRef,
+    isInitialLoadRef,
+  });
 
   const rowsWithConnection = useMemo(() => {
     return rows.map((row, index) => {
@@ -236,8 +144,7 @@ export function App() {
         ? ayaseDeparturePlatformsByTime?.[row.ayaseDepartureTime] ?? []
         : [];
       const isAyaseDepartureTrack2Only =
-        departurePlatforms.length > 0 &&
-        departurePlatforms.every((p) => p === "2番線");
+        departurePlatforms.length > 0 && departurePlatforms.every((p) => p === "2番線");
 
       const showAyaseDepartureTrack2Label =
         direction === "for_yoyogiuehara" &&
@@ -268,9 +175,15 @@ export function App() {
         showAyaseDepartureTrack3Label,
       };
     });
-  }, [rows, ayaseTimetable, ayaseArrivalPlatformsByTime, ayaseDeparturePlatformsByTime, ayaseToKitaAyaseDeparturePlatformsByTime, direction, stationKey]);
-
-  const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
+  }, [
+    rows,
+    ayaseTimetable,
+    ayaseArrivalPlatformsByTime,
+    ayaseDeparturePlatformsByTime,
+    ayaseToKitaAyaseDeparturePlatformsByTime,
+    direction,
+    stationKey,
+  ]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -317,13 +230,6 @@ export function App() {
       window.history.scrollRestoration = prev;
     };
   }, []);
-
-  const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
-  const [scrollTrigger, setScrollTrigger] = useState(0);
-  const handledScrollTriggerRef = useRef(0);
-  const scrollRequestRef = useRef(false);
-  const preserveScrollDepartureMinutesRef = useRef<number | null>(null);
-  const scrollBehaviorOverrideRef = useRef<ScrollBehavior | null>(null);
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
@@ -388,116 +294,6 @@ export function App() {
     setDirection(next);
     scrollRequestRef.current = true;
   }, [autoDirectionSettings, stationKey]);
-
-  /* ==================================================
-   * ③ 時刻表 JSON 読み込み
-   * ================================================== */
-  useEffect(() => {
-    if (!calendarReady) return;
-
-    const controller = new AbortController();
-    const base = "/kitaayase/data";
-
-    (async () => {
-      try {
-        const latestCache = readLatestDiagramDateCache();
-        const latestIsFresh =
-          !!latestCache && Date.now() - latestCache.fetchedAt < LATEST_CACHE_TTL_MS;
-
-        let diagramDate = latestIsFresh ? latestCache.diagramDate : null;
-
-        if (!diagramDate) {
-          try {
-            const latest = await fetchJsonNoStore<{ diagramDate: string }>(
-              `${base}/latest.json`,
-              controller.signal
-            );
-            diagramDate = latest.diagramDate;
-            writeLatestDiagramDateCache(diagramDate);
-          } catch {
-            if (latestCache?.diagramDate) {
-              diagramDate = latestCache.diagramDate;
-            } else {
-              throw new Error("latest.json fetch failed");
-            }
-          }
-        }
-
-        if (!diagramDate) throw new Error("diagramDate unavailable");
-
-        const url = `${base}/${diagramDate}/timetable/${calendar}/${direction}/${stationKey}.json`;
-        const ayaseUrl = (direction === "for_yoyogiuehara" || direction === "for_kitaayase")
-          ? `${base}/${diagramDate}/timetable/${calendar}/${direction}/ayase.json`
-          : null;
-        const platformUrl = `${base}/${diagramDate}/yahoo-platform-kitasenju-ayase/${calendar}.json`;
-        const departurePlatformUrl = `${base}/${diagramDate}/yahoo-platform-ayase-kitasenju/${calendar}.json`;
-        const toKitaAyaseDeparturePlatformUrl = `${base}/${diagramDate}/yahoo-platform-ayase-kitaayase/${calendar}.json`;
-
-        // 全てのデータを並行して取得（一貫性の確保）
-        const [data, ayaseData, platformJson, departurePlatformJson, toKitaAyasePlatformJson] = await Promise.all([
-          fetchJsonCached<TrainRow[]>(url, { cache: "force-cache" }),
-          ayaseUrl 
-            ? fetchJsonCached<TrainRow[]>(ayaseUrl, { cache: "force-cache" }).catch(() => [])
-            : Promise.resolve([]),
-          fetchJsonCached<{ rows?: Array<{ arrivalTime?: string; arrivalPlatform?: string }> }>(platformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
-          fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(departurePlatformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
-          fetchJsonCached<{ rows?: Array<{ departureTime?: string; departurePlatform?: string }> }>(toKitaAyaseDeparturePlatformUrl, { cache: "force-cache" }).catch(() => ({ rows: [] })),
-        ]);
-
-        if (controller.signal.aborted) return;
-
-        // プラットフォームデータのパース
-        const arrivalByTime: Record<string, string[]> = {};
-        const aRows = Array.isArray(platformJson?.rows) ? platformJson.rows : [];
-        for (const r of aRows) {
-          if (r?.arrivalTime && r?.arrivalPlatform) {
-            if (!arrivalByTime[r.arrivalTime]) arrivalByTime[r.arrivalTime] = [];
-            arrivalByTime[r.arrivalTime].push(r.arrivalPlatform);
-          }
-        }
-
-        const departureByTime: Record<string, string[]> = {};
-        const dRows = Array.isArray(departurePlatformJson?.rows) ? departurePlatformJson.rows : [];
-        for (const r of dRows) {
-          if (r?.departureTime && r?.departurePlatform) {
-            if (!departureByTime[r.departureTime]) departureByTime[r.departureTime] = [];
-            departureByTime[r.departureTime].push(r.departurePlatform);
-          }
-        }
-
-        const toKitaAyaseByTime: Record<string, string[]> = {};
-        const tkRows = Array.isArray(toKitaAyasePlatformJson?.rows) ? toKitaAyasePlatformJson.rows : [];
-        for (const r of tkRows) {
-          if (r?.departureTime && r?.departurePlatform) {
-            if (!toKitaAyaseByTime[r.departureTime]) toKitaAyaseByTime[r.departureTime] = [];
-            toKitaAyaseByTime[r.departureTime].push(r.departurePlatform);
-          }
-        }
-
-        // 状態をまとめて更新
-        setAyaseTimetable(ayaseData);
-        setAyaseArrivalPlatformsByTime(arrivalByTime);
-        setAyaseDeparturePlatformsByTime(departureByTime);
-        setAyaseToKitaAyaseDeparturePlatformsByTime(toKitaAyaseByTime);
-        setRows(data);
-
-        if (isInitialLoadRef.current || scrollRequestRef.current) {
-          setScrollTrigger((v) => v + 1);
-          isInitialLoadRef.current = false;
-          scrollRequestRef.current = false;
-        }
-      } catch (e) {
-        if (controller.signal.aborted) return;
-        console.error("[Fetch] Error loading data:", e);
-        setRows([]);
-        setAyaseTimetable([]);
-        setAyaseArrivalPlatformsByTime(null);
-        setAyaseDeparturePlatformsByTime(null);
-      }
-    })();
-
-    return () => controller.abort();
-  }, [calendar, calendarReady, direction, stationKey, timetableReloadNonce]);
 
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
@@ -566,7 +362,7 @@ export function App() {
     } finally {
       refreshingRef.current = false;
     }
-  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo]);
+  }, [detectCalendarForNow, onCalendarChange, fetchOperationInfo, setTrainDetail]);
 
   useEffect(() => {
     const THRESHOLD_MS = 5 * 60 * 1000;
@@ -619,57 +415,6 @@ export function App() {
   }, [refreshOnResume, applyAutoDirectionIfEnabled]);
 
   const currentStationName = selectStations[stationKey as keyof typeof selectStations] || stationKey;
-
-  const trainDetailAbortRef = useRef<AbortController | null>(null);
-
-  // calendar 切替時に、進行中の詳細取得が旧calendarで刺さらないように abort
-  useEffect(() => {
-    trainDetailAbortRef.current?.abort();
-  }, [calendar]);
-
-  const fetchTrainDetail = async (trainNumber: string) => {
-    // 連打で古いレスポンスが刺さらないようにする
-    trainDetailAbortRef.current?.abort();
-    const controller = new AbortController();
-    trainDetailAbortRef.current = controller;
-
-    const base = "/kitaayase/data";
-
-    try {
-      const latestCache = readLatestDiagramDateCache();
-      const latestIsFresh =
-        !!latestCache && Date.now() - latestCache.fetchedAt < LATEST_CACHE_TTL_MS;
-
-      let diagramDate = latestIsFresh ? latestCache.diagramDate : null;
-
-      if (!diagramDate) {
-        const latest = await fetchJsonNoStore<{ diagramDate: string }>(
-          `${base}/latest.json`,
-          controller.signal
-        );
-        diagramDate = latest.diagramDate;
-        writeLatestDiagramDateCache(diagramDate);
-      }
-
-      if (!diagramDate) throw new Error("diagramDate unavailable");
-
-      const url = `${base}/${diagramDate}/train/${calendar}/${trainNumber}.json`;
-
-      const data = await fetchJsonCached<TrainDetail>(url, {
-        cache: "force-cache",
-      });
-
-      if (controller.signal.aborted) return false;
-
-      setTrainDetail(data);
-      return true;
-    } catch (e: unknown) {
-      if (isAbortError(e)) return false;
-      // ここは UI 側で null 許容のはずなので握りつぶし
-      setTrainDetail(null);
-      return false;
-    }
-  };
 
   /* ==================================================
    * メインレンダリング
