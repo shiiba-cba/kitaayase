@@ -1,5 +1,3 @@
-import { Icon } from "@chakra-ui/react";
-import { MdWarning } from "react-icons/md";
 import { forwardRef } from "react";
 import { Box, Flex, Text, Badge, VStack, HStack } from "@chakra-ui/react";
 import { stations } from "../data/stations";
@@ -244,8 +242,9 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
     const CARD_NORMAL_BG = "rgba(255,255,255,0.04)";
     const CARD_HIGHLIGHT_BG = "rgba(255,255,255,0.12)";
 
-    const depColor = isDepartWrong ? "whiteAlpha.700" : "white";
-    const arrColor = isArrivalWrong ? "whiteAlpha.700" : "white";
+    const ALERT_TEXT_COLOR = "#ff7f00"; // 「当駅始発」と同色
+    const depColor = isDepartWrong ? ALERT_TEXT_COLOR : "white";
+    const arrColor = isArrivalWrong ? ALERT_TEXT_COLOR : "white";
 
     const typeInfo = getTrainTypeInfo(row.type);
     const trainTypeLabel = typeInfo ? typeInfo.label : (trainTypes[row.type.toLowerCase()] || row.type);
@@ -312,14 +311,6 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 display="flex"
                 alignItems="center"
               >
-                {isDepartWrong && (
-                  <Icon
-                    as={MdWarning}
-                    mr={1}
-                    color="yellow.300"
-                    boxSize="1.4em"
-                  />
-                )}
                 {depLabel}
                 {depSuffix && (
                   <Text
@@ -479,14 +470,6 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                   >
                     {arrSuffix}
                   </Text>
-                )}
-                {isArrivalWrong && (
-                  <Icon
-                    as={MdWarning}
-                    ml={1}
-                    color="yellow.300"
-                    boxSize="1.4em"
-                  />
                 )}
               </Text>
             </Flex>
