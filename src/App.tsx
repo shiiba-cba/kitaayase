@@ -43,7 +43,13 @@ import {
   getThroughLineColorForStationKey,
 } from "./utils/trainUtils";
 import { calculateTransferInfo } from "./utils/transferLogic";
-import { toServiceDayMinutes } from "./utils/time";
+import {
+  oppositeDirection,
+  pickDirectionBySettings,
+  readAutoDirectionSettings,
+  type AutoDirectionSettings,
+  type DirectionKey,
+} from "./utils/autoDirection";
 
 function isAbortError(e: unknown): boolean {
   return (
@@ -246,80 +252,6 @@ function parseOperationInfo(text: string) {
   };
 }
 
-type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
-
-type AutoDirectionSettings = {
-  enabled: boolean;
-  cutoffTime: string; // HH:mm
-  beforeCutoffDirection: DirectionKey;
-  afterCutoffDirection: DirectionKey;
-};
-
-const AUTO_DIRECTION_SETTINGS_KEY = STORAGE_KEYS.autoDirectionSettings;
-const SHOW_ONLY_DEPARTURES_KEY = STORAGE_KEYS.showOnlyDepartures;
-
-const DEFAULT_AUTO_DIRECTION_SETTINGS: AutoDirectionSettings = {
-  enabled: false,
-  cutoffTime: "16:00",
-  beforeCutoffDirection: "for_yoyogiuehara",
-  afterCutoffDirection: "for_kitaayase",
-};
-
-function readAutoDirectionSettings(): AutoDirectionSettings {
-  try {
-    const raw = localStorage.getItem(AUTO_DIRECTION_SETTINGS_KEY);
-    if (!raw) return DEFAULT_AUTO_DIRECTION_SETTINGS;
-
-    const parsed = JSON.parse(raw) as Partial<AutoDirectionSettings>;
-    const enabled = parsed.enabled === true;
-    const cutoffTime =
-      typeof parsed.cutoffTime === "string" && /^\d{2}:\d{2}$/.test(parsed.cutoffTime)
-        ? parsed.cutoffTime
-        : DEFAULT_AUTO_DIRECTION_SETTINGS.cutoffTime;
-    const beforeCutoffDirection =
-      parsed.beforeCutoffDirection === "for_yoyogiuehara" ||
-      parsed.beforeCutoffDirection === "for_kitaayase"
-        ? parsed.beforeCutoffDirection
-        : DEFAULT_AUTO_DIRECTION_SETTINGS.beforeCutoffDirection;
-    const afterCandidate =
-      parsed.afterCutoffDirection === "for_yoyogiuehara" ||
-      parsed.afterCutoffDirection === "for_kitaayase"
-        ? parsed.afterCutoffDirection
-        : DEFAULT_AUTO_DIRECTION_SETTINGS.afterCutoffDirection;
-
-    const afterCutoffDirection =
-      afterCandidate === beforeCutoffDirection
-        ? oppositeDirection(beforeCutoffDirection)
-        : afterCandidate;
-
-    return {
-      enabled,
-      cutoffTime,
-      beforeCutoffDirection,
-      afterCutoffDirection,
-    };
-  } catch {
-    return DEFAULT_AUTO_DIRECTION_SETTINGS;
-  }
-}
-
-function oppositeDirection(direction: DirectionKey): DirectionKey {
-  return direction === "for_yoyogiuehara" ? "for_kitaayase" : "for_yoyogiuehara";
-}
-
-function pickDirectionBySettings(
-  settings: AutoDirectionSettings,
-  now: Date = new Date()
-): DirectionKey {
-  const [cutoffHour, cutoffMinute] = settings.cutoffTime.split(":").map(Number);
-  const nowMinutes = toServiceDayMinutes(now.getHours(), now.getMinutes());
-  const cutoffMinutes = toServiceDayMinutes(cutoffHour, cutoffMinute);
-
-  return nowMinutes < cutoffMinutes
-    ? settings.beforeCutoffDirection
-    : settings.afterCutoffDirection;
-}
-
 export function App() {
   const [stationKey, setStationKey] = useState<string>(() => {
     return localStorage.getItem(STORAGE_KEYS.stationKey) || "otemachi";
@@ -425,7 +357,7 @@ export function App() {
   const [autoDirectionSettings, setAutoDirectionSettings] =
     useState<AutoDirectionSettings>(() => readAutoDirectionSettings());
   const [showOnlyDepartures, setShowOnlyDepartures] = useState<boolean>(() => {
-    return localStorage.getItem(SHOW_ONLY_DEPARTURES_KEY) === "1";
+    return localStorage.getItem(STORAGE_KEYS.showOnlyDepartures) === "1";
   });
 
   const displayedRows = useMemo(() => {
@@ -586,14 +518,14 @@ export function App() {
 
   useEffect(() => {
     localStorage.setItem(
-      AUTO_DIRECTION_SETTINGS_KEY,
+      STORAGE_KEYS.autoDirectionSettings,
       JSON.stringify(autoDirectionSettings)
     );
   }, [autoDirectionSettings]);
 
   useEffect(() => {
     localStorage.setItem(
-      SHOW_ONLY_DEPARTURES_KEY,
+      STORAGE_KEYS.showOnlyDepartures,
       showOnlyDepartures ? "1" : "0"
     );
   }, [showOnlyDepartures]);

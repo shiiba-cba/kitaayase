@@ -33,4 +33,16 @@ describe("useCalendar helpers", () => {
     const cal = await detectCalendarForDate(weekday, isHoliday);
     expect(cal).toBe("weekday");
   });
+
+  it("03:59 is treated as previous day, 04:00 is current day", async () => {
+    const monday359 = new Date("2026-02-16T03:59:00+09:00"); // service-day => Sunday
+    const monday400 = new Date("2026-02-16T04:00:00+09:00"); // service-day => Monday
+    const isHoliday = vi.fn().mockResolvedValue(false);
+
+    const before = await detectCalendarForDate(monday359, isHoliday);
+    const after = await detectCalendarForDate(monday400, isHoliday);
+
+    expect(before).toBe("holiday");
+    expect(after).toBe("weekday");
+  });
 });

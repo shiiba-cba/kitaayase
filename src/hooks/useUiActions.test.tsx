@@ -74,6 +74,74 @@ describe("useUiActions", () => {
     expect(scrollRequestRef.current).toBe(true);
   });
 
+  it("changeStation non-kitaayase updates station without forcing direction", () => {
+    const setDirection = vi.fn();
+    const setStationKey = vi.fn();
+    const setShowOnlyDepartures = vi.fn();
+    const setScrollTrigger = vi.fn();
+
+    const scrollRequestRef = { current: false };
+    const preserveRef = { current: null as number | null };
+    const behaviorRef = { current: null as ScrollBehavior | null };
+
+    const { result } = renderHook(() =>
+      useUiActions({
+        stationKey: "otemachi",
+        direction: "for_yoyogiuehara",
+        setDirection,
+        setStationKey,
+        setShowOnlyDepartures,
+        setScrollTrigger,
+        scrollRequestRef,
+        preserveScrollDepartureMinutesRef: preserveRef,
+        scrollBehaviorOverrideRef: behaviorRef,
+        captureVisibleDepartureMinutes: () => 111,
+      })
+    );
+
+    act(() => {
+      result.current.changeStation("nishi-nippori");
+    });
+
+    expect(setStationKey).toHaveBeenCalledWith("nishi-nippori");
+    expect(setDirection).not.toHaveBeenCalled();
+    expect(scrollRequestRef.current).toBe(true);
+  });
+
+  it("toggleDepartureOnly handles null visible-time snapshot", () => {
+    const setDirection = vi.fn();
+    const setStationKey = vi.fn();
+    const setShowOnlyDepartures = vi.fn();
+    const setScrollTrigger = vi.fn();
+
+    const scrollRequestRef = { current: false };
+    const preserveRef = { current: 999 as number | null };
+    const behaviorRef = { current: null as ScrollBehavior | null };
+
+    const { result } = renderHook(() =>
+      useUiActions({
+        stationKey: "otemachi",
+        direction: "for_yoyogiuehara",
+        setDirection,
+        setStationKey,
+        setShowOnlyDepartures,
+        setScrollTrigger,
+        scrollRequestRef,
+        preserveScrollDepartureMinutesRef: preserveRef,
+        scrollBehaviorOverrideRef: behaviorRef,
+        captureVisibleDepartureMinutes: () => null,
+      })
+    );
+
+    act(() => {
+      result.current.toggleDepartureOnly(false);
+    });
+
+    expect(preserveRef.current).toBeNull();
+    expect(behaviorRef.current).toBe("auto");
+    expect(setShowOnlyDepartures).toHaveBeenCalledWith(false);
+  });
+
   it("toggleDepartureOnly preserves visible time, sets auto behavior, and increments trigger", () => {
     const setDirection = vi.fn();
     const setStationKey = vi.fn();
