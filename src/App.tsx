@@ -1529,7 +1529,7 @@ export function App() {
 
                 <Box>
                   <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    切替時刻（1日の境界は朝4:00）
+                    切替時刻
                   </Text>
                   <input
                     type="time"
@@ -1554,7 +1554,7 @@ export function App() {
 
                 <Box>
                   <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    表示方面（切替後・自動）
+                    表示方面（切替後）
                   </Text>
                   <Box
                     width="100%"
