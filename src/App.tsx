@@ -463,6 +463,19 @@ export function App() {
   const operationAbortRef = useRef<AbortController | null>(null);
   const operationEtagRef = useRef<string | null>(null);
 
+  // 初期表示時にブラウザの自動スクロール復元を無効化
+  // （自前の scrollToNow と競合してズレるのを防ぐ）
+  useEffect(() => {
+    if (!("scrollRestoration" in window.history)) return;
+
+    const prev = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = prev;
+    };
+  }, []);
+
   const fetchOperationInfo = useCallback(
     async (opts?: { preserveOnError?: boolean; bustCache?: boolean }) => {
       // 連打・再取得で古いレスポンスが刺さらないようにする
