@@ -1332,7 +1332,35 @@ export function App() {
       >
         <DialogBackdrop />
         <DialogPositioner>
-          <DialogContent bg="#111" color="white" fontFamily={FONT_JP}>
+          <DialogContent
+            bg="#111"
+            color="white"
+            fontFamily={FONT_JP}
+            position="relative"
+          >
+            <DialogCloseTrigger asChild>
+              <IconButton
+                aria-label="close"
+                tabIndex={-1}
+                position="absolute"
+                top="3"
+                right="3"
+                zIndex={10}
+                minW="40px"
+                minH="40px"
+                borderRadius="full"
+                color="white"
+                onClick={() => setIsSettingsOpen(false)}
+                userSelect="none"
+                WebkitUserSelect="none"
+                touchAction="manipulation"
+                _hover={{ bg: "whiteAlpha.300" }}
+                _active={{ bg: "whiteAlpha.400" }}
+              >
+                <LuX size={18} />
+              </IconButton>
+            </DialogCloseTrigger>
+
             <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
               <DialogTitle>表示方面の自動設定</DialogTitle>
             </DialogHeader>
@@ -1355,32 +1383,7 @@ export function App() {
 
                 <Box>
                   <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    切替時刻（1日の境界は朝4:00）
-                  </Text>
-                  <input
-                    type="time"
-                    value={autoDirectionSettings.cutoffTime}
-                    onChange={(e) => {
-                      setAutoDirectionSettings((prev) => ({
-                        ...prev,
-                        cutoffTime: e.target.value || "16:00",
-                      }));
-                    }}
-                    style={{
-                      width: "100%",
-                      background: "#222",
-                      color: "white",
-                      padding: "8px",
-                      borderRadius: "4px",
-                      border: "1px solid #444",
-                      fontFamily: FONT_NUM,
-                    }}
-                  />
-                </Box>
-
-                <Box>
-                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    切替時刻より前に表示する方面
+                    表示方面（切替前）
                   </Text>
                   <select
                     value={autoDirectionSettings.beforeCutoffDirection}
@@ -1409,7 +1412,32 @@ export function App() {
 
                 <Box>
                   <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    切替時刻以降に表示する方面（自動）
+                    切替時刻（1日の境界は朝4:00）
+                  </Text>
+                  <input
+                    type="time"
+                    value={autoDirectionSettings.cutoffTime}
+                    onChange={(e) => {
+                      setAutoDirectionSettings((prev) => ({
+                        ...prev,
+                        cutoffTime: e.target.value || "16:00",
+                      }));
+                    }}
+                    style={{
+                      width: "100%",
+                      background: "#222",
+                      color: "white",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #444",
+                      fontFamily: FONT_NUM,
+                    }}
+                  />
+                </Box>
+
+                <Box>
+                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
+                    表示方面（切替後・自動）
                   </Text>
                   <Box
                     width="100%"
@@ -1426,16 +1454,6 @@ export function App() {
                       : "北綾瀬方面"}
                   </Box>
                 </Box>
-
-                <HStack justify="end" pt={2}>
-                  <Button
-                    variant="outline"
-                    borderColor="whiteAlpha.500"
-                    onClick={() => setIsSettingsOpen(false)}
-                  >
-                    閉じる
-                  </Button>
-                </HStack>
               </VStack>
             </DialogBody>
           </DialogContent>
