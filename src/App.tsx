@@ -513,6 +513,7 @@ export function App() {
   const handledScrollTriggerRef = useRef(0);
   const scrollRequestRef = useRef(false);
   const preserveScrollDepartureMinutesRef = useRef<number | null>(null);
+  const scrollBehaviorOverrideRef = useRef<ScrollBehavior | null>(null);
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
@@ -965,14 +966,16 @@ export function App() {
     const attemptScroll = () => {
       // DOM が準備できているか（少なくとも必要な枚数のカードがマウントされているか）確認
       if (cardRefs.current.size >= displayedRows.length) {
+        const behavior = scrollBehaviorOverrideRef.current ?? "smooth";
         const preserved = preserveScrollDepartureMinutesRef.current;
         const ok =
           preserved !== null
-            ? scrollToDepartureMinutes(preserved, "smooth")
-            : scrollToNow("smooth");
+            ? scrollToDepartureMinutes(preserved, behavior)
+            : scrollToNow(behavior);
 
         if (ok) {
           preserveScrollDepartureMinutesRef.current = null;
+          scrollBehaviorOverrideRef.current = null;
           handledScrollTriggerRef.current = scrollTrigger;
           return;
         }
@@ -984,6 +987,7 @@ export function App() {
       } else {
         // 諦めるが、リクエストは「処理済み」にしてスタックを防ぐ
         preserveScrollDepartureMinutesRef.current = null;
+        scrollBehaviorOverrideRef.current = null;
         handledScrollTriggerRef.current = scrollTrigger;
       }
     };
@@ -1115,6 +1119,7 @@ export function App() {
                   onChange={(e) => {
                     preserveScrollDepartureMinutesRef.current =
                       captureVisibleDepartureMinutes();
+                    scrollBehaviorOverrideRef.current = "auto";
                     setShowOnlyDepartures(e.target.checked);
                     setScrollTrigger((c) => c + 1);
                   }}
