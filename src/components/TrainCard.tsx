@@ -391,7 +391,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
                 stations[row.destinationStationName.toLowerCase()] ||
                 row.destinationStationName
               }
-              textColor={depColor}
+              textColor={isHighlight ? depColor : "gray.400"}
             />
 
             {direction === "for_yoyogiuehara" &&
