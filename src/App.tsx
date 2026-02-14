@@ -31,6 +31,7 @@ import type { OperationInfo } from "./types/OperationInfo";
 import type { OperationVisualState } from "./types/OperationVisualState";
 import { useCalendar } from "./hooks/useCalendar";
 import { useTimetableScroll } from "./hooks/useTimetableScroll";
+import { useUiActions } from "./hooks/useUiActions";
 import { STORAGE_KEYS } from "./constants/storageKeys";
 import { UI_TEXT } from "./constants/uiText";
 import {
@@ -42,6 +43,7 @@ import {
   getThroughLineColorForStationKey,
 } from "./utils/trainUtils";
 import { calculateTransferInfo } from "./utils/transferLogic";
+import { toServiceDayMinutes } from "./utils/time";
 
 function isAbortError(e: unknown): boolean {
   return (
@@ -299,11 +301,6 @@ function readAutoDirectionSettings(): AutoDirectionSettings {
   } catch {
     return DEFAULT_AUTO_DIRECTION_SETTINGS;
   }
-}
-
-function toServiceDayMinutes(hour: number, minute: number) {
-  const total = hour * 60 + minute;
-  return (total - 240 + 1440) % 1440; // 4:00=0
 }
 
 function oppositeDirection(direction: DirectionKey): DirectionKey {
@@ -738,40 +735,18 @@ export function App() {
     scrollBehaviorOverrideRef,
   });
 
-  const toggleDirection = useCallback(() => {
-    setDirection((prev) =>
-      prev === "for_yoyogiuehara" ? "for_kitaayase" : "for_yoyogiuehara"
-    );
-    scrollRequestRef.current = true;
-  }, []);
-
-  const changeStation = useCallback(
-    (newStationKey: string) => {
-      const willChangeStation = newStationKey !== stationKey;
-      const willChangeDirection =
-        newStationKey === "kitaayase" && direction !== "for_yoyogiuehara";
-
-      if (willChangeStation || willChangeDirection) {
-        scrollRequestRef.current = true;
-      }
-
-      setStationKey(newStationKey);
-      if (newStationKey === "kitaayase") {
-        setDirection("for_yoyogiuehara");
-      }
-    },
-    [stationKey, direction]
-  );
-
-  const toggleDepartureOnly = useCallback(
-    (checked: boolean) => {
-      preserveScrollDepartureMinutesRef.current = captureVisibleDepartureMinutes();
-      scrollBehaviorOverrideRef.current = "auto";
-      setShowOnlyDepartures(checked);
-      setScrollTrigger((c) => c + 1);
-    },
-    [captureVisibleDepartureMinutes]
-  );
+  const { toggleDirection, changeStation, toggleDepartureOnly } = useUiActions({
+    stationKey,
+    direction,
+    setDirection,
+    setStationKey,
+    setShowOnlyDepartures,
+    setScrollTrigger,
+    scrollRequestRef,
+    preserveScrollDepartureMinutesRef,
+    scrollBehaviorOverrideRef,
+    captureVisibleDepartureMinutes,
+  });
 
   // ===== 復帰時リフレッシュ（5分以上経過なら初回起動相当） =====
   const backgroundedAtRef = useRef<number | null>(null);

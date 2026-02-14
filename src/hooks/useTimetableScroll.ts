@@ -1,6 +1,7 @@
 import { useCallback, useLayoutEffect } from "react";
 import type { MutableRefObject, RefObject } from "react";
 import type { TrainRow } from "../components/TrainCard";
+import { parseTimeToServiceDayMinutes } from "../utils/time";
 
 type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
 
@@ -14,17 +15,6 @@ type Params = {
   preserveScrollDepartureMinutesRef: MutableRefObject<number | null>;
   scrollBehaviorOverrideRef: MutableRefObject<ScrollBehavior | null>;
 };
-
-function toServiceDayMinutes(hour: number, minute: number) {
-  const total = hour * 60 + minute;
-  return (total - 240 + 1440) % 1440; // 4:00=0
-}
-
-function parseTimeToServiceDayMinutes(time: string): number | null {
-  const [h, m] = time.split(":").map(Number);
-  if (Number.isNaN(h) || Number.isNaN(m)) return null;
-  return toServiceDayMinutes(h, m);
-}
 
 export function useTimetableScroll({
   displayedRows,
