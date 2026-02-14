@@ -240,6 +240,7 @@ export function useTimetableData({
         setAyaseTimetable([]);
         setAyaseArrivalPlatformsByTime(null);
         setAyaseDeparturePlatformsByTime(null);
+        setAyaseToKitaAyaseDeparturePlatformsByTime(null);
       }
     })();
 

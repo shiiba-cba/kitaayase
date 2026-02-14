@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, memo } from "react";
 import { Box, Flex, Text, Badge, VStack, HStack } from "@chakra-ui/react";
 import { stations } from "../data/stations";
 import { trainTypes } from "../data/trainTypes";
@@ -45,7 +45,7 @@ type Props = {
 // --------------------------------------------------
 // TrainCard
 // --------------------------------------------------
-export const TrainCard = forwardRef<HTMLDivElement, Props>(
+export const TrainCard = memo(forwardRef<HTMLDivElement, Props>(
   ({ row, stationKey, direction, themeColor, hasAyaseConnection, transferInfo, showAyaseTrack2Label, showAyaseDepartureTrack2Label, showAyaseDepartureTrack3Label, onClick }, ref) => {
     const stationName = stations[stationKey];
 
@@ -478,7 +478,7 @@ export const TrainCard = forwardRef<HTMLDivElement, Props>(
       </Box>
     );
   }
-);
+));
 
-// forwardRef を使うと displayName が必要なことがある
+// forwardRef + memo を使うと displayName が必要なことがある
 TrainCard.displayName = "TrainCard";
