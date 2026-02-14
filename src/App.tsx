@@ -22,6 +22,7 @@ import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
+import { AutoDirectionSettingsDialog } from "./components/AutoDirectionSettingsDialog";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
 import { FONT_JP, FONT_NUM } from "./styles/fonts";
@@ -1466,141 +1467,34 @@ export function App() {
         </DialogPositioner>
       </DialogRoot>
 
-      <DialogRoot
+      <AutoDirectionSettingsDialog
         open={isSettingsOpen}
-        onOpenChange={(e) => setIsSettingsOpen(e.open)}
-        closeOnInteractOutside
-        closeOnEscape
-      >
-        <DialogBackdrop />
-        <DialogPositioner>
-          <DialogContent
-            bg="#111"
-            color="white"
-            fontFamily={FONT_JP}
-            position="relative"
-          >
-            <DialogCloseTrigger asChild>
-              <IconButton
-                aria-label="close"
-                tabIndex={-1}
-                position="absolute"
-                top="3"
-                right="3"
-                zIndex={10}
-                minW="40px"
-                minH="40px"
-                borderRadius="full"
-                color="white"
-                onClick={() => setIsSettingsOpen(false)}
-                userSelect="none"
-                WebkitUserSelect="none"
-                touchAction="manipulation"
-                _hover={{ bg: "whiteAlpha.300" }}
-                _active={{ bg: "whiteAlpha.400" }}
-              >
-                <LuX size={18} />
-              </IconButton>
-            </DialogCloseTrigger>
-
-            <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
-              <DialogTitle>表示方面の自動設定</DialogTitle>
-            </DialogHeader>
-
-            <DialogBody py={4}>
-              <VStack align="stretch" gap={4}>
-                <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <input
-                    type="checkbox"
-                    checked={autoDirectionSettings.enabled}
-                    onChange={(e) => {
-                      setAutoDirectionSettings((prev) => ({
-                        ...prev,
-                        enabled: e.target.checked,
-                      }));
-                    }}
-                  />
-                  <Text>初期表示・復帰時に時刻で方面を自動切替する</Text>
-                </label>
-
-                <Box>
-                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    表示方面（切替前）
-                  </Text>
-                  <select
-                    value={autoDirectionSettings.beforeCutoffDirection}
-                    onChange={(e) => {
-                      const next = e.target.value as DirectionKey;
-                      setAutoDirectionSettings((prev) => ({
-                        ...prev,
-                        beforeCutoffDirection: next,
-                        afterCutoffDirection: oppositeDirection(next),
-                      }));
-                    }}
-                    style={{
-                      width: "100%",
-                      background: "#222",
-                      color: "white",
-                      padding: "8px",
-                      borderRadius: "4px",
-                      border: "1px solid #444",
-                      fontFamily: FONT_JP,
-                    }}
-                  >
-                    <option value="for_yoyogiuehara">代々木上原方面</option>
-                    <option value="for_kitaayase">北綾瀬方面</option>
-                  </select>
-                </Box>
-
-                <Box>
-                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    切替時刻
-                  </Text>
-                  <input
-                    type="time"
-                    value={autoDirectionSettings.cutoffTime}
-                    onChange={(e) => {
-                      setAutoDirectionSettings((prev) => ({
-                        ...prev,
-                        cutoffTime: e.target.value || "16:00",
-                      }));
-                    }}
-                    style={{
-                      width: "100%",
-                      background: "#222",
-                      color: "white",
-                      padding: "8px",
-                      borderRadius: "4px",
-                      border: "1px solid #444",
-                      fontFamily: FONT_NUM,
-                    }}
-                  />
-                </Box>
-
-                <Box>
-                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    表示方面（切替後）
-                  </Text>
-                  <Box
-                    width="100%"
-                    bg="#222"
-                    color="white"
-                    px={3}
-                    py={2}
-                    borderRadius="4px"
-                    border="1px solid #444"
-                    fontFamily={FONT_JP}
-                  >
-                    {autoDirectionSettings.afterCutoffDirection === "for_yoyogiuehara"
-                      ? "代々木上原方面"
-                      : "北綾瀬方面"}
-                  </Box>
-                </Box>
-              </VStack>
-            </DialogBody>
-          </DialogContent>
-        </DialogPositioner>
-      </DialogRoot>
+        onOpenChange={setIsSettingsOpen}
+        fontFamily={FONT_JP}
+        enabled={autoDirectionSettings.enabled}
+        onEnabledChange={(enabled) => {
+          setAutoDirectionSettings((prev) => ({
+            ...prev,
+            enabled,
+          }));
+        }}
+        beforeCutoffDirection={autoDirectionSettings.beforeCutoffDirection}
+        onBeforeCutoffDirectionChange={(next) => {
+          setAutoDirectionSettings((prev) => ({
+            ...prev,
+            beforeCutoffDirection: next,
+            afterCutoffDirection: oppositeDirection(next),
+          }));
+        }}
+        cutoffTime={autoDirectionSettings.cutoffTime}
+        onCutoffTimeChange={(time) => {
+          setAutoDirectionSettings((prev) => ({
+            ...prev,
+            cutoffTime: time,
+          }));
+        }}
+        afterCutoffDirection={autoDirectionSettings.afterCutoffDirection}
+      />
     </>
   );
 }
