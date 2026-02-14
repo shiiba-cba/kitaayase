@@ -15,7 +15,7 @@ import {
   DialogBody,
   DialogCloseTrigger,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo, useLayoutEffect } from "react";
 import { LuArrowLeftRight, LuSettings2, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
@@ -956,12 +956,12 @@ export function App() {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (displayedRows.length === 0) return;
     if (scrollTrigger === handledScrollTriggerRef.current) return;
 
-    let timeoutId: number;
     let retryCount = 0;
+    let rafId: number | null = null;
 
     const attemptScroll = () => {
       // DOM が準備できているか（少なくとも必要な枚数のカードがマウントされているか）確認
@@ -983,7 +983,7 @@ export function App() {
 
       if (retryCount < 10) {
         retryCount++;
-        timeoutId = window.setTimeout(attemptScroll, 100);
+        rafId = window.requestAnimationFrame(attemptScroll);
       } else {
         // 諦めるが、リクエストは「処理済み」にしてスタックを防ぐ
         preserveScrollDepartureMinutesRef.current = null;
@@ -992,10 +992,14 @@ export function App() {
       }
     };
 
-    // 初回試行
-    timeoutId = window.setTimeout(attemptScroll, 100);
+    // まず同期的に試行（paint前）
+    attemptScroll();
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, [displayedRows, scrollToNow, scrollToDepartureMinutes, scrollTrigger]);
 
   const parsedOperationInfo = useMemo(() => {
