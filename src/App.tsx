@@ -16,7 +16,7 @@ import {
   DialogCloseTrigger,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { LuArrowLeftRight, LuX } from "react-icons/lu";
+import { LuArrowLeftRight, LuSettings2, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
@@ -240,14 +240,88 @@ function parseOperationInfo(text: string) {
   };
 }
 
+type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
+
+type AutoDirectionSettings = {
+  enabled: boolean;
+  cutoffTime: string; // HH:mm
+  beforeCutoffDirection: DirectionKey;
+  afterCutoffDirection: DirectionKey;
+};
+
+const AUTO_DIRECTION_SETTINGS_KEY = "kitaayase:autoDirectionSettings:v1";
+
+const DEFAULT_AUTO_DIRECTION_SETTINGS: AutoDirectionSettings = {
+  enabled: false,
+  cutoffTime: "16:00",
+  beforeCutoffDirection: "for_yoyogiuehara",
+  afterCutoffDirection: "for_kitaayase",
+};
+
+function readAutoDirectionSettings(): AutoDirectionSettings {
+  try {
+    const raw = localStorage.getItem(AUTO_DIRECTION_SETTINGS_KEY);
+    if (!raw) return DEFAULT_AUTO_DIRECTION_SETTINGS;
+
+    const parsed = JSON.parse(raw) as Partial<AutoDirectionSettings>;
+    const enabled = parsed.enabled === true;
+    const cutoffTime =
+      typeof parsed.cutoffTime === "string" && /^\d{2}:\d{2}$/.test(parsed.cutoffTime)
+        ? parsed.cutoffTime
+        : DEFAULT_AUTO_DIRECTION_SETTINGS.cutoffTime;
+    const beforeCutoffDirection =
+      parsed.beforeCutoffDirection === "for_yoyogiuehara" ||
+      parsed.beforeCutoffDirection === "for_kitaayase"
+        ? parsed.beforeCutoffDirection
+        : DEFAULT_AUTO_DIRECTION_SETTINGS.beforeCutoffDirection;
+    const afterCutoffDirection =
+      parsed.afterCutoffDirection === "for_yoyogiuehara" ||
+      parsed.afterCutoffDirection === "for_kitaayase"
+        ? parsed.afterCutoffDirection
+        : DEFAULT_AUTO_DIRECTION_SETTINGS.afterCutoffDirection;
+
+    return {
+      enabled,
+      cutoffTime,
+      beforeCutoffDirection,
+      afterCutoffDirection,
+    };
+  } catch {
+    return DEFAULT_AUTO_DIRECTION_SETTINGS;
+  }
+}
+
+function toServiceDayMinutes(hour: number, minute: number) {
+  const total = hour * 60 + minute;
+  return (total - 240 + 1440) % 1440; // 4:00=0
+}
+
+function pickDirectionBySettings(
+  settings: AutoDirectionSettings,
+  now: Date = new Date()
+): DirectionKey {
+  const [cutoffHour, cutoffMinute] = settings.cutoffTime.split(":").map(Number);
+  const nowMinutes = toServiceDayMinutes(now.getHours(), now.getMinutes());
+  const cutoffMinutes = toServiceDayMinutes(cutoffHour, cutoffMinute);
+
+  return nowMinutes < cutoffMinutes
+    ? settings.beforeCutoffDirection
+    : settings.afterCutoffDirection;
+}
+
 export function App() {
   const [stationKey, setStationKey] = useState<string>(() => {
     return localStorage.getItem("stationKey") || "otemachi";
   });
-  const [direction, setDirection] = useState<"for_yoyogiuehara" | "for_kitaayase">(() => {
+  const [direction, setDirection] = useState<DirectionKey>(() => {
     const savedStationKey = localStorage.getItem("stationKey") || "otemachi";
     if (savedStationKey === "kitaayase") {
       return "for_yoyogiuehara";
+    }
+
+    const auto = readAutoDirectionSettings();
+    if (auto.enabled) {
+      return pickDirectionBySettings(auto);
     }
 
     const saved = localStorage.getItem("direction");
@@ -335,6 +409,9 @@ export function App() {
   const [trainDetail, setTrainDetail] = useState<TrainDetail | null>(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [autoDirectionSettings, setAutoDirectionSettings] =
+    useState<AutoDirectionSettings>(() => readAutoDirectionSettings());
 
   // ===== 運行情報 =====
   const [operationInfo, setOperationInfo] = useState<OperationInfo | null>(
@@ -464,6 +541,25 @@ export function App() {
   useEffect(() => {
     localStorage.setItem("stationKey", stationKey);
   }, [stationKey]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      AUTO_DIRECTION_SETTINGS_KEY,
+      JSON.stringify(autoDirectionSettings)
+    );
+  }, [autoDirectionSettings]);
+
+  const applyAutoDirectionIfEnabled = useCallback(() => {
+    if (!autoDirectionSettings.enabled) return;
+    if (stationKey === "kitaayase") {
+      setDirection("for_yoyogiuehara");
+      return;
+    }
+
+    const next = pickDirectionBySettings(autoDirectionSettings);
+    setDirection(next);
+    scrollRequestRef.current = true;
+  }, [autoDirectionSettings, stationKey]);
 
   /* ==================================================
    * ③ 時刻表 JSON 読み込み
@@ -627,6 +723,10 @@ export function App() {
   const backgroundedAtRef = useRef<number | null>(null);
   const refreshingRef = useRef(false);
 
+  useEffect(() => {
+    applyAutoDirectionIfEnabled();
+  }, [applyAutoDirectionIfEnabled]);
+
   const refreshOnResume = useCallback(async () => {
     if (refreshingRef.current) return;
     refreshingRef.current = true;
@@ -680,6 +780,9 @@ export function App() {
       // 判定が終わったらクリア
       backgroundedAtRef.current = null;
 
+      // 復帰時は毎回、表示方面の自動設定を再適用（有効時のみ）
+      applyAutoDirectionIfEnabled();
+
       if (elapsed >= THRESHOLD_MS) {
         console.warn("[Resume] Threshold exceeded. Refreshing...");
         refreshOnResume();
@@ -705,7 +808,7 @@ export function App() {
       window.removeEventListener("focus", onVisible);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
-  }, [refreshOnResume]);
+  }, [refreshOnResume, applyAutoDirectionIfEnabled]);
 
   const currentStationName = selectStations[stationKey as keyof typeof selectStations] || stationKey;
 
@@ -838,22 +941,36 @@ export function App() {
                 />
               </Flex>
 
-              <IconButton
-                aria-label="方向入れ替え"
-                size="md"
-                bg={METRO_GREEN}
-                _hover={{ bg: METRO_GREEN }}
-                onClick={() => {
-                  setDirection(
-                    direction === "for_yoyogiuehara"
-                      ? "for_kitaayase"
-                      : "for_yoyogiuehara"
-                  );
-                  scrollRequestRef.current = true;
-                }}
-              >
-                <LuArrowLeftRight />
-              </IconButton>
+              <HStack gap={2}>
+                <IconButton
+                  aria-label="方向入れ替え"
+                  size="md"
+                  bg={METRO_GREEN}
+                  _hover={{ bg: METRO_GREEN }}
+                  onClick={() => {
+                    setDirection(
+                      direction === "for_yoyogiuehara"
+                        ? "for_kitaayase"
+                        : "for_yoyogiuehara"
+                    );
+                    scrollRequestRef.current = true;
+                  }}
+                >
+                  <LuArrowLeftRight />
+                </IconButton>
+
+                <IconButton
+                  aria-label="表示方面の自動設定"
+                  size="md"
+                  variant="outline"
+                  borderColor="whiteAlpha.500"
+                  color="white"
+                  _hover={{ bg: "whiteAlpha.200" }}
+                  onClick={() => setIsSettingsOpen(true)}
+                >
+                  <LuSettings2 />
+                </IconButton>
+              </HStack>
 
               <Flex flex="1" justify="center">
                 <StationLargeLabel
@@ -1194,6 +1311,131 @@ export function App() {
                     </Flex>
                   );
                 })}
+              </VStack>
+            </DialogBody>
+          </DialogContent>
+        </DialogPositioner>
+      </DialogRoot>
+
+      <DialogRoot
+        open={isSettingsOpen}
+        onOpenChange={(e) => setIsSettingsOpen(e.open)}
+        closeOnInteractOutside
+        closeOnEscape
+      >
+        <DialogBackdrop />
+        <DialogPositioner>
+          <DialogContent bg="#111" color="white" fontFamily={FONT_JP}>
+            <DialogHeader borderBottom="1px solid" borderColor="whiteAlpha.300">
+              <DialogTitle>表示方面の自動設定</DialogTitle>
+            </DialogHeader>
+
+            <DialogBody py={4}>
+              <VStack align="stretch" gap={4}>
+                <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <input
+                    type="checkbox"
+                    checked={autoDirectionSettings.enabled}
+                    onChange={(e) => {
+                      setAutoDirectionSettings((prev) => ({
+                        ...prev,
+                        enabled: e.target.checked,
+                      }));
+                    }}
+                  />
+                  <Text>初期表示・復帰時に時刻で方面を自動切替する</Text>
+                </label>
+
+                <Box>
+                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
+                    切替時刻（1日の境界は朝4:00）
+                  </Text>
+                  <input
+                    type="time"
+                    value={autoDirectionSettings.cutoffTime}
+                    onChange={(e) => {
+                      setAutoDirectionSettings((prev) => ({
+                        ...prev,
+                        cutoffTime: e.target.value || "16:00",
+                      }));
+                    }}
+                    style={{
+                      width: "100%",
+                      background: "#222",
+                      color: "white",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #444",
+                      fontFamily: FONT_NUM,
+                    }}
+                  />
+                </Box>
+
+                <Box>
+                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
+                    切替時刻より前に表示する方面
+                  </Text>
+                  <select
+                    value={autoDirectionSettings.beforeCutoffDirection}
+                    onChange={(e) => {
+                      const next = e.target.value as DirectionKey;
+                      setAutoDirectionSettings((prev) => ({
+                        ...prev,
+                        beforeCutoffDirection: next,
+                      }));
+                    }}
+                    style={{
+                      width: "100%",
+                      background: "#222",
+                      color: "white",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #444",
+                      fontFamily: FONT_JP,
+                    }}
+                  >
+                    <option value="for_yoyogiuehara">代々木上原方面</option>
+                    <option value="for_kitaayase">北綾瀬方面</option>
+                  </select>
+                </Box>
+
+                <Box>
+                  <Text fontSize="sm" mb={1} color="whiteAlpha.800">
+                    切替時刻以降に表示する方面
+                  </Text>
+                  <select
+                    value={autoDirectionSettings.afterCutoffDirection}
+                    onChange={(e) => {
+                      const next = e.target.value as DirectionKey;
+                      setAutoDirectionSettings((prev) => ({
+                        ...prev,
+                        afterCutoffDirection: next,
+                      }));
+                    }}
+                    style={{
+                      width: "100%",
+                      background: "#222",
+                      color: "white",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #444",
+                      fontFamily: FONT_JP,
+                    }}
+                  >
+                    <option value="for_yoyogiuehara">代々木上原方面</option>
+                    <option value="for_kitaayase">北綾瀬方面</option>
+                  </select>
+                </Box>
+
+                <HStack justify="end" pt={2}>
+                  <Button
+                    variant="outline"
+                    borderColor="whiteAlpha.500"
+                    onClick={() => setIsSettingsOpen(false)}
+                  >
+                    閉じる
+                  </Button>
+                </HStack>
               </VStack>
             </DialogBody>
           </DialogContent>
