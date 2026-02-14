@@ -15,13 +15,14 @@ import {
   DialogBody,
   DialogCloseTrigger,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState, useCallback, useMemo, lazy, Suspense } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { LuArrowLeftRight, LuSettings2, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
+import { AutoDirectionSettingsDialog } from "./components/AutoDirectionSettingsDialog";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
 import { FONT_JP, FONT_NUM } from "./styles/fonts";
@@ -49,11 +50,6 @@ import {
   type DirectionKey,
 } from "./utils/autoDirection";
 
-const AutoDirectionSettingsDialog = lazy(() =>
-  import("./components/AutoDirectionSettingsDialog").then((m) => ({
-    default: m.AutoDirectionSettingsDialog,
-  }))
-);
 
 function isAbortError(e: unknown): boolean {
   return (
@@ -1095,8 +1091,7 @@ export function App() {
         </DialogPositioner>
       </DialogRoot>
 
-      <Suspense fallback={null}>
-        <AutoDirectionSettingsDialog
+      <AutoDirectionSettingsDialog
           open={isSettingsOpen}
           onOpenChange={setIsSettingsOpen}
           fontFamily={FONT_JP}
@@ -1123,8 +1118,7 @@ export function App() {
             }));
           }}
           afterCutoffDirection={autoDirectionSettings.afterCutoffDirection}
-        />
-      </Suspense>
+      />
     </>
   );
 }
