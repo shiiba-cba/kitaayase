@@ -1044,7 +1044,10 @@ export function App() {
                 <input
                   type="checkbox"
                   checked={showOnlyDepartures}
-                  onChange={(e) => setShowOnlyDepartures(e.target.checked)}
+                  onChange={(e) => {
+                    setShowOnlyDepartures(e.target.checked);
+                    setScrollTrigger((c) => c + 1);
+                  }}
                 />
                 <Text fontSize="sm" color="whiteAlpha.900">
                   {direction === "for_yoyogiuehara"
