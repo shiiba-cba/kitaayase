@@ -349,6 +349,7 @@ export function App() {
 
   const {
     calendar,
+    calendarReady,
     onCalendarChange: baseOnCalendarChange,
     detectCalendarForNow,
   } = useCalendar();
@@ -618,6 +619,8 @@ export function App() {
    * ③ 時刻表 JSON 読み込み
    * ================================================== */
   useEffect(() => {
+    if (!calendarReady) return;
+
     const controller = new AbortController();
     const base = "/kitaayase/data";
 
@@ -720,7 +723,7 @@ export function App() {
     })();
 
     return () => controller.abort();
-  }, [calendar, direction, stationKey, timetableReloadNonce]);
+  }, [calendar, calendarReady, direction, stationKey, timetableReloadNonce]);
 
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";

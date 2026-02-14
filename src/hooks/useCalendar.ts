@@ -56,6 +56,7 @@ export function useCalendar(opts?: {
   const isHoliday = opts?.isHoliday ?? isHolidayDefault;
 
   const [calendar, setCalendar] = useState<CalendarType>(initial);
+  const [calendarReady, setCalendarReady] = useState(false);
 
   const detectCalendarForNow = useCallback(async () => {
     return detectCalendarForDate(new Date(), isHoliday);
@@ -66,6 +67,7 @@ export function useCalendar(opts?: {
     (async () => {
       const detected = await detectCalendarForNow();
       setCalendar(detected);
+      setCalendarReady(true);
     })();
   }, [detectCalendarForNow]);
 
@@ -79,6 +81,7 @@ export function useCalendar(opts?: {
 
   return {
     calendar,
+    calendarReady,
     setCalendar,
     onCalendarChange,
     detectCalendarForNow,
