@@ -15,23 +15,21 @@ import {
   DialogBody,
   DialogCloseTrigger,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo, lazy, Suspense } from "react";
 import { LuArrowLeftRight, LuSettings2, LuX } from "react-icons/lu";
 
 import { TrainCard } from "./components/TrainCard";
 import type { TrainRow } from "./components/TrainCard";
 import { selectStations } from "./data/selectStations";
 import { StationLargeLabel } from "./components/StationLargeLabel";
-import { AutoDirectionSettingsDialog } from "./components/AutoDirectionSettingsDialog";
 import type { TrainDetail } from "./types/TrainDetail";
 import { StationSmallLabel } from "./components/StationSmallLabel";
 import { FONT_JP, FONT_NUM } from "./styles/fonts";
 import { OperationInfoBanner } from "./components/OperationInfoBanner";
-import type { OperationInfo } from "./types/OperationInfo";
-import type { OperationVisualState } from "./types/OperationVisualState";
 import { useCalendar } from "./hooks/useCalendar";
 import { useTimetableScroll } from "./hooks/useTimetableScroll";
 import { useUiActions } from "./hooks/useUiActions";
+import { useOperationInfo } from "./hooks/useOperationInfo";
 import { STORAGE_KEYS } from "./constants/storageKeys";
 import { UI_TEXT } from "./constants/uiText";
 import {
@@ -50,6 +48,12 @@ import {
   type AutoDirectionSettings,
   type DirectionKey,
 } from "./utils/autoDirection";
+
+const AutoDirectionSettingsDialog = lazy(() =>
+  import("./components/AutoDirectionSettingsDialog").then((m) => ({
+    default: m.AutoDirectionSettingsDialog,
+  }))
+);
 
 function isAbortError(e: unknown): boolean {
   return (
@@ -172,86 +176,6 @@ function writeLatestDiagramDateCache(diagramDate: string) {
 /* ==================================================
  * 運行情報の見出し取得
  * ================================================== */
-function getOperationTitle(text: string): string {
-  if (text.includes("運転を見合わせ")) {
-    return "運転見合わせ";
-  }
-
-  if (text.includes("折返し運転")) {
-    return "折返し運転";
-  }
-
-  if (text.includes("運転を再開")) {
-    return text.includes("ダイヤが乱れ") ? "運転再開・ダイヤ乱れ" : "運転再開";
-  }
-
-  if (text.includes("直通運転を中止")) {
-    return "直通運転中止";
-  }
-
-  if (text.includes("直通運転を再開")) {
-    return "直通運転再開";
-  }
-
-  if (text.includes("運休")) {
-    // 列車名があれば拾う
-    const m = text.match(/(メトロ[^\s、。]+号)/);
-    return m ? `${m[1]}運休` : "列車運休";
-  }
-
-  if (text.includes("一部の列車に遅れ")) {
-    return "一部列車遅延";
-  }
-
-  if (text.includes("ダイヤが乱れ")) {
-    return "ダイヤ乱れ";
-  }
-
-  if (text.includes("平常どおり運転")) {
-    return "平常運転";
-  }
-
-  return "運行情報";
-}
-
-function getOperationVisualState(text: string): OperationVisualState {
-  // 最優先：運転見合わせ
-  if (text.includes("運転を見合わせ")) {
-    return "suspended";
-  }
-
-  // 明確に「平常」
-  if (text.includes("平常どおり運転")) {
-    return "normal";
-  }
-
-  // 再開だが乱れあり
-  if (text.includes("運転を再開") && text.includes("ダイヤが乱れ")) {
-    return "delay";
-  }
-
-  // 遅延・乱れ系
-  if (
-    text.includes("ダイヤが乱れ") ||
-    text.includes("遅れ") ||
-    text.includes("運休") ||
-    text.includes("折返し運転") ||
-    text.includes("直通運転を中止")
-  ) {
-    return "delay";
-  }
-
-  // それ以外は無難に normal
-  return "normal";
-}
-
-function parseOperationInfo(text: string) {
-  return {
-    title: getOperationTitle(text),
-    state: getOperationVisualState(text),
-  };
-}
-
 export function App() {
   const [stationKey, setStationKey] = useState<string>(() => {
     return localStorage.getItem(STORAGE_KEYS.stationKey) || "otemachi";
@@ -373,23 +297,17 @@ export function App() {
   }, [rowsWithConnection, showOnlyDepartures, direction]);
 
   // ===== 運行情報 =====
-  const [operationInfo, setOperationInfo] = useState<OperationInfo | null>(
-    null
-  );
-
-  // ===== 運行情報 折りたたみ =====
-  // デフォルトは折りたたみ（平常運転時にスッキリ見せる）
-  const [isOperationOpen, setIsOperationOpen] = useState(false);
+  const {
+    operationInfo,
+    parsedOperationInfo,
+    isOperationOpen,
+    setIsOperationOpen,
+    fetchOperationInfo,
+  } = useOperationInfo();
 
   // TrainCard refs
   const cardRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
   const headerRef = useRef<HTMLDivElement | null>(null);
-
-  const OPERATION_URL =
-    "https://throbbing-dust-144d.kitaayase-worker.workers.dev";
-
-  const operationAbortRef = useRef<AbortController | null>(null);
-  const operationEtagRef = useRef<string | null>(null);
 
   // 初期表示時にブラウザの自動スクロール復元を無効化
   // （自前の scrollToNow と競合してズレるのを防ぐ）
@@ -403,51 +321,6 @@ export function App() {
       window.history.scrollRestoration = prev;
     };
   }, []);
-
-  const fetchOperationInfo = useCallback(
-    async (opts?: { preserveOnError?: boolean; bustCache?: boolean }) => {
-      // 連打・再取得で古いレスポンスが刺さらないようにする
-      operationAbortRef.current?.abort();
-      const controller = new AbortController();
-      operationAbortRef.current = controller;
-
-      try {
-        const url = opts?.bustCache ? `${OPERATION_URL}?t=${Date.now()}` : OPERATION_URL;
-
-        const res = await fetch(url, {
-          cache: "no-store",
-          signal: controller.signal,
-          headers: operationEtagRef.current
-            ? {
-                "If-None-Match": operationEtagRef.current,
-              }
-            : undefined,
-        });
-
-        if (res.status === 304) {
-          return true;
-        }
-
-        if (!res.ok) throw new Error("failed to fetch operation info");
-
-        const etag = res.headers.get("etag");
-        if (etag) {
-          operationEtagRef.current = etag;
-        }
-
-        const data: OperationInfo = await res.json();
-        setOperationInfo(data);
-        return true;
-      } catch (e: unknown) {
-        if (isAbortError(e)) return false;
-        if (!opts?.preserveOnError) {
-          setOperationInfo(null);
-        }
-        return false;
-      }
-    },
-    []
-  );
 
   const [timetableReloadNonce, setTimetableReloadNonce] = useState(0);
   const [scrollTrigger, setScrollTrigger] = useState(0);
@@ -484,28 +357,6 @@ export function App() {
     },
     [fetchOperationInfo, baseOnCalendarChange, calendar]
   );
-
-  /* ==================================================
-   * ② 運行情報取得（raw 直参照）
-   * ================================================== */
-  useEffect(() => {
-    fetchOperationInfo();
-
-    return () => {
-      operationAbortRef.current?.abort();
-    };
-  }, [fetchOperationInfo]);
-
-  // 運行情報が平常運転でない場合は自動で開く（重要情報の見逃し防止）
-  // ※平常運転に戻ったときは自動で閉じない（ユーザー操作を尊重）
-  useEffect(() => {
-    if (!operationInfo) return;
-
-    const state = getOperationVisualState(operationInfo.text);
-    if (state !== "normal") {
-      setIsOperationOpen(true);
-    }
-  }, [operationInfo]);
 
   // 永続化
   useEffect(() => {
@@ -823,11 +674,6 @@ export function App() {
       return false;
     }
   };
-
-  const parsedOperationInfo = useMemo(() => {
-    if (!operationInfo) return null;
-    return parseOperationInfo(operationInfo.text);
-  }, [operationInfo]);
 
   /* ==================================================
    * メインレンダリング
@@ -1249,34 +1095,36 @@ export function App() {
         </DialogPositioner>
       </DialogRoot>
 
-      <AutoDirectionSettingsDialog
-        open={isSettingsOpen}
-        onOpenChange={setIsSettingsOpen}
-        fontFamily={FONT_JP}
-        enabled={autoDirectionSettings.enabled}
-        onEnabledChange={(enabled) => {
-          setAutoDirectionSettings((prev) => ({
-            ...prev,
-            enabled,
-          }));
-        }}
-        beforeCutoffDirection={autoDirectionSettings.beforeCutoffDirection}
-        onBeforeCutoffDirectionChange={(next) => {
-          setAutoDirectionSettings((prev) => ({
-            ...prev,
-            beforeCutoffDirection: next,
-            afterCutoffDirection: oppositeDirection(next),
-          }));
-        }}
-        cutoffTime={autoDirectionSettings.cutoffTime}
-        onCutoffTimeChange={(time) => {
-          setAutoDirectionSettings((prev) => ({
-            ...prev,
-            cutoffTime: time,
-          }));
-        }}
-        afterCutoffDirection={autoDirectionSettings.afterCutoffDirection}
-      />
+      <Suspense fallback={null}>
+        <AutoDirectionSettingsDialog
+          open={isSettingsOpen}
+          onOpenChange={setIsSettingsOpen}
+          fontFamily={FONT_JP}
+          enabled={autoDirectionSettings.enabled}
+          onEnabledChange={(enabled) => {
+            setAutoDirectionSettings((prev) => ({
+              ...prev,
+              enabled,
+            }));
+          }}
+          beforeCutoffDirection={autoDirectionSettings.beforeCutoffDirection}
+          onBeforeCutoffDirectionChange={(next) => {
+            setAutoDirectionSettings((prev) => ({
+              ...prev,
+              beforeCutoffDirection: next,
+              afterCutoffDirection: oppositeDirection(next),
+            }));
+          }}
+          cutoffTime={autoDirectionSettings.cutoffTime}
+          onCutoffTimeChange={(time) => {
+            setAutoDirectionSettings((prev) => ({
+              ...prev,
+              cutoffTime: time,
+            }));
+          }}
+          afterCutoffDirection={autoDirectionSettings.afterCutoffDirection}
+        />
+      </Suspense>
     </>
   );
 }
