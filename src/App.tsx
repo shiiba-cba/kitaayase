@@ -848,7 +848,7 @@ export function App() {
 
       // 平日/休日を現在日時で上書き
       const detected = await detectCalendarForNow();
-      await onCalendarChange(detected, { skipOperationFetch: true });
+      onCalendarChange(detected, { skipOperationFetch: true });
 
       // ダイヤ/運行情報を取り直し
       // スクロール予約は onCalendarChange 内で設定済み
