@@ -250,6 +250,7 @@ type AutoDirectionSettings = {
 };
 
 const AUTO_DIRECTION_SETTINGS_KEY = "kitaayase:autoDirectionSettings:v1";
+const SHOW_ONLY_DEPARTURES_KEY = "kitaayase:showOnlyDepartures:v1";
 
 const DEFAULT_AUTO_DIRECTION_SETTINGS: AutoDirectionSettings = {
   enabled: false,
@@ -421,6 +422,21 @@ export function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [autoDirectionSettings, setAutoDirectionSettings] =
     useState<AutoDirectionSettings>(() => readAutoDirectionSettings());
+  const [showOnlyDepartures, setShowOnlyDepartures] = useState<boolean>(() => {
+    return localStorage.getItem(SHOW_ONLY_DEPARTURES_KEY) === "1";
+  });
+
+  const displayedRows = useMemo(() => {
+    if (!showOnlyDepartures) return rowsWithConnection;
+
+    return rowsWithConnection.filter((row) => {
+      const departureTime =
+        direction === "for_yoyogiuehara"
+          ? row.kitaAyaseDepartureTime
+          : row.stationDepartureTime;
+      return !!departureTime;
+    });
+  }, [rowsWithConnection, showOnlyDepartures, direction]);
 
   // ===== 運行情報 =====
   const [operationInfo, setOperationInfo] = useState<OperationInfo | null>(
@@ -558,6 +574,13 @@ export function App() {
     );
   }, [autoDirectionSettings]);
 
+  useEffect(() => {
+    localStorage.setItem(
+      SHOW_ONLY_DEPARTURES_KEY,
+      showOnlyDepartures ? "1" : "0"
+    );
+  }, [showOnlyDepartures]);
+
   const applyAutoDirectionIfEnabled = useCallback(() => {
     if (!autoDirectionSettings.enabled) return;
     if (stationKey === "kitaayase") {
@@ -687,18 +710,18 @@ export function App() {
    * ================================================== */
   const scrollToNow = useCallback(
     (behavior: ScrollBehavior = "smooth") => {
-      if (rows.length === 0) return false;
+      if (displayedRows.length === 0) return false;
 
       const now = new Date();
       let currentMinutes = now.getHours() * 60 + now.getMinutes();
       if (currentMinutes < 240) currentMinutes += 1440;
 
-      const targetIndex = rows.findIndex((row) => {
+      const targetIndex = displayedRows.findIndex((row) => {
         const t =
           direction === "for_yoyogiuehara"
             ? row.kitaAyaseDepartureTime
             : row.stationDepartureTime;
-        
+
         if (!t) return false;
 
         const [h, m] = t.split(":").map(Number);
@@ -708,7 +731,7 @@ export function App() {
         return trainMinutes >= currentMinutes;
       });
 
-      const index = targetIndex !== -1 ? targetIndex : rows.length - 1;
+      const index = targetIndex !== -1 ? targetIndex : displayedRows.length - 1;
       const el = cardRefs.current.get(index);
       if (!el) return false;
 
@@ -725,7 +748,7 @@ export function App() {
       });
       return true;
     },
-    [rows, direction]
+    [displayedRows, direction]
   );
 
   // ===== 復帰時リフレッシュ（5分以上経過なら初回起動相当） =====
@@ -873,7 +896,7 @@ export function App() {
   };
 
   useEffect(() => {
-    if (rows.length === 0) return;
+    if (displayedRows.length === 0) return;
     if (scrollTrigger === handledScrollTriggerRef.current) return;
 
     let timeoutId: number;
@@ -881,7 +904,7 @@ export function App() {
 
     const attemptScroll = () => {
       // DOM が準備できているか（少なくとも必要な枚数のカードがマウントされているか）確認
-      if (cardRefs.current.size >= rows.length) {
+      if (cardRefs.current.size >= displayedRows.length) {
         if (scrollToNow("smooth")) {
           handledScrollTriggerRef.current = scrollTrigger;
           return;
@@ -901,7 +924,7 @@ export function App() {
     timeoutId = window.setTimeout(attemptScroll, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [rows, scrollToNow, scrollTrigger]);
+  }, [displayedRows, scrollToNow, scrollTrigger]);
 
   const parsedOperationInfo = useMemo(() => {
     if (!operationInfo) return null;
@@ -1016,6 +1039,21 @@ export function App() {
               ))}
             </select>
 
+            <Box width="90%">
+              <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <input
+                  type="checkbox"
+                  checked={showOnlyDepartures}
+                  onChange={(e) => setShowOnlyDepartures(e.target.checked)}
+                />
+                <Text fontSize="sm" color="whiteAlpha.900">
+                  {direction === "for_yoyogiuehara"
+                    ? "北綾瀬を発車する電車のみ表示"
+                    : `${currentStationName}を発車する電車のみ表示`}
+                </Text>
+              </label>
+            </Box>
+
             {/* ==== 平日 / 休日 ==== */}
             <Flex w="100%" align="center">
               <Flex flex="1" justify="center"></Flex>
@@ -1067,7 +1105,13 @@ export function App() {
 
         {/* ===== 時刻表一覧 ===== */}
         <VStack gap={4} w="100%" pt={2}>
-          {rowsWithConnection.map((row, i) => (
+          {displayedRows.length === 0 && (
+            <Text color="whiteAlpha.700" fontFamily={FONT_JP}>
+              条件に一致する列車がありません
+            </Text>
+          )}
+
+          {displayedRows.map((row, i) => (
             <TrainCard
               key={i}
               row={row}
