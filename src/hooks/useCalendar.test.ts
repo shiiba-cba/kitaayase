@@ -7,20 +7,20 @@ import {
 
 describe("useCalendar helpers", () => {
   it("applyFourAmCutoff shifts date back before 04:00", () => {
-    const d = new Date("2026-02-14T03:30:00+09:00");
+    const d = new Date(2026, 1, 14, 3, 30, 0);
     const shifted = applyFourAmCutoff(d);
     expect(formatDateYYYYMMDD(shifted)).toBe("2026-02-13");
   });
 
   it("detectCalendarForDate returns holiday on weekend", async () => {
-    const saturday = new Date("2026-02-14T12:00:00+09:00");
+    const saturday = new Date(2026, 1, 14, 12, 0, 0);
     const isHoliday = vi.fn().mockResolvedValue(false);
     const cal = await detectCalendarForDate(saturday, isHoliday);
     expect(cal).toBe("holiday");
   });
 
   it("detectCalendarForDate uses holiday API on weekday", async () => {
-    const weekday = new Date("2026-02-16T12:00:00+09:00"); // Monday
+    const weekday = new Date(2026, 1, 16, 12, 0, 0); // Monday
     const isHoliday = vi.fn().mockResolvedValue(true);
     const cal = await detectCalendarForDate(weekday, isHoliday);
     expect(cal).toBe("holiday");
@@ -28,15 +28,15 @@ describe("useCalendar helpers", () => {
   });
 
   it("falls back to weekend-only when holiday API fails", async () => {
-    const weekday = new Date("2026-02-16T12:00:00+09:00"); // Monday
+    const weekday = new Date(2026, 1, 16, 12, 0, 0); // Monday
     const isHoliday = vi.fn().mockRejectedValue(new Error("network"));
     const cal = await detectCalendarForDate(weekday, isHoliday);
     expect(cal).toBe("weekday");
   });
 
   it("03:59 is treated as previous day, 04:00 is current day", async () => {
-    const monday359 = new Date("2026-02-16T03:59:00+09:00"); // service-day => Sunday
-    const monday400 = new Date("2026-02-16T04:00:00+09:00"); // service-day => Monday
+    const monday359 = new Date(2026, 1, 16, 3, 59, 0); // service-day => Sunday
+    const monday400 = new Date(2026, 1, 16, 4, 0, 0); // service-day => Monday
     const isHoliday = vi.fn().mockResolvedValue(false);
 
     const before = await detectCalendarForDate(monday359, isHoliday);

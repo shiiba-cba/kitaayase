@@ -22,10 +22,10 @@ describe("autoDirection utils", () => {
       afterCutoffDirection: "for_kitaayase",
     };
 
-    expect(pickDirectionBySettings(settings, new Date("2026-02-14T15:59:00+09:00"))).toBe(
+    expect(pickDirectionBySettings(settings, new Date(2026, 1, 14, 15, 59, 0))).toBe(
       "for_yoyogiuehara"
     );
-    expect(pickDirectionBySettings(settings, new Date("2026-02-14T16:00:00+09:00"))).toBe(
+    expect(pickDirectionBySettings(settings, new Date(2026, 1, 14, 16, 0, 0))).toBe(
       "for_kitaayase"
     );
   });
