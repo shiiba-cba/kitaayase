@@ -274,11 +274,16 @@ function readAutoDirectionSettings(): AutoDirectionSettings {
       parsed.beforeCutoffDirection === "for_kitaayase"
         ? parsed.beforeCutoffDirection
         : DEFAULT_AUTO_DIRECTION_SETTINGS.beforeCutoffDirection;
-    const afterCutoffDirection =
+    const afterCandidate =
       parsed.afterCutoffDirection === "for_yoyogiuehara" ||
       parsed.afterCutoffDirection === "for_kitaayase"
         ? parsed.afterCutoffDirection
         : DEFAULT_AUTO_DIRECTION_SETTINGS.afterCutoffDirection;
+
+    const afterCutoffDirection =
+      afterCandidate === beforeCutoffDirection
+        ? oppositeDirection(beforeCutoffDirection)
+        : afterCandidate;
 
     return {
       enabled,
@@ -294,6 +299,10 @@ function readAutoDirectionSettings(): AutoDirectionSettings {
 function toServiceDayMinutes(hour: number, minute: number) {
   const total = hour * 60 + minute;
   return (total - 240 + 1440) % 1440; // 4:00=0
+}
+
+function oppositeDirection(direction: DirectionKey): DirectionKey {
+  return direction === "for_yoyogiuehara" ? "for_kitaayase" : "for_yoyogiuehara";
 }
 
 function pickDirectionBySettings(
@@ -1380,6 +1389,7 @@ export function App() {
                       setAutoDirectionSettings((prev) => ({
                         ...prev,
                         beforeCutoffDirection: next,
+                        afterCutoffDirection: oppositeDirection(next),
                       }));
                     }}
                     style={{
@@ -1399,30 +1409,22 @@ export function App() {
 
                 <Box>
                   <Text fontSize="sm" mb={1} color="whiteAlpha.800">
-                    切替時刻以降に表示する方面
+                    切替時刻以降に表示する方面（自動）
                   </Text>
-                  <select
-                    value={autoDirectionSettings.afterCutoffDirection}
-                    onChange={(e) => {
-                      const next = e.target.value as DirectionKey;
-                      setAutoDirectionSettings((prev) => ({
-                        ...prev,
-                        afterCutoffDirection: next,
-                      }));
-                    }}
-                    style={{
-                      width: "100%",
-                      background: "#222",
-                      color: "white",
-                      padding: "8px",
-                      borderRadius: "4px",
-                      border: "1px solid #444",
-                      fontFamily: FONT_JP,
-                    }}
+                  <Box
+                    width="100%"
+                    bg="#222"
+                    color="white"
+                    px={3}
+                    py={2}
+                    borderRadius="4px"
+                    border="1px solid #444"
+                    fontFamily={FONT_JP}
                   >
-                    <option value="for_yoyogiuehara">代々木上原方面</option>
-                    <option value="for_kitaayase">北綾瀬方面</option>
-                  </select>
+                    {autoDirectionSettings.afterCutoffDirection === "for_yoyogiuehara"
+                      ? "代々木上原方面"
+                      : "北綾瀬方面"}
+                  </Box>
                 </Box>
 
                 <HStack justify="end" pt={2}>
