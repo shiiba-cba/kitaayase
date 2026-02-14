@@ -1,8 +1,11 @@
+// @vitest-environment jsdom
+import { renderHook } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import {
   applyFourAmCutoff,
   detectCalendarForDate,
   formatDateYYYYMMDD,
+  useCalendar,
 } from "./useCalendar";
 
 describe("useCalendar helpers", () => {
@@ -44,5 +47,11 @@ describe("useCalendar helpers", () => {
 
     expect(before).toBe("holiday");
     expect(after).toBe("weekday");
+  });
+
+  it("useCalendar uses persisted value as initial state", () => {
+    localStorage.setItem("calendar", "holiday");
+    const { result } = renderHook(() => useCalendar());
+    expect(result.current.calendar).toBe("holiday");
   });
 });

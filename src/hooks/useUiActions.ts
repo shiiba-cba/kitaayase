@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import type { Dispatch, MutableRefObject, SetStateAction } from "react";
-
-type DirectionKey = "for_yoyogiuehara" | "for_kitaayase";
+import type { DirectionKey } from "../utils/autoDirection";
 
 type Params = {
   stationKey: string;

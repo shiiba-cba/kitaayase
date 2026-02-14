@@ -35,13 +35,14 @@ describe("autoDirection utils", () => {
       STORAGE_KEYS.autoDirectionSettings,
       JSON.stringify({
         enabled: true,
-        cutoffTime: "16:00",
+        cutoffTime: "99:99",
         beforeCutoffDirection: "for_yoyogiuehara",
         afterCutoffDirection: "for_yoyogiuehara",
       })
     );
 
     const s = readAutoDirectionSettings();
+    expect(s.cutoffTime).toBe("16:00");
     expect(s.beforeCutoffDirection).toBe("for_yoyogiuehara");
     expect(s.afterCutoffDirection).toBe("for_kitaayase");
   });

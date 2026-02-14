@@ -47,6 +47,15 @@ export async function detectCalendarForDate(
  * - UI操作での切替も提供
  * - 判定ロジックは detectCalendarForDate に切り出しているのでテストしやすい
  */
+function readPersistedCalendar(persistKey: string): CalendarType | null {
+  try {
+    const raw = localStorage.getItem(persistKey);
+    return raw === "weekday" || raw === "holiday" ? raw : null;
+  } catch {
+    return null;
+  }
+}
+
 export function useCalendar(opts?: {
   initial?: CalendarType;
   isHoliday?: (dateStr: string) => Promise<boolean>;
@@ -56,7 +65,9 @@ export function useCalendar(opts?: {
   const persistKey = opts?.persistKey ?? STORAGE_KEYS.calendar;
   const isHoliday = opts?.isHoliday ?? isHolidayDefault;
 
-  const [calendar, setCalendar] = useState<CalendarType>(initial);
+  const [calendar, setCalendar] = useState<CalendarType>(() => {
+    return readPersistedCalendar(persistKey) ?? initial;
+  });
   const [calendarReady, setCalendarReady] = useState(false);
 
   const detectCalendarForNow = useCallback(async () => {

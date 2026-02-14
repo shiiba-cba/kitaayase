@@ -21,6 +21,14 @@ export function oppositeDirection(direction: DirectionKey): DirectionKey {
   return direction === "for_yoyogiuehara" ? "for_kitaayase" : "for_yoyogiuehara";
 }
 
+function isValidTimeString(v: string): boolean {
+  const m = v.match(/^(\d{2}):(\d{2})$/);
+  if (!m) return false;
+  const hh = Number(m[1]);
+  const mm = Number(m[2]);
+  return Number.isInteger(hh) && Number.isInteger(mm) && hh >= 0 && hh <= 23 && mm >= 0 && mm <= 59;
+}
+
 export function readAutoDirectionSettings(): AutoDirectionSettings {
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.autoDirectionSettings);
@@ -29,7 +37,7 @@ export function readAutoDirectionSettings(): AutoDirectionSettings {
     const parsed = JSON.parse(raw) as Partial<AutoDirectionSettings>;
     const enabled = parsed.enabled === true;
     const cutoffTime =
-      typeof parsed.cutoffTime === "string" && /^\d{2}:\d{2}$/.test(parsed.cutoffTime)
+      typeof parsed.cutoffTime === "string" && isValidTimeString(parsed.cutoffTime)
         ? parsed.cutoffTime
         : DEFAULT_AUTO_DIRECTION_SETTINGS.cutoffTime;
     const beforeCutoffDirection =
