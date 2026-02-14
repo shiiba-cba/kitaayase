@@ -302,6 +302,12 @@ function toServiceDayMinutes(hour: number, minute: number) {
   return (total - 240 + 1440) % 1440; // 4:00=0
 }
 
+function parseTimeToServiceDayMinutes(time: string): number | null {
+  const [h, m] = time.split(":").map(Number);
+  if (Number.isNaN(h) || Number.isNaN(m)) return null;
+  return toServiceDayMinutes(h, m);
+}
+
 function oppositeDirection(direction: DirectionKey): DirectionKey {
   return direction === "for_yoyogiuehara" ? "for_kitaayase" : "for_yoyogiuehara";
 }
@@ -506,6 +512,7 @@ export function App() {
   const [scrollTrigger, setScrollTrigger] = useState(0);
   const handledScrollTriggerRef = useRef(0);
   const scrollRequestRef = useRef(false);
+  const preserveScrollDepartureMinutesRef = useRef<number | null>(null);
 
   // Wrap onCalendarChange to add custom logic (scroll to now, refresh operation info)
   const onCalendarChange = useCallback(
@@ -704,6 +711,59 @@ export function App() {
   const METRO_GREEN = "#00bb85";
   const METRO_RED = "#f62e36";
   const themeColor = calendar === "holiday" ? METRO_RED : METRO_GREEN;
+
+  const getDepartureMinutesForRow = useCallback(
+    (row: TrainRow) => {
+      const t =
+        direction === "for_yoyogiuehara"
+          ? row.kitaAyaseDepartureTime
+          : row.stationDepartureTime;
+      if (!t) return null;
+      return parseTimeToServiceDayMinutes(t);
+    },
+    [direction]
+  );
+
+  const captureVisibleDepartureMinutes = useCallback(() => {
+    const headerHeight = headerRef.current?.offsetHeight ?? 0;
+
+    for (let i = 0; i < displayedRows.length; i++) {
+      const el = cardRefs.current.get(i);
+      if (!el) continue;
+
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom <= headerHeight) continue;
+
+      const mins = getDepartureMinutesForRow(displayedRows[i]);
+      if (mins !== null) return mins;
+    }
+
+    return null;
+  }, [displayedRows, getDepartureMinutesForRow]);
+
+  const scrollToDepartureMinutes = useCallback(
+    (targetMinutes: number, behavior: ScrollBehavior = "smooth") => {
+      if (displayedRows.length === 0) return false;
+
+      const targetIndex = displayedRows.findIndex((row) => {
+        const mins = getDepartureMinutesForRow(row);
+        return mins !== null && mins >= targetMinutes;
+      });
+
+      const index = targetIndex !== -1 ? targetIndex : displayedRows.length - 1;
+      const el = cardRefs.current.get(index);
+      if (!el) return false;
+
+      const headerHeight = headerRef.current?.offsetHeight ?? 0;
+      const rect = el.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+      const targetY = absoluteTop - headerHeight - 8;
+
+      window.scrollTo({ top: targetY, behavior });
+      return true;
+    },
+    [displayedRows, getDepartureMinutesForRow]
+  );
 
   /* ==================================================
    * ④ 現在時刻へスクロール
@@ -905,7 +965,14 @@ export function App() {
     const attemptScroll = () => {
       // DOM が準備できているか（少なくとも必要な枚数のカードがマウントされているか）確認
       if (cardRefs.current.size >= displayedRows.length) {
-        if (scrollToNow("smooth")) {
+        const preserved = preserveScrollDepartureMinutesRef.current;
+        const ok =
+          preserved !== null
+            ? scrollToDepartureMinutes(preserved, "smooth")
+            : scrollToNow("smooth");
+
+        if (ok) {
+          preserveScrollDepartureMinutesRef.current = null;
           handledScrollTriggerRef.current = scrollTrigger;
           return;
         }
@@ -916,6 +983,7 @@ export function App() {
         timeoutId = window.setTimeout(attemptScroll, 100);
       } else {
         // 諦めるが、リクエストは「処理済み」にしてスタックを防ぐ
+        preserveScrollDepartureMinutesRef.current = null;
         handledScrollTriggerRef.current = scrollTrigger;
       }
     };
@@ -924,7 +992,7 @@ export function App() {
     timeoutId = window.setTimeout(attemptScroll, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [displayedRows, scrollToNow, scrollTrigger]);
+  }, [displayedRows, scrollToNow, scrollToDepartureMinutes, scrollTrigger]);
 
   const parsedOperationInfo = useMemo(() => {
     if (!operationInfo) return null;
@@ -1045,6 +1113,8 @@ export function App() {
                   type="checkbox"
                   checked={showOnlyDepartures}
                   onChange={(e) => {
+                    preserveScrollDepartureMinutesRef.current =
+                      captureVisibleDepartureMinutes();
                     setShowOnlyDepartures(e.target.checked);
                     setScrollTrigger((c) => c + 1);
                   }}
