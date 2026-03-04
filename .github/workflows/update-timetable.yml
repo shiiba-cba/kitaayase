@@ -2,8 +2,8 @@ name: Detect diagram revision and update timetable
 
 on:
   schedule:
-    # JST 4:00 = UTC 19:00
-    - cron: "0 19 * * *"
+    # JST 4:30 = UTC 19:30
+    - cron: "30 19 * * *"
   workflow_dispatch:
 
 jobs:
@@ -100,4 +100,71 @@ jobs:
 
           git add public/data
           git commit -m "Add new timetable data for diagram revision"
+          git push
+
+      # --------------------------------------------------
+      # Read latest diagram date
+      # --------------------------------------------------
+      - name: Read latest diagram date
+        id: latest
+        run: |
+          DIAGRAM_DATE=$(node -e "console.log(require('./public/data/latest.json').diagramDate)")
+          echo "date=$DIAGRAM_DATE" >> $GITHUB_OUTPUT
+
+      # --------------------------------------------------
+      # Collect Yahoo platform data (ayase -> kitaayase)
+      # --------------------------------------------------
+      - name: Collect yahoo-platform-ayase-kitaayase
+        id: yahoo_aka
+        run: |
+          DIR="public/data/${{ steps.latest.outputs.date }}/yahoo-platform-ayase-kitaayase"
+          if [ ! -d "$DIR" ]; then
+            node src/tools/yahoo-platform-ayase-kitaayase.js \
+              --diagram-date "${{ steps.latest.outputs.date }}"
+            echo "ran=true" >> $GITHUB_OUTPUT
+          else
+            echo "ran=false" >> $GITHUB_OUTPUT
+          fi
+
+      # --------------------------------------------------
+      # Collect Yahoo platform data (ayase -> kitasenju)
+      # --------------------------------------------------
+      - name: Collect yahoo-platform-ayase-kitasenju
+        id: yahoo_aks
+        run: |
+          DIR="public/data/${{ steps.latest.outputs.date }}/yahoo-platform-ayase-kitasenju"
+          if [ ! -d "$DIR" ]; then
+            node src/tools/yahoo-platform-ayase-kitasenju.js \
+              --diagram-date "${{ steps.latest.outputs.date }}"
+            echo "ran=true" >> $GITHUB_OUTPUT
+          else
+            echo "ran=false" >> $GITHUB_OUTPUT
+          fi
+
+      # --------------------------------------------------
+      # Collect Yahoo platform data (kitasenju -> ayase)
+      # --------------------------------------------------
+      - name: Collect yahoo-platform-kitasenju-ayase
+        id: yahoo_ksa
+        run: |
+          DIR="public/data/${{ steps.latest.outputs.date }}/yahoo-platform-kitasenju-ayase"
+          if [ ! -d "$DIR" ]; then
+            node src/tools/yahoo-platform-kitasenju-ayase.js \
+              --diagram-date "${{ steps.latest.outputs.date }}"
+            echo "ran=true" >> $GITHUB_OUTPUT
+          else
+            echo "ran=false" >> $GITHUB_OUTPUT
+          fi
+
+      # --------------------------------------------------
+      # Commit & push yahoo platform data (if any ran)
+      # --------------------------------------------------
+      - name: Commit and push yahoo platform data
+        if: steps.yahoo_aka.outputs.ran == 'true' || steps.yahoo_aks.outputs.ran == 'true' || steps.yahoo_ksa.outputs.ran == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add public/data
+          git commit -m "Add yahoo platform data for ${{ steps.latest.outputs.date }}"
           git push

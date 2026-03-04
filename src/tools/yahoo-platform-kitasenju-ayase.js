@@ -208,39 +208,42 @@ async function collectForDate(dateStr, opts = {}) {
   const date = parseDate(dateStr);
   const startHour = Number(opts.startHour ?? 4);
   const endHour = Number(opts.endHour ?? 26);
-  const stepMin = Number(opts.stepMin ?? 5);
-  const concurrency = Number(opts.concurrency ?? 8);
+  const fallbackStep = Number(opts.stepMin ?? 10);
 
   const allRows = [];
   const errors = [];
 
-  const slots = [];
-  for (let total = startHour * 60; total <= endHour * 60 + 59; total += stepMin) {
-    const { hh, mm } = toHourMin(total);
-    slots.push({ hh, mm });
+  function parseMin(hhmm) {
+    if (!hhmm) return null;
+    const [h, m] = hhmm.split(":").map(Number);
+    if (isNaN(h) || isNaN(m)) return null;
+    return h * 60 + m;
   }
 
-  let cursor = 0;
+  let currentMin = startHour * 60;
 
-  async function worker() {
-    while (cursor < slots.length) {
-      const i = cursor;
-      cursor += 1;
-      const { hh, mm } = slots[i];
+  while (currentMin <= endHour * 60 + 59) {
+    const { hh, mm } = toHourMin(currentMin);
 
-      try {
-        const rows = await fetchOne({ ...date, hh, mm });
-        allRows.push(...rows);
-      } catch (e) {
-        errors.push({ hh, mm, message: String(e) });
-      }
-
-      // 過剰アクセスを避ける
-      await sleep(30);
+    let rows = [];
+    try {
+      rows = await fetchOne({ ...date, hh, mm });
+      allRows.push(...rows);
+    } catch (e) {
+      errors.push({ hh, mm, message: String(e) });
     }
-  }
 
-  await Promise.all(Array.from({ length: Math.max(1, concurrency) }, () => worker()));
+    // 結果の最終発車時刻+1分を次のクエリ開始点にする（カーソル方式）
+    // kitasenju-ayase では departureTime = 北千住発（Yahoo検索の出発時刻）
+    const lastDep = rows
+      .map((r) => parseMin(r.departureTime))
+      .filter((t) => t !== null && t >= currentMin)
+      .reduce((max, t) => Math.max(max, t), -Infinity);
+
+    currentMin = lastDep !== -Infinity ? lastDep + 1 : currentMin + fallbackStep;
+
+    await sleep(30);
+  }
 
   return {
     date: dateStr,
@@ -255,20 +258,33 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 }
 
+function parseStartHour(str) {
+  const m = /^(\d+):(\d{2})$/.exec(str || "");
+  if (!m) throw new Error(`Invalid --start format: ${str} (expected HH:MM)`);
+  return Number(m[1]) + Number(m[2]) / 60;
+}
+
 async function main() {
   const diagramDate = parseArg("--diagram-date", "20250315");
   const autoDates = resolveSamplingDates(diagramDate);
   const weekdayDate = parseArg("--weekday", autoDates.weekday);
   const holidayDate = parseArg("--holiday", autoDates.holiday);
-  const stepMin = Number(parseArg("--step", "5"));
+  const stepMin = Number(parseArg("--step", "10")); // fallback step (結果0件時)
+  const startHour = parseStartHour(parseArg("--start", "4:00"));
   const OUTPUT_DIR = resolveOutputDir(diagramDate);
+  const TMP_DIR = OUTPUT_DIR + ".tmp";
+
+  // 前回の途中失敗分を削除
+  if (fs.existsSync(TMP_DIR)) {
+    fs.rmSync(TMP_DIR, { recursive: true });
+  }
 
   console.log(
-    `[collect] diagramDate=${diagramDate}, weekday=${weekdayDate}, holiday=${holidayDate}, step=${stepMin}min`
+    `[collect] diagramDate=${diagramDate}, weekday=${weekdayDate}, holiday=${holidayDate}, start=${parseArg("--start", "4:00")}, fallbackStep=${stepMin}min`
   );
 
-  const weekday = await collectForDate(weekdayDate, { stepMin });
-  const holiday = await collectForDate(holidayDate, { stepMin });
+  const weekday = await collectForDate(weekdayDate, { stepMin, startHour });
+  const holiday = await collectForDate(holidayDate, { stepMin, startHour });
 
   const meta = {
     generatedAt: new Date().toISOString(),
@@ -277,10 +293,10 @@ async function main() {
     to: "綾瀬",
     source: "https://transit.yahoo.co.jp/",
     note: "Yahoo!路線情報の検索結果（__NEXT_DATA__）から抽出。利用規約・権利条件に注意。",
-    query: { stepMin },
+    query: { startHour, fallbackStepMin: stepMin },
   };
 
-  writeJson(path.join(OUTPUT_DIR, "weekday.json"), {
+  writeJson(path.join(TMP_DIR, "weekday.json"), {
     ...meta,
     type: "weekday",
     date: weekday.date,
@@ -288,7 +304,7 @@ async function main() {
     errors: weekday.errors,
   });
 
-  writeJson(path.join(OUTPUT_DIR, "holiday.json"), {
+  writeJson(path.join(TMP_DIR, "holiday.json"), {
     ...meta,
     type: "holiday",
     date: holiday.date,
@@ -296,7 +312,7 @@ async function main() {
     errors: holiday.errors,
   });
 
-  writeJson(path.join(OUTPUT_DIR, "summary.json"), {
+  writeJson(path.join(TMP_DIR, "summary.json"), {
     ...meta,
     weekday: {
       date: weekday.date,
@@ -309,6 +325,8 @@ async function main() {
       errorCount: holiday.errors.length,
     },
   });
+
+  fs.renameSync(TMP_DIR, OUTPUT_DIR);
 
   console.log(`[done] wrote: ${OUTPUT_DIR}`);
   console.log(
