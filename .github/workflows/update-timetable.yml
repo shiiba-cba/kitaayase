@@ -61,7 +61,7 @@ jobs:
       - name: Generate timetable (diagram revision detected)
         if: steps.diff.outputs.changed == 'true'
         run: |
-          DIAGRAM_DATE=$(date +%Y%m%d)
+          DIAGRAM_DATE=$(TZ=Asia/Tokyo date +%Y%m%d)
           node src/tools/generateTimetable.js "$DIAGRAM_DATE"
 
       # --------------------------------------------------
@@ -70,7 +70,7 @@ jobs:
       - name: Generate train master (diagram revision detected)
         if: steps.diff.outputs.changed == 'true'
         run: |
-          DIAGRAM_DATE=$(date +%Y%m%d)
+          DIAGRAM_DATE=$(TZ=Asia/Tokyo date +%Y%m%d)
           node src/tools/generateTrainMaster.js "$DIAGRAM_DATE"
 
       # --------------------------------------------------
@@ -79,7 +79,7 @@ jobs:
       - name: Update latest.json
         if: steps.diff.outputs.changed == 'true'
         run: |
-          DIAGRAM_DATE=$(date +%Y%m%d)
+          DIAGRAM_DATE=$(TZ=Asia/Tokyo date +%Y%m%d)
           echo "{ \"diagramDate\": \"$DIAGRAM_DATE\" }" > public/data/latest.json
 
       # --------------------------------------------------
