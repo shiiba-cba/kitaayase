@@ -5,6 +5,11 @@ on:
     # JST 4:30 = UTC 19:30
     - cron: "30 19 * * *"
   workflow_dispatch:
+    inputs:
+      force_diagram_date:
+        description: 'Yahoo番線データを強制再取得する日付 (YYYYMMDD)。空白の場合は latest.json を参照。'
+        required: false
+        default: ''
 
 jobs:
   update-timetable:
@@ -108,7 +113,11 @@ jobs:
       - name: Read latest diagram date
         id: latest
         run: |
-          DIAGRAM_DATE=$(node -e "console.log(require('./public/data/latest.json').diagramDate)")
+          if [ -n "${{ github.event.inputs.force_diagram_date }}" ]; then
+            DIAGRAM_DATE="${{ github.event.inputs.force_diagram_date }}"
+          else
+            DIAGRAM_DATE=$(node -e "console.log(require('./public/data/latest.json').diagramDate)")
+          fi
           echo "date=$DIAGRAM_DATE" >> $GITHUB_OUTPUT
 
       # --------------------------------------------------
@@ -118,9 +127,11 @@ jobs:
         id: yahoo_aka
         run: |
           DIR="public/data/${{ steps.latest.outputs.date }}/yahoo-platform-ayase-kitaayase"
+          if [ -n "${{ github.event.inputs.force_diagram_date }}" ] && [ -d "$DIR" ]; then
+            rm -rf "$DIR"
+          fi
           if [ ! -d "$DIR" ]; then
-            node src/tools/yahoo-platform-ayase-kitaayase.js \
-              --diagram-date "${{ steps.latest.outputs.date }}"
+            node src/tools/yahoo-platform-ayase-kitaayase.js --diagram-date "${{ steps.latest.outputs.date }}"
             echo "ran=true" >> $GITHUB_OUTPUT
           else
             echo "ran=false" >> $GITHUB_OUTPUT
@@ -133,9 +144,11 @@ jobs:
         id: yahoo_aks
         run: |
           DIR="public/data/${{ steps.latest.outputs.date }}/yahoo-platform-ayase-kitasenju"
+          if [ -n "${{ github.event.inputs.force_diagram_date }}" ] && [ -d "$DIR" ]; then
+            rm -rf "$DIR"
+          fi
           if [ ! -d "$DIR" ]; then
-            node src/tools/yahoo-platform-ayase-kitasenju.js \
-              --diagram-date "${{ steps.latest.outputs.date }}"
+            node src/tools/yahoo-platform-ayase-kitasenju.js --diagram-date "${{ steps.latest.outputs.date }}"
             echo "ran=true" >> $GITHUB_OUTPUT
           else
             echo "ran=false" >> $GITHUB_OUTPUT
@@ -148,9 +161,11 @@ jobs:
         id: yahoo_ksa
         run: |
           DIR="public/data/${{ steps.latest.outputs.date }}/yahoo-platform-kitasenju-ayase"
+          if [ -n "${{ github.event.inputs.force_diagram_date }}" ] && [ -d "$DIR" ]; then
+            rm -rf "$DIR"
+          fi
           if [ ! -d "$DIR" ]; then
-            node src/tools/yahoo-platform-kitasenju-ayase.js \
-              --diagram-date "${{ steps.latest.outputs.date }}"
+            node src/tools/yahoo-platform-kitasenju-ayase.js --diagram-date "${{ steps.latest.outputs.date }}"
             echo "ran=true" >> $GITHUB_OUTPUT
           else
             echo "ran=false" >> $GITHUB_OUTPUT
