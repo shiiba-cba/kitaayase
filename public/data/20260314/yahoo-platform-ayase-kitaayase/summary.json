@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-03-14T01:05:01.226Z",
+  "diagramDate": "20260314",
+  "from": "綾瀬",
+  "to": "北綾瀬",
+  "source": "https://transit.yahoo.co.jp/",
+  "note": "Yahoo!路線情報の検索結果（__NEXT_DATA__）から抽出。利用規約・権利条件に注意。",
+  "query": {
+    "startHour": 4,
+    "fallbackStepMin": 10
+  },
+  "weekday": {
+    "date": "2026-03-16",
+    "count": 125,
+    "errorCount": 0
+  },
+  "holiday": {
+    "date": "2026-03-14",
+    "count": 113,
+    "errorCount": 0
+  }
+}
