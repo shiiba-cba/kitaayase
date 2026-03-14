@@ -1,0 +1,18 @@
+{
+  "trainNumber": "B905S",
+  "calendar": "holiday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Ayase",
+  "destinationStation": "KitaAyase",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "departureTime": "09:37"
+    },
+    {
+      "station": "KitaAyase",
+      "arrivalTime": "09:41"
+    }
+  ]
+}

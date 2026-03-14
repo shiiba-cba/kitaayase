@@ -1,0 +1,86 @@
+{
+  "trainNumber": "B1207S",
+  "calendar": "holiday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "",
+  "destinationStation": "Abiko",
+  "timetable": [
+    {
+      "station": "YoyogiUehara",
+      "departureTime": "13:39"
+    },
+    {
+      "station": "YoyogiKoen",
+      "departureTime": "13:41"
+    },
+    {
+      "station": "MeijiJingumae",
+      "departureTime": "13:44"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "13:45"
+    },
+    {
+      "station": "Nogizaka",
+      "departureTime": "13:48"
+    },
+    {
+      "station": "Akasaka",
+      "departureTime": "13:50"
+    },
+    {
+      "station": "KokkaiGijidomae",
+      "departureTime": "13:52"
+    },
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "13:54"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "13:56"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "13:58"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "13:59"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "14:02"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "14:03"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "14:05"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "14:08"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "14:09"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "14:12"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "14:16"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "14:19"
+    }
+  ]
+}

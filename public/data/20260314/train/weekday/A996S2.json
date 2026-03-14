@@ -1,0 +1,18 @@
+{
+  "trainNumber": "A996S2",
+  "calendar": "weekday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "Local",
+  "originStation": "KitaAyase",
+  "destinationStation": "Ayase",
+  "timetable": [
+    {
+      "station": "KitaAyase",
+      "departureTime": "09:25"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "09:29"
+    }
+  ]
+}

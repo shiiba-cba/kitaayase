@@ -1,0 +1,29 @@
+{
+  "trainNumber": "A2016E",
+  "calendar": "holiday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "LimitedExpress",
+  "originStation": "KitaSenju",
+  "destinationStation": "HonAtsugi",
+  "timetable": [
+    {
+      "station": "KitaSenju",
+      "departureTime": "20:35"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "20:51"
+    },
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "20:57"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "21:05"
+    },
+    {
+      "station": "YoyogiUehara"
+    }
+  ]
+}

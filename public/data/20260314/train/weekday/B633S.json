@@ -1,0 +1,58 @@
+{
+  "trainNumber": "B633S",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Kasumigaseki",
+  "destinationStation": "Toride",
+  "timetable": [
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "06:16"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "06:18"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "06:20"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "06:21"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "06:24"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "06:26"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "06:28"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "06:30"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "06:32"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "06:34"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "06:38"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "06:41"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "trainNumber": "B2415K",
+  "calendar": "holiday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "KitaSenju",
+  "destinationStation": "Matsudo",
+  "timetable": [
+    {
+      "station": "KitaSenju",
+      "departureTime": "00:48"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "00:51"
+    }
+  ]
+}

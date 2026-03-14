@@ -1,0 +1,58 @@
+{
+  "trainNumber": "B1715S",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Kasumigaseki",
+  "destinationStation": "Kashiwa",
+  "timetable": [
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "17:12"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "17:14"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "17:16"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "17:18"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "17:20"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "17:22"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "17:24"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "17:27"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "17:29"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "17:31"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "17:35"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "17:38"
+    }
+  ]
+}
