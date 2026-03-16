@@ -1,0 +1,86 @@
+{
+  "trainNumber": "A1017K",
+  "calendar": "weekday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "Local",
+  "originStation": "Abiko",
+  "destinationStation": "YoyogiUehara",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "departureTime": "10:38"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "10:42"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "10:45"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "10:48"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "10:49"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "10:52"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "10:53"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "10:56"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "10:58"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "10:59"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "11:01"
+    },
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "11:04"
+    },
+    {
+      "station": "KokkaiGijidomae",
+      "departureTime": "11:05"
+    },
+    {
+      "station": "Akasaka",
+      "departureTime": "11:07"
+    },
+    {
+      "station": "Nogizaka",
+      "departureTime": "11:09"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "11:12"
+    },
+    {
+      "station": "MeijiJingumae",
+      "departureTime": "11:14"
+    },
+    {
+      "station": "YoyogiKoen",
+      "departureTime": "11:16"
+    },
+    {
+      "station": "YoyogiUehara",
+      "arrivalTime": "11:17"
+    }
+  ]
+}

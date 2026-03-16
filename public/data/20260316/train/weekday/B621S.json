@@ -1,0 +1,14 @@
+{
+  "trainNumber": "B621S",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Ayase",
+  "destinationStation": "Toride",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "arrivalTime": "06:33"
+    }
+  ]
+}
