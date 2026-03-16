@@ -8,79 +8,79 @@
   "timetable": [
     {
       "station": "YoyogiUehara",
-      "departureTime": "06:06"
-    },
-    {
-      "station": "YoyogiKoen",
-      "departureTime": "06:08"
-    },
-    {
-      "station": "MeijiJingumae",
-      "departureTime": "06:10"
-    },
-    {
-      "station": "OmoteSando",
-      "departureTime": "06:12"
-    },
-    {
-      "station": "Nogizaka",
-      "departureTime": "06:15"
-    },
-    {
-      "station": "Akasaka",
-      "departureTime": "06:17"
-    },
-    {
-      "station": "KokkaiGijidomae",
-      "departureTime": "06:19"
-    },
-    {
-      "station": "Kasumigaseki",
-      "departureTime": "06:21"
-    },
-    {
-      "station": "Hibiya",
       "departureTime": "06:23"
     },
     {
-      "station": "Nijubashimae",
-      "departureTime": "06:24"
+      "station": "YoyogiKoen",
+      "departureTime": "06:25"
     },
     {
-      "station": "Otemachi",
-      "departureTime": "06:26"
+      "station": "MeijiJingumae",
+      "departureTime": "06:27"
     },
     {
-      "station": "ShinOchanomizu",
-      "departureTime": "06:28"
+      "station": "OmoteSando",
+      "departureTime": "06:29"
     },
     {
-      "station": "Yushima",
-      "departureTime": "06:30"
+      "station": "Nogizaka",
+      "departureTime": "06:31"
     },
     {
-      "station": "Nezu",
-      "departureTime": "06:32"
+      "station": "Akasaka",
+      "departureTime": "06:33"
     },
     {
-      "station": "Sendagi",
-      "departureTime": "06:34"
+      "station": "KokkaiGijidomae",
+      "departureTime": "06:35"
     },
     {
-      "station": "NishiNippori",
-      "departureTime": "06:36"
+      "station": "Kasumigaseki",
+      "departureTime": "06:37"
     },
     {
-      "station": "Machiya",
+      "station": "Hibiya",
       "departureTime": "06:39"
     },
     {
-      "station": "KitaSenju",
+      "station": "Nijubashimae",
+      "departureTime": "06:41"
+    },
+    {
+      "station": "Otemachi",
       "departureTime": "06:42"
     },
     {
+      "station": "ShinOchanomizu",
+      "departureTime": "06:45"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "06:47"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "06:49"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "06:51"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "06:53"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "06:55"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "06:59"
+    },
+    {
       "station": "Ayase",
-      "arrivalTime": "06:46"
+      "arrivalTime": "07:02"
     }
   ]
 }

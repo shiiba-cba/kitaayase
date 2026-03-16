@@ -4,7 +4,7 @@
   "direction": "for_kitaayase",
   "trainType": "Local",
   "originStation": "YoyogiUehara",
-  "destinationStation": "Ayase",
+  "destinationStation": "KitaAyase",
   "timetable": [
     {
       "station": "YoyogiUehara",
@@ -80,7 +80,11 @@
     },
     {
       "station": "Ayase",
-      "arrivalTime": "07:24"
+      "departureTime": "07:27"
+    },
+    {
+      "station": "KitaAyase",
+      "arrivalTime": "07:31"
     }
   ]
 }

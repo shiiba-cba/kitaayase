@@ -8,11 +8,11 @@
   "timetable": [
     {
       "station": "Ayase",
-      "departureTime": "09:14"
+      "departureTime": "09:13"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "09:18"
+      "departureTime": "09:17"
     },
     {
       "station": "Machiya",
@@ -24,31 +24,31 @@
     },
     {
       "station": "Sendagi",
-      "departureTime": "09:27"
+      "departureTime": "09:28"
     },
     {
       "station": "Nezu",
-      "departureTime": "09:30"
+      "departureTime": "09:31"
     },
     {
       "station": "Yushima",
-      "departureTime": "09:32"
+      "departureTime": "09:33"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "09:34"
+      "departureTime": "09:35"
     },
     {
       "station": "Otemachi",
-      "departureTime": "09:37"
+      "departureTime": "09:38"
     },
     {
       "station": "Nijubashimae",
-      "departureTime": "09:39"
+      "departureTime": "09:40"
     },
     {
       "station": "Hibiya",
-      "departureTime": "09:41"
+      "departureTime": "09:42"
     },
     {
       "station": "Kasumigaseki",
@@ -56,7 +56,7 @@
     },
     {
       "station": "KokkaiGijidomae",
-      "departureTime": "09:45"
+      "departureTime": "09:46"
     },
     {
       "station": "Akasaka",

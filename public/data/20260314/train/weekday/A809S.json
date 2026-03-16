@@ -4,7 +4,7 @@
   "direction": "for_yoyogiuehara",
   "trainType": "Local",
   "originStation": "KitaAyase",
-  "destinationStation": "SeijogakuenMae",
+  "destinationStation": "MeijiJingumae",
   "timetable": [
     {
       "station": "KitaAyase",
@@ -12,7 +12,7 @@
     },
     {
       "station": "Ayase",
-      "departureTime": "08:18"
+      "departureTime": "08:17"
     },
     {
       "station": "KitaSenju",
@@ -20,7 +20,7 @@
     },
     {
       "station": "Machiya",
-      "departureTime": "08:26"
+      "departureTime": "08:25"
     },
     {
       "station": "NishiNippori",
@@ -36,55 +36,47 @@
     },
     {
       "station": "Yushima",
-      "departureTime": "08:36"
+      "departureTime": "08:37"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "08:39"
+      "departureTime": "08:40"
     },
     {
       "station": "Otemachi",
-      "departureTime": "08:42"
-    },
-    {
-      "station": "Nijubashimae",
       "departureTime": "08:43"
     },
     {
-      "station": "Hibiya",
+      "station": "Nijubashimae",
       "departureTime": "08:45"
     },
     {
-      "station": "Kasumigaseki",
-      "departureTime": "08:48"
+      "station": "Hibiya",
+      "departureTime": "08:47"
     },
     {
-      "station": "KokkaiGijidomae",
+      "station": "Kasumigaseki",
       "departureTime": "08:50"
     },
     {
+      "station": "KokkaiGijidomae",
+      "departureTime": "08:51"
+    },
+    {
       "station": "Akasaka",
-      "departureTime": "08:52"
+      "departureTime": "08:53"
     },
     {
       "station": "Nogizaka",
-      "departureTime": "08:54"
+      "departureTime": "08:56"
     },
     {
       "station": "OmoteSando",
-      "departureTime": "08:57"
-    },
-    {
-      "station": "MeijiJingumae",
       "departureTime": "08:58"
     },
     {
-      "station": "YoyogiKoen",
-      "departureTime": "09:01"
-    },
-    {
-      "station": "YoyogiUehara",
-      "arrivalTime": "09:02"
+      "station": "MeijiJingumae",
+      "arrivalTime": "09:00"
     }
   ]
 }

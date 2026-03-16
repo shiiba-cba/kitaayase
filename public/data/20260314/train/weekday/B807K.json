@@ -24,7 +24,7 @@
     },
     {
       "station": "Nogizaka",
-      "departureTime": "08:12"
+      "departureTime": "08:11"
     },
     {
       "station": "Akasaka",
@@ -80,11 +80,11 @@
     },
     {
       "station": "Ayase",
-      "departureTime": "08:46"
+      "departureTime": "08:45"
     },
     {
       "station": "KitaAyase",
-      "arrivalTime": "08:50"
+      "arrivalTime": "08:49"
     }
   ]
 }

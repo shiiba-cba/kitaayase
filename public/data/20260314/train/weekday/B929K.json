@@ -8,79 +8,79 @@
   "timetable": [
     {
       "station": "YoyogiUehara",
-      "departureTime": "09:46"
+      "departureTime": "09:53"
     },
     {
       "station": "YoyogiKoen",
-      "departureTime": "09:48"
-    },
-    {
-      "station": "MeijiJingumae",
-      "departureTime": "09:51"
-    },
-    {
-      "station": "OmoteSando",
-      "departureTime": "09:52"
-    },
-    {
-      "station": "Nogizaka",
       "departureTime": "09:55"
     },
     {
-      "station": "Akasaka",
+      "station": "MeijiJingumae",
       "departureTime": "09:57"
     },
     {
-      "station": "KokkaiGijidomae",
+      "station": "OmoteSando",
       "departureTime": "09:59"
     },
     {
-      "station": "Kasumigaseki",
+      "station": "Nogizaka",
       "departureTime": "10:01"
     },
     {
-      "station": "Hibiya",
+      "station": "Akasaka",
       "departureTime": "10:03"
     },
     {
-      "station": "Nijubashimae",
+      "station": "KokkaiGijidomae",
       "departureTime": "10:05"
     },
     {
-      "station": "Otemachi",
-      "departureTime": "10:06"
+      "station": "Kasumigaseki",
+      "departureTime": "10:07"
     },
     {
-      "station": "ShinOchanomizu",
+      "station": "Hibiya",
       "departureTime": "10:09"
     },
     {
-      "station": "Yushima",
-      "departureTime": "10:10"
+      "station": "Nijubashimae",
+      "departureTime": "10:11"
     },
     {
-      "station": "Nezu",
+      "station": "Otemachi",
       "departureTime": "10:12"
     },
     {
-      "station": "Sendagi",
+      "station": "ShinOchanomizu",
       "departureTime": "10:15"
     },
     {
-      "station": "NishiNippori",
-      "departureTime": "10:16"
+      "station": "Yushima",
+      "departureTime": "10:17"
     },
     {
-      "station": "Machiya",
+      "station": "Nezu",
       "departureTime": "10:19"
     },
     {
-      "station": "KitaSenju",
+      "station": "Sendagi",
+      "departureTime": "10:21"
+    },
+    {
+      "station": "NishiNippori",
       "departureTime": "10:23"
     },
     {
+      "station": "Machiya",
+      "departureTime": "10:25"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "10:29"
+    },
+    {
       "station": "Ayase",
-      "arrivalTime": "10:26"
+      "arrivalTime": "10:32"
     }
   ]
 }

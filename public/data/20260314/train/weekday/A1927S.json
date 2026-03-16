@@ -8,79 +8,79 @@
   "timetable": [
     {
       "station": "Ayase",
-      "departureTime": "19:58"
-    },
-    {
-      "station": "KitaSenju",
-      "departureTime": "20:02"
-    },
-    {
-      "station": "Machiya",
-      "departureTime": "20:05"
-    },
-    {
-      "station": "NishiNippori",
-      "departureTime": "20:08"
-    },
-    {
-      "station": "Sendagi",
-      "departureTime": "20:10"
-    },
-    {
-      "station": "Nezu",
       "departureTime": "20:12"
     },
     {
-      "station": "Yushima",
-      "departureTime": "20:14"
-    },
-    {
-      "station": "ShinOchanomizu",
+      "station": "KitaSenju",
       "departureTime": "20:16"
     },
     {
-      "station": "Otemachi",
-      "departureTime": "20:18"
+      "station": "Machiya",
+      "departureTime": "20:19"
     },
     {
-      "station": "Nijubashimae",
-      "departureTime": "20:20"
-    },
-    {
-      "station": "Hibiya",
+      "station": "NishiNippori",
       "departureTime": "20:22"
     },
     {
-      "station": "Kasumigaseki",
+      "station": "Sendagi",
       "departureTime": "20:24"
     },
     {
-      "station": "KokkaiGijidomae",
+      "station": "Nezu",
       "departureTime": "20:26"
     },
     {
-      "station": "Akasaka",
-      "departureTime": "20:27"
+      "station": "Yushima",
+      "departureTime": "20:28"
     },
     {
-      "station": "Nogizaka",
-      "departureTime": "20:29"
+      "station": "ShinOchanomizu",
+      "departureTime": "20:30"
     },
     {
-      "station": "OmoteSando",
+      "station": "Otemachi",
       "departureTime": "20:32"
     },
     {
-      "station": "MeijiJingumae",
+      "station": "Nijubashimae",
       "departureTime": "20:34"
     },
     {
-      "station": "YoyogiKoen",
+      "station": "Hibiya",
       "departureTime": "20:36"
     },
     {
+      "station": "Kasumigaseki",
+      "departureTime": "20:38"
+    },
+    {
+      "station": "KokkaiGijidomae",
+      "departureTime": "20:40"
+    },
+    {
+      "station": "Akasaka",
+      "departureTime": "20:41"
+    },
+    {
+      "station": "Nogizaka",
+      "departureTime": "20:43"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "20:46"
+    },
+    {
+      "station": "MeijiJingumae",
+      "departureTime": "20:48"
+    },
+    {
+      "station": "YoyogiKoen",
+      "departureTime": "20:50"
+    },
+    {
       "station": "YoyogiUehara",
-      "arrivalTime": "20:38"
+      "arrivalTime": "20:52"
     }
   ]
 }

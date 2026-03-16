@@ -8,79 +8,79 @@
   "timetable": [
     {
       "station": "YoyogiUehara",
-      "departureTime": "19:51"
+      "departureTime": "19:26"
     },
     {
       "station": "YoyogiKoen",
-      "departureTime": "19:53"
+      "departureTime": "19:28"
     },
     {
       "station": "MeijiJingumae",
-      "departureTime": "19:55"
+      "departureTime": "19:30"
     },
     {
       "station": "OmoteSando",
-      "departureTime": "19:57"
+      "departureTime": "19:32"
     },
     {
       "station": "Nogizaka",
-      "departureTime": "19:59"
+      "departureTime": "19:35"
     },
     {
       "station": "Akasaka",
-      "departureTime": "20:01"
+      "departureTime": "19:37"
     },
     {
       "station": "KokkaiGijidomae",
-      "departureTime": "20:03"
+      "departureTime": "19:39"
     },
     {
       "station": "Kasumigaseki",
-      "departureTime": "20:05"
+      "departureTime": "19:41"
     },
     {
       "station": "Hibiya",
-      "departureTime": "20:07"
+      "departureTime": "19:43"
     },
     {
       "station": "Nijubashimae",
-      "departureTime": "20:09"
+      "departureTime": "19:45"
     },
     {
       "station": "Otemachi",
-      "departureTime": "20:11"
+      "departureTime": "19:47"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "20:13"
+      "departureTime": "19:49"
     },
     {
       "station": "Yushima",
-      "departureTime": "20:15"
+      "departureTime": "19:51"
     },
     {
       "station": "Nezu",
-      "departureTime": "20:17"
+      "departureTime": "19:53"
     },
     {
       "station": "Sendagi",
-      "departureTime": "20:19"
+      "departureTime": "19:56"
     },
     {
       "station": "NishiNippori",
-      "departureTime": "20:21"
+      "departureTime": "19:58"
     },
     {
       "station": "Machiya",
-      "departureTime": "20:24"
+      "departureTime": "20:00"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "20:28"
+      "departureTime": "20:04"
     },
     {
       "station": "Ayase",
-      "arrivalTime": "20:31"
+      "arrivalTime": "20:08"
     }
   ]
 }

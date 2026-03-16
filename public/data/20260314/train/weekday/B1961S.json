@@ -3,84 +3,84 @@
   "calendar": "weekday",
   "direction": "for_kitaayase",
   "trainType": "Local",
-  "originStation": "YoyogiUehara",
-  "destinationStation": "Ayase",
+  "originStation": "",
+  "destinationStation": "Abiko",
   "timetable": [
     {
       "station": "YoyogiUehara",
-      "departureTime": "19:55"
+      "departureTime": "19:40"
     },
     {
       "station": "YoyogiKoen",
-      "departureTime": "19:57"
+      "departureTime": "19:42"
     },
     {
       "station": "MeijiJingumae",
-      "departureTime": "19:59"
+      "departureTime": "19:45"
     },
     {
       "station": "OmoteSando",
-      "departureTime": "20:01"
+      "departureTime": "19:46"
     },
     {
       "station": "Nogizaka",
-      "departureTime": "20:03"
+      "departureTime": "19:49"
     },
     {
       "station": "Akasaka",
-      "departureTime": "20:05"
+      "departureTime": "19:51"
     },
     {
       "station": "KokkaiGijidomae",
-      "departureTime": "20:07"
+      "departureTime": "19:53"
     },
     {
       "station": "Kasumigaseki",
-      "departureTime": "20:09"
+      "departureTime": "19:55"
     },
     {
       "station": "Hibiya",
-      "departureTime": "20:11"
+      "departureTime": "19:57"
     },
     {
       "station": "Nijubashimae",
-      "departureTime": "20:13"
+      "departureTime": "19:59"
     },
     {
       "station": "Otemachi",
-      "departureTime": "20:14"
+      "departureTime": "20:00"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "20:17"
+      "departureTime": "20:03"
     },
     {
       "station": "Yushima",
-      "departureTime": "20:19"
+      "departureTime": "20:04"
     },
     {
       "station": "Nezu",
-      "departureTime": "20:21"
+      "departureTime": "20:06"
     },
     {
       "station": "Sendagi",
-      "departureTime": "20:24"
+      "departureTime": "20:09"
     },
     {
       "station": "NishiNippori",
-      "departureTime": "20:26"
+      "departureTime": "20:11"
     },
     {
       "station": "Machiya",
-      "departureTime": "20:28"
+      "departureTime": "20:14"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "20:32"
+      "departureTime": "20:18"
     },
     {
       "station": "Ayase",
-      "arrivalTime": "20:36"
+      "arrivalTime": "20:21"
     }
   ]
 }

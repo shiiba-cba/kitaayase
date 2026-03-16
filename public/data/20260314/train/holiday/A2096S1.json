@@ -8,11 +8,11 @@
   "timetable": [
     {
       "station": "KitaAyase",
-      "departureTime": "20:28"
+      "departureTime": "20:00"
     },
     {
       "station": "Ayase",
-      "arrivalTime": "20:32"
+      "arrivalTime": "20:04"
     }
   ]
 }

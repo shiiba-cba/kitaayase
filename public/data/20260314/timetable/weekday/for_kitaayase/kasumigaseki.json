@@ -62,6 +62,14 @@
     "ayaseDepartureTime": "05:45"
   },
   {
+    "trainNumber": "B509K",
+    "type": "Local",
+    "destinationStationName": "Toride",
+    "originStationName": "Ayase",
+    "stationName": "Kasumigaseki",
+    "ayaseArrivalTime": "05:45"
+  },
+  {
     "trainNumber": "B535S",
     "type": "Local",
     "destinationStationName": "Toride",
@@ -84,6 +92,14 @@
     "ayaseDepartureTime": "06:00"
   },
   {
+    "trainNumber": "B609S",
+    "type": "Local",
+    "destinationStationName": "Matsudo",
+    "originStationName": "Ayase",
+    "stationName": "Kasumigaseki",
+    "ayaseArrivalTime": "06:00"
+  },
+  {
     "trainNumber": "B537S",
     "type": "Local",
     "destinationStationName": "Toride",
@@ -93,6 +109,14 @@
     "stationDepartureTime": "05:40",
     "ayaseArrivalTime": "06:05",
     "yoyogiUeharaDepartureTime": "05:26"
+  },
+  {
+    "trainNumber": "B613S",
+    "type": "Local",
+    "destinationStationName": "Toride",
+    "originStationName": "Ayase",
+    "stationName": "Kasumigaseki",
+    "ayaseArrivalTime": "06:12"
   },
   {
     "trainNumber": "B539S",
@@ -117,7 +141,15 @@
     "ayaseDepartureTime": "06:19"
   },
   {
-    "trainNumber": "B515K",
+    "trainNumber": "B615S",
+    "type": "Local",
+    "destinationStationName": "Toride",
+    "originStationName": "Ayase",
+    "stationName": "Kasumigaseki",
+    "ayaseArrivalTime": "06:20"
+  },
+  {
+    "trainNumber": "B541E",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -126,6 +158,14 @@
     "stationDepartureTime": "06:00",
     "ayaseArrivalTime": "06:25",
     "yoyogiUeharaDepartureTime": "05:46"
+  },
+  {
+    "trainNumber": "B621S",
+    "type": "Local",
+    "destinationStationName": "Toride",
+    "originStationName": "Ayase",
+    "stationName": "Kasumigaseki",
+    "ayaseArrivalTime": "06:33"
   },
   {
     "trainNumber": "B541S",
@@ -182,7 +222,7 @@
     "ayaseDepartureTime": "06:50"
   },
   {
-    "trainNumber": "B641E",
+    "trainNumber": "B615K",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -215,7 +255,7 @@
     "ayaseDepartureTime": "07:02"
   },
   {
-    "trainNumber": "B549E",
+    "trainNumber": "B561E",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "stationName": "Kasumigaseki",
@@ -235,7 +275,7 @@
     "yoyogiUeharaDepartureTime": "06:27"
   },
   {
-    "trainNumber": "B551E",
+    "trainNumber": "B549E",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "stationName": "Kasumigaseki",
@@ -298,7 +338,7 @@
     "yoyogiUeharaDepartureTime": "06:45"
   },
   {
-    "trainNumber": "B702S",
+    "trainNumber": "B719S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Kasumigaseki",
@@ -321,7 +361,7 @@
     "yoyogiUeharaDepartureTime": "06:50"
   },
   {
-    "trainNumber": "B613S",
+    "trainNumber": "B611S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -343,7 +383,7 @@
     "ayaseDepartureTime": "07:36"
   },
   {
-    "trainNumber": "B653E",
+    "trainNumber": "B613K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -385,7 +425,7 @@
     "ayaseDepartureTime": "07:52"
   },
   {
-    "trainNumber": "B711K",
+    "trainNumber": "B717S",
     "type": "Local",
     "destinationStationName": "Matsudo",
     "originStationName": "YoyogiUehara",
@@ -427,7 +467,7 @@
     "yoyogiUeharaDepartureTime": "07:21"
   },
   {
-    "trainNumber": "B561E",
+    "trainNumber": "B553E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -458,7 +498,7 @@
     "ayaseDepartureTime": "08:12"
   },
   {
-    "trainNumber": "B721S",
+    "trainNumber": "B723S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -479,7 +519,7 @@
     "ayaseArrivalTime": "08:15"
   },
   {
-    "trainNumber": "B657S",
+    "trainNumber": "B651E",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -496,8 +536,8 @@
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "07:41",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "07:57",
-    "ayaseArrivalTime": "08:23",
+    "stationDepartureTime": "07:56",
+    "ayaseArrivalTime": "08:22",
     "yoyogiUeharaDepartureTime": "07:41"
   },
   {
@@ -505,10 +545,10 @@
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "08:01",
-    "destinationArrivalTime": "08:27",
-    "ayaseArrivalTime": "08:27",
-    "yoyogiUeharaDepartureTime": "07:46"
+    "stationDepartureTime": "07:59",
+    "destinationArrivalTime": "08:25",
+    "ayaseArrivalTime": "08:25",
+    "yoyogiUeharaDepartureTime": "07:44"
   },
   {
     "trainNumber": "B896S2",
@@ -522,12 +562,24 @@
     "ayaseDepartureTime": "08:28"
   },
   {
+    "trainNumber": "B702S",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "YoyogiUehara",
+    "originDepartureTime": "07:47",
+    "stationName": "Kasumigaseki",
+    "stationDepartureTime": "08:02",
+    "destinationArrivalTime": "08:28",
+    "ayaseArrivalTime": "08:28",
+    "yoyogiUeharaDepartureTime": "07:47"
+  },
+  {
     "trainNumber": "B757E",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "08:04",
-    "ayaseArrivalTime": "08:30",
+    "stationDepartureTime": "08:05",
+    "ayaseArrivalTime": "08:31",
     "yoyogiUeharaDepartureTime": "07:50"
   },
   {
@@ -537,13 +589,13 @@
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "07:53",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "08:07",
+    "stationDepartureTime": "08:08",
     "destinationArrivalTime": "08:33",
     "ayaseArrivalTime": "08:33",
     "yoyogiUeharaDepartureTime": "07:53"
   },
   {
-    "trainNumber": "B711S",
+    "trainNumber": "B765E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -568,7 +620,7 @@
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "08:15",
+    "stationDepartureTime": "08:14",
     "ayaseArrivalTime": "08:40",
     "yoyogiUeharaDepartureTime": "07:59"
   },
@@ -580,9 +632,9 @@
     "originDepartureTime": "08:02",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "08:18",
-    "destinationArrivalTime": "08:50",
-    "kitaAyaseArrivalTime": "08:50",
-    "ayaseDepartureTime": "08:46",
+    "destinationArrivalTime": "08:49",
+    "kitaAyaseArrivalTime": "08:49",
+    "ayaseDepartureTime": "08:45",
     "yoyogiUeharaDepartureTime": "08:02"
   },
   {
@@ -590,37 +642,37 @@
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "08:21",
+    "stationDepartureTime": "08:20",
     "ayaseArrivalTime": "08:47",
-    "yoyogiUeharaDepartureTime": "08:06"
+    "yoyogiUeharaDepartureTime": "08:05"
   },
   {
-    "trainNumber": "B759S",
+    "trainNumber": "B757S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "08:24",
-    "destinationArrivalTime": "08:50",
-    "ayaseArrivalTime": "08:50",
-    "yoyogiUeharaDepartureTime": "08:09"
+    "destinationArrivalTime": "08:49",
+    "ayaseArrivalTime": "08:49",
+    "yoyogiUeharaDepartureTime": "08:08"
   },
   {
     "trainNumber": "B825K",
     "type": "Local",
     "destinationStationName": "Matsudo",
     "originStationName": "YoyogiUehara",
-    "originDepartureTime": "08:12",
+    "originDepartureTime": "08:11",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "08:27",
-    "ayaseArrivalTime": "08:53",
-    "yoyogiUeharaDepartureTime": "08:12"
+    "ayaseArrivalTime": "08:52",
+    "yoyogiUeharaDepartureTime": "08:11"
   },
   {
     "trainNumber": "B731S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "08:30",
+    "stationDepartureTime": "08:29",
     "ayaseArrivalTime": "08:55",
     "yoyogiUeharaDepartureTime": "08:14"
   },
@@ -648,7 +700,7 @@
     "yoyogiUeharaDepartureTime": "08:16"
   },
   {
-    "trainNumber": "B753S",
+    "trainNumber": "B763E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -671,7 +723,7 @@
     "yoyogiUeharaDepartureTime": "08:22"
   },
   {
-    "trainNumber": "B723S",
+    "trainNumber": "B725S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -692,7 +744,7 @@
     "yoyogiUeharaDepartureTime": "08:27"
   },
   {
-    "trainNumber": "B713K",
+    "trainNumber": "B761S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -713,17 +765,6 @@
     "yoyogiUeharaDepartureTime": "08:33"
   },
   {
-    "trainNumber": "B996S1",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "09:17",
-    "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "09:21",
-    "kitaAyaseArrivalTime": "09:21",
-    "ayaseDepartureTime": "09:17"
-  },
-  {
     "trainNumber": "B817K",
     "type": "Local",
     "destinationStationName": "Abiko",
@@ -733,7 +774,18 @@
     "yoyogiUeharaDepartureTime": "08:35"
   },
   {
-    "trainNumber": "B802S",
+    "trainNumber": "B996S1",
+    "type": "Local",
+    "destinationStationName": "KitaAyase",
+    "originStationName": "Ayase",
+    "originDepartureTime": "09:19",
+    "stationName": "Kasumigaseki",
+    "destinationArrivalTime": "09:23",
+    "kitaAyaseArrivalTime": "09:23",
+    "ayaseDepartureTime": "09:19"
+  },
+  {
+    "trainNumber": "B841S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -745,7 +797,7 @@
     "yoyogiUeharaDepartureTime": "08:38"
   },
   {
-    "trainNumber": "B763E",
+    "trainNumber": "B753S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -755,7 +807,7 @@
     "yoyogiUeharaDepartureTime": "08:41"
   },
   {
-    "trainNumber": "B815K",
+    "trainNumber": "B811K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -776,7 +828,7 @@
     "yoyogiUeharaDepartureTime": "08:46"
   },
   {
-    "trainNumber": "B831K",
+    "trainNumber": "B815K",
     "type": "Local",
     "destinationStationName": "Matsudo",
     "originStationName": "YoyogiUehara",
@@ -791,14 +843,14 @@
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
-    "originDepartureTime": "09:31",
+    "originDepartureTime": "09:32",
     "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "09:35",
-    "kitaAyaseArrivalTime": "09:35",
-    "ayaseDepartureTime": "09:31"
+    "destinationArrivalTime": "09:36",
+    "kitaAyaseArrivalTime": "09:36",
+    "ayaseDepartureTime": "09:32"
   },
   {
-    "trainNumber": "B761S",
+    "trainNumber": "B759S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -807,7 +859,7 @@
     "yoyogiUeharaDepartureTime": "08:51"
   },
   {
-    "trainNumber": "B845S",
+    "trainNumber": "B801K",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -819,19 +871,19 @@
     "yoyogiUeharaDepartureTime": "08:54"
   },
   {
-    "trainNumber": "B829S",
+    "trainNumber": "B845S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "08:56",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "09:12",
-    "destinationArrivalTime": "09:38",
-    "ayaseArrivalTime": "09:38",
+    "destinationArrivalTime": "09:39",
+    "ayaseArrivalTime": "09:39",
     "yoyogiUeharaDepartureTime": "08:56"
   },
   {
-    "trainNumber": "B847S",
+    "trainNumber": "B827S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -859,7 +911,7 @@
     "ayaseDepartureTime": "09:46"
   },
   {
-    "trainNumber": "B933S",
+    "trainNumber": "B929S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -871,9 +923,9 @@
     "yoyogiUeharaDepartureTime": "09:06"
   },
   {
-    "trainNumber": "B951E",
+    "trainNumber": "B931K",
     "type": "Local",
-    "destinationStationName": "Matsudo",
+    "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "09:08",
     "stationName": "Kasumigaseki",
@@ -882,9 +934,9 @@
     "yoyogiUeharaDepartureTime": "09:08"
   },
   {
-    "trainNumber": "B809K",
+    "trainNumber": "B847S",
     "type": "Local",
-    "destinationStationName": "Abiko",
+    "destinationStationName": "Matsudo",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "09:27",
     "ayaseArrivalTime": "09:53",
@@ -904,7 +956,7 @@
     "yoyogiUeharaDepartureTime": "09:14"
   },
   {
-    "trainNumber": "B915S",
+    "trainNumber": "B913S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -914,30 +966,30 @@
     "yoyogiUeharaDepartureTime": "09:16"
   },
   {
-    "trainNumber": "B911K",
+    "trainNumber": "B943S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "09:19",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "09:35",
-    "ayaseArrivalTime": "10:01",
+    "ayaseArrivalTime": "10:00",
     "yoyogiUeharaDepartureTime": "09:19"
   },
   {
-    "trainNumber": "B907S",
+    "trainNumber": "B917S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "09:22",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "09:38",
-    "destinationArrivalTime": "10:04",
-    "ayaseArrivalTime": "10:04",
+    "stationDepartureTime": "09:37",
+    "destinationArrivalTime": "10:03",
+    "ayaseArrivalTime": "10:03",
     "yoyogiUeharaDepartureTime": "09:22"
   },
   {
-    "trainNumber": "B925S",
+    "trainNumber": "B909K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -945,62 +997,50 @@
     "destinationArrivalTime": "10:11",
     "kitaAyaseArrivalTime": "10:11",
     "ayaseDepartureTime": "10:07",
-    "yoyogiUeharaDepartureTime": "09:25"
+    "yoyogiUeharaDepartureTime": "09:26"
   },
   {
-    "trainNumber": "B957S",
+    "trainNumber": "B903S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
-    "originDepartureTime": "09:28",
+    "originDepartureTime": "09:29",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "09:43",
+    "stationDepartureTime": "09:44",
     "ayaseArrivalTime": "10:09",
-    "yoyogiUeharaDepartureTime": "09:28"
+    "yoyogiUeharaDepartureTime": "09:29"
   },
   {
-    "trainNumber": "B955S",
+    "trainNumber": "B951E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
-    "originDepartureTime": "09:31",
+    "originDepartureTime": "09:33",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "09:46",
-    "destinationArrivalTime": "10:12",
-    "ayaseArrivalTime": "10:12",
-    "yoyogiUeharaDepartureTime": "09:31"
+    "stationDepartureTime": "09:48",
+    "destinationArrivalTime": "10:13",
+    "ayaseArrivalTime": "10:13",
+    "yoyogiUeharaDepartureTime": "09:33"
   },
   {
-    "trainNumber": "B951S",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "YoyogiUehara",
-    "originDepartureTime": "09:34",
-    "stationName": "Kasumigaseki",
-    "stationDepartureTime": "09:49",
-    "destinationArrivalTime": "10:14",
-    "ayaseArrivalTime": "10:14",
-    "yoyogiUeharaDepartureTime": "09:34"
-  },
-  {
-    "trainNumber": "B917S",
+    "trainNumber": "B919S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "09:52",
+    "stationDepartureTime": "09:51",
     "destinationArrivalTime": "10:17",
     "ayaseArrivalTime": "10:17",
     "yoyogiUeharaDepartureTime": "09:37"
   },
   {
-    "trainNumber": "B923K",
+    "trainNumber": "B951S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "09:40",
     "stationName": "Kasumigaseki",
-    "stationDepartureTime": "09:55",
-    "ayaseArrivalTime": "10:20",
+    "stationDepartureTime": "09:54",
+    "ayaseArrivalTime": "10:19",
     "yoyogiUeharaDepartureTime": "09:40"
   },
   {
@@ -1015,7 +1055,7 @@
     "ayaseDepartureTime": "10:21"
   },
   {
-    "trainNumber": "B904S",
+    "trainNumber": "B965E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -1027,7 +1067,7 @@
     "yoyogiUeharaDepartureTime": "09:43"
   },
   {
-    "trainNumber": "B929K",
+    "trainNumber": "B915S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -1037,7 +1077,7 @@
     "yoyogiUeharaDepartureTime": "09:46"
   },
   {
-    "trainNumber": "B913S",
+    "trainNumber": "B911S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1048,7 +1088,7 @@
     "yoyogiUeharaDepartureTime": "09:50"
   },
   {
-    "trainNumber": "B901K",
+    "trainNumber": "B929K",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -1069,7 +1109,7 @@
     "ayaseDepartureTime": "10:35"
   },
   {
-    "trainNumber": "B907K",
+    "trainNumber": "B913K",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -1081,7 +1121,7 @@
     "yoyogiUeharaDepartureTime": "09:56"
   },
   {
-    "trainNumber": "B909S",
+    "trainNumber": "B921S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1094,13 +1134,13 @@
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
-    "originDepartureTime": "10:04",
+    "originDepartureTime": "10:05",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "10:19",
     "destinationArrivalTime": "10:50",
     "kitaAyaseArrivalTime": "10:50",
     "ayaseDepartureTime": "10:46",
-    "yoyogiUeharaDepartureTime": "10:04"
+    "yoyogiUeharaDepartureTime": "10:05"
   },
   {
     "trainNumber": "B1021K",
@@ -1114,7 +1154,7 @@
     "yoyogiUeharaDepartureTime": "10:08"
   },
   {
-    "trainNumber": "B949E",
+    "trainNumber": "B937S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "stationName": "Kasumigaseki",
@@ -1147,7 +1187,7 @@
     "ayaseDepartureTime": "10:57"
   },
   {
-    "trainNumber": "B903S",
+    "trainNumber": "B953E",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1156,7 +1196,7 @@
     "yoyogiUeharaDepartureTime": "10:19"
   },
   {
-    "trainNumber": "B1037S",
+    "trainNumber": "B1033S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -1201,7 +1241,7 @@
     "ayaseDepartureTime": "11:16"
   },
   {
-    "trainNumber": "B1047E",
+    "trainNumber": "B1055S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1210,7 +1250,7 @@
     "yoyogiUeharaDepartureTime": "10:39"
   },
   {
-    "trainNumber": "B1053S",
+    "trainNumber": "B1007K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -1277,7 +1317,7 @@
     "ayaseDepartureTime": "11:46"
   },
   {
-    "trainNumber": "B1123S",
+    "trainNumber": "B1125S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1288,7 +1328,7 @@
     "yoyogiUeharaDepartureTime": "11:09"
   },
   {
-    "trainNumber": "B1125S",
+    "trainNumber": "B1109K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1301,7 +1341,7 @@
     "yoyogiUeharaDepartureTime": "11:14"
   },
   {
-    "trainNumber": "B1059S",
+    "trainNumber": "B1023K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1310,27 +1350,17 @@
     "yoyogiUeharaDepartureTime": "11:19"
   },
   {
-    "trainNumber": "B1117S",
+    "trainNumber": "B1151E",
     "type": "Local",
-    "destinationStationName": "Ayase",
+    "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "11:24",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "11:39",
-    "destinationArrivalTime": "12:04",
-    "ayaseArrivalTime": "12:04",
-    "yoyogiUeharaDepartureTime": "11:24"
-  },
-  {
-    "trainNumber": "B1296S1",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "12:06",
-    "stationName": "Kasumigaseki",
     "destinationArrivalTime": "12:10",
     "kitaAyaseArrivalTime": "12:10",
-    "ayaseDepartureTime": "12:06"
+    "ayaseDepartureTime": "12:06",
+    "yoyogiUeharaDepartureTime": "11:24"
   },
   {
     "trainNumber": "B1117K",
@@ -1344,7 +1374,7 @@
     "yoyogiUeharaDepartureTime": "11:29"
   },
   {
-    "trainNumber": "B1107K",
+    "trainNumber": "B1113K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1357,7 +1387,7 @@
     "yoyogiUeharaDepartureTime": "11:34"
   },
   {
-    "trainNumber": "B1021S",
+    "trainNumber": "B1027K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1366,7 +1396,7 @@
     "yoyogiUeharaDepartureTime": "11:39"
   },
   {
-    "trainNumber": "B1101K",
+    "trainNumber": "B1129K",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -1378,7 +1408,7 @@
     "yoyogiUeharaDepartureTime": "11:44"
   },
   {
-    "trainNumber": "B1296S2",
+    "trainNumber": "B1296S1",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -1389,7 +1419,7 @@
     "ayaseDepartureTime": "12:26"
   },
   {
-    "trainNumber": "B1147S",
+    "trainNumber": "B1127S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1413,7 +1443,7 @@
     "yoyogiUeharaDepartureTime": "11:54"
   },
   {
-    "trainNumber": "B1127K",
+    "trainNumber": "B1153S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1422,7 +1452,7 @@
     "yoyogiUeharaDepartureTime": "11:59"
   },
   {
-    "trainNumber": "B1249E",
+    "trainNumber": "B1237S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -1434,7 +1464,7 @@
     "yoyogiUeharaDepartureTime": "12:04"
   },
   {
-    "trainNumber": "B1296S3",
+    "trainNumber": "B1296S2",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -1445,7 +1475,7 @@
     "ayaseDepartureTime": "12:46"
   },
   {
-    "trainNumber": "B1211K",
+    "trainNumber": "B1243S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1456,7 +1486,7 @@
     "yoyogiUeharaDepartureTime": "12:09"
   },
   {
-    "trainNumber": "B1237S",
+    "trainNumber": "B1233S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1478,20 +1508,30 @@
     "yoyogiUeharaDepartureTime": "12:19"
   },
   {
-    "trainNumber": "B1229K",
+    "trainNumber": "B1251S",
     "type": "Local",
-    "destinationStationName": "KitaAyase",
+    "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "12:24",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "12:39",
-    "destinationArrivalTime": "13:10",
-    "kitaAyaseArrivalTime": "13:10",
-    "ayaseDepartureTime": "13:06",
+    "destinationArrivalTime": "13:04",
+    "ayaseArrivalTime": "13:04",
     "yoyogiUeharaDepartureTime": "12:24"
   },
   {
-    "trainNumber": "B1223K",
+    "trainNumber": "B1396S1",
+    "type": "Local",
+    "destinationStationName": "KitaAyase",
+    "originStationName": "Ayase",
+    "originDepartureTime": "13:06",
+    "stationName": "Kasumigaseki",
+    "destinationArrivalTime": "13:10",
+    "kitaAyaseArrivalTime": "13:10",
+    "ayaseDepartureTime": "13:06"
+  },
+  {
+    "trainNumber": "B1201K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1502,30 +1542,20 @@
     "yoyogiUeharaDepartureTime": "12:29"
   },
   {
-    "trainNumber": "B1253S",
+    "trainNumber": "B1207K",
     "type": "Local",
-    "destinationStationName": "Ayase",
+    "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "12:34",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "12:49",
-    "destinationArrivalTime": "13:14",
-    "ayaseArrivalTime": "13:14",
+    "destinationArrivalTime": "13:20",
+    "kitaAyaseArrivalTime": "13:20",
+    "ayaseDepartureTime": "13:16",
     "yoyogiUeharaDepartureTime": "12:34"
   },
   {
-    "trainNumber": "B1396S1",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "13:16",
-    "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "13:20",
-    "kitaAyaseArrivalTime": "13:20",
-    "ayaseDepartureTime": "13:16"
-  },
-  {
-    "trainNumber": "B1129S",
+    "trainNumber": "B1161S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1581,7 +1611,7 @@
     "ayaseDepartureTime": "13:36"
   },
   {
-    "trainNumber": "B1261S",
+    "trainNumber": "B1259S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1590,7 +1620,7 @@
     "yoyogiUeharaDepartureTime": "12:59"
   },
   {
-    "trainNumber": "B1325S",
+    "trainNumber": "B1309K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1614,30 +1644,20 @@
     "yoyogiUeharaDepartureTime": "13:09"
   },
   {
-    "trainNumber": "B1317S",
+    "trainNumber": "B1351E",
     "type": "Local",
-    "destinationStationName": "Ayase",
+    "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "13:14",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "13:29",
-    "destinationArrivalTime": "13:54",
-    "ayaseArrivalTime": "13:54",
+    "destinationArrivalTime": "14:00",
+    "kitaAyaseArrivalTime": "14:00",
+    "ayaseDepartureTime": "13:56",
     "yoyogiUeharaDepartureTime": "13:14"
   },
   {
-    "trainNumber": "B1396S3",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "13:56",
-    "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "14:00",
-    "kitaAyaseArrivalTime": "14:00",
-    "ayaseDepartureTime": "13:56"
-  },
-  {
-    "trainNumber": "B1209K",
+    "trainNumber": "B1245S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1646,17 +1666,27 @@
     "yoyogiUeharaDepartureTime": "13:19"
   },
   {
-    "trainNumber": "B1307K",
+    "trainNumber": "B1313K",
     "type": "Local",
-    "destinationStationName": "KitaAyase",
+    "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "13:24",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "13:39",
+    "destinationArrivalTime": "14:04",
+    "ayaseArrivalTime": "14:04",
+    "yoyogiUeharaDepartureTime": "13:24"
+  },
+  {
+    "trainNumber": "B1496S1",
+    "type": "Local",
+    "destinationStationName": "KitaAyase",
+    "originStationName": "Ayase",
+    "originDepartureTime": "14:06",
+    "stationName": "Kasumigaseki",
     "destinationArrivalTime": "14:10",
     "kitaAyaseArrivalTime": "14:10",
-    "ayaseDepartureTime": "14:06",
-    "yoyogiUeharaDepartureTime": "13:24"
+    "ayaseDepartureTime": "14:06"
   },
   {
     "trainNumber": "B1345E",
@@ -1670,7 +1700,7 @@
     "yoyogiUeharaDepartureTime": "13:29"
   },
   {
-    "trainNumber": "B1301K",
+    "trainNumber": "B1329K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1683,7 +1713,7 @@
     "yoyogiUeharaDepartureTime": "13:34"
   },
   {
-    "trainNumber": "B1257S",
+    "trainNumber": "B1231K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1704,7 +1734,7 @@
     "yoyogiUeharaDepartureTime": "13:44"
   },
   {
-    "trainNumber": "B1496S1",
+    "trainNumber": "B1496S2",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -1715,7 +1745,7 @@
     "ayaseDepartureTime": "14:26"
   },
   {
-    "trainNumber": "B1323S",
+    "trainNumber": "B1325S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1726,7 +1756,7 @@
     "yoyogiUeharaDepartureTime": "13:49"
   },
   {
-    "trainNumber": "B1349E",
+    "trainNumber": "B1337S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1739,7 +1769,7 @@
     "yoyogiUeharaDepartureTime": "13:54"
   },
   {
-    "trainNumber": "B1313K",
+    "trainNumber": "B1311S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1748,7 +1778,7 @@
     "yoyogiUeharaDepartureTime": "13:59"
   },
   {
-    "trainNumber": "B1437S",
+    "trainNumber": "B1433S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -1760,7 +1790,7 @@
     "yoyogiUeharaDepartureTime": "14:04"
   },
   {
-    "trainNumber": "B1496S2",
+    "trainNumber": "B1496S3",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -1782,7 +1812,7 @@
     "yoyogiUeharaDepartureTime": "14:09"
   },
   {
-    "trainNumber": "B1429K",
+    "trainNumber": "B1451S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1795,7 +1825,7 @@
     "yoyogiUeharaDepartureTime": "14:14"
   },
   {
-    "trainNumber": "B1303S",
+    "trainNumber": "B1357S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1804,7 +1834,7 @@
     "yoyogiUeharaDepartureTime": "14:19"
   },
   {
-    "trainNumber": "B1453S",
+    "trainNumber": "B1407K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1817,7 +1847,7 @@
     "yoyogiUeharaDepartureTime": "14:24"
   },
   {
-    "trainNumber": "B1447S",
+    "trainNumber": "B1427S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1851,7 +1881,7 @@
     "ayaseDepartureTime": "15:16"
   },
   {
-    "trainNumber": "B1313S",
+    "trainNumber": "B1355S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1873,7 +1903,7 @@
     "yoyogiUeharaDepartureTime": "14:44"
   },
   {
-    "trainNumber": "B1411K",
+    "trainNumber": "B1443S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1884,7 +1914,7 @@
     "yoyogiUeharaDepartureTime": "14:49"
   },
   {
-    "trainNumber": "B1425S",
+    "trainNumber": "B1409K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1906,7 +1936,7 @@
     "yoyogiUeharaDepartureTime": "14:59"
   },
   {
-    "trainNumber": "B1517S",
+    "trainNumber": "B1551E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -1929,7 +1959,7 @@
     "ayaseDepartureTime": "15:48"
   },
   {
-    "trainNumber": "B1507K",
+    "trainNumber": "B1501K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -1940,7 +1970,7 @@
     "yoyogiUeharaDepartureTime": "15:09"
   },
   {
-    "trainNumber": "B1523K",
+    "trainNumber": "B1513K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -1953,7 +1983,7 @@
     "yoyogiUeharaDepartureTime": "15:14"
   },
   {
-    "trainNumber": "B1459S",
+    "trainNumber": "B1423K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -1962,27 +1992,17 @@
     "yoyogiUeharaDepartureTime": "15:19"
   },
   {
-    "trainNumber": "B1501K",
+    "trainNumber": "B1529K",
     "type": "Local",
-    "destinationStationName": "Ayase",
+    "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
     "originDepartureTime": "15:24",
     "stationName": "Kasumigaseki",
     "stationDepartureTime": "15:39",
-    "destinationArrivalTime": "16:05",
-    "ayaseArrivalTime": "16:05",
+    "destinationArrivalTime": "16:10",
+    "kitaAyaseArrivalTime": "16:10",
+    "ayaseDepartureTime": "16:06",
     "yoyogiUeharaDepartureTime": "15:24"
-  },
-  {
-    "trainNumber": "B1696S1",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "16:07",
-    "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "16:11",
-    "kitaAyaseArrivalTime": "16:11",
-    "ayaseDepartureTime": "16:07"
   },
   {
     "trainNumber": "B1521K",
@@ -2009,7 +2029,7 @@
     "yoyogiUeharaDepartureTime": "15:34"
   },
   {
-    "trainNumber": "B1447E",
+    "trainNumber": "B1427K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2018,7 +2038,7 @@
     "yoyogiUeharaDepartureTime": "15:39"
   },
   {
-    "trainNumber": "B1549E",
+    "trainNumber": "B1537S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -2038,7 +2058,7 @@
     "destinationArrivalTime": "16:22"
   },
   {
-    "trainNumber": "B1696S2",
+    "trainNumber": "B1696S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -2060,7 +2080,7 @@
     "yoyogiUeharaDepartureTime": "15:49"
   },
   {
-    "trainNumber": "B1537S",
+    "trainNumber": "B1533S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2073,7 +2093,7 @@
     "yoyogiUeharaDepartureTime": "15:54"
   },
   {
-    "trainNumber": "B1527K",
+    "trainNumber": "B1553S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2082,7 +2102,7 @@
     "yoyogiUeharaDepartureTime": "15:59"
   },
   {
-    "trainNumber": "B1629K",
+    "trainNumber": "B1651S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2106,7 +2126,7 @@
     "yoyogiUeharaDepartureTime": "16:08"
   },
   {
-    "trainNumber": "B1653S",
+    "trainNumber": "B1607K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2117,7 +2137,7 @@
     "yoyogiUeharaDepartureTime": "16:12"
   },
   {
-    "trainNumber": "B1627S",
+    "trainNumber": "B1607S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2130,7 +2150,7 @@
     "yoyogiUeharaDepartureTime": "16:17"
   },
   {
-    "trainNumber": "B1655S",
+    "trainNumber": "B1613S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2162,7 +2182,7 @@
     "yoyogiUeharaDepartureTime": "16:25"
   },
   {
-    "trainNumber": "B1661E",
+    "trainNumber": "B1663E",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2186,7 +2206,7 @@
     "yoyogiUeharaDepartureTime": "16:32"
   },
   {
-    "trainNumber": "B1619S",
+    "trainNumber": "B1661E",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2199,7 +2219,7 @@
     "yoyogiUeharaDepartureTime": "16:36"
   },
   {
-    "trainNumber": "B1613K",
+    "trainNumber": "B1611S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2210,7 +2230,7 @@
     "yoyogiUeharaDepartureTime": "16:39"
   },
   {
-    "trainNumber": "B1629S",
+    "trainNumber": "B1661S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -2221,7 +2241,7 @@
     "yoyogiUeharaDepartureTime": "16:43"
   },
   {
-    "trainNumber": "B1611S",
+    "trainNumber": "B1623S",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2254,7 +2274,7 @@
     "yoyogiUeharaDepartureTime": "16:51"
   },
   {
-    "trainNumber": "B1617S",
+    "trainNumber": "B1651E",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2267,7 +2287,7 @@
     "yoyogiUeharaDepartureTime": "16:55"
   },
   {
-    "trainNumber": "B1715S",
+    "trainNumber": "B1729S",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "Kasumigaseki",
@@ -2288,7 +2308,7 @@
     "ayaseDepartureTime": "17:43"
   },
   {
-    "trainNumber": "B1623K",
+    "trainNumber": "B1613K",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2299,7 +2319,7 @@
     "yoyogiUeharaDepartureTime": "16:59"
   },
   {
-    "trainNumber": "B1661S",
+    "trainNumber": "B1653E",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2308,7 +2328,7 @@
     "yoyogiUeharaDepartureTime": "17:03"
   },
   {
-    "trainNumber": "B1747S",
+    "trainNumber": "B1727S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -2320,7 +2340,7 @@
     "yoyogiUeharaDepartureTime": "17:08"
   },
   {
-    "trainNumber": "B1731K",
+    "trainNumber": "B1715K",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -2342,7 +2362,7 @@
     "ayaseDepartureTime": "17:55"
   },
   {
-    "trainNumber": "B1657S",
+    "trainNumber": "B1631K",
     "type": "Local",
     "destinationStationName": "Toride",
     "stationName": "Kasumigaseki",
@@ -2364,7 +2384,7 @@
     "yoyogiUeharaDepartureTime": "17:18"
   },
   {
-    "trainNumber": "B1713S",
+    "trainNumber": "B1755S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2375,7 +2395,7 @@
     "yoyogiUeharaDepartureTime": "17:22"
   },
   {
-    "trainNumber": "B1733S",
+    "trainNumber": "B1717S",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "Kasumigaseki",
@@ -2407,7 +2427,7 @@
     "yoyogiUeharaDepartureTime": "17:29"
   },
   {
-    "trainNumber": "B1749E",
+    "trainNumber": "B1737S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2418,7 +2438,7 @@
     "yoyogiUeharaDepartureTime": "17:33"
   },
   {
-    "trainNumber": "B1743S",
+    "trainNumber": "B1747E",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -2429,7 +2449,7 @@
     "yoyogiUeharaDepartureTime": "17:37"
   },
   {
-    "trainNumber": "B1719K",
+    "trainNumber": "B1709K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -2440,7 +2460,7 @@
     "yoyogiUeharaDepartureTime": "17:41"
   },
   {
-    "trainNumber": "B1737S",
+    "trainNumber": "B1733S",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2473,7 +2493,7 @@
     "ayaseDepartureTime": "18:30"
   },
   {
-    "trainNumber": "B1765E",
+    "trainNumber": "B1719K",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "stationName": "Kasumigaseki",
@@ -2482,7 +2502,7 @@
     "yoyogiUeharaDepartureTime": "17:50"
   },
   {
-    "trainNumber": "B1729K",
+    "trainNumber": "B1751S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2495,7 +2515,7 @@
     "yoyogiUeharaDepartureTime": "17:53"
   },
   {
-    "trainNumber": "B1723S",
+    "trainNumber": "B1725S",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2506,7 +2526,7 @@
     "yoyogiUeharaDepartureTime": "17:56"
   },
   {
-    "trainNumber": "B1727S",
+    "trainNumber": "B1707S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2517,7 +2537,7 @@
     "yoyogiUeharaDepartureTime": "17:59"
   },
   {
-    "trainNumber": "B1753E",
+    "trainNumber": "B1745S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -2528,7 +2548,7 @@
     "yoyogiUeharaDepartureTime": "18:03"
   },
   {
-    "trainNumber": "B1807S",
+    "trainNumber": "B1865E",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "Kasumigaseki",
@@ -2550,18 +2570,7 @@
     "yoyogiUeharaDepartureTime": "18:07"
   },
   {
-    "trainNumber": "B1896S2",
-    "type": "Local",
-    "destinationStationName": "KitaAyase",
-    "originStationName": "Ayase",
-    "originDepartureTime": "18:51",
-    "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "18:55",
-    "kitaAyaseArrivalTime": "18:55",
-    "ayaseDepartureTime": "18:51"
-  },
-  {
-    "trainNumber": "B1701K",
+    "trainNumber": "B1729K",
     "type": "Local",
     "destinationStationName": "Toride",
     "stationName": "Kasumigaseki",
@@ -2570,7 +2579,18 @@
     "yoyogiUeharaDepartureTime": "18:11"
   },
   {
-    "trainNumber": "B1847S",
+    "trainNumber": "B1896S2",
+    "type": "Local",
+    "destinationStationName": "KitaAyase",
+    "originStationName": "Ayase",
+    "originDepartureTime": "18:54",
+    "stationName": "Kasumigaseki",
+    "destinationArrivalTime": "18:58",
+    "kitaAyaseArrivalTime": "18:58",
+    "ayaseDepartureTime": "18:54"
+  },
+  {
+    "trainNumber": "B1827S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "Kasumigaseki",
@@ -2580,7 +2600,7 @@
     "ayaseArrivalTime": "18:55"
   },
   {
-    "trainNumber": "B1863E",
+    "trainNumber": "B1839S",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -2591,7 +2611,7 @@
     "yoyogiUeharaDepartureTime": "18:16"
   },
   {
-    "trainNumber": "B1721S",
+    "trainNumber": "B1759S",
     "type": "Local",
     "destinationStationName": "Toride",
     "stationName": "Kasumigaseki",
@@ -2600,18 +2620,18 @@
     "yoyogiUeharaDepartureTime": "18:20"
   },
   {
-    "trainNumber": "B1996S1",
+    "trainNumber": "B1945S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
-    "originDepartureTime": "19:03",
+    "originDepartureTime": "19:02",
     "stationName": "Kasumigaseki",
-    "destinationArrivalTime": "19:07",
-    "kitaAyaseArrivalTime": "19:07",
-    "ayaseDepartureTime": "19:03"
+    "destinationArrivalTime": "19:06",
+    "kitaAyaseArrivalTime": "19:06",
+    "ayaseDepartureTime": "19:02"
   },
   {
-    "trainNumber": "B1819S",
+    "trainNumber": "B1861E",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2622,7 +2642,7 @@
     "yoyogiUeharaDepartureTime": "18:23"
   },
   {
-    "trainNumber": "B1851E",
+    "trainNumber": "B1847S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2635,7 +2655,7 @@
     "yoyogiUeharaDepartureTime": "18:26"
   },
   {
-    "trainNumber": "B1803S",
+    "trainNumber": "B1849E",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "stationName": "Kasumigaseki",
@@ -2644,7 +2664,7 @@
     "yoyogiUeharaDepartureTime": "18:30"
   },
   {
-    "trainNumber": "B1847E",
+    "trainNumber": "B1827K",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2655,7 +2675,7 @@
     "yoyogiUeharaDepartureTime": "18:33"
   },
   {
-    "trainNumber": "B1996S2",
+    "trainNumber": "B1996S1",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -2679,7 +2699,7 @@
     "yoyogiUeharaDepartureTime": "18:36"
   },
   {
-    "trainNumber": "B1841S",
+    "trainNumber": "B1809S",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -2700,7 +2720,7 @@
     "yoyogiUeharaDepartureTime": "18:43"
   },
   {
-    "trainNumber": "B1827K",
+    "trainNumber": "B1853S",
     "type": "Local",
     "destinationStationName": "Toride",
     "originStationName": "YoyogiUehara",
@@ -2711,7 +2731,7 @@
     "yoyogiUeharaDepartureTime": "18:46"
   },
   {
-    "trainNumber": "B1996S3",
+    "trainNumber": "B1996S2",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -2722,7 +2742,7 @@
     "ayaseDepartureTime": "19:28"
   },
   {
-    "trainNumber": "B1825S",
+    "trainNumber": "B1857S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -2743,7 +2763,7 @@
     "ayaseArrivalTime": "19:35"
   },
   {
-    "trainNumber": "B1845S",
+    "trainNumber": "B1841S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2756,7 +2776,7 @@
     "yoyogiUeharaDepartureTime": "18:55"
   },
   {
-    "trainNumber": "B1809S",
+    "trainNumber": "B1821S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2765,7 +2785,7 @@
     "yoyogiUeharaDepartureTime": "18:59"
   },
   {
-    "trainNumber": "B1955S",
+    "trainNumber": "B1913S",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -2776,7 +2796,7 @@
     "yoyogiUeharaDepartureTime": "19:04"
   },
   {
-    "trainNumber": "B1996S4",
+    "trainNumber": "B1996S3",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -2787,7 +2807,7 @@
     "ayaseDepartureTime": "19:47"
   },
   {
-    "trainNumber": "B1961E",
+    "trainNumber": "B1915S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2798,7 +2818,7 @@
     "yoyogiUeharaDepartureTime": "19:08"
   },
   {
-    "trainNumber": "B1807K",
+    "trainNumber": "B1843S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -2831,7 +2851,7 @@
     "ayaseDepartureTime": "20:01"
   },
   {
-    "trainNumber": "B1859S",
+    "trainNumber": "B1823K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2840,7 +2860,7 @@
     "yoyogiUeharaDepartureTime": "19:22"
   },
   {
-    "trainNumber": "B2045S",
+    "trainNumber": "B2041S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -2851,7 +2871,7 @@
     "ayaseDepartureTime": "20:06"
   },
   {
-    "trainNumber": "B1913K",
+    "trainNumber": "B1911S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2862,7 +2882,7 @@
     "yoyogiUeharaDepartureTime": "19:26"
   },
   {
-    "trainNumber": "B1809K",
+    "trainNumber": "B1803S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2882,7 +2902,7 @@
     "ayaseDepartureTime": "20:13"
   },
   {
-    "trainNumber": "B1915S",
+    "trainNumber": "B1929S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -2895,7 +2915,7 @@
     "yoyogiUeharaDepartureTime": "19:35"
   },
   {
-    "trainNumber": "B1929S",
+    "trainNumber": "B1961S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -2926,7 +2946,7 @@
     "yoyogiUeharaDepartureTime": "19:45"
   },
   {
-    "trainNumber": "B1911S",
+    "trainNumber": "B1923S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -2937,7 +2957,7 @@
     "yoyogiUeharaDepartureTime": "19:51"
   },
   {
-    "trainNumber": "B2015S",
+    "trainNumber": "B2029S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "Ayase",
@@ -2948,7 +2968,7 @@
     "ayaseDepartureTime": "20:34"
   },
   {
-    "trainNumber": "B1961S",
+    "trainNumber": "B1953E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -2981,7 +3001,7 @@
     "ayaseDepartureTime": "20:40"
   },
   {
-    "trainNumber": "B1953S",
+    "trainNumber": "B1907K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -2992,7 +3012,7 @@
     "yoyogiUeharaDepartureTime": "20:00"
   },
   {
-    "trainNumber": "B2033S",
+    "trainNumber": "B2017S",
     "type": "Local",
     "destinationStationName": "Kashiwa",
     "originStationName": "YoyogiUehara",
@@ -3014,7 +3034,7 @@
     "ayaseDepartureTime": "20:52"
   },
   {
-    "trainNumber": "B1911K",
+    "trainNumber": "B1901K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -3023,7 +3043,7 @@
     "yoyogiUeharaDepartureTime": "20:11"
   },
   {
-    "trainNumber": "B2013S",
+    "trainNumber": "B2055S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -3045,7 +3065,7 @@
     "yoyogiUeharaDepartureTime": "20:20"
   },
   {
-    "trainNumber": "B2043S",
+    "trainNumber": "B2047E",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -3068,7 +3088,7 @@
     "ayaseDepartureTime": "21:08"
   },
   {
-    "trainNumber": "B2057S",
+    "trainNumber": "B2031K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3112,7 +3132,7 @@
     "ayaseDepartureTime": "21:22"
   },
   {
-    "trainNumber": "B2019K",
+    "trainNumber": "B2009K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -3123,7 +3143,7 @@
     "yoyogiUeharaDepartureTime": "20:42"
   },
   {
-    "trainNumber": "B2007S",
+    "trainNumber": "B2065E",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3134,7 +3154,7 @@
     "yoyogiUeharaDepartureTime": "20:46"
   },
   {
-    "trainNumber": "B2031K",
+    "trainNumber": "B2015K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -3154,7 +3174,7 @@
     "ayaseDepartureTime": "21:34"
   },
   {
-    "trainNumber": "B2063E",
+    "trainNumber": "B2039S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -3167,7 +3187,7 @@
     "yoyogiUeharaDepartureTime": "20:57"
   },
   {
-    "trainNumber": "B2023K",
+    "trainNumber": "B2013K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -3176,7 +3196,7 @@
     "yoyogiUeharaDepartureTime": "21:02"
   },
   {
-    "trainNumber": "B2147S",
+    "trainNumber": "B2127S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -3188,7 +3208,7 @@
     "yoyogiUeharaDepartureTime": "21:07"
   },
   {
-    "trainNumber": "B2031S",
+    "trainNumber": "B2045S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -3208,7 +3228,7 @@
     "ayaseDepartureTime": "21:54"
   },
   {
-    "trainNumber": "B2101K",
+    "trainNumber": "B2129K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3230,7 +3250,7 @@
     "yoyogiUeharaDepartureTime": "21:21"
   },
   {
-    "trainNumber": "B2121S",
+    "trainNumber": "B2159S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3275,7 +3295,7 @@
     "ayaseDepartureTime": "22:21"
   },
   {
-    "trainNumber": "B2155S",
+    "trainNumber": "B2113S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3286,7 +3306,7 @@
     "yoyogiUeharaDepartureTime": "21:40"
   },
   {
-    "trainNumber": "B2137S",
+    "trainNumber": "B2133S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -3297,7 +3317,7 @@
     "yoyogiUeharaDepartureTime": "21:45"
   },
   {
-    "trainNumber": "B2109S",
+    "trainNumber": "B2121S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3319,7 +3339,7 @@
     "ayaseDepartureTime": "22:37"
   },
   {
-    "trainNumber": "B2123S",
+    "trainNumber": "B2125S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "stationName": "Kasumigaseki",
@@ -3328,7 +3348,7 @@
     "yoyogiUeharaDepartureTime": "21:56"
   },
   {
-    "trainNumber": "B2213S",
+    "trainNumber": "B2255S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -3362,7 +3382,7 @@
     "ayaseDepartureTime": "22:49"
   },
   {
-    "trainNumber": "B2259S",
+    "trainNumber": "B2211S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -3375,7 +3395,7 @@
     "yoyogiUeharaDepartureTime": "22:12"
   },
   {
-    "trainNumber": "B2165E",
+    "trainNumber": "B2119K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3397,7 +3417,7 @@
     "ayaseDepartureTime": "23:03"
   },
   {
-    "trainNumber": "B2209K",
+    "trainNumber": "B2203S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3408,7 +3428,7 @@
     "yoyogiUeharaDepartureTime": "22:23"
   },
   {
-    "trainNumber": "B2229S",
+    "trainNumber": "B2261S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -3421,7 +3441,7 @@
     "yoyogiUeharaDepartureTime": "22:29"
   },
   {
-    "trainNumber": "B2219K",
+    "trainNumber": "B2209K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3443,7 +3463,7 @@
     "ayaseDepartureTime": "23:19"
   },
   {
-    "trainNumber": "B2227K",
+    "trainNumber": "B2253S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "stationName": "Kasumigaseki",
@@ -3454,7 +3474,7 @@
     "yoyogiUeharaDepartureTime": "22:40"
   },
   {
-    "trainNumber": "B2233S",
+    "trainNumber": "B2217S",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3487,7 +3507,7 @@
     "yoyogiUeharaDepartureTime": "22:52"
   },
   {
-    "trainNumber": "B2263E",
+    "trainNumber": "B2239S",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -3500,7 +3520,7 @@
     "yoyogiUeharaDepartureTime": "22:58"
   },
   {
-    "trainNumber": "B2311K",
+    "trainNumber": "B2301K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3522,7 +3542,7 @@
     "ayaseDepartureTime": "23:49"
   },
   {
-    "trainNumber": "B2357S",
+    "trainNumber": "B2331K",
     "type": "Local",
     "destinationStationName": "KitaAyase",
     "originStationName": "YoyogiUehara",
@@ -3570,7 +3590,7 @@
     "ayaseDepartureTime": "00:09"
   },
   {
-    "trainNumber": "B2307S",
+    "trainNumber": "B2365E",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3581,7 +3601,7 @@
     "yoyogiUeharaDepartureTime": "23:28"
   },
   {
-    "trainNumber": "B2331K",
+    "trainNumber": "B2315K",
     "type": "Local",
     "destinationStationName": "Abiko",
     "originStationName": "YoyogiUehara",
@@ -3614,7 +3634,7 @@
     "yoyogiUeharaDepartureTime": "23:45"
   },
   {
-    "trainNumber": "B2331S",
+    "trainNumber": "B2345S",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "YoyogiUehara",
@@ -3626,7 +3646,7 @@
     "yoyogiUeharaDepartureTime": "23:52"
   },
   {
-    "trainNumber": "B2401K",
+    "trainNumber": "B2429K",
     "type": "Local",
     "destinationStationName": "Matsudo",
     "originStationName": "YoyogiUehara",
@@ -3637,7 +3657,7 @@
     "yoyogiUeharaDepartureTime": "00:00"
   },
   {
-    "trainNumber": "B2419K",
+    "trainNumber": "B2409K",
     "type": "Local",
     "destinationStationName": "Matsudo",
     "originStationName": "KitaSenju",

@@ -2,85 +2,85 @@
   "trainNumber": "A1353S",
   "calendar": "weekday",
   "direction": "for_yoyogiuehara",
-  "trainType": "Local",
-  "originStation": "Ayase",
-  "destinationStation": "YoyogiUehara",
+  "trainType": "Express",
+  "originStation": "Abiko",
+  "destinationStation": "Karakida",
   "timetable": [
     {
       "station": "Ayase",
-      "departureTime": "13:33"
-    },
-    {
-      "station": "KitaSenju",
-      "departureTime": "13:37"
-    },
-    {
-      "station": "Machiya",
-      "departureTime": "13:40"
-    },
-    {
-      "station": "NishiNippori",
-      "departureTime": "13:43"
-    },
-    {
-      "station": "Sendagi",
-      "departureTime": "13:44"
-    },
-    {
-      "station": "Nezu",
-      "departureTime": "13:47"
-    },
-    {
-      "station": "Yushima",
       "departureTime": "13:48"
     },
     {
-      "station": "ShinOchanomizu",
-      "departureTime": "13:51"
+      "station": "KitaSenju",
+      "departureTime": "13:52"
     },
     {
-      "station": "Otemachi",
-      "departureTime": "13:53"
+      "station": "Machiya",
+      "departureTime": "13:55"
     },
     {
-      "station": "Nijubashimae",
-      "departureTime": "13:54"
+      "station": "NishiNippori",
+      "departureTime": "13:58"
     },
     {
-      "station": "Hibiya",
-      "departureTime": "13:56"
-    },
-    {
-      "station": "Kasumigaseki",
+      "station": "Sendagi",
       "departureTime": "13:59"
     },
     {
-      "station": "KokkaiGijidomae",
-      "departureTime": "14:00"
-    },
-    {
-      "station": "Akasaka",
+      "station": "Nezu",
       "departureTime": "14:02"
     },
     {
-      "station": "Nogizaka",
-      "departureTime": "14:04"
+      "station": "Yushima",
+      "departureTime": "14:03"
     },
     {
-      "station": "OmoteSando",
-      "departureTime": "14:07"
+      "station": "ShinOchanomizu",
+      "departureTime": "14:06"
     },
     {
-      "station": "MeijiJingumae",
+      "station": "Otemachi",
+      "departureTime": "14:08"
+    },
+    {
+      "station": "Nijubashimae",
       "departureTime": "14:09"
     },
     {
-      "station": "YoyogiKoen",
+      "station": "Hibiya",
       "departureTime": "14:11"
     },
     {
+      "station": "Kasumigaseki",
+      "departureTime": "14:14"
+    },
+    {
+      "station": "KokkaiGijidomae",
+      "departureTime": "14:15"
+    },
+    {
+      "station": "Akasaka",
+      "departureTime": "14:17"
+    },
+    {
+      "station": "Nogizaka",
+      "departureTime": "14:19"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "14:22"
+    },
+    {
+      "station": "MeijiJingumae",
+      "departureTime": "14:24"
+    },
+    {
+      "station": "YoyogiKoen",
+      "departureTime": "14:26"
+    },
+    {
       "station": "YoyogiUehara",
-      "arrivalTime": "14:12"
+      "arrivalTime": "14:27"
     }
   ]
 }

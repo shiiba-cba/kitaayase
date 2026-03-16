@@ -8,39 +8,39 @@
   "timetable": [
     {
       "station": "KitaAyase",
-      "departureTime": "09:16"
+      "departureTime": "09:14"
     },
     {
       "station": "Ayase",
-      "departureTime": "09:21"
+      "departureTime": "09:20"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "09:26"
+      "departureTime": "09:24"
     },
     {
       "station": "Machiya",
-      "departureTime": "09:29"
+      "departureTime": "09:28"
     },
     {
       "station": "NishiNippori",
-      "departureTime": "09:32"
+      "departureTime": "09:31"
     },
     {
       "station": "Sendagi",
-      "departureTime": "09:35"
+      "departureTime": "09:34"
     },
     {
       "station": "Nezu",
-      "departureTime": "09:37"
+      "departureTime": "09:36"
     },
     {
       "station": "Yushima",
-      "departureTime": "09:39"
+      "departureTime": "09:38"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "09:42"
+      "departureTime": "09:41"
     },
     {
       "station": "Otemachi",
@@ -48,7 +48,7 @@
     },
     {
       "station": "Nijubashimae",
-      "departureTime": "09:46"
+      "departureTime": "09:45"
     },
     {
       "station": "Hibiya",
@@ -64,7 +64,7 @@
     },
     {
       "station": "Akasaka",
-      "departureTime": "09:54"
+      "departureTime": "09:53"
     },
     {
       "station": "Nogizaka",
@@ -72,7 +72,7 @@
     },
     {
       "station": "OmoteSando",
-      "departureTime": "09:59"
+      "departureTime": "09:58"
     },
     {
       "station": "MeijiJingumae",

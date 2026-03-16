@@ -4,7 +4,7 @@
   "direction": "for_yoyogiuehara",
   "trainType": "Local",
   "originStation": "Abiko",
-  "destinationStation": "YoyogiUehara",
+  "destinationStation": "MukogaokaYuen",
   "timetable": [
     {
       "station": "Ayase",
@@ -12,7 +12,7 @@
     },
     {
       "station": "KitaSenju",
-      "departureTime": "08:42"
+      "departureTime": "08:41"
     },
     {
       "station": "Machiya",
@@ -20,67 +20,67 @@
     },
     {
       "station": "NishiNippori",
-      "departureTime": "08:49"
+      "departureTime": "08:50"
     },
     {
       "station": "Sendagi",
-      "departureTime": "08:51"
+      "departureTime": "08:52"
     },
     {
       "station": "Nezu",
-      "departureTime": "08:53"
+      "departureTime": "08:55"
     },
     {
       "station": "Yushima",
-      "departureTime": "08:56"
-    },
-    {
-      "station": "ShinOchanomizu",
       "departureTime": "08:58"
     },
     {
-      "station": "Otemachi",
+      "station": "ShinOchanomizu",
       "departureTime": "09:01"
     },
     {
+      "station": "Otemachi",
+      "departureTime": "09:04"
+    },
+    {
       "station": "Nijubashimae",
-      "departureTime": "09:03"
+      "departureTime": "09:06"
     },
     {
       "station": "Hibiya",
-      "departureTime": "09:05"
+      "departureTime": "09:08"
     },
     {
       "station": "Kasumigaseki",
-      "departureTime": "09:07"
+      "departureTime": "09:11"
     },
     {
       "station": "KokkaiGijidomae",
-      "departureTime": "09:09"
+      "departureTime": "09:13"
     },
     {
       "station": "Akasaka",
-      "departureTime": "09:12"
+      "departureTime": "09:15"
     },
     {
       "station": "Nogizaka",
-      "departureTime": "09:14"
-    },
-    {
-      "station": "OmoteSando",
       "departureTime": "09:17"
     },
     {
-      "station": "MeijiJingumae",
-      "departureTime": "09:19"
+      "station": "OmoteSando",
+      "departureTime": "09:20"
     },
     {
-      "station": "YoyogiKoen",
+      "station": "MeijiJingumae",
       "departureTime": "09:21"
     },
     {
+      "station": "YoyogiKoen",
+      "departureTime": "09:23"
+    },
+    {
       "station": "YoyogiUehara",
-      "arrivalTime": "09:23"
+      "arrivalTime": "09:25"
     }
   ]
 }

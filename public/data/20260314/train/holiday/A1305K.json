@@ -8,83 +8,83 @@
   "timetable": [
     {
       "station": "KitaAyase",
-      "departureTime": "13:17"
-    },
-    {
-      "station": "Ayase",
-      "departureTime": "13:23"
-    },
-    {
-      "station": "KitaSenju",
-      "departureTime": "13:27"
-    },
-    {
-      "station": "Machiya",
-      "departureTime": "13:30"
-    },
-    {
-      "station": "NishiNippori",
-      "departureTime": "13:33"
-    },
-    {
-      "station": "Sendagi",
-      "departureTime": "13:34"
-    },
-    {
-      "station": "Nezu",
-      "departureTime": "13:37"
-    },
-    {
-      "station": "Yushima",
-      "departureTime": "13:38"
-    },
-    {
-      "station": "ShinOchanomizu",
-      "departureTime": "13:41"
-    },
-    {
-      "station": "Otemachi",
-      "departureTime": "13:43"
-    },
-    {
-      "station": "Nijubashimae",
-      "departureTime": "13:44"
-    },
-    {
-      "station": "Hibiya",
-      "departureTime": "13:46"
-    },
-    {
-      "station": "Kasumigaseki",
-      "departureTime": "13:49"
-    },
-    {
-      "station": "KokkaiGijidomae",
-      "departureTime": "13:50"
-    },
-    {
-      "station": "Akasaka",
-      "departureTime": "13:52"
-    },
-    {
-      "station": "Nogizaka",
-      "departureTime": "13:54"
-    },
-    {
-      "station": "OmoteSando",
       "departureTime": "13:57"
     },
     {
+      "station": "Ayase",
+      "departureTime": "14:03"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "14:07"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "14:10"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "14:13"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "14:14"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "14:17"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "14:18"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "14:21"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "14:23"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "14:24"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "14:26"
+    },
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "14:29"
+    },
+    {
+      "station": "KokkaiGijidomae",
+      "departureTime": "14:30"
+    },
+    {
+      "station": "Akasaka",
+      "departureTime": "14:32"
+    },
+    {
+      "station": "Nogizaka",
+      "departureTime": "14:34"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "14:37"
+    },
+    {
       "station": "MeijiJingumae",
-      "departureTime": "13:59"
+      "departureTime": "14:39"
     },
     {
       "station": "YoyogiKoen",
-      "departureTime": "14:01"
+      "departureTime": "14:41"
     },
     {
       "station": "YoyogiUehara",
-      "arrivalTime": "14:02"
+      "arrivalTime": "14:42"
     }
   ]
 }

@@ -31,7 +31,7 @@
     "ayaseArrivalTime": "05:04"
   },
   {
-    "trainNumber": "A501S",
+    "trainNumber": "A509K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -66,7 +66,7 @@
     "ayaseArrivalTime": "05:26"
   },
   {
-    "trainNumber": "A503S",
+    "trainNumber": "A501S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -160,11 +160,11 @@
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
-    "originDepartureTime": "06:19",
+    "originDepartureTime": "06:23",
     "stationName": "NishiNippori",
-    "destinationArrivalTime": "06:23",
-    "kitaAyaseDepartureTime": "06:19",
-    "ayaseArrivalTime": "06:23"
+    "destinationArrivalTime": "06:27",
+    "kitaAyaseDepartureTime": "06:23",
+    "ayaseArrivalTime": "06:27"
   },
   {
     "trainNumber": "A513S",
@@ -178,17 +178,6 @@
     "yoyogiUeharaArrivalTime": "07:10"
   },
   {
-    "trainNumber": "A696S3",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "06:32",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "06:36",
-    "kitaAyaseDepartureTime": "06:32",
-    "ayaseArrivalTime": "06:36"
-  },
-  {
     "trainNumber": "A621K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -200,6 +189,17 @@
     "yoyogiUeharaArrivalTime": "07:19"
   },
   {
+    "trainNumber": "A696S3",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "06:40",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "06:44",
+    "kitaAyaseDepartureTime": "06:40",
+    "ayaseArrivalTime": "06:44"
+  },
+  {
     "trainNumber": "A629S",
     "type": "Express",
     "destinationStationName": "MukogaokaYuen",
@@ -208,17 +208,6 @@
     "stationDepartureTime": "06:58",
     "ayaseDepartureTime": "06:48",
     "yoyogiUeharaArrivalTime": "07:28"
-  },
-  {
-    "trainNumber": "A696S4",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "06:47",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "06:51",
-    "kitaAyaseDepartureTime": "06:47",
-    "ayaseArrivalTime": "06:51"
   },
   {
     "trainNumber": "A623K",
@@ -232,6 +221,17 @@
     "yoyogiUeharaArrivalTime": "07:36"
   },
   {
+    "trainNumber": "A696S4",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "06:54",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "06:58",
+    "kitaAyaseDepartureTime": "06:54",
+    "ayaseArrivalTime": "06:58"
+  },
+  {
     "trainNumber": "A633S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -243,24 +243,14 @@
     "yoyogiUeharaArrivalTime": "07:43"
   },
   {
-    "trainNumber": "A796S1",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "07:01",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "07:05",
-    "kitaAyaseDepartureTime": "07:01",
-    "ayaseArrivalTime": "07:05"
-  },
-  {
     "trainNumber": "A755E",
     "type": "Express",
     "destinationStationName": "SagamiOno",
-    "originStationName": "Ayase",
-    "originDepartureTime": "07:09",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "07:04",
     "stationName": "NishiNippori",
     "stationDepartureTime": "07:19",
+    "kitaAyaseDepartureTime": "07:04",
     "ayaseDepartureTime": "07:09",
     "yoyogiUeharaArrivalTime": "07:48"
   },
@@ -276,6 +266,17 @@
     "yoyogiUeharaArrivalTime": "07:53"
   },
   {
+    "trainNumber": "A796S1",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "07:10",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "07:14",
+    "kitaAyaseDepartureTime": "07:10",
+    "ayaseArrivalTime": "07:14"
+  },
+  {
     "trainNumber": "A631S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -285,17 +286,6 @@
     "destinationArrivalTime": "07:58",
     "ayaseDepartureTime": "07:19",
     "yoyogiUeharaArrivalTime": "07:58"
-  },
-  {
-    "trainNumber": "A796S2",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "07:15",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "07:19",
-    "kitaAyaseDepartureTime": "07:15",
-    "ayaseArrivalTime": "07:19"
   },
   {
     "trainNumber": "A619S",
@@ -309,6 +299,17 @@
     "yoyogiUeharaArrivalTime": "08:03"
   },
   {
+    "trainNumber": "A796S2",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "07:22",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "07:26",
+    "kitaAyaseDepartureTime": "07:22",
+    "ayaseArrivalTime": "07:26"
+  },
+  {
     "trainNumber": "A621S",
     "type": "Express",
     "destinationStationName": "MukogaokaYuen",
@@ -319,27 +320,17 @@
     "yoyogiUeharaArrivalTime": "08:08"
   },
   {
-    "trainNumber": "A705K",
+    "trainNumber": "A711K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
-    "originStationName": "Ayase",
-    "originDepartureTime": "07:34",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "07:29",
     "stationName": "NishiNippori",
     "stationDepartureTime": "07:44",
     "destinationArrivalTime": "08:13",
+    "kitaAyaseDepartureTime": "07:29",
     "ayaseDepartureTime": "07:34",
     "yoyogiUeharaArrivalTime": "08:13"
-  },
-  {
-    "trainNumber": "A796S3",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "07:30",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "07:34",
-    "kitaAyaseDepartureTime": "07:30",
-    "ayaseArrivalTime": "07:34"
   },
   {
     "trainNumber": "A715K",
@@ -364,27 +355,16 @@
     "yoyogiUeharaArrivalTime": "08:23"
   },
   {
-    "trainNumber": "A709K",
+    "trainNumber": "A705K",
     "type": "Express",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "KitaAyase",
-    "originDepartureTime": "07:41",
+    "originDepartureTime": "07:43",
     "stationName": "NishiNippori",
     "stationDepartureTime": "07:58",
-    "kitaAyaseDepartureTime": "07:41",
+    "kitaAyaseDepartureTime": "07:43",
     "ayaseDepartureTime": "07:48",
     "yoyogiUeharaArrivalTime": "08:28"
-  },
-  {
-    "trainNumber": "A796S4",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "07:46",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "07:50",
-    "kitaAyaseDepartureTime": "07:46",
-    "ayaseArrivalTime": "07:50"
   },
   {
     "trainNumber": "A723S",
@@ -398,7 +378,18 @@
     "yoyogiUeharaArrivalTime": "08:33"
   },
   {
-    "trainNumber": "A701S",
+    "trainNumber": "A796S3",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "07:53",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "07:57",
+    "kitaAyaseDepartureTime": "07:53",
+    "ayaseArrivalTime": "07:57"
+  },
+  {
+    "trainNumber": "A709K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -407,17 +398,6 @@
     "destinationArrivalTime": "08:38",
     "ayaseDepartureTime": "07:59",
     "yoyogiUeharaArrivalTime": "08:38"
-  },
-  {
-    "trainNumber": "A796S5",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "07:59",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "08:03",
-    "kitaAyaseDepartureTime": "07:59",
-    "ayaseArrivalTime": "08:03"
   },
   {
     "trainNumber": "A741E",
@@ -442,7 +422,18 @@
     "yoyogiUeharaArrivalTime": "08:49"
   },
   {
-    "trainNumber": "A703S",
+    "trainNumber": "A896S1",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "08:05",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "08:09",
+    "kitaAyaseDepartureTime": "08:05",
+    "ayaseArrivalTime": "08:09"
+  },
+  {
+    "trainNumber": "A701S",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Abiko",
@@ -450,17 +441,6 @@
     "stationDepartureTime": "08:25",
     "ayaseDepartureTime": "08:15",
     "yoyogiUeharaArrivalTime": "08:54"
-  },
-  {
-    "trainNumber": "A896S1",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "08:15",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "08:19",
-    "kitaAyaseDepartureTime": "08:15",
-    "ayaseArrivalTime": "08:19"
   },
   {
     "trainNumber": "A717K",
@@ -472,6 +452,17 @@
     "destinationArrivalTime": "09:00",
     "ayaseDepartureTime": "08:20",
     "yoyogiUeharaArrivalTime": "09:00"
+  },
+  {
+    "trainNumber": "A896S2",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "08:19",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "08:23",
+    "kitaAyaseDepartureTime": "08:19",
+    "ayaseArrivalTime": "08:23"
   },
   {
     "trainNumber": "A727K",
@@ -508,11 +499,11 @@
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
-    "originDepartureTime": "08:30",
+    "originDepartureTime": "08:32",
     "stationName": "NishiNippori",
     "stationDepartureTime": "08:47",
     "destinationArrivalTime": "09:17",
-    "kitaAyaseDepartureTime": "08:30",
+    "kitaAyaseDepartureTime": "08:32",
     "ayaseDepartureTime": "08:37",
     "yoyogiUeharaArrivalTime": "09:17"
   },
@@ -532,23 +523,23 @@
     "type": "Express",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "KitaAyase",
-    "originDepartureTime": "08:40",
+    "originDepartureTime": "08:42",
     "stationName": "NishiNippori",
     "stationDepartureTime": "08:58",
-    "kitaAyaseDepartureTime": "08:40",
+    "kitaAyaseDepartureTime": "08:42",
     "ayaseDepartureTime": "08:48",
     "yoyogiUeharaArrivalTime": "09:27"
   },
   {
-    "trainNumber": "A896S2",
+    "trainNumber": "A896S3",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
-    "originDepartureTime": "08:46",
+    "originDepartureTime": "08:47",
     "stationName": "NishiNippori",
-    "destinationArrivalTime": "08:50",
-    "kitaAyaseDepartureTime": "08:46",
-    "ayaseArrivalTime": "08:50"
+    "destinationArrivalTime": "08:51",
+    "kitaAyaseDepartureTime": "08:47",
+    "ayaseArrivalTime": "08:51"
   },
   {
     "trainNumber": "A839S",
@@ -573,17 +564,6 @@
     "yoyogiUeharaArrivalTime": "09:37"
   },
   {
-    "trainNumber": "A896S3",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "08:58",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "09:02",
-    "kitaAyaseDepartureTime": "08:58",
-    "ayaseArrivalTime": "09:02"
-  },
-  {
     "trainNumber": "A829K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
@@ -593,6 +573,17 @@
     "destinationArrivalTime": "09:42",
     "ayaseDepartureTime": "09:03",
     "yoyogiUeharaArrivalTime": "09:42"
+  },
+  {
+    "trainNumber": "A896S4",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "08:59",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "09:03",
+    "kitaAyaseDepartureTime": "08:59",
+    "ayaseArrivalTime": "09:03"
   },
   {
     "trainNumber": "A801K",
@@ -628,7 +619,7 @@
     "yoyogiUeharaArrivalTime": "09:57"
   },
   {
-    "trainNumber": "A905K",
+    "trainNumber": "A911K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -718,7 +709,7 @@
     "yoyogiUeharaArrivalTime": "10:27"
   },
   {
-    "trainNumber": "A905S2",
+    "trainNumber": "A903S2",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -787,7 +778,7 @@
     "yoyogiUeharaArrivalTime": "10:52"
   },
   {
-    "trainNumber": "A1009K",
+    "trainNumber": "A1005K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -822,7 +813,7 @@
     "ayaseArrivalTime": "10:22"
   },
   {
-    "trainNumber": "A1007S",
+    "trainNumber": "A1005S",
     "type": "SemiExpress",
     "destinationStationName": "SeijogakuenMae",
     "originStationName": "Ayase",
@@ -852,7 +843,7 @@
     "yoyogiUeharaArrivalTime": "11:12"
   },
   {
-    "trainNumber": "A1003K",
+    "trainNumber": "A1021K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -965,7 +956,7 @@
     "ayaseArrivalTime": "11:10"
   },
   {
-    "trainNumber": "A1111K",
+    "trainNumber": "A1107S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1001,7 +992,7 @@
     "yoyogiUeharaArrivalTime": "12:02"
   },
   {
-    "trainNumber": "A1021K",
+    "trainNumber": "A1003K",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
@@ -1022,7 +1013,7 @@
     "ayaseArrivalTime": "11:30"
   },
   {
-    "trainNumber": "A1105K",
+    "trainNumber": "A1111K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1045,7 +1036,7 @@
     "yoyogiUeharaArrivalTime": "12:17"
   },
   {
-    "trainNumber": "A1105S",
+    "trainNumber": "A1103S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1115,7 +1106,7 @@
     "yoyogiUeharaArrivalTime": "12:42"
   },
   {
-    "trainNumber": "A1103S",
+    "trainNumber": "A1101S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
@@ -1125,25 +1116,15 @@
     "yoyogiUeharaArrivalTime": "12:47"
   },
   {
-    "trainNumber": "A1296S1",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "12:06",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "12:10",
-    "kitaAyaseDepartureTime": "12:06",
-    "ayaseArrivalTime": "12:10"
-  },
-  {
-    "trainNumber": "A1215K",
+    "trainNumber": "A1205K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
-    "originStationName": "Ayase",
-    "originDepartureTime": "12:13",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "12:07",
     "stationName": "NishiNippori",
     "stationDepartureTime": "12:23",
     "destinationArrivalTime": "12:52",
+    "kitaAyaseDepartureTime": "12:07",
     "ayaseDepartureTime": "12:13",
     "yoyogiUeharaArrivalTime": "12:52"
   },
@@ -1182,7 +1163,7 @@
     "yoyogiUeharaArrivalTime": "13:07"
   },
   {
-    "trainNumber": "A1296S2",
+    "trainNumber": "A1296S1",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
@@ -1239,7 +1220,7 @@
     "yoyogiUeharaArrivalTime": "13:27"
   },
   {
-    "trainNumber": "A1296S3",
+    "trainNumber": "A1296S2",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
@@ -1262,7 +1243,7 @@
     "yoyogiUeharaArrivalTime": "13:32"
   },
   {
-    "trainNumber": "A1209K",
+    "trainNumber": "A1215K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -1273,7 +1254,7 @@
     "yoyogiUeharaArrivalTime": "13:37"
   },
   {
-    "trainNumber": "A1211K",
+    "trainNumber": "A1207S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1319,7 +1300,7 @@
     "yoyogiUeharaArrivalTime": "13:52"
   },
   {
-    "trainNumber": "A1203K",
+    "trainNumber": "A1221K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -1330,7 +1311,7 @@
     "yoyogiUeharaArrivalTime": "13:57"
   },
   {
-    "trainNumber": "A1305K",
+    "trainNumber": "A1311K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1364,7 +1345,7 @@
     "ayaseArrivalTime": "13:30"
   },
   {
-    "trainNumber": "A1305S",
+    "trainNumber": "A1303S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1444,7 +1425,7 @@
     "yoyogiUeharaArrivalTime": "14:37"
   },
   {
-    "trainNumber": "A1315K",
+    "trainNumber": "A1305K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1478,7 +1459,7 @@
     "ayaseArrivalTime": "14:10"
   },
   {
-    "trainNumber": "A1425K",
+    "trainNumber": "A1443S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1558,7 +1539,7 @@
     "yoyogiUeharaArrivalTime": "15:17"
   },
   {
-    "trainNumber": "A1409K",
+    "trainNumber": "A1419S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1571,7 +1552,7 @@
     "yoyogiUeharaArrivalTime": "15:22"
   },
   {
-    "trainNumber": "A1429K",
+    "trainNumber": "A1405S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "Abiko",
@@ -1592,7 +1573,7 @@
     "ayaseArrivalTime": "14:50"
   },
   {
-    "trainNumber": "A1411K",
+    "trainNumber": "A1407S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1604,7 +1585,7 @@
     "yoyogiUeharaArrivalTime": "15:32"
   },
   {
-    "trainNumber": "A1443S",
+    "trainNumber": "A1425K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -1638,7 +1619,7 @@
     "yoyogiUeharaArrivalTime": "15:47"
   },
   {
-    "trainNumber": "A1505K",
+    "trainNumber": "A1511K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1691,7 +1672,7 @@
     "yoyogiUeharaArrivalTime": "16:01"
   },
   {
-    "trainNumber": "A1505S",
+    "trainNumber": "A1503S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1704,7 +1685,7 @@
     "yoyogiUeharaArrivalTime": "16:06"
   },
   {
-    "trainNumber": "A1407S",
+    "trainNumber": "A1403K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
@@ -1737,7 +1718,7 @@
     "yoyogiUeharaArrivalTime": "16:16"
   },
   {
-    "trainNumber": "A1519S",
+    "trainNumber": "A1515K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -1782,7 +1763,7 @@
     "ayaseArrivalTime": "15:52"
   },
   {
-    "trainNumber": "A1515K",
+    "trainNumber": "A1505K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1794,7 +1775,7 @@
     "yoyogiUeharaArrivalTime": "16:36"
   },
   {
-    "trainNumber": "A1503K",
+    "trainNumber": "A1521K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -1805,7 +1786,7 @@
     "yoyogiUeharaArrivalTime": "16:41"
   },
   {
-    "trainNumber": "A1539S",
+    "trainNumber": "A1543S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1818,7 +1799,7 @@
     "yoyogiUeharaArrivalTime": "16:46"
   },
   {
-    "trainNumber": "A1521K",
+    "trainNumber": "A1529K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
@@ -1885,7 +1866,7 @@
     "yoyogiUeharaArrivalTime": "17:11"
   },
   {
-    "trainNumber": "A1609K",
+    "trainNumber": "A1619S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -1920,7 +1901,7 @@
     "ayaseArrivalTime": "16:42"
   },
   {
-    "trainNumber": "A1611S",
+    "trainNumber": "A1607S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1932,7 +1913,7 @@
     "yoyogiUeharaArrivalTime": "17:26"
   },
   {
-    "trainNumber": "A1603S",
+    "trainNumber": "A1601S",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "Abiko",
@@ -1955,7 +1936,7 @@
     "yoyogiUeharaArrivalTime": "17:36"
   },
   {
-    "trainNumber": "A1625K",
+    "trainNumber": "A1639S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -1977,7 +1958,7 @@
     "ayaseArrivalTime": "17:02"
   },
   {
-    "trainNumber": "A1717K",
+    "trainNumber": "A1711K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -1999,7 +1980,7 @@
     "yoyogiUeharaArrivalTime": "17:51"
   },
   {
-    "trainNumber": "A1705S",
+    "trainNumber": "A1703S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -2069,7 +2050,7 @@
     "yoyogiUeharaArrivalTime": "18:16"
   },
   {
-    "trainNumber": "A1743S",
+    "trainNumber": "A1725K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2080,7 +2061,7 @@
     "yoyogiUeharaArrivalTime": "18:21"
   },
   {
-    "trainNumber": "A1715K",
+    "trainNumber": "A1705K",
     "type": "SemiExpress",
     "destinationStationName": "MukogaokaYuen",
     "originStationName": "KitaAyase",
@@ -2114,7 +2095,7 @@
     "ayaseArrivalTime": "17:52"
   },
   {
-    "trainNumber": "A1725S",
+    "trainNumber": "A1743S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -2126,7 +2107,7 @@
     "yoyogiUeharaArrivalTime": "18:36"
   },
   {
-    "trainNumber": "A1705K",
+    "trainNumber": "A1717K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2182,7 +2163,7 @@
     "yoyogiUeharaArrivalTime": "18:56"
   },
   {
-    "trainNumber": "A1719S",
+    "trainNumber": "A1715K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2193,7 +2174,7 @@
     "yoyogiUeharaArrivalTime": "19:01"
   },
   {
-    "trainNumber": "A1809K",
+    "trainNumber": "A1819S",
     "type": "Express",
     "destinationStationName": "Karakida",
     "originStationName": "KitaAyase",
@@ -2205,7 +2186,7 @@
     "yoyogiUeharaArrivalTime": "19:06"
   },
   {
-    "trainNumber": "A1713S",
+    "trainNumber": "A1763E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2227,7 +2208,7 @@
     "ayaseArrivalTime": "18:32"
   },
   {
-    "trainNumber": "A1811S",
+    "trainNumber": "A1807S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -2239,7 +2220,7 @@
     "yoyogiUeharaArrivalTime": "19:16"
   },
   {
-    "trainNumber": "A1803K",
+    "trainNumber": "A1821K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2262,7 +2243,7 @@
     "yoyogiUeharaArrivalTime": "19:26"
   },
   {
-    "trainNumber": "A1829K",
+    "trainNumber": "A1805S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2273,7 +2254,7 @@
     "yoyogiUeharaArrivalTime": "19:32"
   },
   {
-    "trainNumber": "A1817K",
+    "trainNumber": "A1811K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -2296,7 +2277,7 @@
     "yoyogiUeharaArrivalTime": "19:42"
   },
   {
-    "trainNumber": "A1805S",
+    "trainNumber": "A1803S",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "KitaAyase",
@@ -2383,7 +2364,7 @@
     "stationName": "NishiNippori"
   },
   {
-    "trainNumber": "A1911K",
+    "trainNumber": "A1911S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -2395,7 +2376,7 @@
     "yoyogiUeharaArrivalTime": "20:13"
   },
   {
-    "trainNumber": "A1925K",
+    "trainNumber": "A1939S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2418,7 +2399,7 @@
     "yoyogiUeharaArrivalTime": "20:24"
   },
   {
-    "trainNumber": "A1921K",
+    "trainNumber": "A1929K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2429,25 +2410,15 @@
     "yoyogiUeharaArrivalTime": "20:30"
   },
   {
-    "trainNumber": "A1996S3",
-    "type": "Local",
-    "destinationStationName": "Ayase",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "19:47",
-    "stationName": "NishiNippori",
-    "destinationArrivalTime": "19:51",
-    "kitaAyaseDepartureTime": "19:47",
-    "ayaseArrivalTime": "19:51"
-  },
-  {
-    "trainNumber": "A1923S",
+    "trainNumber": "A1917K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
-    "originStationName": "Ayase",
-    "originDepartureTime": "19:55",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "19:49",
     "stationName": "NishiNippori",
     "stationDepartureTime": "20:06",
     "destinationArrivalTime": "20:35",
+    "kitaAyaseDepartureTime": "19:49",
     "ayaseDepartureTime": "19:55",
     "yoyogiUeharaArrivalTime": "20:35"
   },
@@ -2463,14 +2434,24 @@
     "yoyogiUeharaArrivalTime": "20:41"
   },
   {
-    "trainNumber": "A1949E",
+    "trainNumber": "A2096S1",
+    "type": "Local",
+    "destinationStationName": "Ayase",
+    "originStationName": "KitaAyase",
+    "originDepartureTime": "20:00",
+    "stationName": "NishiNippori",
+    "destinationArrivalTime": "20:04",
+    "kitaAyaseDepartureTime": "20:00",
+    "ayaseArrivalTime": "20:04"
+  },
+  {
+    "trainNumber": "A2049E",
     "type": "Express",
     "destinationStationName": "HonAtsugi",
-    "originStationName": "KitaAyase",
-    "originDepartureTime": "19:59",
+    "originStationName": "Ayase",
+    "originDepartureTime": "20:06",
     "stationName": "NishiNippori",
     "stationDepartureTime": "20:17",
-    "kitaAyaseDepartureTime": "19:59",
     "ayaseDepartureTime": "20:06",
     "yoyogiUeharaArrivalTime": "20:46"
   },
@@ -2486,7 +2467,7 @@
     "yoyogiUeharaArrivalTime": "20:52"
   },
   {
-    "trainNumber": "A2019S",
+    "trainNumber": "A2015K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "KitaAyase",
@@ -2499,7 +2480,7 @@
     "yoyogiUeharaArrivalTime": "20:57"
   },
   {
-    "trainNumber": "A1943S",
+    "trainNumber": "A1925K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2530,7 +2511,7 @@
     "stationName": "NishiNippori"
   },
   {
-    "trainNumber": "A2096S1",
+    "trainNumber": "A2096S2",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
@@ -2541,7 +2522,7 @@
     "ayaseArrivalTime": "20:32"
   },
   {
-    "trainNumber": "A1903S",
+    "trainNumber": "A1901S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2552,7 +2533,7 @@
     "yoyogiUeharaArrivalTime": "21:13"
   },
   {
-    "trainNumber": "A2025S",
+    "trainNumber": "A2043S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2563,7 +2544,7 @@
     "yoyogiUeharaArrivalTime": "21:19"
   },
   {
-    "trainNumber": "A2029K",
+    "trainNumber": "A2005S",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "KitaAyase",
@@ -2575,7 +2556,7 @@
     "yoyogiUeharaArrivalTime": "21:26"
   },
   {
-    "trainNumber": "A2063E",
+    "trainNumber": "A2003K",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
@@ -2586,7 +2567,7 @@
     "ayaseArrivalTime": "20:48"
   },
   {
-    "trainNumber": "A2007S",
+    "trainNumber": "A2013S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2597,7 +2578,7 @@
     "yoyogiUeharaArrivalTime": "21:32"
   },
   {
-    "trainNumber": "A2096S2",
+    "trainNumber": "A2096S3",
     "type": "Local",
     "destinationStationName": "Ayase",
     "originStationName": "KitaAyase",
@@ -2608,7 +2589,7 @@
     "ayaseArrivalTime": "20:55"
   },
   {
-    "trainNumber": "A2001S",
+    "trainNumber": "A2021S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2642,7 +2623,7 @@
     "ayaseArrivalTime": "21:15"
   },
   {
-    "trainNumber": "A2013S",
+    "trainNumber": "A2063E",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2674,7 +2655,7 @@
     "ayaseArrivalTime": "21:27"
   },
   {
-    "trainNumber": "A2139S",
+    "trainNumber": "A2123S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Ayase",
@@ -2686,7 +2667,7 @@
     "yoyogiUeharaArrivalTime": "22:12"
   },
   {
-    "trainNumber": "A2115K",
+    "trainNumber": "A2111K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2720,7 +2701,7 @@
     "yoyogiUeharaArrivalTime": "22:28"
   },
   {
-    "trainNumber": "A2117K",
+    "trainNumber": "A2127K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2753,7 +2734,7 @@
     "yoyogiUeharaArrivalTime": "22:44"
   },
   {
-    "trainNumber": "A2219S",
+    "trainNumber": "A2215K",
     "type": "Express",
     "destinationStationName": "Isehara",
     "originStationName": "KitaAyase",
@@ -2765,7 +2746,7 @@
     "yoyogiUeharaArrivalTime": "22:52"
   },
   {
-    "trainNumber": "A2111K",
+    "trainNumber": "A2111S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2811,7 +2792,7 @@
     "ayaseArrivalTime": "22:39"
   },
   {
-    "trainNumber": "A2221K",
+    "trainNumber": "A2229K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2844,7 +2825,7 @@
     "ayaseArrivalTime": "22:52"
   },
   {
-    "trainNumber": "A2223S",
+    "trainNumber": "A2217K",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2888,7 +2869,7 @@
     "ayaseArrivalTime": "23:20"
   },
   {
-    "trainNumber": "A2203S",
+    "trainNumber": "A2201S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2922,7 +2903,7 @@
     "ayaseArrivalTime": "23:35"
   },
   {
-    "trainNumber": "A2307S",
+    "trainNumber": "A2313S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2933,7 +2914,7 @@
     "yoyogiUeharaArrivalTime": "00:22"
   },
   {
-    "trainNumber": "A2301S",
+    "trainNumber": "A2321S",
     "type": "Local",
     "destinationStationName": "YoyogiUehara",
     "originStationName": "Abiko",
@@ -2976,7 +2957,7 @@
     "ayaseArrivalTime": "00:17"
   },
   {
-    "trainNumber": "A2315K",
+    "trainNumber": "A2311K",
     "type": "Local",
     "destinationStationName": "KitaSenju",
     "originStationName": "Abiko",

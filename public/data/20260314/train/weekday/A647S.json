@@ -8,35 +8,35 @@
   "timetable": [
     {
       "station": "Ayase",
-      "departureTime": "07:05"
+      "departureTime": "07:06"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "07:09"
+      "departureTime": "07:10"
     },
     {
       "station": "Machiya",
-      "departureTime": "07:12"
+      "departureTime": "07:13"
     },
     {
       "station": "NishiNippori",
-      "departureTime": "07:15"
+      "departureTime": "07:16"
     },
     {
       "station": "Sendagi",
-      "departureTime": "07:17"
+      "departureTime": "07:18"
     },
     {
       "station": "Nezu",
-      "departureTime": "07:19"
+      "departureTime": "07:20"
     },
     {
       "station": "Yushima",
-      "departureTime": "07:21"
+      "departureTime": "07:22"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "07:23"
+      "departureTime": "07:24"
     },
     {
       "station": "Otemachi",

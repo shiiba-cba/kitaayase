@@ -3,52 +3,52 @@
   "calendar": "weekday",
   "direction": "for_yoyogiuehara",
   "trainType": "Local",
-  "originStation": "Kashiwa",
+  "originStation": "Toride",
   "destinationStation": "SeijogakuenMae",
   "timetable": [
     {
       "station": "Ayase",
-      "departureTime": "07:54"
+      "departureTime": "07:52"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "07:58"
+      "departureTime": "07:56"
     },
     {
       "station": "Machiya",
-      "departureTime": "08:02"
+      "departureTime": "08:00"
     },
     {
       "station": "NishiNippori",
-      "departureTime": "08:05"
+      "departureTime": "08:03"
     },
     {
       "station": "Sendagi",
-      "departureTime": "08:07"
+      "departureTime": "08:05"
     },
     {
       "station": "Nezu",
-      "departureTime": "08:10"
+      "departureTime": "08:08"
     },
     {
       "station": "Yushima",
-      "departureTime": "08:12"
+      "departureTime": "08:11"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "08:14"
+      "departureTime": "08:13"
     },
     {
       "station": "Otemachi",
-      "departureTime": "08:17"
+      "departureTime": "08:16"
     },
     {
       "station": "Nijubashimae",
-      "departureTime": "08:19"
+      "departureTime": "08:18"
     },
     {
       "station": "Hibiya",
-      "departureTime": "08:21"
+      "departureTime": "08:20"
     },
     {
       "station": "Kasumigaseki",

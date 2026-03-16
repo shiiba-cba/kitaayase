@@ -56,7 +56,7 @@
     },
     {
       "station": "KokkaiGijidomae",
-      "departureTime": "09:49"
+      "departureTime": "09:48"
     },
     {
       "station": "Akasaka",
@@ -64,7 +64,7 @@
     },
     {
       "station": "Nogizaka",
-      "departureTime": "09:53"
+      "departureTime": "09:52"
     },
     {
       "station": "OmoteSando",
@@ -80,7 +80,7 @@
     },
     {
       "station": "YoyogiUehara",
-      "arrivalTime": "10:01"
+      "arrivalTime": "10:00"
     }
   ]
 }

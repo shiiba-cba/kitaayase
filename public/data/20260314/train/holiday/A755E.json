@@ -3,9 +3,13 @@
   "calendar": "holiday",
   "direction": "for_yoyogiuehara",
   "trainType": "Express",
-  "originStation": "Ayase",
+  "originStation": "KitaAyase",
   "destinationStation": "SagamiOno",
   "timetable": [
+    {
+      "station": "KitaAyase",
+      "departureTime": "07:04"
+    },
     {
       "station": "Ayase",
       "departureTime": "07:09"

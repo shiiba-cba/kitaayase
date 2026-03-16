@@ -28,7 +28,7 @@
     },
     {
       "station": "Nezu",
-      "departureTime": "07:49"
+      "departureTime": "07:50"
     },
     {
       "station": "Yushima",
@@ -80,7 +80,7 @@
     },
     {
       "station": "YoyogiUehara",
-      "arrivalTime": "08:17"
+      "arrivalTime": "08:16"
     }
   ]
 }

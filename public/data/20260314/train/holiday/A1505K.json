@@ -8,79 +8,79 @@
   "timetable": [
     {
       "station": "Ayase",
-      "departureTime": "15:12"
+      "departureTime": "15:56"
     },
     {
       "station": "KitaSenju",
-      "departureTime": "15:15"
+      "departureTime": "16:00"
     },
     {
       "station": "Machiya",
-      "departureTime": "15:19"
+      "departureTime": "16:03"
     },
     {
       "station": "NishiNippori",
-      "departureTime": "15:21"
+      "departureTime": "16:06"
     },
     {
       "station": "Sendagi",
-      "departureTime": "15:23"
+      "departureTime": "16:08"
     },
     {
       "station": "Nezu",
-      "departureTime": "15:25"
+      "departureTime": "16:10"
     },
     {
       "station": "Yushima",
-      "departureTime": "15:27"
+      "departureTime": "16:12"
     },
     {
       "station": "ShinOchanomizu",
-      "departureTime": "15:29"
+      "departureTime": "16:14"
     },
     {
       "station": "Otemachi",
-      "departureTime": "15:32"
+      "departureTime": "16:16"
     },
     {
       "station": "Nijubashimae",
-      "departureTime": "15:33"
+      "departureTime": "16:18"
     },
     {
       "station": "Hibiya",
-      "departureTime": "15:35"
+      "departureTime": "16:20"
     },
     {
       "station": "Kasumigaseki",
-      "departureTime": "15:37"
+      "departureTime": "16:22"
     },
     {
       "station": "KokkaiGijidomae",
-      "departureTime": "15:39"
+      "departureTime": "16:24"
     },
     {
       "station": "Akasaka",
-      "departureTime": "15:41"
+      "departureTime": "16:25"
     },
     {
       "station": "Nogizaka",
-      "departureTime": "15:43"
+      "departureTime": "16:28"
     },
     {
       "station": "OmoteSando",
-      "departureTime": "15:46"
+      "departureTime": "16:30"
     },
     {
       "station": "MeijiJingumae",
-      "departureTime": "15:47"
+      "departureTime": "16:32"
     },
     {
       "station": "YoyogiKoen",
-      "departureTime": "15:49"
+      "departureTime": "16:34"
     },
     {
       "station": "YoyogiUehara",
-      "arrivalTime": "15:51"
+      "arrivalTime": "16:36"
     }
   ]
 }
