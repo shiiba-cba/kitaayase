@@ -1,0 +1,921 @@
+{
+  "generatedAt": "2026-03-16T14:56:09.515Z",
+  "diagramDate": "20260316",
+  "from": "綾瀬",
+  "to": "北綾瀬",
+  "source": "https://transit.yahoo.co.jp/",
+  "note": "Yahoo!路線情報の検索結果（__NEXT_DATA__）から抽出。利用規約・権利条件に注意。",
+  "query": {
+    "startHour": 4,
+    "fallbackStepMin": 10
+  },
+  "type": "holiday",
+  "date": "2026-03-20",
+  "rows": [
+    {
+      "requestedAt": "23:45",
+      "departureTime": "00:04",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:45",
+      "departureTime": "00:25",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:00",
+      "departureTime": "05:13",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:00",
+      "departureTime": "05:33",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "04:00",
+      "departureTime": "05:55",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:56",
+      "departureTime": "06:14",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:56",
+      "departureTime": "06:32",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "05:56",
+      "departureTime": "06:48",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:49",
+      "departureTime": "07:03",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:49",
+      "departureTime": "07:16",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "06:49",
+      "departureTime": "07:27",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:28",
+      "departureTime": "07:43",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:28",
+      "departureTime": "07:59",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "07:28",
+      "departureTime": "08:11",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:12",
+      "departureTime": "08:18",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:12",
+      "departureTime": "08:31",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:12",
+      "departureTime": "08:41",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:42",
+      "departureTime": "08:53",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:42",
+      "departureTime": "08:57",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "08:42",
+      "departureTime": "09:05",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:06",
+      "departureTime": "09:14",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:06",
+      "departureTime": "09:22",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:06",
+      "departureTime": "09:29",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:30",
+      "departureTime": "09:37",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:30",
+      "departureTime": "09:45",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:30",
+      "departureTime": "09:54",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:55",
+      "departureTime": "10:00",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:55",
+      "departureTime": "10:11",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "09:55",
+      "departureTime": "10:17",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:18",
+      "departureTime": "10:27",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:18",
+      "departureTime": "10:40",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:18",
+      "departureTime": "10:47",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:48",
+      "departureTime": "10:57",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:48",
+      "departureTime": "11:07",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "10:48",
+      "departureTime": "11:17",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:18",
+      "departureTime": "11:26",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:18",
+      "departureTime": "11:36",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:18",
+      "departureTime": "11:46",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:47",
+      "departureTime": "11:56",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:47",
+      "departureTime": "12:06",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "11:47",
+      "departureTime": "12:16",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:17",
+      "departureTime": "12:26",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:17",
+      "departureTime": "12:36",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:17",
+      "departureTime": "12:46",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:47",
+      "departureTime": "12:56",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:47",
+      "departureTime": "13:06",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "12:47",
+      "departureTime": "13:16",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:17",
+      "departureTime": "13:26",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:17",
+      "departureTime": "13:36",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:17",
+      "departureTime": "13:46",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:47",
+      "departureTime": "13:56",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:47",
+      "departureTime": "14:06",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "13:47",
+      "departureTime": "14:16",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:17",
+      "departureTime": "14:26",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:17",
+      "departureTime": "14:36",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:17",
+      "departureTime": "14:46",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:47",
+      "departureTime": "14:56",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:47",
+      "departureTime": "15:07",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "14:47",
+      "departureTime": "15:18",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:19",
+      "departureTime": "15:27",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:19",
+      "departureTime": "15:38",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:19",
+      "departureTime": "15:47",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:48",
+      "departureTime": "15:58",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:48",
+      "departureTime": "16:07",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "15:48",
+      "departureTime": "16:18",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:19",
+      "departureTime": "16:28",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:19",
+      "departureTime": "16:37",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:19",
+      "departureTime": "16:48",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:49",
+      "departureTime": "16:57",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:49",
+      "departureTime": "17:08",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "16:49",
+      "departureTime": "17:18",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:19",
+      "departureTime": "17:27",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:19",
+      "departureTime": "17:38",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:19",
+      "departureTime": "17:47",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:48",
+      "departureTime": "17:58",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:48",
+      "departureTime": "18:07",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "17:48",
+      "departureTime": "18:18",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:19",
+      "departureTime": "18:27",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:19",
+      "departureTime": "18:37",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:19",
+      "departureTime": "18:48",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:49",
+      "departureTime": "18:58",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:49",
+      "departureTime": "19:03",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "18:49",
+      "departureTime": "19:08",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:09",
+      "departureTime": "19:18",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:09",
+      "departureTime": "19:25",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:09",
+      "departureTime": "19:36",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:37",
+      "departureTime": "19:48",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:37",
+      "departureTime": "19:58",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "19:37",
+      "departureTime": "20:09",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:10",
+      "departureTime": "20:19",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:10",
+      "departureTime": "20:27",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:10",
+      "departureTime": "20:36",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:37",
+      "departureTime": "20:43",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:37",
+      "departureTime": "20:49",
+      "destination": "北綾瀬行",
+      "departurePlatform": "4番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "20:37",
+      "departureTime": "21:02",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:03",
+      "departureTime": "21:12",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:03",
+      "departureTime": "21:17",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:03",
+      "departureTime": "21:30",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:31",
+      "departureTime": "21:35",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:31",
+      "departureTime": "21:45",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:31",
+      "departureTime": "21:54",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:55",
+      "departureTime": "22:04",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:55",
+      "departureTime": "22:12",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "21:55",
+      "departureTime": "22:24",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:25",
+      "departureTime": "22:29",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:25",
+      "departureTime": "22:41",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:25",
+      "departureTime": "22:47",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:48",
+      "departureTime": "22:55",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:48",
+      "departureTime": "23:02",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "22:48",
+      "departureTime": "23:09",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:10",
+      "departureTime": "23:23",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:10",
+      "departureTime": "23:39",
+      "destination": "北綾瀬行",
+      "departurePlatform": "3番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    },
+    {
+      "requestedAt": "23:10",
+      "departureTime": "23:44",
+      "destination": "北綾瀬行",
+      "departurePlatform": "0番線",
+      "railName": "東京メトロ千代田線",
+      "stationCode": "22499"
+    }
+  ],
+  "errors": []
+}

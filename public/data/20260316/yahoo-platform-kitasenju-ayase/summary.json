@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-03-16T14:59:02.415Z",
+  "diagramDate": "20260316",
+  "from": "北千住",
+  "to": "綾瀬",
+  "source": "https://transit.yahoo.co.jp/",
+  "note": "Yahoo!路線情報の検索結果（__NEXT_DATA__）から抽出。利用規約・権利条件に注意。",
+  "query": {
+    "startHour": 4,
+    "fallbackStepMin": 10
+  },
+  "weekday": {
+    "date": "2026-03-16",
+    "count": 265,
+    "errorCount": 0
+  },
+  "holiday": {
+    "date": "2026-03-20",
+    "count": 201,
+    "errorCount": 0
+  }
+}
