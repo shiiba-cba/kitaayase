@@ -38,7 +38,6 @@ export function calculateTransferInfo(
   let transferInfo: TransferInfo | undefined = undefined;
 
   // 1. 北綾瀬 -> 代々木上原方面の乗り換え判定
-  // 北綾瀬始発の3両(96S)から、綾瀬駅で千代田線本線への乗り換え
   if (
     direction === "for_yoyogiuehara" &&
     row.trainNumber.includes("96S") &&
@@ -46,10 +45,8 @@ export function calculateTransferInfo(
   ) {
     const [arrH, arrM] = row.ayaseArrivalTime.split(":").map(Number);
     let arrTotal = arrH * 60 + arrM;
-    if (arrTotal < 240) arrTotal += 1440; // 4:00 AM 境界
+    if (arrTotal < 240) arrTotal += 1440;
 
-    // 2分後以降に発車する「次の電車」を特定し、
-    // その電車が綾瀬始発なら乗り換え可にする
     const nextTrainAfterTransfer = ayaseTimetable
       .filter((conn) => {
         if (!conn.ayaseDepartureTime) return false;
@@ -64,12 +61,10 @@ export function calculateTransferInfo(
       .sort((a, b) => {
         const [aH, aM] = (a.ayaseDepartureTime || "00:00").split(":").map(Number);
         const [bH, bM] = (b.ayaseDepartureTime || "00:00").split(":").map(Number);
-
         let aTotal = aH * 60 + aM;
         let bTotal = bH * 60 + bM;
         if (aTotal < 240) aTotal += 1440;
         if (bTotal < 240) bTotal += 1440;
-
         return aTotal - bTotal;
       })[0];
 
@@ -77,7 +72,6 @@ export function calculateTransferInfo(
   }
 
   // 2. 代々木上原 -> 北綾瀬方面の複雑な乗り換え判定
-  // 本線から北綾瀬に行く際、直通を待つか綾瀬で支線に乗り換えるか
   if (
     direction === "for_kitaayase" &&
     stationKey !== "ayase" &&
@@ -88,7 +82,7 @@ export function calculateTransferInfo(
     if (currentAyaseArrival) {
       const [arrH, arrM] = currentAyaseArrival.split(":").map(Number);
       let arrTotal = arrH * 60 + arrM;
-      if (arrTotal < 240) arrTotal += 1440; // 4:00 AM 境界
+      if (arrTotal < 240) arrTotal += 1440;
 
       const minTransferMinutes = requiredTransferMinutes(
         currentAyaseArrival,
@@ -113,26 +107,33 @@ export function calculateTransferInfo(
         r.destinationStationName === "KitaAyase" && !r.trainNumber.includes("96S")
       );
 
-      // (B)と(C)を比較して、北綾瀬への到着が早い方を案内する
+      // 到着時刻の比較
+      let shuttleArrivalTime: number | null = null;
       if (reachableShuttle) {
-        if (!nextThroughTrain) {
+        const [sArrH, sArrM] = (reachableShuttle.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
+        shuttleArrivalTime = sArrH * 60 + sArrM;
+        if (shuttleArrivalTime < 240) shuttleArrivalTime += 1440;
+      }
+
+      let throughArrivalTime: number | null = null;
+      if (nextThroughTrain) {
+        const [tArrH, tArrM] = (nextThroughTrain.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
+        throughArrivalTime = tArrH * 60 + tArrM;
+        if (throughArrivalTime < 240) throughArrivalTime += 1440;
+      }
+
+      // ロジックの判定
+      if (shuttleArrivalTime !== null) {
+        if (throughArrivalTime === null || shuttleArrivalTime <= throughArrivalTime) {
+          // シャトルが早い、または同着の場合はシャトル（乗り換え案内）
+          // 指示通り、我孫子行などから綾瀬始発に繋がる場合はこちら
           transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
         } else {
-          const [sArrH, sArrM] = (reachableShuttle.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
-          let sArrTotal = sArrH * 60 + sArrM;
-          if (sArrTotal < 240) sArrTotal += 1440;
-
-          const [tArrH, tArrM] = (nextThroughTrain.kitaAyaseArrivalTime || "00:00").split(":").map(Number);
-          let tArrTotal = tArrH * 60 + tArrM;
-          if (tArrTotal < 240) tArrTotal += 1440;
-
-          if (sArrTotal <= tArrTotal) {
-            transferInfo = { label: "綾瀬で0番線にのりかえ", color: "#ff7f00" };
-          } else {
-            transferInfo = { label: "後続の北綾瀬行に接続", color: "#ff7f00" };
-          }
+          // 直通の方が早い
+          transferInfo = { label: "後続の北綾瀬行に接続", color: "#ff7f00" };
         }
-      } else if (nextThroughTrain) {
+      } else if (throughArrivalTime !== null) {
+        // シャトルに間に合わないが直通はある
         transferInfo = { label: "後続の北綾瀬行に接続", color: "#ff7f00" };
       }
     }
