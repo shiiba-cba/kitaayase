@@ -1,0 +1,58 @@
+{
+  "trainNumber": "A2333S",
+  "calendar": "holiday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "Local",
+  "originStation": "Abiko",
+  "destinationStation": "Kasumigaseki",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "departureTime": "00:04"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "00:08"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "00:11"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "00:14"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "00:15"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "00:18"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "00:20"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "00:22"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "00:25"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "00:26"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "00:28"
+    },
+    {
+      "station": "Kasumigaseki",
+      "arrivalTime": "00:30"
+    }
+  ]
+}

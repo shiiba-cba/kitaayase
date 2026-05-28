@@ -1,0 +1,14 @@
+{
+  "trainNumber": "B609S",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Ayase",
+  "destinationStation": "Matsudo",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "arrivalTime": "06:00"
+    }
+  ]
+}

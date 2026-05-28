@@ -1,0 +1,58 @@
+{
+  "trainNumber": "B2005K",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Kasumigaseki",
+  "destinationStation": "Abiko",
+  "timetable": [
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "20:12"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "20:14"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "20:17"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "20:18"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "20:21"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "20:23"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "20:24"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "20:27"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "20:30"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "20:32"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "20:36"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "20:39"
+    }
+  ]
+}

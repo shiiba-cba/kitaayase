@@ -1,0 +1,38 @@
+{
+  "trainNumber": "B513S",
+  "calendar": "holiday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Yushima",
+  "destinationStation": "Abiko",
+  "timetable": [
+    {
+      "station": "Yushima",
+      "departureTime": "05:00"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "05:01"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "05:04"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "05:06"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "05:08"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "05:15"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "05:18"
+    }
+  ]
+}

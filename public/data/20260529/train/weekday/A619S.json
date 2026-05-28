@@ -1,0 +1,62 @@
+{
+  "trainNumber": "A619S",
+  "calendar": "weekday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "Local",
+  "originStation": "KitaAyase",
+  "destinationStation": "Kasumigaseki",
+  "timetable": [
+    {
+      "station": "KitaAyase",
+      "departureTime": "06:20"
+    },
+    {
+      "station": "Ayase",
+      "departureTime": "06:25"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "06:28"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "06:32"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "06:34"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "06:36"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "06:38"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "06:40"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "06:42"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "06:45"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "06:46"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "06:48"
+    },
+    {
+      "station": "Kasumigaseki",
+      "arrivalTime": "06:50"
+    }
+  ]
+}

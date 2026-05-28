@@ -1,0 +1,18 @@
+{
+  "trainNumber": "B2396S1",
+  "calendar": "holiday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Ayase",
+  "destinationStation": "KitaAyase",
+  "timetable": [
+    {
+      "station": "Ayase",
+      "departureTime": "23:09"
+    },
+    {
+      "station": "KitaAyase",
+      "arrivalTime": "23:13"
+    }
+  ]
+}

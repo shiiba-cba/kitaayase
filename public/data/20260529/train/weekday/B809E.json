@@ -1,0 +1,29 @@
+{
+  "trainNumber": "B809E",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "LimitedExpress",
+  "originStation": "",
+  "destinationStation": "KitaSenju",
+  "timetable": [
+    {
+      "station": "YoyogiUehara"
+    },
+    {
+      "station": "OmoteSando",
+      "arrivalTime": "09:08"
+    },
+    {
+      "station": "Kasumigaseki",
+      "arrivalTime": "09:16"
+    },
+    {
+      "station": "Otemachi",
+      "arrivalTime": "09:23"
+    },
+    {
+      "station": "KitaSenju",
+      "arrivalTime": "09:40"
+    }
+  ]
+}

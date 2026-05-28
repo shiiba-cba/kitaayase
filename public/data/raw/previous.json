@@ -27978,6 +27978,378 @@
     ]
   },
   {
+    "@id": "urn:ucode:_00001C0000000000000100000396825E",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1133S",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1133S.Weekday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+    "odpt:trainNumber": "A1133S",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "11:17",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+      },
+      {
+        "odpt:departureTime": "11:23",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "11:27",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:30",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:33",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:34",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:37",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:38",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:41",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:43",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:44",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:46",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:49",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:50",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "11:52",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "11:54",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "11:57",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "11:59",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "12:01",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "12:02",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003103554",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1029K",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1029K.Weekday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+    "odpt:trainNumber": "A1029K",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "10:53",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "10:57",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:00",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:03",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:07",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:08",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:11",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:13",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:14",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:16",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:19",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:20",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "11:22",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "11:24",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "11:27",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "11:29",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "11:31",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "11:32",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000310333D",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A621K",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A621K.Weekday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+    "odpt:trainNumber": "A621K",
+    "odpt:originStation": [
+      "odpt.Station:JR-East.JobanLocal.Abiko"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "07:00",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "07:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "07:07",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "07:10",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "07:11",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "07:14",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "07:15",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "07:18",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "07:20",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "07:21",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "07:23",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:arrivalTime": "07:25",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003C688CF",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1003S",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1003S.Weekday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Express",
+    "odpt:trainNumber": "A1003S",
+    "odpt:originStation": [
+      "odpt.Station:JR-East.JobanLocal.Abiko"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:Odakyu.Tama.Karakida"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "11:28",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "11:32",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:35",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:38",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:39",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:42",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:43",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:46",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:48",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:49",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:51",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:54",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:55",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "11:57",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "11:59",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "12:02",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "12:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "12:06",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "12:07",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
     "@id": "urn:ucode:_00001C0000000000000100000320877C",
     "@type": "odpt:TrainTimetable",
     "dc:date": "2026-03-16T09:00:00+09:00",
@@ -28076,6 +28448,109 @@
       },
       {
         "odpt:arrivalTime": "10:52",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003103910",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1005S",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1005S.Weekday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+    "odpt:trainNumber": "A1005S",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "10:58",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+      },
+      {
+        "odpt:departureTime": "11:03",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "11:07",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:10",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:13",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:14",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:17",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:18",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:21",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:23",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:24",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:26",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:29",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:30",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "11:32",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "11:34",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "11:37",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "11:39",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "11:41",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "11:42",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
@@ -28382,208 +28857,6 @@
     ]
   },
   {
-    "@id": "urn:ucode:_00001C00000000000001000003C688CF",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1003S",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1003S.Weekday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:Weekday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Express",
-    "odpt:trainNumber": "A1003S",
-    "odpt:originStation": [
-      "odpt.Station:JR-East.JobanLocal.Abiko"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:Odakyu.Tama.Karakida"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "11:28",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "11:32",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "11:35",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "11:38",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "11:39",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "11:42",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "11:43",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "11:46",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "11:48",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "11:49",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "11:51",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "11:54",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "11:55",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "11:57",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "11:59",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "12:02",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "12:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "12:06",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "12:07",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C00000000000001000003103910",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1005S",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1005S.Weekday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:Weekday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A1005S",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "10:58",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-      },
-      {
-        "odpt:departureTime": "11:03",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "11:07",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "11:10",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "11:13",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "11:14",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "11:17",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "11:18",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "11:21",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "11:23",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "11:24",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "11:26",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "11:29",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "11:30",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "11:32",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "11:34",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "11:37",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "11:39",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "11:41",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "11:42",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
     "@id": "urn:ucode:_00001C00000000000001000003C688D1",
     "@type": "odpt:TrainTimetable",
     "dc:date": "2026-03-16T09:00:00+09:00",
@@ -28678,105 +28951,6 @@
       },
       {
         "odpt:arrivalTime": "11:37",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C00000000000001000003103554",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1029K",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1029K.Weekday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:Weekday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A1029K",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "10:53",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "10:57",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "11:00",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "11:03",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "11:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "11:07",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "11:08",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "11:11",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "11:13",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "11:14",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "11:16",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "11:19",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "11:20",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "11:22",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "11:24",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "11:27",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "11:29",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "11:31",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "11:32",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
@@ -29837,109 +30011,6 @@
       },
       {
         "odpt:arrivalTime": "12:37",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C0000000000000100000396825E",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1133S",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1133S.Weekday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:Weekday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A1133S",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "11:17",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-      },
-      {
-        "odpt:departureTime": "11:23",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "11:27",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "11:30",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "11:33",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "11:34",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "11:37",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "11:38",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "11:41",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "11:43",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "11:44",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "11:46",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "11:49",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "11:50",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "11:52",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "11:54",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "11:57",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "11:59",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "12:01",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "12:02",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
@@ -48501,77 +48572,6 @@
       },
       {
         "odpt:arrivalTime": "06:50",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C0000000000000100000310333D",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A621K",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A621K.Weekday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:Weekday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A621K",
-    "odpt:originStation": [
-      "odpt.Station:JR-East.JobanLocal.Abiko"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "07:00",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "07:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "07:07",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "07:10",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "07:11",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "07:14",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "07:15",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "07:18",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "07:20",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "07:21",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "07:23",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:arrivalTime": "07:25",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
       }
     ]
@@ -77226,18 +77226,18 @@
     ]
   },
   {
-    "@id": "urn:ucode:_00001C0000000000000100000387E80D",
+    "@id": "urn:ucode:_00001C000000000000010000031031AF",
     "@type": "odpt:TrainTimetable",
     "dc:date": "2026-03-16T09:00:00+09:00",
     "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
     "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1019S",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1019S.SaturdayHoliday",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1005K",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1005K.SaturdayHoliday",
     "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
     "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
     "odpt:operator": "odpt.Operator:TokyoMetro",
     "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A1019S",
+    "odpt:trainNumber": "A1005K",
     "odpt:originStation": [
       "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
     ],
@@ -77247,83 +77247,83 @@
     ],
     "odpt:trainTimetableObject": [
       {
-        "odpt:departureTime": "10:56",
+        "odpt:departureTime": "10:10",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
       },
       {
-        "odpt:departureTime": "11:03",
+        "odpt:departureTime": "10:17",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
       },
       {
-        "odpt:departureTime": "11:07",
+        "odpt:departureTime": "10:21",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
       },
       {
-        "odpt:departureTime": "11:10",
+        "odpt:departureTime": "10:24",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
       },
       {
-        "odpt:departureTime": "11:13",
+        "odpt:departureTime": "10:27",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
       },
       {
-        "odpt:departureTime": "11:14",
+        "odpt:departureTime": "10:28",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
       },
       {
-        "odpt:departureTime": "11:17",
+        "odpt:departureTime": "10:31",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
       },
       {
-        "odpt:departureTime": "11:18",
+        "odpt:departureTime": "10:32",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
       },
       {
-        "odpt:departureTime": "11:21",
+        "odpt:departureTime": "10:35",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
       },
       {
-        "odpt:departureTime": "11:23",
+        "odpt:departureTime": "10:37",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
       },
       {
-        "odpt:departureTime": "11:24",
+        "odpt:departureTime": "10:38",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
       },
       {
-        "odpt:departureTime": "11:26",
+        "odpt:departureTime": "10:40",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
       },
       {
-        "odpt:departureTime": "11:29",
+        "odpt:departureTime": "10:43",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
       },
       {
-        "odpt:departureTime": "11:30",
+        "odpt:departureTime": "10:44",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
       },
       {
-        "odpt:departureTime": "11:32",
+        "odpt:departureTime": "10:46",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
       },
       {
-        "odpt:departureTime": "11:34",
+        "odpt:departureTime": "10:48",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
       },
       {
-        "odpt:departureTime": "11:37",
+        "odpt:departureTime": "10:51",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
       },
       {
-        "odpt:departureTime": "11:39",
+        "odpt:departureTime": "10:53",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
       },
       {
-        "odpt:departureTime": "11:41",
+        "odpt:departureTime": "10:55",
         "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
       },
       {
-        "odpt:arrivalTime": "11:42",
+        "odpt:arrivalTime": "10:56",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
@@ -77427,6 +77427,448 @@
       },
       {
         "odpt:arrivalTime": "11:17",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000320879A",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1111K",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1111K.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+    "odpt:trainNumber": "A1111K",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "11:33",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "11:37",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:40",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:43",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:44",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:47",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:48",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:51",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:53",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:54",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:56",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:59",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "12:00",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "12:02",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "12:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "12:07",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "12:09",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "12:11",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "12:12",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000034C364F",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1003E",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1003E.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.LimitedExpress",
+    "odpt:trainNumber": "A1003E",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:OdakyuHakone.HakoneTozan.HakoneYumoto"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "10:33",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "10:49",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "10:55",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000378DF70",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1003K",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1003K.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Express",
+    "odpt:trainNumber": "A1003K",
+    "odpt:originStation": [
+      "odpt.Station:JR-East.JobanLocal.Abiko"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:Odakyu.Tama.Karakida"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "11:28",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "11:32",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:35",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:38",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:39",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:42",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:43",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:46",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:48",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:49",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:51",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:54",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:55",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "11:57",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "11:59",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "12:02",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "12:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "12:06",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "12:07",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003C688D0",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1005S",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1005S.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.SemiExpress",
+    "odpt:trainNumber": "A1005S",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:Odakyu.Odawara.SeijogakuenMae"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "10:25",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "10:30",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "10:33",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "10:36",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "10:37",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "10:40",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "10:41",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "10:44",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "10:46",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "10:47",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "10:49",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "10:52",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "10:53",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "10:55",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "10:57",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "11:00",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "11:02",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "11:04",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "11:05",
+        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000387E80D",
+    "@type": "odpt:TrainTimetable",
+    "dc:date": "2026-03-16T09:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
+    "dct:issued": "2026-03-14",
+    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1019S",
+    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1019S.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TokyoMetro",
+    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+    "odpt:trainNumber": "A1019S",
+    "odpt:originStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+    ],
+    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
+    "odpt:destinationStation": [
+      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+    ],
+    "odpt:trainTimetableObject": [
+      {
+        "odpt:departureTime": "10:56",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+      },
+      {
+        "odpt:departureTime": "11:03",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+      },
+      {
+        "odpt:departureTime": "11:07",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      },
+      {
+        "odpt:departureTime": "11:10",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
+      },
+      {
+        "odpt:departureTime": "11:13",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
+      },
+      {
+        "odpt:departureTime": "11:14",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
+      },
+      {
+        "odpt:departureTime": "11:17",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
+      },
+      {
+        "odpt:departureTime": "11:18",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
+      },
+      {
+        "odpt:departureTime": "11:21",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
+      },
+      {
+        "odpt:departureTime": "11:23",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+      },
+      {
+        "odpt:departureTime": "11:24",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
+      },
+      {
+        "odpt:departureTime": "11:26",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+      },
+      {
+        "odpt:departureTime": "11:29",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
+      },
+      {
+        "odpt:departureTime": "11:30",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
+      },
+      {
+        "odpt:departureTime": "11:32",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
+      },
+      {
+        "odpt:departureTime": "11:34",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
+      },
+      {
+        "odpt:departureTime": "11:37",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
+      },
+      {
+        "odpt:departureTime": "11:39",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+      },
+      {
+        "odpt:departureTime": "11:41",
+        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
+      },
+      {
+        "odpt:arrivalTime": "11:42",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
@@ -77823,349 +78265,6 @@
       },
       {
         "odpt:arrivalTime": "11:32",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C000000000000010000034C364F",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1003E",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1003E.SaturdayHoliday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.LimitedExpress",
-    "odpt:trainNumber": "A1003E",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:OdakyuHakone.HakoneTozan.HakoneYumoto"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "10:33",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "10:49",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "10:55",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "11:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C0000000000000100000378DF70",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1003K",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1003K.SaturdayHoliday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Express",
-    "odpt:trainNumber": "A1003K",
-    "odpt:originStation": [
-      "odpt.Station:JR-East.JobanLocal.Abiko"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:Odakyu.Tama.Karakida"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "11:28",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "11:32",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "11:35",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "11:38",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "11:39",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "11:42",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "11:43",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "11:46",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "11:48",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "11:49",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "11:51",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "11:54",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "11:55",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "11:57",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "11:59",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "12:02",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "12:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "12:06",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "12:07",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C000000000000010000031031AF",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1005K",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1005K.SaturdayHoliday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A1005K",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "10:10",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-      },
-      {
-        "odpt:departureTime": "10:17",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "10:21",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "10:24",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "10:27",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "10:28",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "10:31",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "10:32",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "10:35",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "10:37",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "10:38",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "10:40",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "10:43",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "10:44",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "10:46",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "10:48",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "10:51",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "10:53",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "10:55",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "10:56",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C00000000000001000003C688D0",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1005S",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1005S.SaturdayHoliday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.SemiExpress",
-    "odpt:trainNumber": "A1005S",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:Odakyu.Odawara.SeijogakuenMae"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "10:25",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "10:30",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "10:33",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "10:36",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "10:37",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "10:40",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "10:41",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "10:44",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "10:46",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "10:47",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "10:49",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "10:52",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "10:53",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "10:55",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "10:57",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "11:00",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "11:02",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "11:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "11:05",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
@@ -78789,105 +78888,6 @@
       },
       {
         "odpt:arrivalTime": "11:52",
-        "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-      }
-    ]
-  },
-  {
-    "@id": "urn:ucode:_00001C0000000000000100000320879A",
-    "@type": "odpt:TrainTimetable",
-    "dc:date": "2026-03-16T09:00:00+09:00",
-    "@context": "http://vocab.odpt.org/context_odpt_TrainTimetable.jsonld",
-    "dct:issued": "2026-03-14",
-    "odpt:train": "odpt.Train:TokyoMetro.Chiyoda.A1111K",
-    "owl:sameAs": "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1111K.SaturdayHoliday",
-    "odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
-    "odpt:operator": "odpt.Operator:TokyoMetro",
-    "odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-    "odpt:trainNumber": "A1111K",
-    "odpt:originStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-    ],
-    "odpt:railDirection": "odpt.RailDirection:TokyoMetro.YoyogiUehara",
-    "odpt:destinationStation": [
-      "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
-    ],
-    "odpt:trainTimetableObject": [
-      {
-        "odpt:departureTime": "11:33",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Ayase"
-      },
-      {
-        "odpt:departureTime": "11:37",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      },
-      {
-        "odpt:departureTime": "11:40",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Machiya"
-      },
-      {
-        "odpt:departureTime": "11:43",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.NishiNippori"
-      },
-      {
-        "odpt:departureTime": "11:44",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Sendagi"
-      },
-      {
-        "odpt:departureTime": "11:47",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nezu"
-      },
-      {
-        "odpt:departureTime": "11:48",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Yushima"
-      },
-      {
-        "odpt:departureTime": "11:51",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu"
-      },
-      {
-        "odpt:departureTime": "11:53",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Otemachi"
-      },
-      {
-        "odpt:departureTime": "11:54",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nijubashimae"
-      },
-      {
-        "odpt:departureTime": "11:56",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Hibiya"
-      },
-      {
-        "odpt:departureTime": "11:59",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Kasumigaseki"
-      },
-      {
-        "odpt:departureTime": "12:00",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae"
-      },
-      {
-        "odpt:departureTime": "12:02",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Akasaka"
-      },
-      {
-        "odpt:departureTime": "12:04",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.Nogizaka"
-      },
-      {
-        "odpt:departureTime": "12:07",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
-      },
-      {
-        "odpt:departureTime": "12:09",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
-      },
-      {
-        "odpt:departureTime": "12:11",
-        "odpt:departureStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiKoen"
-      },
-      {
-        "odpt:arrivalTime": "12:12",
         "odpt:arrivalStation": "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       }
     ]
