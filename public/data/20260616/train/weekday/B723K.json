@@ -1,0 +1,58 @@
+{
+  "trainNumber": "B723K",
+  "calendar": "weekday",
+  "direction": "for_kitaayase",
+  "trainType": "Local",
+  "originStation": "Kasumigaseki",
+  "destinationStation": "Matsudo",
+  "timetable": [
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "07:50"
+    },
+    {
+      "station": "Hibiya",
+      "departureTime": "07:52"
+    },
+    {
+      "station": "Nijubashimae",
+      "departureTime": "07:54"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "07:55"
+    },
+    {
+      "station": "ShinOchanomizu",
+      "departureTime": "07:58"
+    },
+    {
+      "station": "Yushima",
+      "departureTime": "08:00"
+    },
+    {
+      "station": "Nezu",
+      "departureTime": "08:02"
+    },
+    {
+      "station": "Sendagi",
+      "departureTime": "08:04"
+    },
+    {
+      "station": "NishiNippori",
+      "departureTime": "08:06"
+    },
+    {
+      "station": "Machiya",
+      "departureTime": "08:08"
+    },
+    {
+      "station": "KitaSenju",
+      "departureTime": "08:12"
+    },
+    {
+      "station": "Ayase",
+      "arrivalTime": "08:15"
+    }
+  ]
+}

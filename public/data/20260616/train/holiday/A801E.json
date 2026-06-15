@@ -1,0 +1,29 @@
+{
+  "trainNumber": "A801E",
+  "calendar": "holiday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "LimitedExpress",
+  "originStation": "KitaSenju",
+  "destinationStation": "HakoneYumoto",
+  "timetable": [
+    {
+      "station": "KitaSenju",
+      "departureTime": "08:33"
+    },
+    {
+      "station": "Otemachi",
+      "departureTime": "08:49"
+    },
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "08:55"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "09:04"
+    },
+    {
+      "station": "YoyogiUehara"
+    }
+  ]
+}

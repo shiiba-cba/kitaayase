@@ -1,0 +1,25 @@
+{
+  "trainNumber": "A1913E",
+  "calendar": "weekday",
+  "direction": "for_yoyogiuehara",
+  "trainType": "LimitedExpress",
+  "originStation": "Otemachi",
+  "destinationStation": "HonAtsugi",
+  "timetable": [
+    {
+      "station": "Otemachi",
+      "departureTime": "19:30"
+    },
+    {
+      "station": "Kasumigaseki",
+      "departureTime": "19:36"
+    },
+    {
+      "station": "OmoteSando",
+      "departureTime": "19:44"
+    },
+    {
+      "station": "YoyogiUehara"
+    }
+  ]
+}
